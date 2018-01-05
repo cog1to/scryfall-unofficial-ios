@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		CFD05BC420001A4A00CDF9C2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD05BC320001A4A00CDF9C2 /* AppDelegate.swift */; };
-		CFD05BC620001A4A00CDF9C2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD05BC520001A4A00CDF9C2 /* ViewController.swift */; };
 		CFD05BC920001A4A00CDF9C2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFD05BC720001A4A00CDF9C2 /* Main.storyboard */; };
 		CFD05BCB20001A4A00CDF9C2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFD05BCA20001A4A00CDF9C2 /* Assets.xcassets */; };
 		CFD05BCE20001A4A00CDF9C2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFD05BCC20001A4A00CDF9C2 /* LaunchScreen.storyboard */; };
@@ -28,7 +27,6 @@
 /* Begin PBXFileReference section */
 		CFD05BC020001A4A00CDF9C2 /* Scryfall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scryfall.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFD05BC320001A4A00CDF9C2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CFD05BC520001A4A00CDF9C2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		CFD05BC820001A4A00CDF9C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CFD05BCA20001A4A00CDF9C2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CFD05BCD20001A4A00CDF9C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -77,15 +75,12 @@
 		CFD05BC220001A4A00CDF9C2 /* Scryfall */ = {
 			isa = PBXGroup;
 			children = (
-				CFD05BC320001A4A00CDF9C2 /* AppDelegate.swift */,
-				CFD05BC520001A4A00CDF9C2 /* ViewController.swift */,
-				CFD05BC720001A4A00CDF9C2 /* Main.storyboard */,
-				CFD05BCA20001A4A00CDF9C2 /* Assets.xcassets */,
-				CFD05BCC20001A4A00CDF9C2 /* LaunchScreen.storyboard */,
+				CFD05BE420001A9700CDF9C2 /* Resources */,
+				CFD05BE320001A7900CDF9C2 /* Classes */,
 				CFD05BCF20001A4A00CDF9C2 /* Info.plist */,
 			);
 			path = Scryfall;
-			sourceTree = "<group>";
+			sourceTree = SOURCE_ROOT;
 		};
 		CFD05BD720001A4A00CDF9C2 /* ScryfallTests */ = {
 			isa = PBXGroup;
@@ -96,6 +91,41 @@
 			path = ScryfallTests;
 			sourceTree = "<group>";
 		};
+		CFD05BE320001A7900CDF9C2 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				CFD05BE9200024FC00CDF9C2 /* Service */,
+				CFD05BE8200024E900CDF9C2 /* Model */,
+				CFD05BC320001A4A00CDF9C2 /* AppDelegate.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		CFD05BE420001A9700CDF9C2 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CFD05BC720001A4A00CDF9C2 /* Main.storyboard */,
+				CFD05BCA20001A4A00CDF9C2 /* Assets.xcassets */,
+				CFD05BCC20001A4A00CDF9C2 /* LaunchScreen.storyboard */,
+			);
+			name = Resources;
+			path = Scryfall/Resources;
+			sourceTree = SOURCE_ROOT;
+		};
+		CFD05BE8200024E900CDF9C2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CFD05BE9200024FC00CDF9C2 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -103,9 +133,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CFD05BDD20001A4A00CDF9C2 /* Build configuration list for PBXNativeTarget "Scryfall" */;
 			buildPhases = (
+				CFD05BE52000207500CDF9C2 /* ShellScript */,
 				CFD05BBC20001A4A00CDF9C2 /* Sources */,
 				CFD05BBD20001A4A00CDF9C2 /* Frameworks */,
 				CFD05BBE20001A4A00CDF9C2 /* Resources */,
+				CFD05BE62000209100CDF9C2 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -194,12 +226,56 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		CFD05BE52000207500CDF9C2 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -x\n/usr/local/bin/carthage bootstrap --cache-builds --platform iOS";
+		};
+		CFD05BE62000209100CDF9C2 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Action.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/NSObject_Rx.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxRealm.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
+			);
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/SwiftyJSON.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Realm.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RealmSwift.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Action.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/NSObject_Rx.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxSwift.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxRealm.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxCocoa.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		CFD05BBC20001A4A00CDF9C2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CFD05BC620001A4A00CDF9C2 /* ViewController.swift in Sources */,
 				CFD05BC420001A4A00CDF9C2 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

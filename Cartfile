@@ -1,0 +1,17 @@
+# Require version 3.x of SwiftyJSON
+github "SwiftyJSON/SwiftyJSON" ~> 3.0
+
+# Require version 4.1.0 of RxSwift
+github "ReactiveX/RxSwift" ~> 4.1.0
+
+# Require version 0.7.5 of RxRealm
+github "RxSwiftCommunity/RxRealm" ~> 0.7.5
+
+# Require version 3.0.2 of realm-cocoa
+github "realm/realm-cocoa" ~> 3.0.2
+
+# Require version 3.5.2 of Action
+github "RxSwiftCommunity/Action" ~> 3.5.2
+
+# Require version 4.2.0 of NSObject+Rx
+github "RxSwiftCommunity/NSObject-Rx" ~> 4.2.0

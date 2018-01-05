@@ -1,0 +1,6 @@
+github "ReactiveX/RxSwift" "4.1.0"
+github "RxSwiftCommunity/Action" "3.5.2"
+github "RxSwiftCommunity/NSObject-Rx" "4.2.0"
+github "RxSwiftCommunity/RxRealm" "0.7.5"
+github "SwiftyJSON/SwiftyJSON" "3.1.4"
+github "realm/realm-cocoa" "v3.0.2"
