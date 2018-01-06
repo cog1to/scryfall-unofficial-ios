@@ -12,6 +12,34 @@
 		CFD05BCB20001A4A00CDF9C2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFD05BCA20001A4A00CDF9C2 /* Assets.xcassets */; };
 		CFD05BCE20001A4A00CDF9C2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFD05BCC20001A4A00CDF9C2 /* LaunchScreen.storyboard */; };
 		CFD05BD920001A4A00CDF9C2 /* ScryfallTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD05BD820001A4A00CDF9C2 /* ScryfallTests.swift */; };
+		CFD05BED20002D9300CDF9C2 /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD05BEC20002D9300CDF9C2 /* WebService.swift */; };
+		CFD05BF720002E0200CDF9C2 /* RxRealm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFD05BEF20002E0200CDF9C2 /* RxRealm.framework */; };
+		CFD05BF820002E0200CDF9C2 /* Action.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFD05BF020002E0200CDF9C2 /* Action.framework */; };
+		CFD05BF920002E0200CDF9C2 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFD05BF120002E0200CDF9C2 /* Realm.framework */; };
+		CFD05BFA20002E0200CDF9C2 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFD05BF220002E0200CDF9C2 /* RxCocoa.framework */; };
+		CFD05BFB20002E0200CDF9C2 /* NSObject_Rx.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFD05BF320002E0200CDF9C2 /* NSObject_Rx.framework */; };
+		CFD05BFC20002E0200CDF9C2 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFD05BF420002E0200CDF9C2 /* RealmSwift.framework */; };
+		CFD05BFD20002E0200CDF9C2 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFD05BF520002E0200CDF9C2 /* SwiftyJSON.framework */; };
+		CFD05BFE20002E0200CDF9C2 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFD05BF620002E0200CDF9C2 /* RxSwift.framework */; };
+		CFD05C0020002F4B00CDF9C2 /* ScryfallServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD05BFF20002F4B00CDF9C2 /* ScryfallServiceType.swift */; };
+		CFD05C0220002F5600CDF9C2 /* ScryfallService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD05C0120002F5600CDF9C2 /* ScryfallService.swift */; };
+		CFD05C0420002F7E00CDF9C2 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD05C0320002F7E00CDF9C2 /* Card.swift */; };
+		CFD05C062000317900CDF9C2 /* CardSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD05C052000317900CDF9C2 /* CardSearchViewModel.swift */; };
+		CFD05C082000336C00CDF9C2 /* CardSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD05C072000336C00CDF9C2 /* CardSearchViewController.swift */; };
+		CFD05C0B20003CA700CDF9C2 /* SceneCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD05C0A20003CA700CDF9C2 /* SceneCoordinator.swift */; };
+		CFD05C0D20003CE900CDF9C2 /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD05C0C20003CE900CDF9C2 /* Scene.swift */; };
+		CFD05C0F20003D3900CDF9C2 /* SceneCoordinatorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD05C0E20003D3900CDF9C2 /* SceneCoordinatorType.swift */; };
+		CFD05C1120003D6900CDF9C2 /* SceneTransitionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD05C1020003D6900CDF9C2 /* SceneTransitionType.swift */; };
+		CFD05C1320003E5500CDF9C2 /* BindableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD05C1220003E5500CDF9C2 /* BindableType.swift */; };
+		CFD05C1620003F8500CDF9C2 /* UISearchController+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD05C1520003F8500CDF9C2 /* UISearchController+Rx.swift */; };
+		CFD05C182001144500CDF9C2 /* CardsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD05C172001144500CDF9C2 /* CardsList.swift */; };
+		CFD05C1B200123E600CDF9C2 /* CardSearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD05C1A200123E600CDF9C2 /* CardSearchCell.swift */; };
+		CFD05C1D2001246700CDF9C2 /* LoadingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD05C1C2001246700CDF9C2 /* LoadingCell.swift */; };
+		CFD05C20200136F900CDF9C2 /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD05C1F200136F900CDF9C2 /* Style.swift */; };
+		CFD05C2220013BCF00CDF9C2 /* Rarity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD05C2120013BCF00CDF9C2 /* Rarity.swift */; };
+		CFD05C24200142F500CDF9C2 /* CardDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD05C23200142F500CDF9C2 /* CardDetailsViewController.swift */; };
+		CFD05C2620014C7600CDF9C2 /* CardDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD05C2520014C7600CDF9C2 /* CardDetailsViewModel.swift */; };
+		CFD05C2820014C8400CDF9C2 /* CardFace.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD05C2720014C8400CDF9C2 /* CardFace.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +62,34 @@
 		CFD05BD420001A4A00CDF9C2 /* ScryfallTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScryfallTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFD05BD820001A4A00CDF9C2 /* ScryfallTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScryfallTests.swift; sourceTree = "<group>"; };
 		CFD05BDA20001A4A00CDF9C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CFD05BEC20002D9300CDF9C2 /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
+		CFD05BEF20002E0200CDF9C2 /* RxRealm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxRealm.framework; path = Carthage/Build/iOS/RxRealm.framework; sourceTree = "<group>"; };
+		CFD05BF020002E0200CDF9C2 /* Action.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Action.framework; path = Carthage/Build/iOS/Action.framework; sourceTree = "<group>"; };
+		CFD05BF120002E0200CDF9C2 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
+		CFD05BF220002E0200CDF9C2 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
+		CFD05BF320002E0200CDF9C2 /* NSObject_Rx.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NSObject_Rx.framework; path = Carthage/Build/iOS/NSObject_Rx.framework; sourceTree = "<group>"; };
+		CFD05BF420002E0200CDF9C2 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
+		CFD05BF520002E0200CDF9C2 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
+		CFD05BF620002E0200CDF9C2 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
+		CFD05BFF20002F4B00CDF9C2 /* ScryfallServiceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScryfallServiceType.swift; sourceTree = "<group>"; };
+		CFD05C0120002F5600CDF9C2 /* ScryfallService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScryfallService.swift; sourceTree = "<group>"; };
+		CFD05C0320002F7E00CDF9C2 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		CFD05C052000317900CDF9C2 /* CardSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSearchViewModel.swift; sourceTree = "<group>"; };
+		CFD05C072000336C00CDF9C2 /* CardSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSearchViewController.swift; sourceTree = "<group>"; };
+		CFD05C0A20003CA700CDF9C2 /* SceneCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneCoordinator.swift; sourceTree = "<group>"; };
+		CFD05C0C20003CE900CDF9C2 /* Scene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
+		CFD05C0E20003D3900CDF9C2 /* SceneCoordinatorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneCoordinatorType.swift; sourceTree = "<group>"; };
+		CFD05C1020003D6900CDF9C2 /* SceneTransitionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneTransitionType.swift; sourceTree = "<group>"; };
+		CFD05C1220003E5500CDF9C2 /* BindableType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindableType.swift; sourceTree = "<group>"; };
+		CFD05C1520003F8500CDF9C2 /* UISearchController+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UISearchController+Rx.swift"; sourceTree = "<group>"; };
+		CFD05C172001144500CDF9C2 /* CardsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsList.swift; sourceTree = "<group>"; };
+		CFD05C1A200123E600CDF9C2 /* CardSearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSearchCell.swift; sourceTree = "<group>"; };
+		CFD05C1C2001246700CDF9C2 /* LoadingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingCell.swift; sourceTree = "<group>"; };
+		CFD05C1F200136F900CDF9C2 /* Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
+		CFD05C2120013BCF00CDF9C2 /* Rarity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rarity.swift; sourceTree = "<group>"; };
+		CFD05C23200142F500CDF9C2 /* CardDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailsViewController.swift; sourceTree = "<group>"; };
+		CFD05C2520014C7600CDF9C2 /* CardDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailsViewModel.swift; sourceTree = "<group>"; };
+		CFD05C2720014C8400CDF9C2 /* CardFace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardFace.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +97,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFD05BF720002E0200CDF9C2 /* RxRealm.framework in Frameworks */,
+				CFD05BF820002E0200CDF9C2 /* Action.framework in Frameworks */,
+				CFD05BF920002E0200CDF9C2 /* Realm.framework in Frameworks */,
+				CFD05BFA20002E0200CDF9C2 /* RxCocoa.framework in Frameworks */,
+				CFD05BFB20002E0200CDF9C2 /* NSObject_Rx.framework in Frameworks */,
+				CFD05BFC20002E0200CDF9C2 /* RealmSwift.framework in Frameworks */,
+				CFD05BFD20002E0200CDF9C2 /* SwiftyJSON.framework in Frameworks */,
+				CFD05BFE20002E0200CDF9C2 /* RxSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,6 +124,7 @@
 				CFD05BC220001A4A00CDF9C2 /* Scryfall */,
 				CFD05BD720001A4A00CDF9C2 /* ScryfallTests */,
 				CFD05BC120001A4A00CDF9C2 /* Products */,
+				CFD05BEE20002E0100CDF9C2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -94,6 +159,12 @@
 		CFD05BE320001A7900CDF9C2 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				CFD05C1E200136EE00CDF9C2 /* Style */,
+				CFD05C192001237C00CDF9C2 /* Cells */,
+				CFD05C1420003F5500CDF9C2 /* Rx */,
+				CFD05C0920003C9A00CDF9C2 /* Navigation */,
+				CFD05BEB2000270C00CDF9C2 /* ViewControllers */,
+				CFD05BEA200026FB00CDF9C2 /* ViewModels */,
 				CFD05BE9200024FC00CDF9C2 /* Service */,
 				CFD05BE8200024E900CDF9C2 /* Model */,
 				CFD05BC320001A4A00CDF9C2 /* AppDelegate.swift */,
@@ -115,6 +186,11 @@
 		CFD05BE8200024E900CDF9C2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				CFD05C0320002F7E00CDF9C2 /* Card.swift */,
+				CFD05C2720014C8400CDF9C2 /* CardFace.swift */,
+				CFD05C172001144500CDF9C2 /* CardsList.swift */,
+				CFD05C1220003E5500CDF9C2 /* BindableType.swift */,
+				CFD05C2120013BCF00CDF9C2 /* Rarity.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -122,8 +198,80 @@
 		CFD05BE9200024FC00CDF9C2 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				CFD05BEC20002D9300CDF9C2 /* WebService.swift */,
+				CFD05BFF20002F4B00CDF9C2 /* ScryfallServiceType.swift */,
+				CFD05C0120002F5600CDF9C2 /* ScryfallService.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		CFD05BEA200026FB00CDF9C2 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				CFD05C052000317900CDF9C2 /* CardSearchViewModel.swift */,
+				CFD05C2520014C7600CDF9C2 /* CardDetailsViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		CFD05BEB2000270C00CDF9C2 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				CFD05C072000336C00CDF9C2 /* CardSearchViewController.swift */,
+				CFD05C23200142F500CDF9C2 /* CardDetailsViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		CFD05BEE20002E0100CDF9C2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CFD05BF020002E0200CDF9C2 /* Action.framework */,
+				CFD05BF320002E0200CDF9C2 /* NSObject_Rx.framework */,
+				CFD05BF120002E0200CDF9C2 /* Realm.framework */,
+				CFD05BF420002E0200CDF9C2 /* RealmSwift.framework */,
+				CFD05BF220002E0200CDF9C2 /* RxCocoa.framework */,
+				CFD05BEF20002E0200CDF9C2 /* RxRealm.framework */,
+				CFD05BF620002E0200CDF9C2 /* RxSwift.framework */,
+				CFD05BF520002E0200CDF9C2 /* SwiftyJSON.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CFD05C0920003C9A00CDF9C2 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				CFD05C0A20003CA700CDF9C2 /* SceneCoordinator.swift */,
+				CFD05C0C20003CE900CDF9C2 /* Scene.swift */,
+				CFD05C0E20003D3900CDF9C2 /* SceneCoordinatorType.swift */,
+				CFD05C1020003D6900CDF9C2 /* SceneTransitionType.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		CFD05C1420003F5500CDF9C2 /* Rx */ = {
+			isa = PBXGroup;
+			children = (
+				CFD05C1520003F8500CDF9C2 /* UISearchController+Rx.swift */,
+			);
+			path = Rx;
+			sourceTree = "<group>";
+		};
+		CFD05C192001237C00CDF9C2 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				CFD05C1A200123E600CDF9C2 /* CardSearchCell.swift */,
+				CFD05C1C2001246700CDF9C2 /* LoadingCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		CFD05C1E200136EE00CDF9C2 /* Style */ = {
+			isa = PBXGroup;
+			children = (
+				CFD05C1F200136F900CDF9C2 /* Style.swift */,
+			);
+			path = Style;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -238,7 +386,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "set -x\n/usr/local/bin/carthage bootstrap --cache-builds --platform iOS";
+			shellScript = "set -x\n/usr/local/bin/carthage build --cache-builds --platform iOS";
 		};
 		CFD05BE62000209100CDF9C2 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -276,7 +424,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFD05C062000317900CDF9C2 /* CardSearchViewModel.swift in Sources */,
+				CFD05C2620014C7600CDF9C2 /* CardDetailsViewModel.swift in Sources */,
+				CFD05C24200142F500CDF9C2 /* CardDetailsViewController.swift in Sources */,
+				CFD05BED20002D9300CDF9C2 /* WebService.swift in Sources */,
+				CFD05C0220002F5600CDF9C2 /* ScryfallService.swift in Sources */,
+				CFD05C2820014C8400CDF9C2 /* CardFace.swift in Sources */,
+				CFD05C1120003D6900CDF9C2 /* SceneTransitionType.swift in Sources */,
+				CFD05C1320003E5500CDF9C2 /* BindableType.swift in Sources */,
+				CFD05C082000336C00CDF9C2 /* CardSearchViewController.swift in Sources */,
+				CFD05C0420002F7E00CDF9C2 /* Card.swift in Sources */,
+				CFD05C0B20003CA700CDF9C2 /* SceneCoordinator.swift in Sources */,
+				CFD05C0020002F4B00CDF9C2 /* ScryfallServiceType.swift in Sources */,
+				CFD05C1B200123E600CDF9C2 /* CardSearchCell.swift in Sources */,
+				CFD05C1D2001246700CDF9C2 /* LoadingCell.swift in Sources */,
+				CFD05C0F20003D3900CDF9C2 /* SceneCoordinatorType.swift in Sources */,
+				CFD05C2220013BCF00CDF9C2 /* Rarity.swift in Sources */,
+				CFD05C1620003F8500CDF9C2 /* UISearchController+Rx.swift in Sources */,
+				CFD05C182001144500CDF9C2 /* CardsList.swift in Sources */,
+				CFD05C20200136F900CDF9C2 /* Style.swift in Sources */,
 				CFD05BC420001A4A00CDF9C2 /* AppDelegate.swift in Sources */,
+				CFD05C0D20003CE900CDF9C2 /* Scene.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -431,7 +599,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SDRP58XW4X;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Scryfall/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ru.aint.Scryfall;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -446,7 +619,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SDRP58XW4X;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Scryfall/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ru.aint.Scryfall;
 				PRODUCT_NAME = "$(TARGET_NAME)";

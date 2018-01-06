@@ -1,48 +1,184 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="826-79-5zn">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="v7n-ig-6pn">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Card Search View Controller-->
+        <scene sceneID="BYG-gR-GBh">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Scryfall" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                <tableViewController storyboardIdentifier="CardSearchViewController" id="nIe-aM-jIa" customClass="CardSearchViewController" customModule="Scryfall" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="ojf-gE-LOm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="Otm-UZ-yRy"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CardSearchCell" rowHeight="61" id="UNs-xM-LXx" customClass="CardSearchCell" customModule="Scryfall" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="61"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="UNs-xM-LXx" id="V2h-Ia-Xei">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="60.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Card name" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rpm-hZ-eb1">
+                                            <rect key="frame" x="16" y="11" width="296" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="752" verticalCompressionResistancePriority="752" text="SET" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ogB-Y2-M9D">
+                                            <rect key="frame" x="328" y="10.5" width="31" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Type" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aVT-Ug-Dea">
+                                            <rect key="frame" x="16" y="33" width="297.5" height="17"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="752" verticalCompressionResistancePriority="752" text="Rarity" textAlignment="right" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O0M-qa-6Pd">
+                                            <rect key="frame" x="321.5" y="33" width="37.5" height="17"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="ogB-Y2-M9D" firstAttribute="leading" secondItem="rpm-hZ-eb1" secondAttribute="trailing" constant="16" id="1pq-WR-eyT"/>
+                                        <constraint firstItem="O0M-qa-6Pd" firstAttribute="leading" secondItem="aVT-Ug-Dea" secondAttribute="trailing" constant="8" id="3hU-xm-0fA"/>
+                                        <constraint firstItem="O0M-qa-6Pd" firstAttribute="baseline" secondItem="aVT-Ug-Dea" secondAttribute="baseline" id="4zt-C5-yoJ"/>
+                                        <constraint firstItem="ogB-Y2-M9D" firstAttribute="firstBaseline" secondItem="rpm-hZ-eb1" secondAttribute="firstBaseline" id="6qa-2S-FQ8"/>
+                                        <constraint firstItem="rpm-hZ-eb1" firstAttribute="leading" secondItem="V2h-Ia-Xei" secondAttribute="leadingMargin" id="CdD-zT-hPA"/>
+                                        <constraint firstItem="aVT-Ug-Dea" firstAttribute="leading" secondItem="rpm-hZ-eb1" secondAttribute="leading" id="Nk9-5f-qlU"/>
+                                        <constraint firstItem="rpm-hZ-eb1" firstAttribute="top" secondItem="V2h-Ia-Xei" secondAttribute="topMargin" id="eNQ-gq-CDC"/>
+                                        <constraint firstItem="ogB-Y2-M9D" firstAttribute="trailing" secondItem="V2h-Ia-Xei" secondAttribute="trailingMargin" id="f7h-PA-Xda"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="O0M-qa-6Pd" secondAttribute="trailing" id="kMo-WA-9eN"/>
+                                        <constraint firstItem="aVT-Ug-Dea" firstAttribute="top" secondItem="rpm-hZ-eb1" secondAttribute="bottom" constant="2" id="nri-5L-owi"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="aVT-Ug-Dea" secondAttribute="bottom" id="vXF-6U-X7Y"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="cardNameLabel" destination="rpm-hZ-eb1" id="rWx-vG-fmA"/>
+                                    <outlet property="cardSetLabel" destination="ogB-Y2-M9D" id="dqd-8O-qg5"/>
+                                    <outlet property="rarityLabel" destination="O0M-qa-6Pd" id="9T3-pn-o5W"/>
+                                    <outlet property="typeLabel" destination="aVT-Ug-Dea" id="U3a-Zh-U9B"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="LoadingCell" rowHeight="42" id="Cjz-Tu-32k" customClass="LoadingCell" customModule="Scryfall" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="89" width="375" height="42"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Cjz-Tu-32k" id="mcp-q4-VfF">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="41.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="22g-oE-ozx">
+                                            <rect key="frame" x="177" y="11" width="20" height="20"/>
+                                        </activityIndicatorView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="22g-oE-ozx" firstAttribute="centerX" secondItem="mcp-q4-VfF" secondAttribute="centerX" id="ClQ-TV-Ojl"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="22g-oE-ozx" secondAttribute="bottom" id="Ohh-Un-yzd"/>
+                                        <constraint firstItem="22g-oE-ozx" firstAttribute="top" secondItem="mcp-q4-VfF" secondAttribute="topMargin" id="zQH-XE-Cul"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="activityIndicator" destination="22g-oE-ozx" id="kRH-2W-AdO"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="nIe-aM-jIa" id="hRu-p9-oaY"/>
+                            <outlet property="delegate" destination="nIe-aM-jIa" id="ZGN-hv-lqZ"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="g0M-8P-Nj6"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rqO-g7-9ZD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="372" y="31.934032983508249"/>
+            <point key="canvasLocation" x="476" y="29.23538230884558"/>
+        </scene>
+        <!--Card Details View Controller-->
+        <scene sceneID="TSE-ax-JWF">
+            <objects>
+                <viewController storyboardIdentifier="CardDetailsViewController" id="jJ1-Ql-BeA" customClass="CardDetailsViewController" customModule="Scryfall" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="EVd-Ao-ZrY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="IiH-S9-oFi"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="K1o-LM-TXm">
+                        <barButtonItem key="leftBarButtonItem" title="Close" id="K6D-Ap-gLp">
+                            <connections>
+                                <action selector="onCancel:" destination="jJ1-Ql-BeA" id="l3S-m4-ns1"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vb3-ig-k2c" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="476" y="717"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="iUf-Ee-aqT">
+            <objects>
+                <viewController id="v7n-ig-6pn" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JWw-oX-Xea">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="teF-MJ-VND"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9b2-CA-LOQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-522" y="-680"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="dVX-8U-U7X">
+        <scene sceneID="rOs-MB-BIw">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="826-79-5zn" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="CardSearch" automaticallyAdjustsScrollViewInsets="NO" id="gA1-Uv-6uF" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="s1f-ew-DE8">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Yja-Hn-RCn">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="R3Z-Zk-Nt7"/>
+                        <segue destination="nIe-aM-jIa" kind="relationship" relationship="rootViewController" id="BTF-pI-Qlm"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="NDa-nc-6xY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CRg-Vq-kjR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-553" y="32"/>
+            <point key="canvasLocation" x="-522" y="29"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="AvG-BN-LRi">
+            <objects>
+                <navigationController storyboardIdentifier="CardDetails" automaticallyAdjustsScrollViewInsets="NO" id="BWx-Zi-ZfS" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Xdq-Ak-drb">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="jJ1-Ql-BeA" kind="relationship" relationship="rootViewController" id="TRi-Az-kRK"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SRz-24-9ic" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-522" y="717"/>
         </scene>
     </scenes>
 </document>

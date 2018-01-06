@@ -10,12 +10,17 @@ import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        let service = Scryfall()
+        let sceneCoordinator = SceneCoordinator(window: window!)
+        
+        let searchViewModel = CardSearchViewModel(service: service, coordinator: sceneCoordinator)
+        let firstScene = Scene.search(searchViewModel)
+        sceneCoordinator.transition(to: firstScene, type: .root)
+        
         return true
     }
 
