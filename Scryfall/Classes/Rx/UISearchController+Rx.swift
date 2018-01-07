@@ -12,6 +12,9 @@ import RxSwift
 import RxCocoa
 import Action
 
+/**
+ * UISearchController extension for RxSwift to expose UISearchResultsUpdating methods.
+ */
 class UISearchControllerUpdaterDelegateProxy: DelegateProxy<UISearchController, UISearchResultsUpdating>, UISearchResultsUpdating, DelegateProxyType {
     
     typealias ParentObject = UISearchController

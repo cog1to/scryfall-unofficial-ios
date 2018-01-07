@@ -9,6 +9,9 @@
 import Foundation
 import UIKit
 
+/**
+ * Card search result cell.
+ */
 class CardSearchCell: UITableViewCell {
     @IBOutlet var cardNameLabel: UILabel!
     @IBOutlet var cardSetLabel: UILabel!
@@ -34,6 +37,7 @@ class CardSearchCell: UITableViewCell {
         cardSetLabel.text = card.setCode.uppercased()
         rarityLabel.text = card.rarity.name
         
+        // If type line is empty for the card, try to get if from first card face if possible.
         if card.typeLine.count > 0 {
             typeLabel.text = card.typeLine
         } else if let faces = card.faces, let firstFace = faces.first, firstFace.typeLine.count > 0 {

@@ -12,11 +12,15 @@ import RxSwift
 import RxCocoa
 import Action
 
+/**
+ * View that holds card image.
+ * Call configure(for:layout:) to make it download and show card images.
+ */
 class CardImageHolder: UIView {
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var flipButton: UIButton!
     
-    private let downloader = ImageDownloader()
+    private static let downloader = ImageDownloader()
     private var images = Variable<[UIImage]>([])
     private var flipped = Variable<Bool>(false)
     private var disposeBag = DisposeBag()
@@ -37,6 +41,7 @@ class CardImageHolder: UIView {
     }
     
     func configure(for imageUris: [URL], layout: Layout) {
+        // Show or hide transform button. Right now we show it only for double-faced cards.
         switch layout {
         case .normal, .split, .flip:
             flipButton.isHidden = true
@@ -45,9 +50,10 @@ class CardImageHolder: UIView {
             flipButton.setTitle("Transform", for: .normal)
         }
         
+        // Schedule image downloading.
         Observable<URL>.from(imageUris)
-            .flatMap { [unowned self] in
-                return self.downloader.image(for: $0)
+            .flatMap {
+                return CardImageHolder.downloader.image(for: $0)
             }.filter {
                 $0 != nil
             }.map{
@@ -58,6 +64,7 @@ class CardImageHolder: UIView {
                 }
             }).disposed(by: disposeBag)
         
+        // Watch to changes in images or flipped state to update UI.
         Observable.combineLatest(images.asObservable(), flipped.asObservable())
             .subscribe(onNext: { [weak self] imageValues, flipped in
                 guard let strongSelf = self else {

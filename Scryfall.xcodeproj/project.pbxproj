@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CF0CE3662002678E00000EE1 /* NSMutableAttributedString+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0CE3652002678E00000EE1 /* NSMutableAttributedString+Extension.swift */; };
+		CF0CE3682002A9AB00000EE1 /* Format.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0CE3672002A9AB00000EE1 /* Format.swift */; };
 		CFD05BC420001A4A00CDF9C2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD05BC320001A4A00CDF9C2 /* AppDelegate.swift */; };
 		CFD05BC920001A4A00CDF9C2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFD05BC720001A4A00CDF9C2 /* Main.storyboard */; };
 		CFD05BCB20001A4A00CDF9C2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFD05BCA20001A4A00CDF9C2 /* Assets.xcassets */; };
@@ -59,6 +61,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CF0CE3652002678E00000EE1 /* NSMutableAttributedString+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSMutableAttributedString+Extension.swift"; sourceTree = "<group>"; };
+		CF0CE3672002A9AB00000EE1 /* Format.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Format.swift; sourceTree = "<group>"; };
 		CFD05BC020001A4A00CDF9C2 /* Scryfall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scryfall.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFD05BC320001A4A00CDF9C2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CFD05BC820001A4A00CDF9C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -130,6 +134,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CF0CE3642002675400000EE1 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CFD05C392002525900CDF9C2 /* UIColor+Extension.swift */,
+				CF0CE3652002678E00000EE1 /* NSMutableAttributedString+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		CFD05BB720001A4A00CDF9C2 = {
 			isa = PBXGroup;
 			children = (
@@ -171,6 +184,7 @@
 		CFD05BE320001A7900CDF9C2 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				CF0CE3642002675400000EE1 /* Extensions */,
 				CFD05C2F200182AE00CDF9C2 /* Cache */,
 				CFD05C1E200136EE00CDF9C2 /* Style */,
 				CFD05C192001237C00CDF9C2 /* Cells */,
@@ -206,6 +220,7 @@
 				CFD05C1220003E5500CDF9C2 /* BindableType.swift */,
 				CFD05C2120013BCF00CDF9C2 /* Rarity.swift */,
 				CFD05C2B2001622C00CDF9C2 /* Layout.swift */,
+				CF0CE3672002A9AB00000EE1 /* Format.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -287,7 +302,6 @@
 			isa = PBXGroup;
 			children = (
 				CFD05C1F200136F900CDF9C2 /* Style.swift */,
-				CFD05C392002525900CDF9C2 /* UIColor+Extension.swift */,
 			);
 			path = Style;
 			sourceTree = "<group>";
@@ -463,11 +477,13 @@
 				CFD05C1320003E5500CDF9C2 /* BindableType.swift in Sources */,
 				CFD05C082000336C00CDF9C2 /* CardSearchViewController.swift in Sources */,
 				CFD05C31200182B900CDF9C2 /* ImageCache.swift in Sources */,
+				CF0CE3682002A9AB00000EE1 /* Format.swift in Sources */,
 				CFD05C0420002F7E00CDF9C2 /* Card.swift in Sources */,
 				CFD05C0B20003CA700CDF9C2 /* SceneCoordinator.swift in Sources */,
 				CFD05C0020002F4B00CDF9C2 /* ScryfallServiceType.swift in Sources */,
 				CFD05C1B200123E600CDF9C2 /* CardSearchCell.swift in Sources */,
 				CFD05C1D2001246700CDF9C2 /* LoadingCell.swift in Sources */,
+				CF0CE3662002678E00000EE1 /* NSMutableAttributedString+Extension.swift in Sources */,
 				CFD05C2E20016FA900CDF9C2 /* CardImageURIType.swift in Sources */,
 				CFD05C0F20003D3900CDF9C2 /* SceneCoordinatorType.swift in Sources */,
 				CFD05C2220013BCF00CDF9C2 /* Rarity.swift in Sources */,

@@ -9,6 +9,9 @@
 import Foundation
 import UIKit
 
+/**
+ * Simple cell with an activity indicator.
+ */
 class LoadingCell: UITableViewCell {
     @IBOutlet var activityIndicator: UIActivityIndicatorView!
     
