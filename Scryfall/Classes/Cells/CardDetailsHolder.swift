@@ -140,8 +140,8 @@ extension CardDetailsHolder {
             // Apply font.
             let attributed = NSMutableAttributedString(string: updated, attributes: [.font: Style.font(forKey: .text)])
             
-            // Highlight reminder text, if it's found.
-            let regexp = try! NSRegularExpression(pattern: " \\(.*\\)\n", options: [])
+            // Italicise reminder text, if it's found.
+            let regexp = try! NSRegularExpression(pattern: " \\(.*\\)(\n)?", options: [])
             if let match = regexp.firstMatch(in: attributed.string, options: [], range: NSRange(location: 0, length: attributed.string.count)) {
                 attributed.addAttribute(.font, value: Style.font(forKey: .italic), range: match.range)
             }

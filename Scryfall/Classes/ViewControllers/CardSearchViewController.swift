@@ -38,12 +38,12 @@ class CardSearchViewController: UITableViewController, BindableType {
     }
     
     func bindViewModel() {
-        // Listen to search controller updates.
-        searchController.searchBar.rx.searchButtonClicked
-            .withLatestFrom(searchController.rx.updateSearchResults)
+        // Perform searh when search bar text changes.
+        searchController.rx.updateSearchResults
             .filter { $0 != nil && $0!.count > 0 }
             .map { $0! }
             .debounce(RxTimeInterval(0.5), scheduler: MainScheduler.instance)
+            .distinctUntilChanged()
             .subscribe(viewModel.onSearch.inputs)
             .disposed(by: disposeBag)
         

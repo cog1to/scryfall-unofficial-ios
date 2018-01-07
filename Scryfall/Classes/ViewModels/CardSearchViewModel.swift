@@ -16,7 +16,10 @@ class CardSearchViewModel {
     let sceneCoordinator: SceneCoordinatorType
     let cards: Variable<[Card]>
     let hasMore: Variable<Bool>
+    
     private var nextPage: URL?
+    private var lastRequest: Disposable?
+    private let bag = DisposeBag()
     
     init(service: ScryfallServiceType, coordinator: SceneCoordinatorType) {
         scryfallService = service
@@ -36,25 +39,29 @@ class CardSearchViewModel {
     
     lazy var onSearch: Action<String, Void> = { this in
         return Action { query in
-            return this.scryfallService.search(query: query).do(onNext: { cardsList in
+            this.lastRequest?.dispose()
+            this.lastRequest = this.scryfallService.search(query: query).subscribe(onNext: { cardsList in
                 this.cards.value = cardsList.data
                 this.hasMore.value = cardsList.hasMore
                 this.nextPage = cardsList.nextPage
-            }).map { _ in }
+            })
+            
+            return Observable.just(())
         }
     }(self)
     
     lazy var onNextPage: CocoaAction = { this in
         return CocoaAction {
             if let nextPage = this.nextPage, let components = URLComponents.init(url: nextPage, resolvingAgainstBaseURL: false), let parameters = components.queryItems {
-                return this.scryfallService.search(params: parameters).do(onNext: { cardsList in
+                this.lastRequest?.dispose()
+                this.lastRequest = this.scryfallService.search(params: parameters).subscribe(onNext: { cardsList in
                     this.cards.value.append(contentsOf: cardsList.data)
                     this.hasMore.value = cardsList.hasMore
                     this.nextPage = cardsList.nextPage
-                }).map { _ in }
-            } else {
-                return Observable<Void>.just(())
+                })
             }
+            
+            return Observable<Void>.just(())
         }
     }(self)
     
