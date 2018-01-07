@@ -23,22 +23,34 @@ class CardSearchViewController: UITableViewController, BindableType {
         
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 60
+        tableView.tableFooterView = UIView(frame: CGRect.zero)
+        
+        tableView.backgroundView = nil
+        tableView.backgroundColor = UIColor.groupTableViewBackground
         
         // Setup search controller.
         definesPresentationContext = true
         searchController = UISearchController(searchResultsController: nil)
         searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Search for some cards..."
         navigationItem.searchController = searchController
         navigationItem.hidesSearchBarWhenScrolling = false
     }
     
     func bindViewModel() {
         // Listen to search controller updates.
-        searchController.rx.updateSearchResults
+        searchController.searchBar.rx.searchButtonClicked
+            .withLatestFrom(searchController.rx.updateSearchResults)
             .filter { $0 != nil && $0!.count > 0 }
             .map { $0! }
             .debounce(RxTimeInterval(0.5), scheduler: MainScheduler.instance)
             .subscribe(viewModel.onSearch.inputs)
+            .disposed(by: disposeBag)
+        
+        // Clear table on cancel.
+        searchController.searchBar.rx.cancelButtonClicked
+            .throttle(RxTimeInterval(0.5), scheduler: MainScheduler.instance)
+            .subscribe(viewModel.onCancel.inputs)
             .disposed(by: disposeBag)
         
         // Reload table when change in cards array is detected.

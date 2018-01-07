@@ -25,6 +25,15 @@ class CardSearchViewModel {
         hasMore = Variable<Bool>(false)
     }
     
+    lazy var onCancel: Action<Void, Void> = { this in
+        return Action {
+            this.hasMore.value = false
+            this.cards.value = []
+            
+            return Observable.just(())
+        }
+    }(self)
+    
     lazy var onSearch: Action<String, Void> = { this in
         return Action { query in
             return this.scryfallService.search(query: query).do(onNext: { cardsList in
