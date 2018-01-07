@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -108,26 +107,104 @@
             <point key="canvasLocation" x="476" y="29.23538230884558"/>
         </scene>
         <!--Card Details View Controller-->
-        <scene sceneID="TSE-ax-JWF">
+        <scene sceneID="IPs-KQ-gUd">
             <objects>
-                <viewController storyboardIdentifier="CardDetailsViewController" id="jJ1-Ql-BeA" customClass="CardDetailsViewController" customModule="Scryfall" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="EVd-Ao-ZrY">
+                <viewController storyboardIdentifier="CardDetailsViewController" id="HIK-fP-es0" customClass="CardDetailsViewController" customModule="Scryfall" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TLP-qB-f1N">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lD2-5k-QBT">
+                                <rect key="frame" x="16" y="64" width="343" height="583"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="YKR-kc-FYE">
+                                        <rect key="frame" x="0.0" y="16" width="343" height="535"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SVj-a1-of2" customClass="CardImageHolder" customModule="Scryfall" customModuleProvider="target">
+                                                <rect key="frame" x="47.5" y="0.0" width="248" height="387"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="MXo-19-u7M">
+                                                        <rect key="frame" x="0.0" y="0.0" width="248" height="387"/>
+                                                        <subviews>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="WWM-7N-cBG">
+                                                                <rect key="frame" x="0.0" y="0.0" width="248" height="347"/>
+                                                                <color key="backgroundColor" white="0.76342526929999999" alpha="1" colorSpace="calibratedWhite"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="347" id="ToP-1X-cdN"/>
+                                                                    <constraint firstAttribute="width" constant="248" id="lap-ce-g1y"/>
+                                                                </constraints>
+                                                            </imageView>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="My6-h6-NA1">
+                                                                <rect key="frame" x="0.0" y="357" width="248" height="30"/>
+                                                                <state key="normal" title="Transform/Flip"/>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="MXo-19-u7M" firstAttribute="leading" secondItem="SVj-a1-of2" secondAttribute="leading" id="8BG-c4-7I0"/>
+                                                    <constraint firstItem="MXo-19-u7M" firstAttribute="top" secondItem="SVj-a1-of2" secondAttribute="top" id="JJe-it-acc"/>
+                                                    <constraint firstAttribute="trailing" secondItem="MXo-19-u7M" secondAttribute="trailing" id="XhY-ip-ruh"/>
+                                                    <constraint firstAttribute="bottom" secondItem="MXo-19-u7M" secondAttribute="bottom" id="uz0-L3-IuB"/>
+                                                </constraints>
+                                                <connections>
+                                                    <outlet property="flipButton" destination="My6-h6-NA1" id="Q0j-GB-COJ"/>
+                                                    <outlet property="imageView" destination="WWM-7N-cBG" id="Vck-LH-3iX"/>
+                                                </connections>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Juc-Ck-hUq" customClass="CardDetailsHolder" customModule="Scryfall" customModuleProvider="target">
+                                                <rect key="frame" x="51.5" y="407" width="240" height="128"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="zsh-fc-4QC">
+                                                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                                    </stackView>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="zsh-fc-4QC" secondAttribute="trailing" id="dJA-f6-1Fh"/>
+                                                    <constraint firstAttribute="bottom" secondItem="zsh-fc-4QC" secondAttribute="bottom" id="k0A-Pq-ReJ"/>
+                                                    <constraint firstItem="zsh-fc-4QC" firstAttribute="top" secondItem="Juc-Ck-hUq" secondAttribute="top" id="m3G-jb-b11"/>
+                                                    <constraint firstItem="zsh-fc-4QC" firstAttribute="leading" secondItem="Juc-Ck-hUq" secondAttribute="leading" id="wLg-sC-PRA"/>
+                                                </constraints>
+                                                <connections>
+                                                    <outlet property="stackView" destination="zsh-fc-4QC" id="0uQ-He-72F"/>
+                                                </connections>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="YKR-kc-FYE" secondAttribute="bottom" id="ASZ-oq-MMc"/>
+                                    <constraint firstAttribute="trailing" secondItem="YKR-kc-FYE" secondAttribute="trailing" id="Ahu-ey-fyz"/>
+                                    <constraint firstItem="YKR-kc-FYE" firstAttribute="leading" secondItem="lD2-5k-QBT" secondAttribute="leading" id="Mse-XS-s1P"/>
+                                    <constraint firstItem="YKR-kc-FYE" firstAttribute="width" secondItem="lD2-5k-QBT" secondAttribute="width" id="dx9-Od-rNK"/>
+                                    <constraint firstItem="YKR-kc-FYE" firstAttribute="top" secondItem="lD2-5k-QBT" secondAttribute="top" constant="16" id="qCj-aC-wQt"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="IiH-S9-oFi"/>
+                        <constraints>
+                            <constraint firstItem="0wl-t8-Sf8" firstAttribute="bottom" secondItem="lD2-5k-QBT" secondAttribute="bottom" constant="20" id="X1E-qk-sjJ"/>
+                            <constraint firstItem="lD2-5k-QBT" firstAttribute="top" secondItem="0wl-t8-Sf8" secondAttribute="top" id="fi0-xe-eDd"/>
+                            <constraint firstItem="0wl-t8-Sf8" firstAttribute="trailing" secondItem="lD2-5k-QBT" secondAttribute="trailing" constant="16" id="qMT-Nx-gl3"/>
+                            <constraint firstItem="lD2-5k-QBT" firstAttribute="leading" secondItem="0wl-t8-Sf8" secondAttribute="leading" constant="16" id="ugC-aA-mlW"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="0wl-t8-Sf8"/>
                     </view>
-                    <navigationItem key="navigationItem" id="K1o-LM-TXm">
-                        <barButtonItem key="leftBarButtonItem" title="Close" id="K6D-Ap-gLp">
+                    <navigationItem key="navigationItem" id="Dvh-pv-HjV">
+                        <barButtonItem key="leftBarButtonItem" title="Close" id="D9x-w0-6WI">
                             <connections>
-                                <action selector="onCancel:" destination="jJ1-Ql-BeA" id="l3S-m4-ns1"/>
+                                <action selector="onCancel:" destination="HIK-fP-es0" id="9NV-zZ-PM0"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="cardDetailsHolder" destination="Juc-Ck-hUq" id="CSQ-Gb-HAb"/>
+                        <outlet property="cardImageHolder" destination="SVj-a1-of2" id="6Gv-ju-tE7"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="vb3-ig-k2c" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sl0-4X-F3Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="476" y="717"/>
+            <point key="canvasLocation" x="476" y="802.848575712144"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="iUf-Ee-aqT">
@@ -163,22 +240,22 @@
             <point key="canvasLocation" x="-522" y="29"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="AvG-BN-LRi">
+        <scene sceneID="7Cr-I8-Yy8">
             <objects>
-                <navigationController storyboardIdentifier="CardDetails" automaticallyAdjustsScrollViewInsets="NO" id="BWx-Zi-ZfS" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="CardDetails" automaticallyAdjustsScrollViewInsets="NO" id="b3G-Bi-oQ0" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Xdq-Ak-drb">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="9oi-X4-wbH">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="jJ1-Ql-BeA" kind="relationship" relationship="rootViewController" id="TRi-Az-kRK"/>
+                        <segue destination="HIK-fP-es0" kind="relationship" relationship="rootViewController" id="E78-xd-DEJ"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="SRz-24-9ic" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bUq-qT-yJw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-522" y="717"/>
+            <point key="canvasLocation" x="-522" y="803"/>
         </scene>
     </scenes>
 </document>

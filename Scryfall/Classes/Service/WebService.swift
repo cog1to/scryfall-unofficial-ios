@@ -18,7 +18,7 @@ enum WebServiceError: Error {
 }
 
 class WebService {
-    static func request(API: String, endpoint: String, query: [String: Any] = [:]) -> Observable<JSON> {
+    static func json(API: String, endpoint: String, query: [String: Any] = [:]) -> Observable<JSON> {
         do {
             let items = try query.map { pair -> URLQueryItem in
                 guard let v = pair.value as? CustomStringConvertible else {
@@ -28,13 +28,13 @@ class WebService {
                 return URLQueryItem(name: pair.key, value: v.description)
             }
             
-            return self.request(API: API, endpoint: endpoint, query: items)
+            return self.json(API: API, endpoint: endpoint, query: items)
         } catch {
             return Observable.error(error)
         }
     }
     
-    static func request(API: String, endpoint: String, query: [URLQueryItem]) -> Observable<JSON> {
+    static func json(API: String, endpoint: String, query: [URLQueryItem]) -> Observable<JSON> {
         do {
             guard let url = URL(string: API)?.appendingPathComponent(endpoint),
                 var components = URLComponents(url: url, resolvingAgainstBaseURL: true) else {
