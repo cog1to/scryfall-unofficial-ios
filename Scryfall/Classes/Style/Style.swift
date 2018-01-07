@@ -18,7 +18,16 @@ class Style {
         case headline
     }
     
-    static private var fontCache: [FontKey: UIFont] = [:]
+    enum ColorKey {
+        case link
+    }
+    
+    class func color(forKey key: ColorKey) -> UIColor {
+        switch key {
+        case .link:
+            return UIColor(netHex: 0x421A81)
+        }
+    }
     
     class func font(forKey key: FontKey) -> UIFont {
         switch key {
@@ -34,6 +43,8 @@ class Style {
             return font(fromTextStyle: .title2, withTraits: .traitBold)
         }
     }
+    
+    static private var fontCache: [FontKey: UIFont] = [:]
     
     private class func font(fromTextStyle style: UIFontTextStyle, withTraits traits: UIFontDescriptorSymbolicTraits) -> UIFont {
         let descriptor = UIFontDescriptor.preferredFontDescriptor(withTextStyle: style)

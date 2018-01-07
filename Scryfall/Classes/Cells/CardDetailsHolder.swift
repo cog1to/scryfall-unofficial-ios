@@ -20,50 +20,46 @@ class CardDetailsHolder: UIView {
     }
     
     func configure(for card: Card) {
-        if let faces = card.faces {
-            faces.enumerated().forEach { (idx, face) in
-                if (idx > 0) {
-                    stackView.addArrangedSubview(separator())
-                }
-                
-                let titleLabel = label(withFontStyle: .headline, text: face.name)
-                stackView.addArrangedSubview(titleLabel)
-                
-                if face.typeLine.count > 0 {
-                    stackView.addArrangedSubview(separator())
-                    stackView.addArrangedSubview(label(withFontStyle: .text, text: face.typeLine))
-                }
-                
-                if let oracleText = face.oracleText {
-                    stackView.addArrangedSubview(separator())
-                    stackView.addArrangedSubview(label(text: rulingsString(for: oracleText, flavor: face.flavorText)))
-                }
-                
-                if let power = face.power, let toughness = face.toughness {
-                    stackView.addArrangedSubview(separator())
-                    stackView.addArrangedSubview(label(text: ptString(power: power, toughness: toughness)))
-                }
+        let faces = card.faces ?? [card]
+        faces.enumerated().forEach { (idx, face) in
+            if (idx > 0) {
+                stackView.addArrangedSubview(separator())
             }
-        } else {
-            let titleLabel = label(withFontStyle: .headline, text: card.name)
+            
+            let titleLabel = label(withFontStyle: .headline, text: face.name)
             stackView.addArrangedSubview(titleLabel)
             
-            if card.typeLine.count > 0 {
+            if face.typeLine.count > 0 {
                 stackView.addArrangedSubview(separator())
-                let typeLabel = label(withFontStyle: .text, text: card.typeLine)
-                stackView.addArrangedSubview(typeLabel)
+                stackView.addArrangedSubview(label(withFontStyle: .text, text: face.typeLine))
             }
             
-            if let oracleText = card.oracleText {
+            if let oracleText = face.oracleText {
                 stackView.addArrangedSubview(separator())
-                let oracleLabel = label(text: rulingsString(for: oracleText, flavor: card.flavorText))
-                stackView.addArrangedSubview(oracleLabel)
+                stackView.addArrangedSubview(label(text: rulingsString(for: oracleText, flavor: face.flavorText)))
             }
             
-            if let power = card.power, let toughness = card.toughness {
+            if let power = face.power, let toughness = face.toughness {
                 stackView.addArrangedSubview(separator())
                 stackView.addArrangedSubview(label(text: ptString(power: power, toughness: toughness)))
             }
+            
+            if let loyalty = face.loyalty {
+                stackView.addArrangedSubview(separator())
+                stackView.addArrangedSubview(label(text: loyaltyString(loyalty: loyalty)))
+            }
+        }
+        
+        // Artist
+        if let artist = card.artist {
+            stackView.addArrangedSubview(separator())
+            stackView.addArrangedSubview(label(text: linkText(label: "Illustrated by", value: artist)))
+        }
+        
+        // Reserved
+        if card.reserved {
+            stackView.addArrangedSubview(separator())
+            stackView.addArrangedSubview(label(text: linkText(label: "Part of the", value: "Reserved List")))
         }
         
         layoutIfNeeded()
@@ -134,6 +130,25 @@ extension CardDetailsHolder {
     }
     
     fileprivate func ptString(power: String, toughness: String) -> NSAttributedString {
-        return NSAttributedString(string: "\(power)/\(toughness)", attributes: [NSAttributedStringKey.font : Style.font(forKey: .bold)])
+        return boldedText(string: "\(power)/\(toughness)")
+    }
+    
+    fileprivate func loyaltyString(loyalty: String) -> NSAttributedString {
+        return boldedText(string: "Loyalty: \(loyalty)")
+    }
+    
+    fileprivate func boldedText(string: String) -> NSAttributedString {
+        return NSAttributedString(string: string, attributes: [NSAttributedStringKey.font : Style.font(forKey: .bold)])
+    }
+    
+    fileprivate func linkText(label: String, value: String) -> NSAttributedString {
+        let labelString = NSAttributedString(string: "\(label) ", attributes: [NSAttributedStringKey.font : Style.font(forKey: .subtext)])
+        
+        let linkString = NSAttributedString(string: "\(value)", attributes: [NSAttributedStringKey.font : Style.font(forKey: .subtext), NSAttributedStringKey.foregroundColor: Style.color(forKey: .link)])
+        
+        return [labelString, linkString].reduce(NSMutableAttributedString(), { (result, next) in
+            result.append(next)
+            return result
+        })
     }
 }

@@ -18,18 +18,20 @@ class CardFace {
     var imageUris: [CardImageURIType: URL]
     var power: String?
     var toughness: String?
+    var loyalty: String?
     
     init?(json: JSON) {
-        guard let name = json["name"].string, let typeLine = json["type_line"].string else {
+        guard let name = json["name"].string else {
             return nil
         }
         
         self.name = name
-        self.typeLine = typeLine
+        self.typeLine = json["type_line"].string ?? ""
         self.oracleText = json["oracle_text"].string
         self.flavorText = json["flavor_text"].string
         self.power = json["power"].string
         self.toughness = json["toughness"].string
+        self.loyalty = json["loyalty"].string
         
         if let manaCost = json["mana_cost"].string {
             self.manaCost = manaCost

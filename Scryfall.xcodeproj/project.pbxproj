@@ -45,6 +45,7 @@
 		CFD05C2E20016FA900CDF9C2 /* CardImageURIType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD05C2D20016FA900CDF9C2 /* CardImageURIType.swift */; };
 		CFD05C31200182B900CDF9C2 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD05C30200182B900CDF9C2 /* ImageCache.swift */; };
 		CFD05C382002294100CDF9C2 /* CardDetailsHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD05C372002294100CDF9C2 /* CardDetailsHolder.swift */; };
+		CFD05C3A2002525900CDF9C2 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD05C392002525900CDF9C2 /* UIColor+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +101,7 @@
 		CFD05C2D20016FA900CDF9C2 /* CardImageURIType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardImageURIType.swift; sourceTree = "<group>"; };
 		CFD05C30200182B900CDF9C2 /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 		CFD05C372002294100CDF9C2 /* CardDetailsHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailsHolder.swift; sourceTree = "<group>"; };
+		CFD05C392002525900CDF9C2 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -285,6 +287,7 @@
 			isa = PBXGroup;
 			children = (
 				CFD05C1F200136F900CDF9C2 /* Style.swift */,
+				CFD05C392002525900CDF9C2 /* UIColor+Extension.swift */,
 			);
 			path = Style;
 			sourceTree = "<group>";
@@ -450,6 +453,7 @@
 				CFD05C062000317900CDF9C2 /* CardSearchViewModel.swift in Sources */,
 				CFD05C2620014C7600CDF9C2 /* CardDetailsViewModel.swift in Sources */,
 				CFD05C24200142F500CDF9C2 /* CardDetailsViewController.swift in Sources */,
+				CFD05C3A2002525900CDF9C2 /* UIColor+Extension.swift in Sources */,
 				CFD05BED20002D9300CDF9C2 /* WebService.swift in Sources */,
 				CFD05C382002294100CDF9C2 /* CardDetailsHolder.swift in Sources */,
 				CFD05C0220002F5600CDF9C2 /* ScryfallService.swift in Sources */,
