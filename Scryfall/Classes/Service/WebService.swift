@@ -74,6 +74,13 @@ class WebService {
             }
             
             components.queryItems = query
+            // Replace all "+" in the percentEncodedQuery with "%2B" (a percent-encoded +)
+            // and then replace all "!" with "%21" (a percent-encoded !)
+            // and then replace all "%20" (a percent-encoded space) with "+"
+            components.percentEncodedQuery = components.percentEncodedQuery?
+                .replacingOccurrences(of: "+", with: "%2B")
+                .replacingOccurrences(of: "!", with: "%21")
+                .replacingOccurrences(of: "%20", with: "+")
             
             guard let finalURL = components.url else {
                 throw WebServiceError.invalidURL(endpoint)
