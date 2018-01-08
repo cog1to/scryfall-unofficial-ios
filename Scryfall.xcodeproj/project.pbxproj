@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		CF0CE3662002678E00000EE1 /* NSMutableAttributedString+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0CE3652002678E00000EE1 /* NSMutableAttributedString+Extension.swift */; };
 		CF0CE3682002A9AB00000EE1 /* Format.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0CE3672002A9AB00000EE1 /* Format.swift */; };
+		CF0CE36F2003EA5E00000EE1 /* LegalityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0CE36E2003EA5E00000EE1 /* LegalityView.swift */; };
+		CF0CE3712003EA7200000EE1 /* LegalityView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF0CE3702003EA7200000EE1 /* LegalityView.xib */; };
+		CF0CE3732003EDD100000EE1 /* LegalityTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0CE3722003EDD100000EE1 /* LegalityTable.swift */; };
+		CF0CE3752004031B00000EE1 /* Legality.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0CE3742004031B00000EE1 /* Legality.swift */; };
 		CFD05BC420001A4A00CDF9C2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD05BC320001A4A00CDF9C2 /* AppDelegate.swift */; };
 		CFD05BC920001A4A00CDF9C2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFD05BC720001A4A00CDF9C2 /* Main.storyboard */; };
 		CFD05BCB20001A4A00CDF9C2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFD05BCA20001A4A00CDF9C2 /* Assets.xcassets */; };
@@ -63,6 +67,10 @@
 /* Begin PBXFileReference section */
 		CF0CE3652002678E00000EE1 /* NSMutableAttributedString+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSMutableAttributedString+Extension.swift"; sourceTree = "<group>"; };
 		CF0CE3672002A9AB00000EE1 /* Format.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Format.swift; sourceTree = "<group>"; };
+		CF0CE36E2003EA5E00000EE1 /* LegalityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegalityView.swift; sourceTree = "<group>"; };
+		CF0CE3702003EA7200000EE1 /* LegalityView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LegalityView.xib; sourceTree = "<group>"; };
+		CF0CE3722003EDD100000EE1 /* LegalityTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegalityTable.swift; sourceTree = "<group>"; };
+		CF0CE3742004031B00000EE1 /* Legality.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Legality.swift; sourceTree = "<group>"; };
 		CFD05BC020001A4A00CDF9C2 /* Scryfall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scryfall.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFD05BC320001A4A00CDF9C2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CFD05BC820001A4A00CDF9C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -143,6 +151,16 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		CF0CE36D2003EA5000000EE1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CF0CE36E2003EA5E00000EE1 /* LegalityView.swift */,
+				CF0CE3702003EA7200000EE1 /* LegalityView.xib */,
+				CF0CE3722003EDD100000EE1 /* LegalityTable.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		CFD05BB720001A4A00CDF9C2 = {
 			isa = PBXGroup;
 			children = (
@@ -184,6 +202,7 @@
 		CFD05BE320001A7900CDF9C2 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				CF0CE36D2003EA5000000EE1 /* Views */,
 				CF0CE3642002675400000EE1 /* Extensions */,
 				CFD05C2F200182AE00CDF9C2 /* Cache */,
 				CFD05C1E200136EE00CDF9C2 /* Style */,
@@ -221,6 +240,7 @@
 				CFD05C2120013BCF00CDF9C2 /* Rarity.swift */,
 				CFD05C2B2001622C00CDF9C2 /* Layout.swift */,
 				CF0CE3672002A9AB00000EE1 /* Format.swift */,
+				CF0CE3742004031B00000EE1 /* Legality.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -402,6 +422,7 @@
 				CFD05BCE20001A4A00CDF9C2 /* LaunchScreen.storyboard in Resources */,
 				CFD05BCB20001A4A00CDF9C2 /* Assets.xcassets in Resources */,
 				CFD05BC920001A4A00CDF9C2 /* Main.storyboard in Resources */,
+				CF0CE3712003EA7200000EE1 /* LegalityView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -467,6 +488,8 @@
 				CFD05C062000317900CDF9C2 /* CardSearchViewModel.swift in Sources */,
 				CFD05C2620014C7600CDF9C2 /* CardDetailsViewModel.swift in Sources */,
 				CFD05C24200142F500CDF9C2 /* CardDetailsViewController.swift in Sources */,
+				CF0CE36F2003EA5E00000EE1 /* LegalityView.swift in Sources */,
+				CF0CE3752004031B00000EE1 /* Legality.swift in Sources */,
 				CFD05C3A2002525900CDF9C2 /* UIColor+Extension.swift in Sources */,
 				CFD05BED20002D9300CDF9C2 /* WebService.swift in Sources */,
 				CFD05C382002294100CDF9C2 /* CardDetailsHolder.swift in Sources */,
@@ -480,6 +503,7 @@
 				CF0CE3682002A9AB00000EE1 /* Format.swift in Sources */,
 				CFD05C0420002F7E00CDF9C2 /* Card.swift in Sources */,
 				CFD05C0B20003CA700CDF9C2 /* SceneCoordinator.swift in Sources */,
+				CF0CE3732003EDD100000EE1 /* LegalityTable.swift in Sources */,
 				CFD05C0020002F4B00CDF9C2 /* ScryfallServiceType.swift in Sources */,
 				CFD05C1B200123E600CDF9C2 /* CardSearchCell.swift in Sources */,
 				CFD05C1D2001246700CDF9C2 /* LoadingCell.swift in Sources */,

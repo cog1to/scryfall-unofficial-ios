@@ -29,6 +29,9 @@ class Style {
         /// Common supplementary text (artist, watermark, reserverd info, etc.)
         case subtext
         
+        /// Font for legality plaques
+        case legality
+        
         /// Common title text (card names)
         case headline
     }
@@ -47,6 +50,12 @@ class Style {
         
         /// Not Legal plaque background
         case notLegal
+        
+        /// Banned plaque background
+        case banned
+        
+        /// Restricted plaque background
+        case restricted
         
         /// Common gray color (borders, separators, etc.)
         case gray
@@ -80,6 +89,10 @@ class Style {
             return UIColor(netHex: 0x719369)
         case .notLegal:
             return UIColor(netHex: 0xABABAB)
+        case .banned:
+            return UIColor(netHex: 0xBD757B)
+        case .restricted:
+            return UIColor(netHex: 0x6C8C99)
         case .tint:
             return UIColor(netHex: 0x421A81)
         case .navigationTint:
@@ -118,6 +131,8 @@ class Style {
             font = UIFont.preferredFont(forTextStyle: .footnote)
         case .headline:
             font = getFont(fromTextStyle: .title2, withTraits: .traitBold)
+        case .legality:
+            return UIFont(descriptor: UIFontDescriptor.preferredFontDescriptor(withTextStyle: .footnote).withSymbolicTraits(.traitBold)!, size: 10.0)
         }
         
         fontCache[key] = font

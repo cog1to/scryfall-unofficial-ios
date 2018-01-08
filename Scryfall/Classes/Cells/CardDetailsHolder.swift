@@ -14,7 +14,7 @@ import UIKit
  * Call configure(for:) method to make it generate formatted card data.
  */
 class CardDetailsHolder: UIView {
-    @IBOutlet var stackView: UIStackView!
+    @IBOutlet weak var stackView: UIStackView!
     
     override func awakeFromNib() {
         stackView.axis = .vertical
@@ -72,6 +72,16 @@ class CardDetailsHolder: UIView {
             stackView.addArrangedSubview(label(text: linkText(prefix: "Part of the", value: "Reserved List")))
         }
         
+        // Legalities.
+        if card.legalities.count > 0 {
+            let legalityTable = LegalityTable()
+            legalityTable.translatesAutoresizingMaskIntoConstraints = false
+            legalityTable.configure(legalities: card.legalities, columns: 2)
+            
+            stackView.addArrangedSubview(separator())
+            stackView.addArrangedSubview(embed(legalityTable))
+        }
+        
         layoutIfNeeded()
     }
 }
@@ -108,10 +118,11 @@ extension CardDetailsHolder {
         return embed(label)
     }
     
-    fileprivate func embed(_ view: UIView) -> UIView {
+    fileprivate func embed(_ view: UIView, allowGrowth: Bool = false) -> UIView {
         let container = UIView()
         container.translatesAutoresizingMaskIntoConstraints = false
         container.addSubview(view)
+        
         container.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-8-[child]-8-|", options: [], metrics: nil, views: ["child": view]))
         container.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-8-[child]-8-|", options: [], metrics: nil, views: ["child": view]))
         

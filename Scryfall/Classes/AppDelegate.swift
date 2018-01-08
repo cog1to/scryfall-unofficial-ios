@@ -44,7 +44,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func style() {
         UINavigationBar.appearance().tintColor = Style.color(forKey: .gray)
         UINavigationBar.appearance().barTintColor = Style.color(forKey: .navigationTint)
-        UISearchBar.appearance().tintColor = UIColor.black
+        UISearchBar.appearance().tintColor = Style.color(forKey: .gray)
         UITableView.appearance().separatorColor = Style.color(forKey: .gray)
         UIButton.appearance().tintColor = Style.color(forKey: .tint)
         UIButton.appearance(whenContainedInInstancesOf: [UINavigationBar.self]).tintColor = Style.color(forKey: .gray)

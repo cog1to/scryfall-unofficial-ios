@@ -13,7 +13,7 @@ import UIKit
  * Simple cell with an activity indicator.
  */
 class LoadingCell: UITableViewCell {
-    @IBOutlet var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     override func prepareForReuse() {
         activityIndicator.startAnimating()

@@ -13,10 +13,10 @@ import UIKit
  * Card search result cell.
  */
 class CardSearchCell: UITableViewCell {
-    @IBOutlet var cardNameLabel: UILabel!
-    @IBOutlet var cardSetLabel: UILabel!
-    @IBOutlet var typeLabel: UILabel!
-    @IBOutlet var rarityLabel: UILabel!
+    @IBOutlet weak var cardNameLabel: UILabel!
+    @IBOutlet weak var cardSetLabel: UILabel!
+    @IBOutlet weak var typeLabel: UILabel!
+    @IBOutlet weak var rarityLabel: UILabel!
     
     override func awakeFromNib() {
         cardNameLabel.font = Style.font(forKey: .text)

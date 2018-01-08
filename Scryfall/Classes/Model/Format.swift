@@ -41,7 +41,7 @@ enum Format {
             case .duel:
                 return "Duel Cmdr."
             case .commander:
-                return "Commander"
+                return "Cmdr."
             case .onevone:
                 return "1v1 Cmdr."
             case .future:

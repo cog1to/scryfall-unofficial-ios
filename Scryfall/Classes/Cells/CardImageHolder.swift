@@ -17,8 +17,8 @@ import Action
  * Call configure(for:layout:) to make it download and show card images.
  */
 class CardImageHolder: UIView {
-    @IBOutlet var imageView: UIImageView!
-    @IBOutlet var flipButton: UIButton!
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var flipButton: UIButton!
     
     private static let downloader = ImageDownloader()
     private var images = Variable<[UIImage]>([])
@@ -26,10 +26,11 @@ class CardImageHolder: UIView {
     private var disposeBag = DisposeBag()
     
     override func awakeFromNib() {
-        imageView.layer.cornerRadius = 10
+        imageView.layer.cornerRadius = 12
         flipButton.titleLabel?.font = Style.font(forKey: .bold)
         flipButton.layer.borderColor = Style.color(forKey: .tint).cgColor
         flipButton.layer.borderWidth = 1.0/UIScreen.main.scale
+        flipButton.layer.cornerRadius = 2.0
         setup()
     }
     

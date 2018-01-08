@@ -15,8 +15,8 @@ import RxCocoa
  * Card details controller. Shows card image and detail information about a single card.
  */
 class CardDetailsViewController: UIViewController, BindableType {
-    @IBOutlet var cardImageHolder: CardImageHolder!
-    @IBOutlet var cardDetailsHolder: CardDetailsHolder!
+    @IBOutlet weak var cardImageHolder: CardImageHolder!
+    @IBOutlet weak var cardDetailsHolder: CardDetailsHolder!
     
     var viewModel: CardDetailsViewModel!
 

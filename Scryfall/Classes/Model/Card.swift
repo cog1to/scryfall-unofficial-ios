@@ -35,6 +35,7 @@ class Card: CardFace {
     var layout: Layout
     var artist: String?
     var reserved: Bool
+    var legalities: [Format: Legality]
     
     override init?(json: JSON) {
         // Validate mandatory fields.
@@ -56,6 +57,14 @@ class Card: CardFace {
         self.setCode = json["set"].stringValue
         self.collectorsNumber = json["collectors_number"].stringValue
         self.reserved = json["reserved"].bool ?? false
+        
+        if let legalitiesDictionary = json["legalities"].dictionary {
+            self.legalities = Dictionary<Format, Legality>(uniqueKeysWithValues: legalitiesDictionary.map { (pair) in
+                return (Format(value: pair.key)!, Legality(rawValue: pair.value.stringValue)!)
+            })
+        } else {
+            self.legalities = [:]
+        }
         
         if let rarityValue = Rarity(value: rarity) {
             self.rarity = rarityValue
