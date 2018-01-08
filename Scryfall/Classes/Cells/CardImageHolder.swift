@@ -27,6 +27,9 @@ class CardImageHolder: UIView {
     
     override func awakeFromNib() {
         imageView.layer.cornerRadius = 10
+        flipButton.titleLabel?.font = Style.font(forKey: .bold)
+        flipButton.layer.borderColor = Style.color(forKey: .tint).cgColor
+        flipButton.layer.borderWidth = 1.0/UIScreen.main.scale
         setup()
     }
     

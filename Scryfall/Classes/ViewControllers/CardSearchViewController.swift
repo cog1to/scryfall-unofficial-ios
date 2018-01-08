@@ -26,7 +26,7 @@ class CardSearchViewController: UITableViewController, BindableType {
         tableView.tableFooterView = UIView(frame: CGRect.zero)
         
         tableView.backgroundView = nil
-        tableView.backgroundColor = UIColor.groupTableViewBackground
+        tableView.backgroundColor = Style.color(forKey: .background)
         
         // Setup search controller.
         definesPresentationContext = true
@@ -35,6 +35,14 @@ class CardSearchViewController: UITableViewController, BindableType {
         searchController.searchBar.placeholder = "Search for some cards..."
         navigationItem.searchController = searchController
         navigationItem.hidesSearchBarWhenScrolling = false
+        
+        // Style search controller. A bit of a hack but I haven't seen a better way yet
+        if let textField = searchController.searchBar.value(forKey:"searchField") as? UIView {
+            let backgroundView = textField.subviews.first
+            backgroundView?.backgroundColor = UIColor.white
+            backgroundView?.layer.cornerRadius = 10
+            backgroundView?.clipsToBounds = true
+        }
     }
     
     func bindViewModel() {

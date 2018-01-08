@@ -18,6 +18,7 @@ class CardDetailsHolder: UIView {
     
     override func awakeFromNib() {
         stackView.axis = .vertical
+        self.backgroundColor = Style.color(forKey: .detailsBackground)
         self.layer.cornerRadius = 10
         self.layer.borderColor = Style.color(forKey: .gray).cgColor
         self.layer.borderWidth = 1.0/UIScreen.main.scale
@@ -138,7 +139,7 @@ extension CardDetailsHolder {
             let updated = (idx == paragraphs.count - 1) ? string : "\(string)\n"
             
             // Apply font.
-            let attributed = NSMutableAttributedString(string: updated, attributes: [.font: Style.font(forKey: .text)])
+            let attributed = NSMutableAttributedString(string: updated, attributes: [.font: Style.font(forKey: .text), NSAttributedStringKey.foregroundColor: Style.color(forKey: .text)])
             
             // Italicise reminder text, if it's found.
             let regexp = try! NSRegularExpression(pattern: " \\(.*\\)(\n)?", options: [])
@@ -181,7 +182,7 @@ extension CardDetailsHolder {
         let combined = name + (cost != nil ? " \(cost!)" : "")
         
         // Convert to attributed string and replace mana symbols.
-        let attributed = NSMutableAttributedString(string: combined, attributes: [NSAttributedStringKey.font : Style.font(forKey: .headline)])
+        let attributed = NSMutableAttributedString(string: combined, attributes: [NSAttributedStringKey.font : Style.font(forKey: .headline), NSAttributedStringKey.foregroundColor: Style.color(forKey: .text)])
         attributed.replaceSymbols()
         
         return attributed
@@ -215,7 +216,7 @@ extension CardDetailsHolder {
      * - returns Attributed string with bold font
      */
     fileprivate func boldedText(string: String) -> NSAttributedString {
-        return NSAttributedString(string: string, attributes: [NSAttributedStringKey.font : Style.font(forKey: .bold)])
+        return NSAttributedString(string: string, attributes: [NSAttributedStringKey.font : Style.font(forKey: .bold), NSAttributedStringKey.foregroundColor: Style.color(forKey: .text)])
     }
     
     /**
@@ -226,7 +227,7 @@ extension CardDetailsHolder {
      * - returns Attributed string with formatted link text
      */
     fileprivate func linkText(prefix: String, value: String) -> NSAttributedString {
-        let prefixString = NSAttributedString(string: "\(prefix) ", attributes: [NSAttributedStringKey.font : Style.font(forKey: .subtext)])
+        let prefixString = NSAttributedString(string: "\(prefix) ", attributes: [NSAttributedStringKey.font : Style.font(forKey: .subtext), NSAttributedStringKey.foregroundColor: Style.color(forKey: .text)])
         
         let linkString = NSAttributedString(string: "\(value)", attributes: [NSAttributedStringKey.font : Style.font(forKey: .subtext), NSAttributedStringKey.foregroundColor: Style.color(forKey: .link)])
         

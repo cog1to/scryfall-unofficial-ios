@@ -22,6 +22,8 @@ class CardDetailsViewController: UIViewController, BindableType {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        view.backgroundColor = Style.color(forKey: .background)
     }
     
     func bindViewModel() {

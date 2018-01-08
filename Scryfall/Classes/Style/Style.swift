@@ -36,6 +36,9 @@ class Style {
     /// Supported colors
     enum ColorKey {
         
+        /// Text color.
+        case text
+        
         /// Clickable link color
         case link
         
@@ -47,6 +50,18 @@ class Style {
         
         /// Common gray color (borders, separators, etc.)
         case gray
+        
+        /// Common tint color
+        case tint
+        
+        /// Navigation bar tint
+        case navigationTint
+        
+        /// View background color
+        case background
+        
+        /// Card details view background color
+        case detailsBackground
     }
     
     /**
@@ -57,14 +72,24 @@ class Style {
      */
     class func color(forKey key: ColorKey) -> UIColor {
         switch key {
+        case .text:
+            return UIColor(netHex: 0x15151C)
         case .link:
             return UIColor(netHex: 0x421A81)
         case .legal:
             return UIColor(netHex: 0x719369)
         case .notLegal:
             return UIColor(netHex: 0xABABAB)
+        case .tint:
+            return UIColor(netHex: 0x421A81)
+        case .navigationTint:
+            return UIColor(netHex: 0x2B263A)
         case .gray:
             return UIColor.lightGray
+        case .background:
+            return UIColor(netHex: 0xF5F6FA)
+        case .detailsBackground:
+            return UIColor(netHex: 0xF9F9F9)
         }
     }
     

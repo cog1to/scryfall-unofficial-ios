@@ -107,7 +107,9 @@
                             <outlet property="delegate" destination="nIe-aM-jIa" id="ZGN-hv-lqZ"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="g0M-8P-Nj6"/>
+                    <navigationItem key="navigationItem" id="g0M-8P-Nj6">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="advanced" id="nkR-wO-bRl"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rqO-g7-9ZD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -141,7 +143,7 @@
                                                                     <constraint firstAttribute="width" constant="248" id="lap-ce-g1y"/>
                                                                 </constraints>
                                                             </imageView>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="My6-h6-NA1">
+                                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="My6-h6-NA1">
                                                                 <rect key="frame" x="0.0" y="357" width="248" height="30"/>
                                                                 <state key="normal" title="Transform/Flip"/>
                                                             </button>
@@ -265,4 +267,7 @@
             <point key="canvasLocation" x="-522" y="803"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="advanced" width="26" height="26"/>
+    </resources>
 </document>
