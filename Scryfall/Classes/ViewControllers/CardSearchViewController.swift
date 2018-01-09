@@ -47,9 +47,10 @@ class CardSearchViewController: UITableViewController, BindableType {
         
         // Style search controller. A bit of a hack but I haven't seen a better way yet
         if let textField = searchController.searchBar.value(forKey:"searchField") as? UIView {
+            textField.tintColor = Style.color(forKey: .gray)
             let backgroundView = textField.subviews.first
             backgroundView?.backgroundColor = UIColor.white
-            backgroundView?.layer.cornerRadius = 10
+            backgroundView?.layer.cornerRadius = 4
             backgroundView?.clipsToBounds = true
         }
         

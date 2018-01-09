@@ -71,6 +71,9 @@ class Style {
         
         /// Card details view background color
         case detailsBackground
+        
+        /// Card printing text color
+        case printingText
     }
     
     /**
@@ -103,6 +106,8 @@ class Style {
             return UIColor(netHex: 0xF5F6FA)
         case .detailsBackground:
             return UIColor(netHex: 0xF9F9F9)
+        case .printingText:
+            return UIColor.white
         }
     }
     
@@ -130,7 +135,7 @@ class Style {
         case .subtext:
             font = UIFont.preferredFont(forTextStyle: .footnote)
         case .headline:
-            font = getFont(fromTextStyle: .title2, withTraits: .traitBold)
+            font = getFont(fromTextStyle: .title3, withTraits: .traitBold)
         case .legality:
             return UIFont(descriptor: UIFontDescriptor.preferredFontDescriptor(withTextStyle: .footnote).withSymbolicTraits(.traitBold)!, size: 10.0)
         }

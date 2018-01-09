@@ -55,7 +55,7 @@ class Card: CardFace {
         self.ID = id
         self.setName = json["set_name"].stringValue
         self.setCode = json["set"].stringValue
-        self.collectorsNumber = json["collectors_number"].stringValue
+        self.collectorsNumber = json["collector_number"].stringValue
         self.reserved = json["reserved"].bool ?? false
         
         if let legalitiesDictionary = json["legalities"].dictionary {

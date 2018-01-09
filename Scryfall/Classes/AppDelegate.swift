@@ -43,12 +43,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     private func style() {
         UIApplication.shared.statusBarStyle = .lightContent
-        UINavigationBar.appearance().tintColor = Style.color(forKey: .gray)
+        UINavigationBar.appearance().tintColor = Style.color(forKey: .printingText)
         UINavigationBar.appearance().barTintColor = Style.color(forKey: .navigationTint)
-        UISearchBar.appearance().tintColor = Style.color(forKey: .gray)
+        UISearchBar.appearance().tintColor = Style.color(forKey: .printingText)
         UITableView.appearance().separatorColor = Style.color(forKey: .gray)
         UIButton.appearance().tintColor = Style.color(forKey: .tint)
-        UIButton.appearance(whenContainedInInstancesOf: [UINavigationBar.self]).tintColor = Style.color(forKey: .gray)
+        UIButton.appearance(whenContainedInInstancesOf: [UINavigationBar.self]).tintColor = Style.color(forKey: .printingText)
     }
 }
 

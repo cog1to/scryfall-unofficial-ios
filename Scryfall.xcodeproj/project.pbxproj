@@ -21,6 +21,7 @@
 		CF1FA23D200430CE00E8DAEA /* ColorIdentityToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1FA23C200430CE00E8DAEA /* ColorIdentityToken.swift */; };
 		CF1FA23F2004322500E8DAEA /* TextSearchToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1FA23E2004322500E8DAEA /* TextSearchToken.swift */; };
 		CF1FA2432004C62700E8DAEA /* CyclingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1FA2422004C62700E8DAEA /* CyclingLabel.swift */; };
+		CF1FA24B200569D700E8DAEA /* CardPrintingHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1FA24A200569D700E8DAEA /* CardPrintingHolder.swift */; };
 		CFD05BC420001A4A00CDF9C2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD05BC320001A4A00CDF9C2 /* AppDelegate.swift */; };
 		CFD05BC920001A4A00CDF9C2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFD05BC720001A4A00CDF9C2 /* Main.storyboard */; };
 		CFD05BCB20001A4A00CDF9C2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFD05BCA20001A4A00CDF9C2 /* Assets.xcassets */; };
@@ -87,6 +88,7 @@
 		CF1FA23C200430CE00E8DAEA /* ColorIdentityToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorIdentityToken.swift; sourceTree = "<group>"; };
 		CF1FA23E2004322500E8DAEA /* TextSearchToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextSearchToken.swift; sourceTree = "<group>"; };
 		CF1FA2422004C62700E8DAEA /* CyclingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CyclingLabel.swift; sourceTree = "<group>"; };
+		CF1FA24A200569D700E8DAEA /* CardPrintingHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardPrintingHolder.swift; sourceTree = "<group>"; };
 		CFD05BC020001A4A00CDF9C2 /* Scryfall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scryfall.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFD05BC320001A4A00CDF9C2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CFD05BC820001A4A00CDF9C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -170,10 +172,13 @@
 		CF0CE36D2003EA5000000EE1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				CFD05C292001616500CDF9C2 /* CardImageHolder.swift */,
+				CFD05C372002294100CDF9C2 /* CardDetailsHolder.swift */,
 				CF0CE36E2003EA5E00000EE1 /* LegalityView.swift */,
 				CF0CE3702003EA7200000EE1 /* LegalityView.xib */,
 				CF0CE3722003EDD100000EE1 /* LegalityTable.swift */,
 				CF1FA2422004C62700E8DAEA /* CyclingLabel.swift */,
+				CF1FA24A200569D700E8DAEA /* CardPrintingHolder.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -360,8 +365,6 @@
 			children = (
 				CFD05C1A200123E600CDF9C2 /* CardSearchCell.swift */,
 				CFD05C1C2001246700CDF9C2 /* LoadingCell.swift */,
-				CFD05C292001616500CDF9C2 /* CardImageHolder.swift */,
-				CFD05C372002294100CDF9C2 /* CardDetailsHolder.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -566,6 +569,7 @@
 				CF1FA22E20041EBF00E8DAEA /* QueryToken.swift in Sources */,
 				CFD05C1620003F8500CDF9C2 /* UISearchController+Rx.swift in Sources */,
 				CFD05C182001144500CDF9C2 /* CardsList.swift in Sources */,
+				CF1FA24B200569D700E8DAEA /* CardPrintingHolder.swift in Sources */,
 				CFD05C20200136F900CDF9C2 /* Style.swift in Sources */,
 				CFD05C2A2001616500CDF9C2 /* CardImageHolder.swift in Sources */,
 				CFD05BC420001A4A00CDF9C2 /* AppDelegate.swift in Sources */,

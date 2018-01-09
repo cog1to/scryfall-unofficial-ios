@@ -17,6 +17,7 @@ import RxCocoa
 class CardDetailsViewController: UIViewController, BindableType {
     @IBOutlet weak var cardImageHolder: CardImageHolder!
     @IBOutlet weak var cardDetailsHolder: CardDetailsHolder!
+    @IBOutlet weak var cardSetHolder: CardPrintingHolder!
     
     var viewModel: CardDetailsViewModel!
 
@@ -35,6 +36,7 @@ class CardDetailsViewController: UIViewController, BindableType {
         
         cardImageHolder.configure(for: imageUris, layout: viewModel.card.layout)
         cardDetailsHolder.configure(for: viewModel.card)
+        cardSetHolder.configure(forCard: viewModel.card)
     }
     
     @IBAction func onCancel(_ sender: Any) {

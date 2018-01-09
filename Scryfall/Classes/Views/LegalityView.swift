@@ -19,7 +19,7 @@ class LegalityView: UIStackView {
     
     override func awakeFromNib() {
         legalityContainer.backgroundColor = Style.color(forKey: .notLegal)
-        legalityContainer.layer.cornerRadius = 5
+        legalityContainer.layer.cornerRadius = 4
         
         legalityLabel.textColor = UIColor.white
         legalityLabel.font = Style.font(forKey: .legality)

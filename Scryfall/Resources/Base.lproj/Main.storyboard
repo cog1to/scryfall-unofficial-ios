@@ -124,16 +124,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lD2-5k-QBT">
-                                <rect key="frame" x="16" y="0.0" width="288" height="396"/>
+                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="396"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="YKR-kc-FYE">
-                                        <rect key="frame" x="0.0" y="16" width="288" height="535"/>
+                                        <rect key="frame" x="0.0" y="16" width="0.0" height="750.5"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SVj-a1-of2" customClass="CardImageHolder" customModule="Scryfall" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="0.0" width="248" height="387"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="248" height="525"/>
                                                 <subviews>
-                                                    <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="MXo-19-u7M">
-                                                        <rect key="frame" x="0.0" y="0.0" width="248" height="387"/>
+                                                    <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="equalSpacing" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="MXo-19-u7M">
+                                                        <rect key="frame" x="0.0" y="0.0" width="248" height="525"/>
                                                         <subviews>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="WWM-7N-cBG">
                                                                 <rect key="frame" x="0.0" y="0.0" width="248" height="347"/>
@@ -144,7 +144,7 @@
                                                                 </constraints>
                                                             </imageView>
                                                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="My6-h6-NA1">
-                                                                <rect key="frame" x="0.0" y="357" width="248" height="30"/>
+                                                                <rect key="frame" x="0.0" y="495" width="248" height="30"/>
                                                                 <state key="normal" title="Transform/Flip"/>
                                                             </button>
                                                         </subviews>
@@ -162,10 +162,10 @@
                                                 </connections>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Juc-Ck-hUq" customClass="CardDetailsHolder" customModule="Scryfall" customModuleProvider="target">
-                                                <rect key="frame" x="24" y="407" width="240" height="128"/>
+                                                <rect key="frame" x="0.0" y="545" width="0.0" height="128"/>
                                                 <subviews>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="zsh-fc-4QC">
-                                                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="zsh-fc-4QC">
+                                                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="128"/>
                                                     </stackView>
                                                 </subviews>
                                                 <constraints>
@@ -178,7 +178,56 @@
                                                     <outlet property="stackView" destination="zsh-fc-4QC" id="0uQ-He-72F"/>
                                                 </connections>
                                             </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l0i-sj-1jl" customClass="CardPrintingHolder" customModule="Scryfall" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="693" width="0.0" height="57.5"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="PCh-gI-E5j">
+                                                        <rect key="frame" x="0.0" y="8" width="0.0" height="41.5"/>
+                                                        <subviews>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="set_bng" translatesAutoresizingMaskIntoConstraints="NO" id="ehh-Kc-Oak">
+                                                                <rect key="frame" x="0.0" y="9" width="24" height="24"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="24" id="RTJ-ze-m2n"/>
+                                                                    <constraint firstAttribute="width" constant="24" id="esc-Ws-iCC"/>
+                                                                </constraints>
+                                                            </imageView>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalCompressionResistancePriority="751" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="uTx-UZ-jSo">
+                                                                <rect key="frame" x="0.0" y="2" width="0.0" height="37.5"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Set name (ABR)" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Or1-Gx-sM6">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="20.5"/>
+                                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                                        <nil key="textColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Card number" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QkX-dW-77O">
+                                                                        <rect key="frame" x="0.0" y="20.5" width="0.0" height="17"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                        <nil key="textColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                            </stackView>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="PCh-gI-E5j" firstAttribute="leading" secondItem="l0i-sj-1jl" secondAttribute="leading" constant="8" id="5BB-27-iqV"/>
+                                                    <constraint firstAttribute="bottom" secondItem="PCh-gI-E5j" secondAttribute="bottom" constant="8" id="Xlg-65-IpD"/>
+                                                    <constraint firstAttribute="trailing" secondItem="PCh-gI-E5j" secondAttribute="trailing" constant="8" id="bcm-vE-lLl"/>
+                                                    <constraint firstItem="PCh-gI-E5j" firstAttribute="top" secondItem="l0i-sj-1jl" secondAttribute="top" constant="8" id="cKY-1u-6sh"/>
+                                                </constraints>
+                                                <connections>
+                                                    <outlet property="cardNumberLabel" destination="QkX-dW-77O" id="eh1-DV-0qp"/>
+                                                    <outlet property="setIconView" destination="ehh-Kc-Oak" id="nDa-sM-VWF"/>
+                                                    <outlet property="setNameLabel" destination="Or1-Gx-sM6" id="wu1-51-O6D"/>
+                                                </connections>
+                                            </view>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstItem="l0i-sj-1jl" firstAttribute="width" secondItem="YKR-kc-FYE" secondAttribute="width" id="beh-90-4f4"/>
+                                            <constraint firstItem="Juc-Ck-hUq" firstAttribute="width" secondItem="YKR-kc-FYE" secondAttribute="width" id="tYm-g4-a2y"/>
+                                        </constraints>
                                     </stackView>
                                 </subviews>
                                 <constraints>
@@ -209,11 +258,12 @@
                     <connections>
                         <outlet property="cardDetailsHolder" destination="Juc-Ck-hUq" id="CSQ-Gb-HAb"/>
                         <outlet property="cardImageHolder" destination="SVj-a1-of2" id="6Gv-ju-tE7"/>
+                        <outlet property="cardSetHolder" destination="l0i-sj-1jl" id="eaZ-Yd-o5E"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sl0-4X-F3Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="476" y="802.848575712144"/>
+            <point key="canvasLocation" x="474.375" y="802.5"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="iUf-Ee-aqT">
@@ -271,5 +321,6 @@
     </scenes>
     <resources>
         <image name="advanced" width="26" height="26"/>
+        <image name="set_bng" width="657" height="768"/>
     </resources>
 </document>
