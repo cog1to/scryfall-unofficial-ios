@@ -17,7 +17,8 @@ class CardSearchViewController: UITableViewController, BindableType {
     var searchController: UISearchController!
     var viewModel: CardSearchViewModel!
     var disposeBag = DisposeBag()
-    var noItemsLabel: UILabel!
+    var loadingView: UIView!
+    var activityLabel: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,6 +52,8 @@ class CardSearchViewController: UITableViewController, BindableType {
             backgroundView?.layer.cornerRadius = 10
             backgroundView?.clipsToBounds = true
         }
+        
+        setup()
     }
     
     func bindViewModel() {
@@ -93,6 +96,10 @@ class CardSearchViewController: UITableViewController, BindableType {
                 return self.viewModel.cards.value[$0.row]
             }.subscribe(viewModel.showAction.inputs)
             .disposed(by: disposeBag)
+        
+        // Loading indicator.
+        viewModel.loading.asObservable().distinctUntilChanged().map{ !$0 }.asDriver(onErrorJustReturn: false).drive(loadingView.rx.isHidden).disposed(by: disposeBag)
+        viewModel.loading.asObservable().distinctUntilChanged().asDriver(onErrorJustReturn: false).drive(activityLabel.rx.isAnimating).disposed(by: disposeBag)
     }
 }
 
@@ -129,5 +136,28 @@ extension CardSearchViewController {
         cardCell.selectedBackgroundView =  selectionView;
         
         return cardCell
+    }
+}
+
+extension CardSearchViewController {
+    static let dotsCount = 3
+    
+    func setup() {
+        activityLabel = UIActivityIndicatorView()
+        activityLabel.translatesAutoresizingMaskIntoConstraints = false
+        activityLabel.activityIndicatorViewStyle = .gray
+        activityLabel.startAnimating()
+        
+        loadingView = UIView()
+        loadingView.backgroundColor = Style.color(forKey: .background)
+        loadingView.layer.cornerRadius = 4.0
+        loadingView.translatesAutoresizingMaskIntoConstraints = false
+        loadingView.addSubview(activityLabel)
+        loadingView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-8-[label]-8-|", options: [], metrics: nil, views: ["label": activityLabel]))
+        loadingView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-8-[label]-8-|", options: [], metrics: nil, views: ["label": activityLabel]))
+        
+        tableView.addSubview(loadingView)
+        tableView.addConstraint(NSLayoutConstraint(item: loadingView, attribute: .centerX, relatedBy: .equal, toItem: tableView, attribute: .centerX, multiplier: 1.0, constant: 0.0))
+        tableView.addConstraint(NSLayoutConstraint(item: loadingView, attribute: .centerY, relatedBy: .equal, toItem: tableView, attribute: .centerY, multiplier: 1.0, constant: 0.0))
     }
 }

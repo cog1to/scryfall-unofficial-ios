@@ -16,6 +16,7 @@ class CardSearchViewModel {
     let sceneCoordinator: SceneCoordinatorType
     let cards: Variable<[Card]>
     let hasMore: Variable<Bool>
+    let loading: Variable<Bool>
     
     private var nextPage: URL?
     private var lastRequest: Disposable?
@@ -26,6 +27,7 @@ class CardSearchViewModel {
         sceneCoordinator = coordinator
         cards = Variable<[Card]>([])
         hasMore = Variable<Bool>(false)
+        loading = Variable<Bool>(false)
     }
     
     lazy var onCancel: Action<Void, Void> = { this in
@@ -39,12 +41,19 @@ class CardSearchViewModel {
     
     lazy var onSearch: Action<String, Void> = { this in
         return Action { query in
+            this.loading.value = true
             this.lastRequest?.dispose()
-            this.lastRequest = this.scryfallService.search(query: query).subscribe(onNext: { cardsList in
+            
+            let request = self.scryfallService.search(query: query).share(replay: 1, scope: .whileConnected)
+            this.lastRequest = request.subscribe(onNext: { cardsList in
                 this.cards.value = cardsList.data
                 this.hasMore.value = cardsList.hasMore
                 this.nextPage = cardsList.nextPage
             })
+            
+            request.subscribe({ _ in
+                this.loading.value = false
+            }).disposed(by: this.bag)
             
             return Observable.just(())
         }

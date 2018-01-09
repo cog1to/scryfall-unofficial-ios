@@ -20,6 +20,7 @@
 		CF1FA23B20042D9800E8DAEA /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1FA23A20042D9800E8DAEA /* Color.swift */; };
 		CF1FA23D200430CE00E8DAEA /* ColorIdentityToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1FA23C200430CE00E8DAEA /* ColorIdentityToken.swift */; };
 		CF1FA23F2004322500E8DAEA /* TextSearchToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1FA23E2004322500E8DAEA /* TextSearchToken.swift */; };
+		CF1FA2432004C62700E8DAEA /* CyclingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1FA2422004C62700E8DAEA /* CyclingLabel.swift */; };
 		CFD05BC420001A4A00CDF9C2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD05BC320001A4A00CDF9C2 /* AppDelegate.swift */; };
 		CFD05BC920001A4A00CDF9C2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFD05BC720001A4A00CDF9C2 /* Main.storyboard */; };
 		CFD05BCB20001A4A00CDF9C2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFD05BCA20001A4A00CDF9C2 /* Assets.xcassets */; };
@@ -85,6 +86,7 @@
 		CF1FA23A20042D9800E8DAEA /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		CF1FA23C200430CE00E8DAEA /* ColorIdentityToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorIdentityToken.swift; sourceTree = "<group>"; };
 		CF1FA23E2004322500E8DAEA /* TextSearchToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextSearchToken.swift; sourceTree = "<group>"; };
+		CF1FA2422004C62700E8DAEA /* CyclingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CyclingLabel.swift; sourceTree = "<group>"; };
 		CFD05BC020001A4A00CDF9C2 /* Scryfall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scryfall.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFD05BC320001A4A00CDF9C2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CFD05BC820001A4A00CDF9C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 				CF0CE36E2003EA5E00000EE1 /* LegalityView.swift */,
 				CF0CE3702003EA7200000EE1 /* LegalityView.xib */,
 				CF0CE3722003EDD100000EE1 /* LegalityTable.swift */,
+				CF1FA2422004C62700E8DAEA /* CyclingLabel.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -543,6 +546,7 @@
 				CFD05C2C2001622C00CDF9C2 /* Layout.swift in Sources */,
 				CF1FA23B20042D9800E8DAEA /* Color.swift in Sources */,
 				CF1FA2322004200100E8DAEA /* ColorSetToken.swift in Sources */,
+				CF1FA2432004C62700E8DAEA /* CyclingLabel.swift in Sources */,
 				CFD05C2820014C8400CDF9C2 /* CardFace.swift in Sources */,
 				CFD05C1120003D6900CDF9C2 /* SceneTransitionType.swift in Sources */,
 				CFD05C1320003E5500CDF9C2 /* BindableType.swift in Sources */,
