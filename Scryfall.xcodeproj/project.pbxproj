@@ -13,6 +13,13 @@
 		CF0CE3712003EA7200000EE1 /* LegalityView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF0CE3702003EA7200000EE1 /* LegalityView.xib */; };
 		CF0CE3732003EDD100000EE1 /* LegalityTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0CE3722003EDD100000EE1 /* LegalityTable.swift */; };
 		CF0CE3752004031B00000EE1 /* Legality.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0CE3742004031B00000EE1 /* Legality.swift */; };
+		CF1FA22E20041EBF00E8DAEA /* QueryToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1FA22D20041EBF00E8DAEA /* QueryToken.swift */; };
+		CF1FA2322004200100E8DAEA /* ColorSetToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1FA2312004200100E8DAEA /* ColorSetToken.swift */; };
+		CF1FA2342004235A00E8DAEA /* Comparison.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1FA2332004235A00E8DAEA /* Comparison.swift */; };
+		CF1FA23820042D3900E8DAEA /* ColorCountToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1FA23720042D3900E8DAEA /* ColorCountToken.swift */; };
+		CF1FA23B20042D9800E8DAEA /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1FA23A20042D9800E8DAEA /* Color.swift */; };
+		CF1FA23D200430CE00E8DAEA /* ColorIdentityToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1FA23C200430CE00E8DAEA /* ColorIdentityToken.swift */; };
+		CF1FA23F2004322500E8DAEA /* TextSearchToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1FA23E2004322500E8DAEA /* TextSearchToken.swift */; };
 		CFD05BC420001A4A00CDF9C2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD05BC320001A4A00CDF9C2 /* AppDelegate.swift */; };
 		CFD05BC920001A4A00CDF9C2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFD05BC720001A4A00CDF9C2 /* Main.storyboard */; };
 		CFD05BCB20001A4A00CDF9C2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFD05BCA20001A4A00CDF9C2 /* Assets.xcassets */; };
@@ -71,6 +78,13 @@
 		CF0CE3702003EA7200000EE1 /* LegalityView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LegalityView.xib; sourceTree = "<group>"; };
 		CF0CE3722003EDD100000EE1 /* LegalityTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegalityTable.swift; sourceTree = "<group>"; };
 		CF0CE3742004031B00000EE1 /* Legality.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Legality.swift; sourceTree = "<group>"; };
+		CF1FA22D20041EBF00E8DAEA /* QueryToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryToken.swift; sourceTree = "<group>"; };
+		CF1FA2312004200100E8DAEA /* ColorSetToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSetToken.swift; sourceTree = "<group>"; };
+		CF1FA2332004235A00E8DAEA /* Comparison.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comparison.swift; sourceTree = "<group>"; };
+		CF1FA23720042D3900E8DAEA /* ColorCountToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCountToken.swift; sourceTree = "<group>"; };
+		CF1FA23A20042D9800E8DAEA /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		CF1FA23C200430CE00E8DAEA /* ColorIdentityToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorIdentityToken.swift; sourceTree = "<group>"; };
+		CF1FA23E2004322500E8DAEA /* TextSearchToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextSearchToken.swift; sourceTree = "<group>"; };
 		CFD05BC020001A4A00CDF9C2 /* Scryfall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scryfall.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFD05BC320001A4A00CDF9C2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CFD05BC820001A4A00CDF9C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -161,6 +175,36 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		CF0CE37620041A6E00000EE1 /* Queries */ = {
+			isa = PBXGroup;
+			children = (
+				CF1FA23920042D8000E8DAEA /* Constants */,
+				CF1FA2352004298400E8DAEA /* Tokens */,
+			);
+			path = Queries;
+			sourceTree = "<group>";
+		};
+		CF1FA2352004298400E8DAEA /* Tokens */ = {
+			isa = PBXGroup;
+			children = (
+				CF1FA22D20041EBF00E8DAEA /* QueryToken.swift */,
+				CF1FA2312004200100E8DAEA /* ColorSetToken.swift */,
+				CF1FA23720042D3900E8DAEA /* ColorCountToken.swift */,
+				CF1FA23C200430CE00E8DAEA /* ColorIdentityToken.swift */,
+				CF1FA23E2004322500E8DAEA /* TextSearchToken.swift */,
+			);
+			path = Tokens;
+			sourceTree = "<group>";
+		};
+		CF1FA23920042D8000E8DAEA /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				CF1FA2332004235A00E8DAEA /* Comparison.swift */,
+				CF1FA23A20042D9800E8DAEA /* Color.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
 		CFD05BB720001A4A00CDF9C2 = {
 			isa = PBXGroup;
 			children = (
@@ -232,6 +276,7 @@
 		CFD05BE8200024E900CDF9C2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				CF0CE37620041A6E00000EE1 /* Queries */,
 				CFD05C0320002F7E00CDF9C2 /* Card.swift */,
 				CFD05C2720014C8400CDF9C2 /* CardFace.swift */,
 				CFD05C2D20016FA900CDF9C2 /* CardImageURIType.swift */,
@@ -488,6 +533,7 @@
 				CFD05C062000317900CDF9C2 /* CardSearchViewModel.swift in Sources */,
 				CFD05C2620014C7600CDF9C2 /* CardDetailsViewModel.swift in Sources */,
 				CFD05C24200142F500CDF9C2 /* CardDetailsViewController.swift in Sources */,
+				CF1FA23F2004322500E8DAEA /* TextSearchToken.swift in Sources */,
 				CF0CE36F2003EA5E00000EE1 /* LegalityView.swift in Sources */,
 				CF0CE3752004031B00000EE1 /* Legality.swift in Sources */,
 				CFD05C3A2002525900CDF9C2 /* UIColor+Extension.swift in Sources */,
@@ -495,6 +541,8 @@
 				CFD05C382002294100CDF9C2 /* CardDetailsHolder.swift in Sources */,
 				CFD05C0220002F5600CDF9C2 /* ScryfallService.swift in Sources */,
 				CFD05C2C2001622C00CDF9C2 /* Layout.swift in Sources */,
+				CF1FA23B20042D9800E8DAEA /* Color.swift in Sources */,
+				CF1FA2322004200100E8DAEA /* ColorSetToken.swift in Sources */,
 				CFD05C2820014C8400CDF9C2 /* CardFace.swift in Sources */,
 				CFD05C1120003D6900CDF9C2 /* SceneTransitionType.swift in Sources */,
 				CFD05C1320003E5500CDF9C2 /* BindableType.swift in Sources */,
@@ -511,12 +559,16 @@
 				CFD05C2E20016FA900CDF9C2 /* CardImageURIType.swift in Sources */,
 				CFD05C0F20003D3900CDF9C2 /* SceneCoordinatorType.swift in Sources */,
 				CFD05C2220013BCF00CDF9C2 /* Rarity.swift in Sources */,
+				CF1FA22E20041EBF00E8DAEA /* QueryToken.swift in Sources */,
 				CFD05C1620003F8500CDF9C2 /* UISearchController+Rx.swift in Sources */,
 				CFD05C182001144500CDF9C2 /* CardsList.swift in Sources */,
 				CFD05C20200136F900CDF9C2 /* Style.swift in Sources */,
 				CFD05C2A2001616500CDF9C2 /* CardImageHolder.swift in Sources */,
 				CFD05BC420001A4A00CDF9C2 /* AppDelegate.swift in Sources */,
+				CF1FA23820042D3900E8DAEA /* ColorCountToken.swift in Sources */,
+				CF1FA2342004235A00E8DAEA /* Comparison.swift in Sources */,
 				CFD05C0D20003CE900CDF9C2 /* Scene.swift in Sources */,
+				CF1FA23D200430CE00E8DAEA /* ColorIdentityToken.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

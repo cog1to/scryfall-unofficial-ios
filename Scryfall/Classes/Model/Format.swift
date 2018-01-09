@@ -8,18 +8,18 @@
 
 import Foundation
 
-enum Format {
-    case standard
-    case frontier
-    case modern
-    case pauper
-    case legacy
-    case penny
-    case vintage
-    case duel
-    case commander
-    case onevone
-    case future
+enum Format: String {
+    case standard = "standard"
+    case frontier = "frontier"
+    case modern = "modern"
+    case pauper = "pauper"
+    case legacy = "legacy"
+    case penny = "penny"
+    case vintage = "vintage"
+    case duel = "duel"
+    case commander = "commander"
+    case onevone = "1v1"
+    case future = "future"
     
     var name: String {
         get {
@@ -47,35 +47,6 @@ enum Format {
             case .future:
                 return "Future Standard"
             }
-        }
-    }
-    
-    init?(value: String) {
-        switch value.lowercased() {
-        case "standard":
-            self = .standard
-        case "pauper":
-            self = .pauper
-        case "modern":
-            self = .modern
-        case "legacy":
-            self = .legacy
-        case "vintage":
-            self = .vintage
-        case "penny":
-            self = .penny
-        case "frontier":
-            self = .frontier
-        case "duel":
-            self = .duel
-        case "1v1":
-            self = .onevone
-        case "commander":
-            self = .commander
-        case "future":
-            self = .future
-        default:
-            return nil
         }
     }
     

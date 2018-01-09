@@ -8,11 +8,11 @@
 
 import Foundation
 
-enum Rarity {
-    case common
-    case uncommon
-    case rare
-    case mythic
+enum Rarity: String {
+    case common = "common"
+    case uncommon = "uncommon"
+    case rare = "rare"
+    case mythic = "mythic"
     
     var name: String {
         get {
@@ -26,21 +26,6 @@ enum Rarity {
             case .mythic:
                 return "Mythic"
             }
-        }
-    }
-    
-    init?(value: String) {
-        switch value.lowercased() {
-        case "common":
-            self = .common
-        case "uncommon":
-            self = .uncommon
-        case "rare":
-            self = .rare
-        case "mythic":
-            self = .mythic
-        default:
-            return nil
         }
     }
 }

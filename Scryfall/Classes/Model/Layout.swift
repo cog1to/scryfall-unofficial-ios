@@ -8,11 +8,11 @@
 
 import Foundation
 
-enum Layout {
-    case normal
-    case transform
-    case flip
-    case split
+enum Layout: String {
+    case normal = "normal"
+    case transform = "transform"
+    case flip = "flip"
+    case split = "split"
     
     var name: String {
         get {
@@ -26,21 +26,6 @@ enum Layout {
             case .split:
                 return "Split"
             }
-        }
-    }
-    
-    init?(value: String) {
-        switch value.lowercased() {
-        case "normal":
-            self = .normal
-        case "flip":
-            self = .flip
-        case "transform":
-            self = .transform
-        case "split":
-            self = .split
-        default:
-            return nil
         }
     }
 }

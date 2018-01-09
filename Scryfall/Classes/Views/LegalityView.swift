@@ -9,6 +9,9 @@
 import Foundation
 import UIKit
 
+/**
+ * Custom control for holding a single legality value.
+ */
 class LegalityView: UIStackView {
     @IBOutlet weak var legalityContainer: UIView!
     @IBOutlet weak var legalityLabel: UILabel!

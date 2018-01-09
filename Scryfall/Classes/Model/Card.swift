@@ -60,19 +60,19 @@ class Card: CardFace {
         
         if let legalitiesDictionary = json["legalities"].dictionary {
             self.legalities = Dictionary<Format, Legality>(uniqueKeysWithValues: legalitiesDictionary.map { (pair) in
-                return (Format(value: pair.key)!, Legality(rawValue: pair.value.stringValue)!)
+                return (Format(rawValue: pair.key)!, Legality(rawValue: pair.value.stringValue)!)
             })
         } else {
             self.legalities = [:]
         }
         
-        if let rarityValue = Rarity(value: rarity) {
+        if let rarityValue = Rarity(rawValue: rarity) {
             self.rarity = rarityValue
         } else {
             self.rarity = .common
         }
         
-        if let layoutValue = Layout(value: layout) {
+        if let layoutValue = Layout(rawValue: layout) {
             self.layout = layoutValue
         } else {
             self.layout = .normal

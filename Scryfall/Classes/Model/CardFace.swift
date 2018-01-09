@@ -40,7 +40,7 @@ class CardFace {
         if let imageUris = json["image_uris"].dictionaryObject {
             let filtered = imageUris.filter { ($0.value as? String) != nil }
             self.imageUris = Dictionary<CardImageURIType, URL>(uniqueKeysWithValues: filtered.map { (pair) in
-                return (CardImageURIType(value: pair.key)!, URL(string: pair.value as! String)!)
+                return (CardImageURIType(rawValue: pair.key)!, URL(string: pair.value as! String)!)
             })
         } else {
             self.imageUris = [:]

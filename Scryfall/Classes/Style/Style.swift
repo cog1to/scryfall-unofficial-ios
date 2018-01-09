@@ -96,7 +96,7 @@ class Style {
         case .tint:
             return UIColor(netHex: 0x421A81)
         case .navigationTint:
-            return UIColor(netHex: 0x2B263A)
+            return UIColor(netHex: 0x333141)
         case .gray:
             return UIColor.lightGray
         case .background:

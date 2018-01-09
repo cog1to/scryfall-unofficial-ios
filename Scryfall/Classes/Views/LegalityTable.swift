@@ -9,6 +9,9 @@
 import Foundation
 import UIKit
 
+/**
+ * Custom control for layoing out legality values.
+ */
 class LegalityTable: UIStackView {
     override func awakeFromNib() {
         axis = .horizontal
@@ -23,6 +26,7 @@ class LegalityTable: UIStackView {
         let displayed = Format.displayed
         let filtered = displayed.filter { legalities.keys.contains($0) }
         
+        // Populate columns.
         let columnViews: [UIStackView] = (0..<columns).map{ _ in return newColumn() }
         var legalityViews = [LegalityView]()
         for (index, element) in filtered.enumerated() {

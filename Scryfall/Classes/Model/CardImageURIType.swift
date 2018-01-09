@@ -8,30 +8,11 @@
 
 import Foundation
 
-enum CardImageURIType {
-    case small
-    case normal
-    case large
-    case png
-    case artCrop
-    case borderCrop
-    
-    init?(value: String) {
-        switch value.lowercased() {
-        case "small":
-            self = .small
-        case "normal":
-            self = .normal
-        case "large":
-            self = .large
-        case "png":
-            self = .png
-        case "art_crop":
-            self = .artCrop
-        case "border_crop":
-            self = .borderCrop
-        default:
-            return nil
-        }
-    }
+enum CardImageURIType: String {
+    case small = "small"
+    case normal = "normal"
+    case large = "large"
+    case png = "png"
+    case artCrop = "art_crop"
+    case borderCrop = "border_crop"
 }

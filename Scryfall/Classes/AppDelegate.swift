@@ -42,6 +42,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     private func style() {
+        UIApplication.shared.statusBarStyle = .lightContent
         UINavigationBar.appearance().tintColor = Style.color(forKey: .gray)
         UINavigationBar.appearance().barTintColor = Style.color(forKey: .navigationTint)
         UISearchBar.appearance().tintColor = Style.color(forKey: .gray)

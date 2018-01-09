@@ -17,13 +17,21 @@ class CardSearchViewController: UITableViewController, BindableType {
     var searchController: UISearchController!
     var viewModel: CardSearchViewModel!
     var disposeBag = DisposeBag()
+    var noItemsLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 60
-        tableView.tableFooterView = UIView(frame: CGRect.zero)
+        
+        let noItemsLabel = UILabel()
+        noItemsLabel.numberOfLines = 0
+        noItemsLabel.translatesAutoresizingMaskIntoConstraints = false
+        noItemsLabel.font = Style.font(forKey: .text)
+        noItemsLabel.textColor = Style.color(forKey: .gray)
+        noItemsLabel.text = "Sorry, No cards matching your criteria found"
+        tableView.tableFooterView = UIView()
         
         tableView.backgroundView = nil
         tableView.backgroundColor = Style.color(forKey: .background)
@@ -32,7 +40,7 @@ class CardSearchViewController: UITableViewController, BindableType {
         definesPresentationContext = true
         searchController = UISearchController(searchResultsController: nil)
         searchController.obscuresBackgroundDuringPresentation = false
-        searchController.searchBar.placeholder = "Search for some cards..."
+        searchController.searchBar.placeholder = "Search for cards..."
         navigationItem.searchController = searchController
         navigationItem.hidesSearchBarWhenScrolling = false
         
@@ -79,7 +87,9 @@ class CardSearchViewController: UITableViewController, BindableType {
         tableView.rx.itemSelected
             .filter { [unowned self] indexPath in
                 return indexPath.row != self.viewModel.cards.value.count
-            }.map {
+            }.do(onNext: { [unowned self] in
+                self.tableView.deselectRow(at: $0, animated: true)
+            }).map {
                 return self.viewModel.cards.value[$0.row]
             }.subscribe(viewModel.showAction.inputs)
             .disposed(by: disposeBag)
@@ -104,6 +114,7 @@ extension CardSearchViewController {
         // Loading cell
         if indexPath.row == viewModel.cards.value.count {
             let loadingCell = tableView.dequeueReusableCell(withIdentifier: "LoadingCell", for: indexPath) as! LoadingCell
+            loadingCell.selectionStyle = .none
             return loadingCell
         }
         
@@ -111,6 +122,12 @@ extension CardSearchViewController {
         let cardCell = tableView.dequeueReusableCell(withIdentifier: "CardSearchCell", for: indexPath) as! CardSearchCell
         let card = viewModel.cards.value[indexPath.row]
         cardCell.configure(for: card)
+        
+        // Customize selection color.
+        let selectionView = UIView()
+        selectionView.backgroundColor = Style.color(forKey: .tint).withAlphaComponent(0.3)
+        cardCell.selectedBackgroundView =  selectionView;
+        
         return cardCell
     }
 }
