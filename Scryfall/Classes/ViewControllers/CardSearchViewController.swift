@@ -140,8 +140,8 @@ extension CardSearchViewController {
 }
 
 extension CardSearchViewController {
-    static let dotsCount = 3
     
+    // Initial UI setup. Creates loading indicator.
     func setup() {
         activityLabel = UIActivityIndicatorView()
         activityLabel.translatesAutoresizingMaskIntoConstraints = false
