@@ -9,13 +9,13 @@
 import Foundation
 
 enum TextValue {
-    case plain(String, Bool)
+    case plain(String)
     case regexp(String)
     
     var value: String {
         switch self {
-        case .plain(let text, let exact):
-            return (exact ? "!" : "") + "\"\(text)\""
+        case .plain(let text):
+            return "\"\(text)\""
         case .regexp(let text):
             return "/\(text)/"
         }

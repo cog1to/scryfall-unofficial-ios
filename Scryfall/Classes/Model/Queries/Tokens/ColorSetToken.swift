@@ -8,18 +8,12 @@
 
 import Foundation
 
-class ColorSetToken: QueryToken {
-    var value: Set<Color>
-    var comparison: Comparison
-    var negative: Bool
-    
-    override var string: String {
-        return (negative ? "-" : "") + "color" + comparison.rawValue + value.reduce("", { $0 + $1.rawValue })
+class ColorSetToken: ComparableToken<Set<Color>> {
+    override func name() throws -> String {
+        return "color"
     }
     
-    init(value: Set<Color>, comparison: Comparison = .equals, negative: Bool = false) {
-        self.value = value
-        self.comparison = comparison
-        self.negative = negative
+    override func valueString() throws -> String {
+        return value.reduce("", { $0 + $1.rawValue })
     }
 }

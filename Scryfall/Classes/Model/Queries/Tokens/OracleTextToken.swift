@@ -8,16 +8,8 @@
 
 import Foundation
 
-class OracleTextToken: QueryToken {
-    var negative: Bool
-    var value: TextValue
-    
-    override var string: String {
-        return (negative ? "-" : "") + "o:\(value.value)"
-    }
-    
-    init(value: TextValue, negative: Bool = false) throws {
-        self.value = value
-        self.negative = negative
+class OracleTextToken: TextToken {
+    override func name() throws -> String {
+        return "oracle"
     }
 }

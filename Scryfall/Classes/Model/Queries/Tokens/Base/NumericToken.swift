@@ -22,24 +22,15 @@ enum NumericValue {
     }
 }
 
-class NumericToken: QueryToken {
-    var value: NumericValue
-    var comparison: Comparison
-    var negative: Bool
+class NumericToken: ComparableToken<NumericValue> {
+
+    override func valueString() throws -> String {
+        return value.value()
+    }
     
     /// Override this to provide proper value name.
     internal class func name() -> String {
         return "undefined"
-    }
-    
-    override var string: String {
-        return (negative ? "-" : "") + "\(type(of: self).name())\(comparison.rawValue)\(value.value())"
-    }
-    
-    init(value: NumericValue, comparison: Comparison = .equals, negative: Bool = false) {
-        self.value = value
-        self.comparison = comparison
-        self.negative = negative
     }
 }
 

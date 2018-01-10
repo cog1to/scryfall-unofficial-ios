@@ -8,17 +8,12 @@
 
 import Foundation
 
-class ManaToken: QueryToken {
-    var value: [ManaSymbol]
-    var negative: Bool
-    
-    override var string: String {
-        let manaString: String = value.map { $0.rawValue }.joined()
-        return (negative ? "-" : "") + "mana:\(manaString)"
+class ManaToken: NegatableToken<[ManaSymbol]> {
+    override func name() throws -> String {
+        return "mana"
     }
     
-    init(value: [ManaSymbol], negative: Bool = false) throws {
-        self.value = value
-        self.negative = negative
+    override func valueString() throws -> String {
+        return value.map { $0.rawValue }.joined(separator: "")
     }
 }

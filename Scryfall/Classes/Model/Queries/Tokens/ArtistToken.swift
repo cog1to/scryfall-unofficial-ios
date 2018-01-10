@@ -8,16 +8,12 @@
 
 import Foundation
 
-class ArtistToken: QueryToken {
-    var negative: Bool
-    var value: String
-    
-    override var string: String {
-        return (negative ? "-" : "") + "a:\"\(value)\""
+class ArtistToken: EqualityToken<String> {
+    override func name() throws -> String {
+        return "artist"
     }
     
-    init(value: String, negative: Bool = false) throws {
-        self.value = value
-        self.negative = negative
+    override func valueString() throws -> String {
+        return value
     }
 }

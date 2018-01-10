@@ -8,20 +8,13 @@
 
 import Foundation
 
-class TypeToken: QueryToken {
-    var negative: Bool
-    var value: String
+class TypeToken: NegatableToken<String> {
     
-    override var string: String {
-        return (negative ? "-" : "") + "t:\(value)"
+    override func name() throws -> String {
+        return "type"
     }
     
-    init(value: String, negative: Bool = false) throws {
-        guard !value.contains(" ") else {
-            throw QueryError.illegalTypeValue(value)
-        }
-        
-        self.value = value
-        self.negative = negative
+    override func valueString() throws -> String {
+        return "\"\(value)\""
     }
 }

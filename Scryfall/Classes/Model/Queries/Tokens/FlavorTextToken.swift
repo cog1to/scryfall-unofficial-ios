@@ -8,16 +8,8 @@
 
 import Foundation
 
-class FlavorTextToken: QueryToken {
-    var negative: Bool
-    var value: TextValue
-    
-    override var string: String {
-        return (negative ? "-" : "") + "ft:\(value.value)"
-    }
-    
-    init(value: TextValue, negative: Bool = false) throws {
-        self.value = value
-        self.negative = negative
-    }
+class FlavorTextToken: TextToken {
+    override func name() throws -> String {
+        return "flavor"
+    }    
 }

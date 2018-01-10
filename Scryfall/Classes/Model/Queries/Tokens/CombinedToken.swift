@@ -14,16 +14,18 @@ enum LogicalOperator: String {
 }
 
 class CombinedToken: QueryToken {
-    var value: [QueryToken]
     var op: LogicalOperator
+    var value: [QueryToken]
+    var negative: Bool
     
-    override var string: String {
-        let string = value.map { return $0.string }.joined(separator: " \(op.rawValue) ")
+    func string() throws -> String {
+        let string = try value.map { return try $0.string() }.joined(separator: " \(op.rawValue) ")
         return "(\(string))"
     }
     
-    init(value: [QueryToken], op: LogicalOperator = .and) {
-        self.value = value
+    init(value: [QueryToken], op: LogicalOperator = .and, negative: Bool = false) {
         self.op = op
+        self.value = value
+        self.negative = negative
     }
 }

@@ -8,16 +8,12 @@
 
 import Foundation
 
-class RestrictedToken: QueryToken {
-    var value: Format
-    var negative: Bool
-    
-    override var string: String {
-        return (negative ? "-" : "") + "restricted:\(value)"
+class RestrictedToken: EqualityToken<Format> {
+    override func name() throws -> String {
+        return "restricted"
     }
     
-    init(value: Format, negative: Bool = false) {
-        self.value = value
-        self.negative = negative
+    override func valueString() throws -> String {
+        return value.rawValue
     }
 }

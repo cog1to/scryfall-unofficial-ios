@@ -8,16 +8,8 @@
 
 import Foundation
 
-class RarityToken: QueryToken {
-    var value: Rarity
-    var negative: Bool
-    
-    override var string: String {
-        return (negative ? "-" : "") + "r:\(value.rawValue)"
-    }
-    
-    init(value: Rarity, negative: Bool = false) {
-        self.value = value
-        self.negative = negative
+class RarityToken: EqualityToken<Rarity> {
+    override func name() throws -> String {
+        return "rarity"
     }
 }

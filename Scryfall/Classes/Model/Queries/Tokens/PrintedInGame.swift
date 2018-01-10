@@ -8,16 +8,12 @@
 
 import Foundation
 
-class PrintedInGame: QueryToken {
-    var value: Game
-    var negative: Bool
-    
-    override var string: String {
-        return (negative ? "-" : "") + "game:\(value)"
+class PrintedInGame: EqualityToken<Game> {
+    override func name() throws -> String {
+        return "game"
     }
     
-    init(value: Game, negative: Bool = false) {
-        self.value = value
-        self.negative = negative
+    override func valueString() throws -> String {
+        return value.rawValue
     }
 }

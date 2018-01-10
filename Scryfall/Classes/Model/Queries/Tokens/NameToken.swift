@@ -8,21 +8,20 @@
 
 import Foundation
 
-class NameToken: QueryToken {
-    var value: TextValue
-    var negative: Bool
+class NameToken: TextToken {
+    var exact: Bool
     
-    override var string: String {
+    override func string() -> String {
         switch value {
         case .plain:
-            return (negative ? "-" : "") + "\(value.value)"
+            return applyNegation(string: (exact ? "!" : "") + "\(value.value)")
         case .regexp:
-            return (negative ? "-" : "") + "name:" + "\(value.value)"
+            return applyNegation(string: "name:" + "\(value.value)")
         }
     }
     
-    init(value: TextValue, negative: Bool = false) {
-        self.value = value
-        self.negative = negative
+    init(value: TextValue, exact: Bool = false, negative: Bool = false) {
+        self.exact = exact
+        super.init(value: value, negative: negative)
     }
 }

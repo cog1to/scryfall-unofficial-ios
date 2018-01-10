@@ -8,16 +8,12 @@
 
 import Foundation
 
-class FormatToken: QueryToken {
-    var value: Format
-    var negative: Bool
-    
-    override var string: String {
-        return (negative ? "-" : "") + "f:\(value)"
+class FormatToken: EqualityToken<Format> {
+    override func name() throws -> String {
+        return "format"
     }
     
-    init(value: Format, negative: Bool = false) {
-        self.value = value
-        self.negative = negative
+    override func valueString() throws -> String {
+        return value.rawValue
     }
 }

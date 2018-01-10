@@ -9,7 +9,7 @@
 import Foundation
 
 class IncludeExtrasToken: QueryToken {
-    override var string: String {
+    func string() throws -> String {
         return "include:extras"
     }
 }

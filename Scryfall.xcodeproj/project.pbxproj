@@ -68,6 +68,11 @@
 		CF1FA2A52006AC2F00E8DAEA /* PrintedInBlockToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1FA2A42006AC2F00E8DAEA /* PrintedInBlockToken.swift */; };
 		CF1FA2A72006AD2800E8DAEA /* UnrollToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1FA2A62006AD2800E8DAEA /* UnrollToken.swift */; };
 		CF1FA2A92006AD9300E8DAEA /* CombinedToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1FA2A82006AD9300E8DAEA /* CombinedToken.swift */; };
+		CF1FA2AB2006B2B100E8DAEA /* ValueToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1FA2AA2006B2B100E8DAEA /* ValueToken.swift */; };
+		CF1FA2AD2006B65600E8DAEA /* NegatableToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1FA2AC2006B65600E8DAEA /* NegatableToken.swift */; };
+		CF1FA2AF2006B74800E8DAEA /* ComparableToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1FA2AE2006B74800E8DAEA /* ComparableToken.swift */; };
+		CF1FA2B22006BE4A00E8DAEA /* EqualityToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1FA2B12006BE4A00E8DAEA /* EqualityToken.swift */; };
+		CF1FA2B42006C51600E8DAEA /* TextToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1FA2B32006C51600E8DAEA /* TextToken.swift */; };
 		CFD05BC420001A4A00CDF9C2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD05BC320001A4A00CDF9C2 /* AppDelegate.swift */; };
 		CFD05BC920001A4A00CDF9C2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFD05BC720001A4A00CDF9C2 /* Main.storyboard */; };
 		CFD05BCB20001A4A00CDF9C2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFD05BCA20001A4A00CDF9C2 /* Assets.xcassets */; };
@@ -181,6 +186,11 @@
 		CF1FA2A42006AC2F00E8DAEA /* PrintedInBlockToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrintedInBlockToken.swift; sourceTree = "<group>"; };
 		CF1FA2A62006AD2800E8DAEA /* UnrollToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnrollToken.swift; sourceTree = "<group>"; };
 		CF1FA2A82006AD9300E8DAEA /* CombinedToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombinedToken.swift; sourceTree = "<group>"; };
+		CF1FA2AA2006B2B100E8DAEA /* ValueToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueToken.swift; sourceTree = "<group>"; };
+		CF1FA2AC2006B65600E8DAEA /* NegatableToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NegatableToken.swift; sourceTree = "<group>"; };
+		CF1FA2AE2006B74800E8DAEA /* ComparableToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComparableToken.swift; sourceTree = "<group>"; };
+		CF1FA2B12006BE4A00E8DAEA /* EqualityToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EqualityToken.swift; sourceTree = "<group>"; };
+		CF1FA2B32006C51600E8DAEA /* TextToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextToken.swift; sourceTree = "<group>"; };
 		CFD05BC020001A4A00CDF9C2 /* Scryfall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scryfall.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFD05BC320001A4A00CDF9C2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CFD05BC820001A4A00CDF9C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -287,7 +297,7 @@
 		CF1FA2352004298400E8DAEA /* Tokens */ = {
 			isa = PBXGroup;
 			children = (
-				CF1FA22D20041EBF00E8DAEA /* QueryToken.swift */,
+				CF1FA2B02006BD3700E8DAEA /* Base */,
 				CF1FA2312004200100E8DAEA /* ColorSetToken.swift */,
 				CF1FA23720042D3900E8DAEA /* ColorCountToken.swift */,
 				CF1FA23C200430CE00E8DAEA /* ColorIdentityToken.swift */,
@@ -297,7 +307,6 @@
 				CF1FA2582005842400E8DAEA /* ManaToken.swift */,
 				CF1FA25A2005843A00E8DAEA /* CMCToken.swift */,
 				CF1FA25E200613D700E8DAEA /* TraitToken.swift */,
-				CF1FA26020068A2B00E8DAEA /* NumericToken.swift */,
 				CF1FA262200692CA00E8DAEA /* PowerToken.swift */,
 				CF1FA264200692F400E8DAEA /* LoyaltyToken.swift */,
 				CF1FA2662006930800E8DAEA /* ToughnessToken.swift */,
@@ -352,6 +361,20 @@
 				CF1FA2A22006A9E500E8DAEA /* MTGSet.swift */,
 			);
 			path = Constants;
+			sourceTree = "<group>";
+		};
+		CF1FA2B02006BD3700E8DAEA /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				CF1FA22D20041EBF00E8DAEA /* QueryToken.swift */,
+				CF1FA2AA2006B2B100E8DAEA /* ValueToken.swift */,
+				CF1FA2AC2006B65600E8DAEA /* NegatableToken.swift */,
+				CF1FA2AE2006B74800E8DAEA /* ComparableToken.swift */,
+				CF1FA26020068A2B00E8DAEA /* NumericToken.swift */,
+				CF1FA2B12006BE4A00E8DAEA /* EqualityToken.swift */,
+				CF1FA2B32006C51600E8DAEA /* TextToken.swift */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 		CFD05BB720001A4A00CDF9C2 = {
@@ -690,9 +713,11 @@
 				CFD05BED20002D9300CDF9C2 /* WebService.swift in Sources */,
 				CF1FA2952006A59400E8DAEA /* ArtistToken.swift in Sources */,
 				CFD05C382002294100CDF9C2 /* CardDetailsHolder.swift in Sources */,
+				CF1FA2B22006BE4A00E8DAEA /* EqualityToken.swift in Sources */,
 				CFD05C0220002F5600CDF9C2 /* ScryfallService.swift in Sources */,
 				CF1FA25520057FF200E8DAEA /* ManaSymbol.swift in Sources */,
 				CF1FA28F2006A4D800E8DAEA /* BannedToken.swift in Sources */,
+				CF1FA2AF2006B74800E8DAEA /* ComparableToken.swift in Sources */,
 				CF1FA24F20057B3E00E8DAEA /* TypeToken.swift in Sources */,
 				CF1FA26F200695BF00E8DAEA /* SetsToken.swift in Sources */,
 				CF1FA27B20069F9600E8DAEA /* PrintedInGame.swift in Sources */,
@@ -723,6 +748,7 @@
 				CF1FA263200692CA00E8DAEA /* PowerToken.swift in Sources */,
 				CFD05C0420002F7E00CDF9C2 /* Card.swift in Sources */,
 				CFD05C0B20003CA700CDF9C2 /* SceneCoordinator.swift in Sources */,
+				CF1FA2AB2006B2B100E8DAEA /* ValueToken.swift in Sources */,
 				CF1FA25B2005843A00E8DAEA /* CMCToken.swift in Sources */,
 				CF1FA25F200613D700E8DAEA /* TraitToken.swift in Sources */,
 				CF0CE3732003EDD100000EE1 /* LegalityTable.swift in Sources */,
@@ -739,12 +765,14 @@
 				CF1FA27720069ED300E8DAEA /* IsInToken.swift in Sources */,
 				CF1FA25120057C2800E8DAEA /* QueryError.swift in Sources */,
 				CF0CE3662002678E00000EE1 /* NSMutableAttributedString+Extension.swift in Sources */,
+				CF1FA2B42006C51600E8DAEA /* TextToken.swift in Sources */,
 				CF1FA2932006A55B00E8DAEA /* FlavorTextToken.swift in Sources */,
 				CF1FA27520069A6900E8DAEA /* PrintedInSetToken.swift in Sources */,
 				CFD05C2E20016FA900CDF9C2 /* CardImageURIType.swift in Sources */,
 				CFD05C0F20003D3900CDF9C2 /* SceneCoordinatorType.swift in Sources */,
 				CFD05C2220013BCF00CDF9C2 /* Rarity.swift in Sources */,
 				CF1FA22E20041EBF00E8DAEA /* QueryToken.swift in Sources */,
+				CF1FA2AD2006B65600E8DAEA /* NegatableToken.swift in Sources */,
 				CFD05C1620003F8500CDF9C2 /* UISearchController+Rx.swift in Sources */,
 				CF1FA28D2006A4A900E8DAEA /* FormatToken.swift in Sources */,
 				CFD05C182001144500CDF9C2 /* CardsList.swift in Sources */,

@@ -8,16 +8,12 @@
 
 import Foundation
 
-class PrintedInBlockToken: QueryToken {
-    var value: MTGSet
-    var negative: Bool
-    
-    override var string: String {
-        return (negative ? "-" : "") + "block:\(value.rawValue)"
+class PrintedInBlockToken: EqualityToken<MTGSet> {
+    override func name() throws -> String {
+        return "block"
     }
     
-    init(value: MTGSet, negative: Bool) {
-        self.value = value
-        self.negative = negative
+    override func valueString() throws -> String {
+        return value.rawValue
     }
 }

@@ -8,16 +8,12 @@
 
 import Foundation
 
-class CubeToken: QueryToken {
-    var value: Cube
-    var negative: Bool
-
-    override var string: String {
-        return (negative ? "-" : "") + "cube:\(value)"
+class CubeToken: EqualityToken<Cube> {
+    override func name() throws -> String {
+        return "cube"
     }
     
-    init(value: Cube, negative: Bool = false) {
-        self.value = value
-        self.negative = negative
+    override func valueString() throws -> String {
+        return value.rawValue
     }
 }

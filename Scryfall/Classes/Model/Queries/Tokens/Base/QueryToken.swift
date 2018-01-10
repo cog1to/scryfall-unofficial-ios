@@ -8,8 +8,6 @@
 
 import Foundation
 
-class QueryToken {
-    var string: String {
-        return ""
-    }
+protocol QueryToken {
+    func string() throws -> String
 }

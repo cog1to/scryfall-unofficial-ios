@@ -8,16 +8,12 @@
 
 import Foundation
 
-class FrameToken: QueryToken {
-    var negative: Bool
-    var value: Frame
-    
-    override var string: String {
-        return (negative ? "-" : "") + "frame:\(value.rawValue)"
+class FrameToken: EqualityToken<Frame> {
+    override func name() throws -> String {
+        return "frame"
     }
     
-    init(value: Frame, negative: Bool = false) throws {
-        self.value = value
-        self.negative = negative
+    override func valueString() throws -> String {
+        return value.rawValue
     }
 }

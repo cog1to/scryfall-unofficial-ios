@@ -8,16 +8,12 @@
 
 import Foundation
 
-class BannedToken: QueryToken {
-    var value: Format
-    var negative: Bool
-    
-    override var string: String {
-        return (negative ? "-" : "") + "banned:\(value)"
+class BannedToken: EqualityToken<Format> {
+    override func name() throws -> String {
+        return "banned"
     }
     
-    init(value: Format, negative: Bool = false) {
-        self.value = value
-        self.negative = negative
+    override func valueString() throws -> String {
+        return value.rawValue
     }
 }

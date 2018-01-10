@@ -8,16 +8,12 @@
 
 import Foundation
 
-class BorderToken: QueryToken {
-    var negative: Bool
-    var value: Border
-    
-    override var string: String {
-        return (negative ? "-" : "") + "border:\(value.rawValue)"
+class BorderToken: EqualityToken<Border> {
+    override func name() throws -> String {
+        return "border"
     }
     
-    init(value: Border, negative: Bool = false) throws {
-        self.value = value
-        self.negative = negative
+    override func valueString() throws -> String {
+        return value.rawValue
     }
 }

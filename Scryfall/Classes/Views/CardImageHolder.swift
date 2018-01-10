@@ -57,18 +57,15 @@ class CardImageHolder: UIView {
         }
         
         // Schedule image downloading.
-        Observable<URL>.from(imageUris)
-            .flatMap {
-                return CardImageHolder.downloader.image(for: $0)
-            }.filter {
-                $0 != nil
-            }.map{
-                $0!
-            }.toArray().observeOn(MainScheduler.instance).subscribe(onNext: { [weak self] in
+        Observable.from(imageUris.map { return CardImageHolder.downloader.image(for: $0) })
+            .merge(maxConcurrent: 1)
+            .filter { $0 != nil }
+            .map { $0! }
+            .toArray().observeOn(MainScheduler.instance).subscribe(onNext: { [weak self] in
                 if let strongSelf = self {
                     strongSelf.images.value = $0
-                }
-            }).disposed(by: disposeBag)
+                }})
+            .disposed(by: disposeBag)
         
         // Watch to changes in images or flipped state to update UI.
         Observable.combineLatest(images.asObservable(), flipped.asObservable())

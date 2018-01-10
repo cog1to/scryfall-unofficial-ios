@@ -8,16 +8,12 @@
 
 import Foundation
 
-class WatermarkToken: QueryToken {
-    var negative: Bool
-    var value: Watermark
-    
-    override var string: String {
-        return (negative ? "-" : "") + "wm:\(value.rawValue)"
+class WatermarkToken: EqualityToken<Watermark> {
+    override func name() throws -> String {
+        return "watermark"
     }
     
-    init(value: Watermark, negative: Bool = false) throws {
-        self.value = value
-        self.negative = negative
+    override func valueString() throws -> String {
+        return value.rawValue
     }
 }

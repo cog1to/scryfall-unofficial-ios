@@ -9,7 +9,7 @@
 import Foundation
 
 class UnrollToken: QueryToken {
-    override var string: String {
+    func string() throws -> String {
         return "++"
     }
 }
