@@ -8,10 +8,6 @@
 
 import Foundation
 
-enum ColorParseError: Error {
-    case unknownColorString(String)
-}
-
 // Supported colors
 enum Color: String {
     case white = "w"
@@ -64,7 +60,7 @@ enum Color: String {
         case "brg", "bgr", "rbg", "rgb", "gbr", "grb", "jund":
             return [.red, .green, .black]
         default:
-            throw ColorParseError.unknownColorString(string)
+            throw QueryError.unknownColorString(string)
         }
     }
 }
