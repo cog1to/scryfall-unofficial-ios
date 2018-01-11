@@ -37,7 +37,7 @@ class Card: CardFace {
     var reserved: Bool
     var legalities: [Format: Legality]
     
-    override init?(json: JSON) {
+    required init?(json: JSON) {
         // Validate mandatory fields.
         guard let id = json["id"].string else {
             return nil

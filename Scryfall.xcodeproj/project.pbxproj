@@ -64,7 +64,6 @@
 		CF1FA29D2006A87100E8DAEA /* FrameToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1FA29C2006A87100E8DAEA /* FrameToken.swift */; };
 		CF1FA29F2006A89B00E8DAEA /* Border.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1FA29E2006A89B00E8DAEA /* Border.swift */; };
 		CF1FA2A12006A8D600E8DAEA /* BorderToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1FA2A02006A8D600E8DAEA /* BorderToken.swift */; };
-		CF1FA2A32006A9E500E8DAEA /* MTGSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1FA2A22006A9E500E8DAEA /* MTGSet.swift */; };
 		CF1FA2A52006AC2F00E8DAEA /* PrintedInBlockToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1FA2A42006AC2F00E8DAEA /* PrintedInBlockToken.swift */; };
 		CF1FA2A72006AD2800E8DAEA /* UnrollToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1FA2A62006AD2800E8DAEA /* UnrollToken.swift */; };
 		CF1FA2A92006AD9300E8DAEA /* CombinedToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1FA2A82006AD9300E8DAEA /* CombinedToken.swift */; };
@@ -75,6 +74,10 @@
 		CF1FA2B42006C51600E8DAEA /* TextToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1FA2B32006C51600E8DAEA /* TextToken.swift */; };
 		CF4BE0302007BB030054FFEA /* LayoutToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4BE02F2007BB030054FFEA /* LayoutToken.swift */; };
 		CF4BE0322007BBEB0054FFEA /* StringEnumToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4BE0312007BBEB0054FFEA /* StringEnumToken.swift */; };
+		CF4BE0622007E88A0054FFEA /* CardSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4BE0612007E88A0054FFEA /* CardSet.swift */; };
+		CF4BE0652007E9280054FFEA /* CardSetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4BE0642007E9280054FFEA /* CardSetType.swift */; };
+		CF4BE06A2007F0470054FFEA /* RemoteList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4BE0692007F0470054FFEA /* RemoteList.swift */; };
+		CF4BE06C2007F1380054FFEA /* JSONConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4BE06B2007F1380054FFEA /* JSONConvertible.swift */; };
 		CFD05BC420001A4A00CDF9C2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD05BC320001A4A00CDF9C2 /* AppDelegate.swift */; };
 		CFD05BC920001A4A00CDF9C2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFD05BC720001A4A00CDF9C2 /* Main.storyboard */; };
 		CFD05BCB20001A4A00CDF9C2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFD05BCA20001A4A00CDF9C2 /* Assets.xcassets */; };
@@ -110,7 +113,7 @@
 		CFD05C2820014C8400CDF9C2 /* CardFace.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD05C2720014C8400CDF9C2 /* CardFace.swift */; };
 		CFD05C2A2001616500CDF9C2 /* CardImageHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD05C292001616500CDF9C2 /* CardImageHolder.swift */; };
 		CFD05C2C2001622C00CDF9C2 /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD05C2B2001622C00CDF9C2 /* Layout.swift */; };
-		CFD05C2E20016FA900CDF9C2 /* CardImageURIType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD05C2D20016FA900CDF9C2 /* CardImageURIType.swift */; };
+		CFD05C2E20016FA900CDF9C2 /* CardImageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD05C2D20016FA900CDF9C2 /* CardImageType.swift */; };
 		CFD05C31200182B900CDF9C2 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD05C30200182B900CDF9C2 /* ImageCache.swift */; };
 		CFD05C382002294100CDF9C2 /* CardDetailsHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD05C372002294100CDF9C2 /* CardDetailsHolder.swift */; };
 		CFD05C3A2002525900CDF9C2 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD05C392002525900CDF9C2 /* UIColor+Extension.swift */; };
@@ -184,7 +187,6 @@
 		CF1FA29C2006A87100E8DAEA /* FrameToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameToken.swift; sourceTree = "<group>"; };
 		CF1FA29E2006A89B00E8DAEA /* Border.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Border.swift; sourceTree = "<group>"; };
 		CF1FA2A02006A8D600E8DAEA /* BorderToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderToken.swift; sourceTree = "<group>"; };
-		CF1FA2A22006A9E500E8DAEA /* MTGSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTGSet.swift; sourceTree = "<group>"; };
 		CF1FA2A42006AC2F00E8DAEA /* PrintedInBlockToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrintedInBlockToken.swift; sourceTree = "<group>"; };
 		CF1FA2A62006AD2800E8DAEA /* UnrollToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnrollToken.swift; sourceTree = "<group>"; };
 		CF1FA2A82006AD9300E8DAEA /* CombinedToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombinedToken.swift; sourceTree = "<group>"; };
@@ -195,6 +197,10 @@
 		CF1FA2B32006C51600E8DAEA /* TextToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextToken.swift; sourceTree = "<group>"; };
 		CF4BE02F2007BB030054FFEA /* LayoutToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutToken.swift; sourceTree = "<group>"; };
 		CF4BE0312007BBEB0054FFEA /* StringEnumToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringEnumToken.swift; sourceTree = "<group>"; };
+		CF4BE0612007E88A0054FFEA /* CardSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSet.swift; sourceTree = "<group>"; };
+		CF4BE0642007E9280054FFEA /* CardSetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSetType.swift; sourceTree = "<group>"; };
+		CF4BE0692007F0470054FFEA /* RemoteList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteList.swift; sourceTree = "<group>"; };
+		CF4BE06B2007F1380054FFEA /* JSONConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONConvertible.swift; sourceTree = "<group>"; };
 		CFD05BC020001A4A00CDF9C2 /* Scryfall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scryfall.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFD05BC320001A4A00CDF9C2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CFD05BC820001A4A00CDF9C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -234,7 +240,7 @@
 		CFD05C2720014C8400CDF9C2 /* CardFace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardFace.swift; sourceTree = "<group>"; };
 		CFD05C292001616500CDF9C2 /* CardImageHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardImageHolder.swift; sourceTree = "<group>"; };
 		CFD05C2B2001622C00CDF9C2 /* Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Layout.swift; sourceTree = "<group>"; };
-		CFD05C2D20016FA900CDF9C2 /* CardImageURIType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardImageURIType.swift; sourceTree = "<group>"; };
+		CFD05C2D20016FA900CDF9C2 /* CardImageType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardImageType.swift; sourceTree = "<group>"; };
 		CFD05C30200182B900CDF9C2 /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 		CFD05C372002294100CDF9C2 /* CardDetailsHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailsHolder.swift; sourceTree = "<group>"; };
 		CFD05C392002525900CDF9C2 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
@@ -347,7 +353,7 @@
 			isa = PBXGroup;
 			children = (
 				CF1FA29E2006A89B00E8DAEA /* Border.swift */,
-				CFD05C2D20016FA900CDF9C2 /* CardImageURIType.swift */,
+				CFD05C2D20016FA900CDF9C2 /* CardImageType.swift */,
 				CF1FA23A20042D9800E8DAEA /* Color.swift */,
 				CF1FA2332004235A00E8DAEA /* Comparison.swift */,
 				CF1FA2882006A38A00E8DAEA /* Cube.swift */,
@@ -357,7 +363,6 @@
 				CFD05C2B2001622C00CDF9C2 /* Layout.swift */,
 				CF0CE3742004031B00000EE1 /* Legality.swift */,
 				CF1FA25420057FF200E8DAEA /* ManaSymbol.swift */,
-				CF1FA2A22006A9E500E8DAEA /* MTGSet.swift */,
 				CF1FA2562005833400E8DAEA /* OracleSymbol.swift */,
 				CF1FA27C2006A03000E8DAEA /* Product.swift */,
 				CF1FA25020057C2800E8DAEA /* QueryError.swift */,
@@ -365,6 +370,7 @@
 				CF1FA24C200579F600E8DAEA /* TextValue.swift */,
 				CF1FA25C20058EBB00E8DAEA /* Trait.swift */,
 				CF1FA2962006A5FC00E8DAEA /* Watermark.swift */,
+				CF4BE0642007E9280054FFEA /* CardSetType.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -382,6 +388,23 @@
 				CF4BE0312007BBEB0054FFEA /* StringEnumToken.swift */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		CF4BE0632007E8960054FFEA /* MVVM */ = {
+			isa = PBXGroup;
+			children = (
+				CFD05C1220003E5500CDF9C2 /* BindableType.swift */,
+			);
+			path = MVVM;
+			sourceTree = "<group>";
+		};
+		CF4BE0682007F0350054FFEA /* Lists */ = {
+			isa = PBXGroup;
+			children = (
+				CFD05C172001144500CDF9C2 /* CardsList.swift */,
+				CF4BE0692007F0470054FFEA /* RemoteList.swift */,
+			);
+			path = Lists;
 			sourceTree = "<group>";
 		};
 		CFD05BB720001A4A00CDF9C2 = {
@@ -455,12 +478,14 @@
 		CFD05BE8200024E900CDF9C2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				CF4BE0682007F0350054FFEA /* Lists */,
+				CF4BE0632007E8960054FFEA /* MVVM */,
 				CF1FA23920042D8000E8DAEA /* Constants */,
 				CF0CE37620041A6E00000EE1 /* Queries */,
 				CFD05C0320002F7E00CDF9C2 /* Card.swift */,
 				CFD05C2720014C8400CDF9C2 /* CardFace.swift */,
-				CFD05C172001144500CDF9C2 /* CardsList.swift */,
-				CFD05C1220003E5500CDF9C2 /* BindableType.swift */,
+				CF4BE0612007E88A0054FFEA /* CardSet.swift */,
+				CF4BE06B2007F1380054FFEA /* JSONConvertible.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -716,13 +741,14 @@
 				CF0CE36F2003EA5E00000EE1 /* LegalityView.swift in Sources */,
 				CF1FA2A12006A8D600E8DAEA /* BorderToken.swift in Sources */,
 				CF0CE3752004031B00000EE1 /* Legality.swift in Sources */,
-				CF1FA2A32006A9E500E8DAEA /* MTGSet.swift in Sources */,
+				CF4BE06A2007F0470054FFEA /* RemoteList.swift in Sources */,
 				CFD05C3A2002525900CDF9C2 /* UIColor+Extension.swift in Sources */,
 				CFD05BED20002D9300CDF9C2 /* WebService.swift in Sources */,
 				CF1FA2952006A59400E8DAEA /* ArtistToken.swift in Sources */,
 				CFD05C382002294100CDF9C2 /* CardDetailsHolder.swift in Sources */,
 				CF1FA2B22006BE4A00E8DAEA /* EqualityToken.swift in Sources */,
 				CFD05C0220002F5600CDF9C2 /* ScryfallService.swift in Sources */,
+				CF4BE0652007E9280054FFEA /* CardSetType.swift in Sources */,
 				CF1FA25520057FF200E8DAEA /* ManaSymbol.swift in Sources */,
 				CF1FA28F2006A4D800E8DAEA /* BannedToken.swift in Sources */,
 				CF1FA2AF2006B74800E8DAEA /* ComparableToken.swift in Sources */,
@@ -776,9 +802,10 @@
 				CF1FA2B42006C51600E8DAEA /* TextToken.swift in Sources */,
 				CF1FA2932006A55B00E8DAEA /* FlavorTextToken.swift in Sources */,
 				CF1FA27520069A6900E8DAEA /* SetToken.swift in Sources */,
-				CFD05C2E20016FA900CDF9C2 /* CardImageURIType.swift in Sources */,
+				CFD05C2E20016FA900CDF9C2 /* CardImageType.swift in Sources */,
 				CFD05C0F20003D3900CDF9C2 /* SceneCoordinatorType.swift in Sources */,
 				CFD05C2220013BCF00CDF9C2 /* Rarity.swift in Sources */,
+				CF4BE0622007E88A0054FFEA /* CardSet.swift in Sources */,
 				CF1FA22E20041EBF00E8DAEA /* QueryToken.swift in Sources */,
 				CF1FA2AD2006B65600E8DAEA /* NegatableToken.swift in Sources */,
 				CFD05C1620003F8500CDF9C2 /* UISearchController+Rx.swift in Sources */,
@@ -789,6 +816,7 @@
 				CF1FA24D200579F700E8DAEA /* TextValue.swift in Sources */,
 				CF1FA2972006A5FC00E8DAEA /* Watermark.swift in Sources */,
 				CF1FA2592005842400E8DAEA /* ManaToken.swift in Sources */,
+				CF4BE06C2007F1380054FFEA /* JSONConvertible.swift in Sources */,
 				CFD05C20200136F900CDF9C2 /* Style.swift in Sources */,
 				CFD05C2A2001616500CDF9C2 /* CardImageHolder.swift in Sources */,
 				CFD05BC420001A4A00CDF9C2 /* AppDelegate.swift in Sources */,

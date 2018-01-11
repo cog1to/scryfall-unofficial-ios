@@ -8,12 +8,12 @@
 
 import Foundation
 
-class SetToken: StringEnumToken<MTGSet> {
+class SetToken: EqualityToken<CardSet> {
     override func name() throws -> String {
-        return "set:"
+        return "set"
     }
     
     override func valueString() throws -> String {
-        return value.rawValue
+        return value.code
     }
 }

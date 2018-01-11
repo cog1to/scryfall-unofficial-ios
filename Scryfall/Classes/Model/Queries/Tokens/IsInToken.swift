@@ -9,7 +9,7 @@
 import Foundation
 
 enum IncludedType {
-    case set(MTGSet)
+    case set(CardSet)
     case game(Game)
     case product(Product)
 }
@@ -22,7 +22,7 @@ class IsInToken: EqualityToken<IncludedType> {
     override func valueString() throws -> String {
         switch value {
         case .set(let set):
-            return set.rawValue
+            return set.code
         case .game(let game):
             return game.rawValue
         case .product(let product):

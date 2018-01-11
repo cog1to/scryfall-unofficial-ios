@@ -1,5 +1,5 @@
 //
-//  CardImage.swift
+//  CardImageType.swift
 //  Scryfall
 //
 //  Created by Alexander Rogachev on 1/6/18.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum CardImageURIType: String {
+enum CardImageType: String {
     case small = "small"
     case normal = "normal"
     case large = "large"

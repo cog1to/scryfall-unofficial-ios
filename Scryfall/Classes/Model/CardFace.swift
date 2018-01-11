@@ -9,18 +9,18 @@
 import Foundation
 import SwiftyJSON
 
-class CardFace {
+class CardFace: JSONConvertible {
     var name: String
     var manaCost: String?
     var typeLine: String
     var oracleText: String?
     var flavorText: String?
-    var imageUris: [CardImageURIType: URL]
+    var imageUris: [CardImageType: URL]
     var power: String?
     var toughness: String?
     var loyalty: String?
     
-    init?(json: JSON) {
+    required init?(json: JSON) {
         guard let name = json["name"].string else {
             return nil
         }
@@ -39,8 +39,8 @@ class CardFace {
         
         if let imageUris = json["image_uris"].dictionaryObject {
             let filtered = imageUris.filter { ($0.value as? String) != nil }
-            self.imageUris = Dictionary<CardImageURIType, URL>(uniqueKeysWithValues: filtered.map { (pair) in
-                return (CardImageURIType(rawValue: pair.key)!, URL(string: pair.value as! String)!)
+            self.imageUris = Dictionary<CardImageType, URL>(uniqueKeysWithValues: filtered.map { (pair) in
+                return (CardImageType(rawValue: pair.key)!, URL(string: pair.value as! String)!)
             })
         } else {
             self.imageUris = [:]

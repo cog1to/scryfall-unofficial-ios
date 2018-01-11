@@ -8,8 +8,12 @@
 
 import Foundation
 
-class PrintedInBlockToken: StringEnumToken<MTGSet> {
+class PrintedInBlockToken: EqualityToken<CardSet> {
     override func name() throws -> String {
         return "block"
+    }
+    
+    override func valueString() throws -> String {
+        return value.code
     }
 }

@@ -37,4 +37,11 @@ protocol ScryfallServiceType {
      * - returns: An observable emitting downloaded cards list data.
      */
     func search(params: [URLQueryItem]) -> Observable<CardsList>
+    
+    /**
+     * Returns a list of known sets.
+     *
+     * - returns: An observable emitting array of known sets.
+     */
+    func sets() -> Observable<RemoteList<CardSet>>
 }
