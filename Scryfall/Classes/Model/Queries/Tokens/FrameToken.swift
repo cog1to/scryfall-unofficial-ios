@@ -8,12 +8,8 @@
 
 import Foundation
 
-class FrameToken: EqualityToken<Frame> {
+class FrameToken: StringEnumToken<Frame> {
     override func name() throws -> String {
         return "frame"
-    }
-    
-    override func valueString() throws -> String {
-        return value.rawValue
     }
 }

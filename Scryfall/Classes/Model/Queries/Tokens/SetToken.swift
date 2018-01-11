@@ -1,5 +1,5 @@
 //
-//  PrintedInGame.swift
+//  SetToken.swift
 //  Scryfall
 //
 //  Created by Alexander Rogachev on 1/10/18.
@@ -8,9 +8,9 @@
 
 import Foundation
 
-class PrintedInGame: EqualityToken<Game> {
+class SetToken: StringEnumToken<MTGSet> {
     override func name() throws -> String {
-        return "game"
+        return "set:"
     }
     
     override func valueString() throws -> String {

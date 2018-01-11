@@ -124,13 +124,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lD2-5k-QBT">
-                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="396"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="400"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="YKR-kc-FYE">
-                                        <rect key="frame" x="0.0" y="16" width="0.0" height="750.5"/>
+                                        <rect key="frame" x="16" y="16" width="288" height="750.5"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SVj-a1-of2" customClass="CardImageHolder" customModule="Scryfall" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="248" height="525"/>
+                                                <rect key="frame" x="20" y="0.0" width="248" height="525"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="equalSpacing" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="MXo-19-u7M">
                                                         <rect key="frame" x="0.0" y="0.0" width="248" height="525"/>
@@ -162,10 +162,10 @@
                                                 </connections>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Juc-Ck-hUq" customClass="CardDetailsHolder" customModule="Scryfall" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="545" width="0.0" height="128"/>
+                                                <rect key="frame" x="0.0" y="545" width="288" height="128"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="zsh-fc-4QC">
-                                                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="128"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="288" height="128"/>
                                                     </stackView>
                                                 </subviews>
                                                 <constraints>
@@ -179,10 +179,10 @@
                                                 </connections>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l0i-sj-1jl" customClass="CardPrintingHolder" customModule="Scryfall" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="693" width="0.0" height="57.5"/>
+                                                <rect key="frame" x="0.0" y="693" width="288" height="57.5"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="PCh-gI-E5j">
-                                                        <rect key="frame" x="0.0" y="8" width="0.0" height="41.5"/>
+                                                        <rect key="frame" x="8" y="8" width="272" height="41.5"/>
                                                         <subviews>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="set_bng" translatesAutoresizingMaskIntoConstraints="NO" id="ehh-Kc-Oak">
                                                                 <rect key="frame" x="0.0" y="9" width="24" height="24"/>
@@ -192,16 +192,16 @@
                                                                 </constraints>
                                                             </imageView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalCompressionResistancePriority="751" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="uTx-UZ-jSo">
-                                                                <rect key="frame" x="0.0" y="2" width="0.0" height="37.5"/>
+                                                                <rect key="frame" x="30" y="2" width="242" height="37.5"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Set name (ABR)" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Or1-Gx-sM6">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="20.5"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="242" height="20.5"/>
                                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Card number" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QkX-dW-77O">
-                                                                        <rect key="frame" x="0.0" y="20.5" width="0.0" height="17"/>
+                                                                        <rect key="frame" x="0.0" y="20.5" width="242" height="17"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
@@ -231,20 +231,20 @@
                                     </stackView>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="YKR-kc-FYE" firstAttribute="width" secondItem="lD2-5k-QBT" secondAttribute="width" constant="-32" id="8z2-q0-R6F"/>
                                     <constraint firstAttribute="bottom" secondItem="YKR-kc-FYE" secondAttribute="bottom" id="ASZ-oq-MMc"/>
-                                    <constraint firstAttribute="trailing" secondItem="YKR-kc-FYE" secondAttribute="trailing" id="Ahu-ey-fyz"/>
-                                    <constraint firstItem="YKR-kc-FYE" firstAttribute="leading" secondItem="lD2-5k-QBT" secondAttribute="leading" id="Mse-XS-s1P"/>
-                                    <constraint firstItem="YKR-kc-FYE" firstAttribute="width" secondItem="lD2-5k-QBT" secondAttribute="width" id="dx9-Od-rNK"/>
+                                    <constraint firstItem="YKR-kc-FYE" firstAttribute="leading" secondItem="lD2-5k-QBT" secondAttribute="leading" constant="16" id="SR9-bE-O5u"/>
+                                    <constraint firstAttribute="trailing" secondItem="YKR-kc-FYE" secondAttribute="trailing" constant="16" id="dJ0-07-dlU"/>
                                     <constraint firstItem="YKR-kc-FYE" firstAttribute="top" secondItem="lD2-5k-QBT" secondAttribute="top" constant="16" id="qCj-aC-wQt"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="0wl-t8-Sf8" firstAttribute="bottom" secondItem="lD2-5k-QBT" secondAttribute="bottom" constant="20" id="X1E-qk-sjJ"/>
+                            <constraint firstItem="0wl-t8-Sf8" firstAttribute="bottom" secondItem="lD2-5k-QBT" secondAttribute="bottom" constant="16" id="X1E-qk-sjJ"/>
                             <constraint firstItem="lD2-5k-QBT" firstAttribute="top" secondItem="0wl-t8-Sf8" secondAttribute="top" id="fi0-xe-eDd"/>
-                            <constraint firstItem="0wl-t8-Sf8" firstAttribute="trailing" secondItem="lD2-5k-QBT" secondAttribute="trailing" constant="16" id="qMT-Nx-gl3"/>
-                            <constraint firstItem="lD2-5k-QBT" firstAttribute="leading" secondItem="0wl-t8-Sf8" secondAttribute="leading" constant="16" id="ugC-aA-mlW"/>
+                            <constraint firstItem="0wl-t8-Sf8" firstAttribute="trailing" secondItem="lD2-5k-QBT" secondAttribute="trailing" id="qMT-Nx-gl3"/>
+                            <constraint firstItem="lD2-5k-QBT" firstAttribute="leading" secondItem="0wl-t8-Sf8" secondAttribute="leading" id="ugC-aA-mlW"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="0wl-t8-Sf8"/>
                     </view>
@@ -264,6 +264,34 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sl0-4X-F3Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="474.375" y="802.5"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="O8S-I7-u9Y">
+            <objects>
+                <tableViewController id="FIc-iG-mZN" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="6N0-4n-JPd">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="alH-5I-oH1">
+                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="alH-5I-oH1" id="mOm-6Q-Qkk">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="FIc-iG-mZN" id="wBw-bD-5au"/>
+                            <outlet property="delegate" destination="FIc-iG-mZN" id="ZZr-0F-ccq"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RNA-Nm-bEM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1337" y="800"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="iUf-Ee-aqT">

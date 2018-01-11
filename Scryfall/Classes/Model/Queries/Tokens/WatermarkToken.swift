@@ -8,12 +8,8 @@
 
 import Foundation
 
-class WatermarkToken: EqualityToken<Watermark> {
+class WatermarkToken: StringEnumToken<Watermark> {
     override func name() throws -> String {
         return "watermark"
-    }
-    
-    override func valueString() throws -> String {
-        return value.rawValue
     }
 }

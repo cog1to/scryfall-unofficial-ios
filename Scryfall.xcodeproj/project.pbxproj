@@ -42,10 +42,10 @@
 		CF1FA26F200695BF00E8DAEA /* SetsToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1FA26E200695BF00E8DAEA /* SetsToken.swift */; };
 		CF1FA271200695E500E8DAEA /* PaperPrints.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1FA270200695E500E8DAEA /* PaperPrints.swift */; };
 		CF1FA2732006960200E8DAEA /* PaperSets.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1FA2722006960200E8DAEA /* PaperSets.swift */; };
-		CF1FA27520069A6900E8DAEA /* PrintedInSetToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1FA27420069A6900E8DAEA /* PrintedInSetToken.swift */; };
+		CF1FA27520069A6900E8DAEA /* SetToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1FA27420069A6900E8DAEA /* SetToken.swift */; };
 		CF1FA27720069ED300E8DAEA /* IsInToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1FA27620069ED300E8DAEA /* IsInToken.swift */; };
 		CF1FA27920069F3100E8DAEA /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1FA27820069F3100E8DAEA /* Game.swift */; };
-		CF1FA27B20069F9600E8DAEA /* PrintedInGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1FA27A20069F9600E8DAEA /* PrintedInGame.swift */; };
+		CF1FA27B20069F9600E8DAEA /* GameToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1FA27A20069F9600E8DAEA /* GameToken.swift */; };
 		CF1FA27D2006A03000E8DAEA /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1FA27C2006A03000E8DAEA /* Product.swift */; };
 		CF1FA27F2006A1FD00E8DAEA /* YearToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1FA27E2006A1FD00E8DAEA /* YearToken.swift */; };
 		CF1FA2832006A2FE00E8DAEA /* USDToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1FA2822006A2FE00E8DAEA /* USDToken.swift */; };
@@ -73,6 +73,8 @@
 		CF1FA2AF2006B74800E8DAEA /* ComparableToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1FA2AE2006B74800E8DAEA /* ComparableToken.swift */; };
 		CF1FA2B22006BE4A00E8DAEA /* EqualityToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1FA2B12006BE4A00E8DAEA /* EqualityToken.swift */; };
 		CF1FA2B42006C51600E8DAEA /* TextToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1FA2B32006C51600E8DAEA /* TextToken.swift */; };
+		CF4BE0302007BB030054FFEA /* LayoutToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4BE02F2007BB030054FFEA /* LayoutToken.swift */; };
+		CF4BE0322007BBEB0054FFEA /* StringEnumToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4BE0312007BBEB0054FFEA /* StringEnumToken.swift */; };
 		CFD05BC420001A4A00CDF9C2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD05BC320001A4A00CDF9C2 /* AppDelegate.swift */; };
 		CFD05BC920001A4A00CDF9C2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFD05BC720001A4A00CDF9C2 /* Main.storyboard */; };
 		CFD05BCB20001A4A00CDF9C2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFD05BCA20001A4A00CDF9C2 /* Assets.xcassets */; };
@@ -160,10 +162,10 @@
 		CF1FA26E200695BF00E8DAEA /* SetsToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetsToken.swift; sourceTree = "<group>"; };
 		CF1FA270200695E500E8DAEA /* PaperPrints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaperPrints.swift; sourceTree = "<group>"; };
 		CF1FA2722006960200E8DAEA /* PaperSets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaperSets.swift; sourceTree = "<group>"; };
-		CF1FA27420069A6900E8DAEA /* PrintedInSetToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrintedInSetToken.swift; sourceTree = "<group>"; };
+		CF1FA27420069A6900E8DAEA /* SetToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetToken.swift; sourceTree = "<group>"; };
 		CF1FA27620069ED300E8DAEA /* IsInToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsInToken.swift; sourceTree = "<group>"; };
 		CF1FA27820069F3100E8DAEA /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
-		CF1FA27A20069F9600E8DAEA /* PrintedInGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrintedInGame.swift; sourceTree = "<group>"; };
+		CF1FA27A20069F9600E8DAEA /* GameToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameToken.swift; sourceTree = "<group>"; };
 		CF1FA27C2006A03000E8DAEA /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		CF1FA27E2006A1FD00E8DAEA /* YearToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearToken.swift; sourceTree = "<group>"; };
 		CF1FA2822006A2FE00E8DAEA /* USDToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USDToken.swift; sourceTree = "<group>"; };
@@ -191,6 +193,8 @@
 		CF1FA2AE2006B74800E8DAEA /* ComparableToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComparableToken.swift; sourceTree = "<group>"; };
 		CF1FA2B12006BE4A00E8DAEA /* EqualityToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EqualityToken.swift; sourceTree = "<group>"; };
 		CF1FA2B32006C51600E8DAEA /* TextToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextToken.swift; sourceTree = "<group>"; };
+		CF4BE02F2007BB030054FFEA /* LayoutToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutToken.swift; sourceTree = "<group>"; };
+		CF4BE0312007BBEB0054FFEA /* StringEnumToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringEnumToken.swift; sourceTree = "<group>"; };
 		CFD05BC020001A4A00CDF9C2 /* Scryfall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scryfall.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFD05BC320001A4A00CDF9C2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CFD05BC820001A4A00CDF9C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -288,7 +292,6 @@
 		CF0CE37620041A6E00000EE1 /* Queries */ = {
 			isa = PBXGroup;
 			children = (
-				CF1FA23920042D8000E8DAEA /* Constants */,
 				CF1FA2352004298400E8DAEA /* Tokens */,
 			);
 			path = Queries;
@@ -298,43 +301,44 @@
 			isa = PBXGroup;
 			children = (
 				CF1FA2B02006BD3700E8DAEA /* Base */,
-				CF1FA2312004200100E8DAEA /* ColorSetToken.swift */,
+				CF1FA2942006A59400E8DAEA /* ArtistToken.swift */,
+				CF1FA28E2006A4D800E8DAEA /* BannedToken.swift */,
+				CF1FA2A02006A8D600E8DAEA /* BorderToken.swift */,
+				CF1FA25A2005843A00E8DAEA /* CMCToken.swift */,
 				CF1FA23720042D3900E8DAEA /* ColorCountToken.swift */,
 				CF1FA23C200430CE00E8DAEA /* ColorIdentityToken.swift */,
-				CF1FA23E2004322500E8DAEA /* NameToken.swift */,
-				CF1FA24E20057B3E00E8DAEA /* TypeToken.swift */,
-				CF1FA25220057D0100E8DAEA /* OracleTextToken.swift */,
-				CF1FA2582005842400E8DAEA /* ManaToken.swift */,
-				CF1FA25A2005843A00E8DAEA /* CMCToken.swift */,
-				CF1FA25E200613D700E8DAEA /* TraitToken.swift */,
-				CF1FA262200692CA00E8DAEA /* PowerToken.swift */,
-				CF1FA264200692F400E8DAEA /* LoyaltyToken.swift */,
-				CF1FA2662006930800E8DAEA /* ToughnessToken.swift */,
-				CF1FA2682006936B00E8DAEA /* RarityToken.swift */,
-				CF1FA26A200694DE00E8DAEA /* PrintsToken.swift */,
+				CF1FA2312004200100E8DAEA /* ColorSetToken.swift */,
+				CF1FA2A82006AD9300E8DAEA /* CombinedToken.swift */,
+				CF1FA28A2006A3C100E8DAEA /* CubeToken.swift */,
+				CF1FA2862006A35500E8DAEA /* EURToken.swift */,
+				CF1FA2922006A55B00E8DAEA /* FlavorTextToken.swift */,
+				CF1FA28C2006A4A900E8DAEA /* FormatToken.swift */,
+				CF1FA29C2006A87100E8DAEA /* FrameToken.swift */,
+				CF1FA27A20069F9600E8DAEA /* GameToken.swift */,
 				CF1FA26C2006955500E8DAEA /* IncludeExtrasToken.swift */,
-				CF1FA26E200695BF00E8DAEA /* SetsToken.swift */,
+				CF1FA27620069ED300E8DAEA /* IsInToken.swift */,
+				CF4BE02F2007BB030054FFEA /* LayoutToken.swift */,
+				CF1FA264200692F400E8DAEA /* LoyaltyToken.swift */,
+				CF1FA2582005842400E8DAEA /* ManaToken.swift */,
+				CF1FA23E2004322500E8DAEA /* NameToken.swift */,
+				CF1FA25220057D0100E8DAEA /* OracleTextToken.swift */,
 				CF1FA270200695E500E8DAEA /* PaperPrints.swift */,
 				CF1FA2722006960200E8DAEA /* PaperSets.swift */,
-				CF1FA27420069A6900E8DAEA /* PrintedInSetToken.swift */,
-				CF1FA27620069ED300E8DAEA /* IsInToken.swift */,
-				CF1FA27A20069F9600E8DAEA /* PrintedInGame.swift */,
-				CF1FA27E2006A1FD00E8DAEA /* YearToken.swift */,
-				CF1FA2822006A2FE00E8DAEA /* USDToken.swift */,
-				CF1FA2842006A34300E8DAEA /* TIXToken.swift */,
-				CF1FA2862006A35500E8DAEA /* EURToken.swift */,
-				CF1FA28A2006A3C100E8DAEA /* CubeToken.swift */,
-				CF1FA28C2006A4A900E8DAEA /* FormatToken.swift */,
-				CF1FA28E2006A4D800E8DAEA /* BannedToken.swift */,
-				CF1FA2902006A4FC00E8DAEA /* RestrictedToken.swift */,
-				CF1FA2922006A55B00E8DAEA /* FlavorTextToken.swift */,
-				CF1FA2942006A59400E8DAEA /* ArtistToken.swift */,
-				CF1FA2982006A6AA00E8DAEA /* WatermarkToken.swift */,
-				CF1FA29C2006A87100E8DAEA /* FrameToken.swift */,
-				CF1FA2A02006A8D600E8DAEA /* BorderToken.swift */,
+				CF1FA262200692CA00E8DAEA /* PowerToken.swift */,
 				CF1FA2A42006AC2F00E8DAEA /* PrintedInBlockToken.swift */,
+				CF1FA26A200694DE00E8DAEA /* PrintsToken.swift */,
+				CF1FA2682006936B00E8DAEA /* RarityToken.swift */,
+				CF1FA2902006A4FC00E8DAEA /* RestrictedToken.swift */,
+				CF1FA26E200695BF00E8DAEA /* SetsToken.swift */,
+				CF1FA27420069A6900E8DAEA /* SetToken.swift */,
+				CF1FA2842006A34300E8DAEA /* TIXToken.swift */,
+				CF1FA2662006930800E8DAEA /* ToughnessToken.swift */,
+				CF1FA25E200613D700E8DAEA /* TraitToken.swift */,
+				CF1FA24E20057B3E00E8DAEA /* TypeToken.swift */,
 				CF1FA2A62006AD2800E8DAEA /* UnrollToken.swift */,
-				CF1FA2A82006AD9300E8DAEA /* CombinedToken.swift */,
+				CF1FA2822006A2FE00E8DAEA /* USDToken.swift */,
+				CF1FA2982006A6AA00E8DAEA /* WatermarkToken.swift */,
+				CF1FA27E2006A1FD00E8DAEA /* YearToken.swift */,
 			);
 			path = Tokens;
 			sourceTree = "<group>";
@@ -342,23 +346,25 @@
 		CF1FA23920042D8000E8DAEA /* Constants */ = {
 			isa = PBXGroup;
 			children = (
-				CFD05C2120013BCF00CDF9C2 /* Rarity.swift */,
-				CF0CE3672002A9AB00000EE1 /* Format.swift */,
-				CF0CE3742004031B00000EE1 /* Legality.swift */,
-				CF1FA2332004235A00E8DAEA /* Comparison.swift */,
-				CF1FA23A20042D9800E8DAEA /* Color.swift */,
-				CF1FA24C200579F600E8DAEA /* TextValue.swift */,
-				CF1FA25020057C2800E8DAEA /* QueryError.swift */,
-				CF1FA25420057FF200E8DAEA /* ManaSymbol.swift */,
-				CF1FA2562005833400E8DAEA /* OracleSymbol.swift */,
-				CF1FA25C20058EBB00E8DAEA /* Trait.swift */,
-				CF1FA27820069F3100E8DAEA /* Game.swift */,
-				CF1FA27C2006A03000E8DAEA /* Product.swift */,
-				CF1FA2882006A38A00E8DAEA /* Cube.swift */,
-				CF1FA2962006A5FC00E8DAEA /* Watermark.swift */,
-				CF1FA29A2006A76300E8DAEA /* Frame.swift */,
 				CF1FA29E2006A89B00E8DAEA /* Border.swift */,
+				CFD05C2D20016FA900CDF9C2 /* CardImageURIType.swift */,
+				CF1FA23A20042D9800E8DAEA /* Color.swift */,
+				CF1FA2332004235A00E8DAEA /* Comparison.swift */,
+				CF1FA2882006A38A00E8DAEA /* Cube.swift */,
+				CF0CE3672002A9AB00000EE1 /* Format.swift */,
+				CF1FA29A2006A76300E8DAEA /* Frame.swift */,
+				CF1FA27820069F3100E8DAEA /* Game.swift */,
+				CFD05C2B2001622C00CDF9C2 /* Layout.swift */,
+				CF0CE3742004031B00000EE1 /* Legality.swift */,
+				CF1FA25420057FF200E8DAEA /* ManaSymbol.swift */,
 				CF1FA2A22006A9E500E8DAEA /* MTGSet.swift */,
+				CF1FA2562005833400E8DAEA /* OracleSymbol.swift */,
+				CF1FA27C2006A03000E8DAEA /* Product.swift */,
+				CF1FA25020057C2800E8DAEA /* QueryError.swift */,
+				CFD05C2120013BCF00CDF9C2 /* Rarity.swift */,
+				CF1FA24C200579F600E8DAEA /* TextValue.swift */,
+				CF1FA25C20058EBB00E8DAEA /* Trait.swift */,
+				CF1FA2962006A5FC00E8DAEA /* Watermark.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -373,6 +379,7 @@
 				CF1FA26020068A2B00E8DAEA /* NumericToken.swift */,
 				CF1FA2B12006BE4A00E8DAEA /* EqualityToken.swift */,
 				CF1FA2B32006C51600E8DAEA /* TextToken.swift */,
+				CF4BE0312007BBEB0054FFEA /* StringEnumToken.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -448,13 +455,12 @@
 		CFD05BE8200024E900CDF9C2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				CF1FA23920042D8000E8DAEA /* Constants */,
 				CF0CE37620041A6E00000EE1 /* Queries */,
 				CFD05C0320002F7E00CDF9C2 /* Card.swift */,
 				CFD05C2720014C8400CDF9C2 /* CardFace.swift */,
-				CFD05C2D20016FA900CDF9C2 /* CardImageURIType.swift */,
 				CFD05C172001144500CDF9C2 /* CardsList.swift */,
 				CFD05C1220003E5500CDF9C2 /* BindableType.swift */,
-				CFD05C2B2001622C00CDF9C2 /* Layout.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -700,9 +706,11 @@
 				CFD05C062000317900CDF9C2 /* CardSearchViewModel.swift in Sources */,
 				CFD05C2620014C7600CDF9C2 /* CardDetailsViewModel.swift in Sources */,
 				CF1FA28B2006A3C100E8DAEA /* CubeToken.swift in Sources */,
+				CF4BE0302007BB030054FFEA /* LayoutToken.swift in Sources */,
 				CFD05C24200142F500CDF9C2 /* CardDetailsViewController.swift in Sources */,
 				CF1FA23F2004322500E8DAEA /* NameToken.swift in Sources */,
 				CF1FA25D20058EBB00E8DAEA /* Trait.swift in Sources */,
+				CF4BE0322007BBEB0054FFEA /* StringEnumToken.swift in Sources */,
 				CF1FA2852006A34300E8DAEA /* TIXToken.swift in Sources */,
 				CF1FA27D2006A03000E8DAEA /* Product.swift in Sources */,
 				CF0CE36F2003EA5E00000EE1 /* LegalityView.swift in Sources */,
@@ -720,7 +728,7 @@
 				CF1FA2AF2006B74800E8DAEA /* ComparableToken.swift in Sources */,
 				CF1FA24F20057B3E00E8DAEA /* TypeToken.swift in Sources */,
 				CF1FA26F200695BF00E8DAEA /* SetsToken.swift in Sources */,
-				CF1FA27B20069F9600E8DAEA /* PrintedInGame.swift in Sources */,
+				CF1FA27B20069F9600E8DAEA /* GameToken.swift in Sources */,
 				CF1FA2672006930800E8DAEA /* ToughnessToken.swift in Sources */,
 				CF1FA26120068A2B00E8DAEA /* NumericToken.swift in Sources */,
 				CFD05C2C2001622C00CDF9C2 /* Layout.swift in Sources */,
@@ -767,7 +775,7 @@
 				CF0CE3662002678E00000EE1 /* NSMutableAttributedString+Extension.swift in Sources */,
 				CF1FA2B42006C51600E8DAEA /* TextToken.swift in Sources */,
 				CF1FA2932006A55B00E8DAEA /* FlavorTextToken.swift in Sources */,
-				CF1FA27520069A6900E8DAEA /* PrintedInSetToken.swift in Sources */,
+				CF1FA27520069A6900E8DAEA /* SetToken.swift in Sources */,
 				CFD05C2E20016FA900CDF9C2 /* CardImageURIType.swift in Sources */,
 				CFD05C0F20003D3900CDF9C2 /* SceneCoordinatorType.swift in Sources */,
 				CFD05C2220013BCF00CDF9C2 /* Rarity.swift in Sources */,

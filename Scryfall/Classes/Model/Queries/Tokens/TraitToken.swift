@@ -8,7 +8,7 @@
 
 import Foundation
 
-class TraitToken: EqualityToken<Trait> {
+class TraitToken: StringEnumToken<Trait> {
     override func name() throws -> String {
         switch value {
         case .hasWatermark:

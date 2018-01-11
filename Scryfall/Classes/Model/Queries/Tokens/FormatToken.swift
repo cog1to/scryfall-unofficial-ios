@@ -8,12 +8,8 @@
 
 import Foundation
 
-class FormatToken: EqualityToken<Format> {
+class FormatToken: StringEnumToken<Format> {
     override func name() throws -> String {
         return "format"
-    }
-    
-    override func valueString() throws -> String {
-        return value.rawValue
     }
 }

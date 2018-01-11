@@ -8,7 +8,7 @@
 
 import Foundation
 
-class RarityToken: EqualityToken<Rarity> {
+class RarityToken: StringEnumToken<Rarity> {
     override func name() throws -> String {
         return "rarity"
     }

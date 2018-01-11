@@ -8,12 +8,8 @@
 
 import Foundation
 
-class BorderToken: EqualityToken<Border> {
+class BorderToken: StringEnumToken<Border> {
     override func name() throws -> String {
         return "border"
-    }
-    
-    override func valueString() throws -> String {
-        return value.rawValue
     }
 }

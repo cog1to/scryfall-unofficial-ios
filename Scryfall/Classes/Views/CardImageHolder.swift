@@ -49,11 +49,11 @@ class CardImageHolder: UIView {
     func configure(for imageUris: [URL], layout: Layout) {
         // Show or hide transform button. Right now we show it only for double-faced cards.
         switch layout {
-        case .normal, .split, .flip:
-            flipButton.isHidden = true
-        case .transform:
+        case .transform, .doubleFacedToken:
             flipButton.isHidden = false
             flipButton.setTitle("Transform", for: .normal)
+        default:
+            flipButton.isHidden = true
         }
         
         // Schedule image downloading.

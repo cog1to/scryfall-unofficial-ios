@@ -8,12 +8,8 @@
 
 import Foundation
 
-class RestrictedToken: EqualityToken<Format> {
+class RestrictedToken: StringEnumToken<Format> {
     override func name() throws -> String {
         return "restricted"
-    }
-    
-    override func valueString() throws -> String {
-        return value.rawValue
     }
 }

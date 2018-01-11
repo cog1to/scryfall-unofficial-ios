@@ -8,12 +8,8 @@
 
 import Foundation
 
-class CubeToken: EqualityToken<Cube> {
+class CubeToken: StringEnumToken<Cube> {
     override func name() throws -> String {
         return "cube"
-    }
-    
-    override func valueString() throws -> String {
-        return value.rawValue
     }
 }
