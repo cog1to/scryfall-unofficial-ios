@@ -18,7 +18,7 @@ import Action
  */
 class CardImageHolder: UIView {
     @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var flipButton: UIButton!
+    @IBOutlet weak var flipButton: RoundCornerButton!
     
     private static let downloader = ImageDownloader()
     private var images = Variable<[UIImage]>([])
@@ -37,7 +37,7 @@ class CardImageHolder: UIView {
     }
     
     fileprivate func setup() {
-        flipButton.rx.controlEvent(UIControlEvents.touchUpInside).subscribe(onNext: { [weak self] in
+        flipButton.onTap.subscribe(onNext: { [weak self] in
             guard let strongSelf = self else {
                 return
             }
@@ -51,7 +51,7 @@ class CardImageHolder: UIView {
         switch layout {
         case .transform, .doubleFacedToken:
             flipButton.isHidden = false
-            flipButton.setTitle("Transform", for: .normal)
+            flipButton.title = "Transform"
         default:
             flipButton.isHidden = true
         }

@@ -13,12 +13,16 @@ import RxSwift
 /**
  * Card search view controller. Shows search bar and list of search results.
  */
-class CardSearchViewController: UITableViewController, BindableType {
-    var searchController: UISearchController!
+class CardSearchViewController: UIViewController, BindableType {
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var searchField: UITextField!
+    @IBOutlet weak var loadingView: UIView!
+    @IBOutlet weak var activityLabel: UIActivityIndicatorView!
+    @IBOutlet weak var menuButton: UIButton!
+    
     var viewModel: CardSearchViewModel!
-    var disposeBag = DisposeBag()
-    var loadingView: UIView!
-    var activityLabel: UIActivityIndicatorView!
+    
+    private var disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,40 +41,22 @@ class CardSearchViewController: UITableViewController, BindableType {
         tableView.backgroundView = nil
         tableView.backgroundColor = Style.color(forKey: .background)
         
-        // Setup search controller.
         definesPresentationContext = true
-        searchController = UISearchController(searchResultsController: nil)
-        searchController.obscuresBackgroundDuringPresentation = false
-        searchController.searchBar.placeholder = "Search for cards..."
-        navigationItem.searchController = searchController
-        navigationItem.hidesSearchBarWhenScrolling = false
         
-        // Style search controller. A bit of a hack but I haven't seen a better way yet
-        if let textField = searchController.searchBar.value(forKey:"searchField") as? UIView {
-            textField.tintColor = Style.color(forKey: .gray)
-            let backgroundView = textField.subviews.first
-            backgroundView?.backgroundColor = UIColor.white
-            backgroundView?.layer.cornerRadius = 4
-            backgroundView?.clipsToBounds = true
-        }
+        loadingView.backgroundColor = Style.color(forKey: .background)
+        loadingView.layer.cornerRadius = 4.0
         
-        setup()
+        menuButton.tintColor = Style.color(forKey: .printingText)
     }
     
     func bindViewModel() {
         // Perform searh when search bar text changes.
-        searchController.rx.updateSearchResults
+        searchField.rx.text
             .filter { $0 != nil && $0!.count > 0 }
             .map { $0! }
             .debounce(RxTimeInterval(0.5), scheduler: MainScheduler.instance)
             .distinctUntilChanged()
             .subscribe(viewModel.onSearch.inputs)
-            .disposed(by: disposeBag)
-        
-        // Clear table on cancel.
-        searchController.searchBar.rx.cancelButtonClicked
-            .throttle(RxTimeInterval(0.5), scheduler: MainScheduler.instance)
-            .subscribe(viewModel.onCancel.inputs)
             .disposed(by: disposeBag)
         
         // Reload table when change in cards array is detected.
@@ -104,12 +90,12 @@ class CardSearchViewController: UITableViewController, BindableType {
     }
 }
 
-extension CardSearchViewController {
-    override func numberOfSections(in tableView: UITableView) -> Int {
+extension CardSearchViewController: UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard section == 0 else {
             return 0
         }
@@ -118,7 +104,7 @@ extension CardSearchViewController {
         return viewModel.cards.value.count + (viewModel.hasMore.value ? 1 : 0)
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // Loading cell
         if indexPath.row == viewModel.cards.value.count {
             let loadingCell = tableView.dequeueReusableCell(withIdentifier: "LoadingCell", for: indexPath) as! LoadingCell
@@ -137,28 +123,5 @@ extension CardSearchViewController {
         cardCell.selectedBackgroundView =  selectionView;
         
         return cardCell
-    }
-}
-
-extension CardSearchViewController {
-    
-    // Initial UI setup. Creates loading indicator.
-    func setup() {
-        activityLabel = UIActivityIndicatorView()
-        activityLabel.translatesAutoresizingMaskIntoConstraints = false
-        activityLabel.activityIndicatorViewStyle = .gray
-        activityLabel.startAnimating()
-        
-        loadingView = UIView()
-        loadingView.backgroundColor = Style.color(forKey: .background)
-        loadingView.layer.cornerRadius = 4.0
-        loadingView.translatesAutoresizingMaskIntoConstraints = false
-        loadingView.addSubview(activityLabel)
-        loadingView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-8-[label]-8-|", options: [], metrics: nil, views: ["label": activityLabel]))
-        loadingView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-8-[label]-8-|", options: [], metrics: nil, views: ["label": activityLabel]))
-        
-        tableView.addSubview(loadingView)
-        tableView.addConstraint(NSLayoutConstraint(item: loadingView, attribute: .centerX, relatedBy: .equal, toItem: tableView, attribute: .centerX, multiplier: 1.0, constant: 0.0))
-        tableView.addConstraint(NSLayoutConstraint(item: loadingView, attribute: .centerY, relatedBy: .equal, toItem: tableView, attribute: .centerY, multiplier: 1.0, constant: 0.0))
     }
 }

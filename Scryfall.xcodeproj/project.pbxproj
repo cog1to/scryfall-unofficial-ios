@@ -78,6 +78,9 @@
 		CF4BE0652007E9280054FFEA /* CardSetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4BE0642007E9280054FFEA /* CardSetType.swift */; };
 		CF4BE06A2007F0470054FFEA /* RemoteList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4BE0692007F0470054FFEA /* RemoteList.swift */; };
 		CF4BE06C2007F1380054FFEA /* JSONConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4BE06B2007F1380054FFEA /* JSONConvertible.swift */; };
+		CF4BE070200826710054FFEA /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4BE06F200826710054FFEA /* UIView+Extension.swift */; };
+		CF4BE0792008D1890054FFEA /* RoundCornerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4BE0782008D1890054FFEA /* RoundCornerButton.swift */; };
+		CF4BE07D2008DB740054FFEA /* CardsListSettingsHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF4BE07C2008DB740054FFEA /* CardsListSettingsHeader.xib */; };
 		CFD05BC420001A4A00CDF9C2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD05BC320001A4A00CDF9C2 /* AppDelegate.swift */; };
 		CFD05BC920001A4A00CDF9C2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFD05BC720001A4A00CDF9C2 /* Main.storyboard */; };
 		CFD05BCB20001A4A00CDF9C2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFD05BCA20001A4A00CDF9C2 /* Assets.xcassets */; };
@@ -201,6 +204,9 @@
 		CF4BE0642007E9280054FFEA /* CardSetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSetType.swift; sourceTree = "<group>"; };
 		CF4BE0692007F0470054FFEA /* RemoteList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteList.swift; sourceTree = "<group>"; };
 		CF4BE06B2007F1380054FFEA /* JSONConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONConvertible.swift; sourceTree = "<group>"; };
+		CF4BE06F200826710054FFEA /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		CF4BE0782008D1890054FFEA /* RoundCornerButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundCornerButton.swift; sourceTree = "<group>"; };
+		CF4BE07C2008DB740054FFEA /* CardsListSettingsHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardsListSettingsHeader.xib; sourceTree = "<group>"; };
 		CFD05BC020001A4A00CDF9C2 /* Scryfall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scryfall.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFD05BC320001A4A00CDF9C2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CFD05BC820001A4A00CDF9C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -277,6 +283,7 @@
 			children = (
 				CFD05C392002525900CDF9C2 /* UIColor+Extension.swift */,
 				CF0CE3652002678E00000EE1 /* NSMutableAttributedString+Extension.swift */,
+				CF4BE06F200826710054FFEA /* UIView+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -291,6 +298,8 @@
 				CF0CE3722003EDD100000EE1 /* LegalityTable.swift */,
 				CF1FA2422004C62700E8DAEA /* CyclingLabel.swift */,
 				CF1FA24A200569D700E8DAEA /* CardPrintingHolder.swift */,
+				CF4BE0782008D1890054FFEA /* RoundCornerButton.swift */,
+				CF4BE07C2008DB740054FFEA /* CardsListSettingsHeader.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -662,6 +671,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF4BE07D2008DB740054FFEA /* CardsListSettingsHeader.xib in Resources */,
 				CFD05BCE20001A4A00CDF9C2 /* LaunchScreen.storyboard in Resources */,
 				CFD05BCB20001A4A00CDF9C2 /* Assets.xcassets in Resources */,
 				CFD05BC920001A4A00CDF9C2 /* Main.storyboard in Resources */,
@@ -792,11 +802,13 @@
 				CFD05C1B200123E600CDF9C2 /* CardSearchCell.swift in Sources */,
 				CF1FA2992006A6AA00E8DAEA /* WatermarkToken.swift in Sources */,
 				CFD05C1D2001246700CDF9C2 /* LoadingCell.swift in Sources */,
+				CF4BE070200826710054FFEA /* UIView+Extension.swift in Sources */,
 				CF1FA2732006960200E8DAEA /* PaperSets.swift in Sources */,
 				CF1FA29F2006A89B00E8DAEA /* Border.swift in Sources */,
 				CF1FA2A52006AC2F00E8DAEA /* PrintedInBlockToken.swift in Sources */,
 				CF1FA271200695E500E8DAEA /* PaperPrints.swift in Sources */,
 				CF1FA27720069ED300E8DAEA /* IsInToken.swift in Sources */,
+				CF4BE0792008D1890054FFEA /* RoundCornerButton.swift in Sources */,
 				CF1FA25120057C2800E8DAEA /* QueryError.swift in Sources */,
 				CF0CE3662002678E00000EE1 /* NSMutableAttributedString+Extension.swift in Sources */,
 				CF1FA2B42006C51600E8DAEA /* TextToken.swift in Sources */,
