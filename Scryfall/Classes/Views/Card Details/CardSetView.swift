@@ -1,5 +1,5 @@
 //
-//  CardPrintingHolder.swift
+//  CardSetView.swift
 //  Scryfall
 //
 //  Created by Alexander Rogachev on 1/10/18.
@@ -11,9 +11,9 @@ import UIKit
 import RxSwift
 
 /**
- * View that displays a single card's printing info.
+ * View that displays a single card's set info.
  */
-class CardPrintingHolder: UIView {
+class CardSetView: UIView {
     @IBOutlet weak var setIconView: UIImageView!
     @IBOutlet weak var setNameLabel: UILabel!
     @IBOutlet weak var cardNumberLabel: UILabel!

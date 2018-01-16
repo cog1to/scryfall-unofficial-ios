@@ -21,21 +21,24 @@ import SwiftyJSON
 
 class Card: CardFace {
     var ID: String
-    var multiverseIDs: [Int]?
-    var mtgoID: Int?
-    var uri: URL?
-    var scryfallUri: URL?
-    var printSearchUri: URL?
+    var multiverseIDs: [Int]? = nil
+    var mtgoID: Int? = nil
+    var uri: URL? = nil
+    var scryfallUri: URL? = nil
+    var printSearchUri: URL? = nil
     var setName: String
     var setCode: String
     var collectorsNumber: String
-    var priceUSD: Float?
+    var priceUSD: Float? = nil
+    var priceEUR: Float? = nil
+    var priceTIX: Float? = nil
     var rarity: Rarity
-    var faces: [CardFace]?
+    var faces: [CardFace]? = nil
     var layout: Layout
-    var artist: String?
+    var artist: String? = nil
     var reserved: Bool
     var legalities: [Format: Legality]
+    var watermark: Watermark? = nil
     
     required init?(json: JSON) {
         // Validate mandatory fields.
@@ -85,15 +88,27 @@ class Card: CardFace {
         self.mtgoID = json["mtgo_id"].int
         self.uri = json["uri"].url
         self.scryfallUri = json["scryfall_uri"].url
-        self.printSearchUri = json["print_search_uri"].url
+        self.printSearchUri = json["prints_search_uri"].url
         self.artist = json["artist"].string
+        
+        if let watermarkString = json["watermark"].string, let watermark = Watermark(rawValue: watermarkString) {
+            self.watermark = watermark
+        }
         
         if let multiverseArray = json["multiverse_ids"].array {
             self.multiverseIDs = multiverseArray.map { return $0.intValue }
         }
         
-        if let priceString = json["usd"].string, let price = Float(priceString) {
+        if let priceUSD = json["usd"].string, let price = Float(priceUSD) {
             self.priceUSD = price
+        }
+        
+        if let priceEUR = json["eur"].string, let price = Float(priceEUR) {
+            self.priceEUR = price
+        }
+        
+        if let priceTIX = json["tix"].string, let price = Float(priceTIX) {
+            self.priceTIX = price
         }
         
         if let faces = json["card_faces"].array {

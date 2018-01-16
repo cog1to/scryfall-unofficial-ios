@@ -1,5 +1,5 @@
 //
-//  CardImageCollectionCell.swift
+//  CardImageView.swift
 //  Scryfall
 //
 //  Created by Alexander Rogachev on 1/6/18.
@@ -16,7 +16,7 @@ import Action
  * View that holds card image.
  * Call configure(for:layout:) to make it download and show card images.
  */
-class CardImageHolder: UIView {
+class CardImageView: UIView {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var flipButton: RoundCornerButton!
     
@@ -57,7 +57,7 @@ class CardImageHolder: UIView {
         }
         
         // Schedule image downloading.
-        Observable.from(imageUris.map { return CardImageHolder.downloader.image(for: $0) })
+        Observable.from(imageUris.map { return CardImageView.downloader.image(for: $0) })
             .merge(maxConcurrent: 1)
             .filter { $0 != nil }
             .map { $0! }

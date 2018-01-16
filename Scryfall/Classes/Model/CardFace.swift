@@ -11,14 +11,14 @@ import SwiftyJSON
 
 class CardFace: JSONConvertible {
     var name: String
-    var manaCost: String?
+    var manaCost: String? = nil
     var typeLine: String
-    var oracleText: String?
-    var flavorText: String?
+    var oracleText: String? = nil
+    var flavorText: String? = nil
     var imageUris: [CardImageType: URL]
-    var power: String?
-    var toughness: String?
-    var loyalty: String?
+    var power: String? = nil
+    var toughness: String? = nil
+    var loyalty: String? = nil
     
     required init?(json: JSON) {
         guard let name = json["name"].string else {

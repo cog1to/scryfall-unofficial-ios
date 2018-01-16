@@ -1,5 +1,5 @@
 //
-//  CardDetailsHolder.swift
+//  CardDetailsView.swift
 //  Scryfall
 //
 //  Created by Alexander Rogachev on 1/7/18.
@@ -13,7 +13,7 @@ import UIKit
  * View that holds card details information.
  * Call configure(for:) method to make it generate formatted card data.
  */
-class CardDetailsHolder: UIView {
+class CardDetailsView: UIView {
     @IBOutlet weak var stackView: UIStackView!
     
     override func awakeFromNib() {
@@ -60,6 +60,12 @@ class CardDetailsHolder: UIView {
             }
         }
         
+        // Watermark.
+        if let watermark = card.watermark {
+            stackView.addArrangedSubview(separator())
+            stackView.addArrangedSubview(label(text: linkText(prefix: "Watermark:", value: watermark.name)))
+        }
+        
         // Artist.
         if let artist = card.artist {
             stackView.addArrangedSubview(separator())
@@ -87,7 +93,7 @@ class CardDetailsHolder: UIView {
 }
 
 /// Subviews generation.
-extension CardDetailsHolder {
+extension CardDetailsView {
     fileprivate func separator() -> UIView {
         let view = UIView(frame: CGRect(x: 0, y: 0, width: 1, height: 1.0/UIScreen.main.scale))
         view.backgroundColor = Style.color(forKey: .gray)
@@ -131,7 +137,7 @@ extension CardDetailsHolder {
 }
 
 /// Formatted strings generation.
-extension CardDetailsHolder {
+extension CardDetailsView {
     
     /**
      * Creates formatted oracle text combined with flavor text string.

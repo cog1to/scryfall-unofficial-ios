@@ -206,7 +206,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="YKR-kc-FYE">
                                         <rect key="frame" x="16" y="16" width="288" height="709.5"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SVj-a1-of2" customClass="CardImageHolder" customModule="Scryfall" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SVj-a1-of2" customClass="CardImageView" customModule="Scryfall" customModuleProvider="target">
                                                 <rect key="frame" x="20" y="0.0" width="248" height="484"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="equalSpacing" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="MXo-19-u7M">
@@ -242,7 +242,7 @@
                                                     <outlet property="imageView" destination="WWM-7N-cBG" id="Vck-LH-3iX"/>
                                                 </connections>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Juc-Ck-hUq" customClass="CardDetailsHolder" customModule="Scryfall" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Juc-Ck-hUq" customClass="CardDetailsView" customModule="Scryfall" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="504" width="288" height="128"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="zsh-fc-4QC">
@@ -259,7 +259,7 @@
                                                     <outlet property="stackView" destination="zsh-fc-4QC" id="0uQ-He-72F"/>
                                                 </connections>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l0i-sj-1jl" customClass="CardPrintingHolder" customModule="Scryfall" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l0i-sj-1jl" customClass="CardSetView" customModule="Scryfall" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="652" width="288" height="57.5"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="PCh-gI-E5j">
@@ -337,9 +337,10 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="cardDetailsHolder" destination="Juc-Ck-hUq" id="CSQ-Gb-HAb"/>
-                        <outlet property="cardImageHolder" destination="SVj-a1-of2" id="6Gv-ju-tE7"/>
-                        <outlet property="cardSetHolder" destination="l0i-sj-1jl" id="eaZ-Yd-o5E"/>
+                        <outlet property="cardDetailsView" destination="Juc-Ck-hUq" id="bbR-hO-iQX"/>
+                        <outlet property="cardImageView" destination="SVj-a1-of2" id="C1B-V5-c9J"/>
+                        <outlet property="cardSetView" destination="l0i-sj-1jl" id="Tcg-aJ-OUc"/>
+                        <outlet property="stackView" destination="YKR-kc-FYE" id="qYV-Aw-DGj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sl0-4X-F3Q" userLabel="First Responder" sceneMemberID="firstResponder"/>

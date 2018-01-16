@@ -74,6 +74,23 @@ class Style {
         
         /// Card printing text color
         case printingText
+        
+        /// Background for price cell of selected printing
+        case selectedPrinting
+        
+        /// MARK: rarity colors
+        
+        /// Common card rarity symbol color
+        case common
+        
+        /// Uncommon card rarity symbol color
+        case uncommon
+        
+        /// Rare card rarity symbol color
+        case rare
+        
+        // Mythic Rare card rarity symbol color
+        case mythicRare
     }
     
     /**
@@ -108,6 +125,16 @@ class Style {
             return UIColor(netHex: 0xF9F9F9)
         case .printingText:
             return UIColor.white
+        case .selectedPrinting:
+            return UIColor(netHex: 0xF5F5F5)
+        case .common:
+            return UIColor(netHex: 0x15151C)
+        case .uncommon:
+            return UIColor(netHex: 0x6B848B)
+        case .rare:
+            return UIColor(netHex: 0xC19C00)
+        case .mythicRare:
+            return UIColor(netHex: 0xE55501)
         }
     }
     

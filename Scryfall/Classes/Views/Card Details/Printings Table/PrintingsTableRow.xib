@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="tED-rn-oj1" customClass="PrintingsTableRow" customModule="Scryfall" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="41"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" translatesAutoresizingMaskIntoConstraints="NO" id="BUG-34-7Vj">
+                    <rect key="frame" x="-8" y="12.5" width="16" height="16"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="16" id="KGT-EM-9YY"/>
+                        <constraint firstAttribute="width" constant="16" id="Oed-8X-BDR"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="Sample Text" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="weW-VJ-Buv">
+                    <rect key="frame" x="14" y="4" width="84" height="33"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" horizontalCompressionResistancePriority="753" ambiguous="YES" distribution="equalSpacing" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="rSp-8f-Var">
+                    <rect key="frame" x="246.5" y="8" width="120.5" height="25"/>
+                </stackView>
+            </subviews>
+            <constraints>
+                <constraint firstItem="rSp-8f-Var" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="weW-VJ-Buv" secondAttribute="trailing" constant="8" id="4s7-Pl-p2L"/>
+                <constraint firstItem="BUG-34-7Vj" firstAttribute="centerY" secondItem="tED-rn-oj1" secondAttribute="centerY" id="681-A9-hdk"/>
+                <constraint firstItem="rSp-8f-Var" firstAttribute="top" secondItem="tED-rn-oj1" secondAttribute="top" constant="8" id="FOA-yZ-bk4"/>
+                <constraint firstItem="BUG-34-7Vj" firstAttribute="leading" secondItem="tED-rn-oj1" secondAttribute="leading" constant="-8" id="HlK-DQ-O6x"/>
+                <constraint firstAttribute="trailing" secondItem="rSp-8f-Var" secondAttribute="trailing" constant="8" id="lCB-V6-4pG"/>
+                <constraint firstAttribute="bottom" secondItem="rSp-8f-Var" secondAttribute="bottom" constant="8" id="nfK-3J-3zS"/>
+                <constraint firstAttribute="bottom" secondItem="weW-VJ-Buv" secondAttribute="bottom" constant="4" id="xM8-hw-ul8"/>
+                <constraint firstItem="weW-VJ-Buv" firstAttribute="leading" secondItem="tED-rn-oj1" secondAttribute="leading" constant="14" id="yXS-c4-6TZ"/>
+                <constraint firstItem="weW-VJ-Buv" firstAttribute="top" secondItem="tED-rn-oj1" secondAttribute="top" constant="4" id="zVH-6X-NlY"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="pricesStackView" destination="rSp-8f-Var" id="PCc-Ol-2jA"/>
+                <outlet property="rarityIcon" destination="BUG-34-7Vj" id="Idp-T5-PdY"/>
+                <outlet property="titleLabel" destination="weW-VJ-Buv" id="Qfm-px-bFt"/>
+            </connections>
+            <point key="canvasLocation" x="33.5" y="-702.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="star" width="10" height="10"/>
+    </resources>
+</document>

@@ -58,4 +58,107 @@ enum Watermark: String {
     case transformers = "transformers"
     case wotc = "wotc"
     case wpn = "wpn"
+    
+    var name: String {
+        switch self {
+        case .set:
+            return "Set Symbol"
+        case .abzan:
+            return "Abzan"
+        case .agentsofsneak:
+            return "Agents of S.N.E.A.K."
+        case .arena:
+            return "Arena"
+        case .atarka:
+            return "Atarka"
+        case .azorius:
+            return "Azorius"
+        case .boros:
+            return "Boros"
+        case .colorpie:
+            return "Color pie"
+        case .conspiracy:
+            return "Conspiracy"
+        case .crossbreedlabs:
+            return "Crossbreed Labs"
+        case .dci:
+            return "DCI"
+        case .dimir:
+            return "Dimir"
+        case .dromoka:
+            return "Dromoka"
+        case .dnd:
+            return "D&D"
+        case .fnm:
+            return "Friday Night Magic"
+        case .goblinexplosioneers:
+            return "Goblin Explosioneers"
+        case .golgari:
+            return "Golgari"
+        case .gruul:
+            return "Gruul"
+        case .grandprix:
+            return "Grandprix"
+        case .izzet:
+            return "Izeet"
+        case .jeskai:
+            return "Jeskai"
+        case .junior:
+            return "Junior Series"
+        case .juniorapac:
+            return "Junior Series APAC"
+        case .junioreurope:
+            return "Junior Series Europe"
+        case .kolaghan:
+            return "Kolaghan"
+        case .leagueofdastardlydoom:
+            return "League of Dastardly Doom"
+        case .mps:
+            return "MPS"
+        case .mtg:
+            return "Magic: The Gathering"
+        case .mardu:
+            return "Mardu"
+        case .mtg10:
+            return "Magic 10th Anniversary"
+        case .mtg15:
+            return "Magic 15th Anniversary"
+        case .mirran:
+            return "Mirran"
+        case .nerf:
+            return "Nerf"
+        case .orzhov:
+            return "Orzhov"
+        case .ojutai:
+            return "Ojutai"
+        case .orderofthewidget:
+            return "Order of the Widget"
+        case .phyrexian:
+            return "Phyrexian"
+        case .planeswalker:
+            return "Planeswalker"
+        case .protour:
+            return "Pro Tour"
+        case .rakdos:
+            return "Rakdos"
+        case .simic:
+            return "Simic"
+        case .sultai:
+            return "Sultai"
+        case .selesnya:
+            return "Selesnya"
+        case .silumgar:
+            return "Silumgar"
+        case .scholarship:
+            return "Scholarship Series"
+        case .temur:
+            return "Temur"
+        case .transformers:
+            return "Transformers"
+        case .wpn:
+            return "Wizards Play Network"
+        case .wotc:
+            return "Wizards of the Coast"
+        }
+    }
 }
