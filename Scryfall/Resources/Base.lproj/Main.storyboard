@@ -204,10 +204,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="400"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="YKR-kc-FYE">
-                                        <rect key="frame" x="16" y="16" width="288" height="709.5"/>
+                                        <rect key="frame" x="16" y="16" width="320" height="709.5"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SVj-a1-of2" customClass="CardImageView" customModule="Scryfall" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="0.0" width="248" height="484"/>
+                                                <rect key="frame" x="144" y="0.0" width="248" height="484"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="equalSpacing" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="MXo-19-u7M">
                                                         <rect key="frame" x="0.0" y="0.0" width="248" height="484"/>
@@ -243,10 +243,10 @@
                                                 </connections>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Juc-Ck-hUq" customClass="CardDetailsView" customModule="Scryfall" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="504" width="288" height="128"/>
+                                                <rect key="frame" x="0.0" y="504" width="320" height="128"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="zsh-fc-4QC">
-                                                        <rect key="frame" x="0.0" y="0.0" width="288" height="128"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="320" height="128"/>
                                                     </stackView>
                                                 </subviews>
                                                 <constraints>
@@ -260,10 +260,10 @@
                                                 </connections>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l0i-sj-1jl" customClass="CardSetView" customModule="Scryfall" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="652" width="288" height="57.5"/>
+                                                <rect key="frame" x="0.0" y="652" width="320" height="57.5"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="PCh-gI-E5j">
-                                                        <rect key="frame" x="8" y="8" width="272" height="41.5"/>
+                                                        <rect key="frame" x="8" y="8" width="320" height="41.5"/>
                                                         <subviews>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="set_bng" translatesAutoresizingMaskIntoConstraints="NO" id="ehh-Kc-Oak">
                                                                 <rect key="frame" x="0.0" y="9" width="24" height="24"/>
@@ -273,16 +273,16 @@
                                                                 </constraints>
                                                             </imageView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalCompressionResistancePriority="751" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="uTx-UZ-jSo">
-                                                                <rect key="frame" x="30" y="2" width="242" height="37.5"/>
+                                                                <rect key="frame" x="30" y="2" width="320" height="37.5"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Set name (ABR)" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Or1-Gx-sM6">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="242" height="20.5"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="320" height="20.5"/>
                                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Card number" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QkX-dW-77O">
-                                                                        <rect key="frame" x="0.0" y="20.5" width="242" height="17"/>
+                                                                        <rect key="frame" x="0.0" y="20.5" width="320" height="17"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
@@ -340,6 +340,7 @@
                         <outlet property="cardDetailsView" destination="Juc-Ck-hUq" id="bbR-hO-iQX"/>
                         <outlet property="cardImageView" destination="SVj-a1-of2" id="C1B-V5-c9J"/>
                         <outlet property="cardSetView" destination="l0i-sj-1jl" id="Tcg-aJ-OUc"/>
+                        <outlet property="scrollView" destination="lD2-5k-QBT" id="diO-Oz-z6a"/>
                         <outlet property="stackView" destination="YKR-kc-FYE" id="qYV-Aw-DGj"/>
                     </connections>
                 </viewController>

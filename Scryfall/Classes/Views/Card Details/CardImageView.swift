@@ -56,6 +56,9 @@ class CardImageView: UIView {
             flipButton.isHidden = true
         }
         
+        imageView.image = nil
+        images.value = []
+        
         // Schedule image downloading.
         Observable.from(imageUris.map { return CardImageView.downloader.image(for: $0) })
             .merge(maxConcurrent: 1)

@@ -22,7 +22,7 @@
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="Sample Text" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="weW-VJ-Buv">
-                    <rect key="frame" x="14" y="4" width="84" height="33"/>
+                    <rect key="frame" x="14" y="8" width="84" height="25"/>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -38,9 +38,9 @@
                 <constraint firstItem="BUG-34-7Vj" firstAttribute="leading" secondItem="tED-rn-oj1" secondAttribute="leading" constant="-8" id="HlK-DQ-O6x"/>
                 <constraint firstAttribute="trailing" secondItem="rSp-8f-Var" secondAttribute="trailing" constant="8" id="lCB-V6-4pG"/>
                 <constraint firstAttribute="bottom" secondItem="rSp-8f-Var" secondAttribute="bottom" constant="8" id="nfK-3J-3zS"/>
-                <constraint firstAttribute="bottom" secondItem="weW-VJ-Buv" secondAttribute="bottom" constant="4" id="xM8-hw-ul8"/>
+                <constraint firstAttribute="bottom" secondItem="weW-VJ-Buv" secondAttribute="bottom" constant="8" id="xM8-hw-ul8"/>
                 <constraint firstItem="weW-VJ-Buv" firstAttribute="leading" secondItem="tED-rn-oj1" secondAttribute="leading" constant="14" id="yXS-c4-6TZ"/>
-                <constraint firstItem="weW-VJ-Buv" firstAttribute="top" secondItem="tED-rn-oj1" secondAttribute="top" constant="4" id="zVH-6X-NlY"/>
+                <constraint firstItem="weW-VJ-Buv" firstAttribute="top" secondItem="tED-rn-oj1" secondAttribute="top" constant="8" id="zVH-6X-NlY"/>
             </constraints>
             <nil key="simulatedTopBarMetrics"/>
             <nil key="simulatedBottomBarMetrics"/>

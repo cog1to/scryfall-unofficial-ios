@@ -17,6 +17,7 @@ class CardSearchViewModel {
     let cards: Variable<[Card]>
     let hasMore: Variable<Bool>
     let loading: Variable<Bool>
+    let searchText = Variable<String>("")
     
     private var nextPage: URL?
     private var lastRequest: Disposable?
@@ -70,7 +71,7 @@ class CardSearchViewModel {
                 })
             }
             
-            return Observable<Void>.just(())
+            return Observable.just(())
         }
     }(self)
     
@@ -78,8 +79,34 @@ class CardSearchViewModel {
         return Action { card in
             let detailsViewModel = CardDetailsViewModel(card: card,
                                                      service: this.scryfallService,
-                                                 coordinator: this.sceneCoordinator)
+                                                 coordinator: this.sceneCoordinator,
+                                                    callback: this.onLink)
             return this.sceneCoordinator.transition(to: Scene.details(detailsViewModel), type: .formSheet)
+        }
+    }(self)
+    
+    lazy var onLink: Action<[URLQueryItem], Void> = { this in
+        return Action { queryItems in
+            this.loading.value = true
+            this.lastRequest?.dispose()
+            
+            let query = queryItems.filter { $0.name == "q" }.first
+            if let queryText = query?.value {
+                this.searchText.value = queryText
+            }
+            
+            let request = self.scryfallService.search(params: queryItems).share(replay: 1, scope: .whileConnected)
+            this.lastRequest = request.subscribe(onNext: { cardsList in
+                this.cards.value = cardsList.data
+                this.hasMore.value = cardsList.hasMore
+                this.nextPage = cardsList.nextPage
+            })
+            
+            request.subscribe({ _ in
+                this.loading.value = false
+            }).disposed(by: this.bag)
+            
+            return Observable.just(())
         }
     }(self)
 }

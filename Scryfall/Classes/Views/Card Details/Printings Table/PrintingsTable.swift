@@ -7,12 +7,20 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
+import Action
+import RxGesture
 
 /**
  * Printings table custom view.
  */
 class PrintingsTable: UIView {
+    
+    private let maxPrints = 5
+    
     private var stackView: UIStackView!
+    private var disposeBag = DisposeBag()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -39,7 +47,7 @@ class PrintingsTable: UIView {
         addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[stackView]|", options: [], metrics: nil, views: ["stackView": stackView]))
     }
     
-    func configure(cards: [Card], selected: Card) {
+    func configure(cards: [Card], selected: Card, action: Action<Card, Void>, allPrintsAction: CocoaAction) {
         stackView.subviews.forEach { stackView.removeArrangedSubview($0) }
         
         guard cards.count > 0 else {
@@ -57,15 +65,30 @@ class PrintingsTable: UIView {
         }
         
         // Printings
-        for card in cards {
+        for card in cards.prefix(maxPrints) {
             if let rowView = Bundle.main.loadNibNamed("PrintingsTableRow", owner: nil, options: nil)!.first as? PrintingsTableRow {
                 rowView.configure(card: card, selected: card.ID == selected.ID)
+                
                 stackView.addArrangedSubview(rowView)
                 stackView.addConstraint(NSLayoutConstraint(item: rowView, attribute: .width, relatedBy: .equal, toItem: stackView, attribute: .width, multiplier: 1.0, constant: -(2.0*1.0/UIScreen.main.scale)))
                 
                 for (idx, view) in rowView.pricesStackView.subviews.enumerated() {
                     addConstraint(NSLayoutConstraint(item: view, attribute: .width, relatedBy: .equal, toItem: headerLabels[idx], attribute: .width, multiplier: 1.0, constant: 0.0))
                 }
+                
+                rowView.rx.tapGesture().when(.recognized).map({ _ in return card }).bind(to: action.inputs).disposed(by: disposeBag)
+            }
+        }
+        
+        // Put 'all prints' link if there are too many prints
+        if cards.count > maxPrints {
+            if let linkView = Bundle.main.loadNibNamed("PrintingsTableFooter", owner: nil, options: nil)!.first as? PrintingsTableFooter {
+                linkView.title = "View all \(cards.count) prints →"
+                
+                stackView.addArrangedSubview(linkView)
+                stackView.addConstraint(NSLayoutConstraint(item: linkView, attribute: .width, relatedBy: .equal, toItem: stackView, attribute: .width, multiplier: 1.0, constant: -(2.0*1.0/UIScreen.main.scale)))
+                
+                linkView.rx.tapGesture().when(.recognized).map({_ in return ()}).bind(to: allPrintsAction.inputs).disposed(by: disposeBag)
             }
         }
         

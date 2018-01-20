@@ -54,6 +54,7 @@ class CardSearchViewController: UIViewController, BindableType {
         searchField.rx.text
             .filter { $0 != nil && $0!.count > 0 }
             .map { $0! }
+            .distinctUntilChanged()
             .debounce(RxTimeInterval(0.5), scheduler: MainScheduler.instance)
             .distinctUntilChanged()
             .subscribe(viewModel.onSearch.inputs)
@@ -87,6 +88,9 @@ class CardSearchViewController: UIViewController, BindableType {
         // Loading indicator.
         viewModel.loading.asObservable().distinctUntilChanged().map{ !$0 }.asDriver(onErrorJustReturn: false).drive(loadingView.rx.isHidden).disposed(by: disposeBag)
         viewModel.loading.asObservable().distinctUntilChanged().asDriver(onErrorJustReturn: false).drive(activityLabel.rx.isAnimating).disposed(by: disposeBag)
+        
+        // Search text reverse binding.
+        viewModel.searchText.asObservable().bind(to: searchField.rx.text).disposed(by: disposeBag)
     }
 }
 

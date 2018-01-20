@@ -14,6 +14,6 @@ class ArtistToken: EqualityToken<String> {
     }
     
     override func valueString() throws -> String {
-        return value
+        return "\"\(value)\""
     }
 }

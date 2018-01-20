@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CF00E4502011529500FCF9FF /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF00E44E2011529500FCF9FF /* RxBlocking.framework */; };
+		CF00E4512011529500FCF9FF /* RxTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF00E44F2011529500FCF9FF /* RxTest.framework */; };
+		CF00E456201157C400FCF9FF /* RxGesture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF00E455201157C400FCF9FF /* RxGesture.framework */; };
+		CF00E4582011EB0100FCF9FF /* PrintingsTableFooter.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF00E4572011EB0100FCF9FF /* PrintingsTableFooter.xib */; };
+		CF00E45A2011EC3D00FCF9FF /* PrintingsTableFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF00E4592011EC3D00FCF9FF /* PrintingsTableFooter.swift */; };
 		CF0CE3662002678E00000EE1 /* NSMutableAttributedString+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0CE3652002678E00000EE1 /* NSMutableAttributedString+Extension.swift */; };
 		CF0CE3682002A9AB00000EE1 /* Format.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0CE3672002A9AB00000EE1 /* Format.swift */; };
 		CF0CE36F2003EA5E00000EE1 /* LegalityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0CE36E2003EA5E00000EE1 /* LegalityView.swift */; };
@@ -139,6 +144,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CF00E44E2011529500FCF9FF /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/iOS/RxBlocking.framework; sourceTree = "<group>"; };
+		CF00E44F2011529500FCF9FF /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = Carthage/Build/iOS/RxTest.framework; sourceTree = "<group>"; };
+		CF00E455201157C400FCF9FF /* RxGesture.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxGesture.framework; path = Carthage/Build/iOS/RxGesture.framework; sourceTree = "<group>"; };
+		CF00E4572011EB0100FCF9FF /* PrintingsTableFooter.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PrintingsTableFooter.xib; sourceTree = "<group>"; };
+		CF00E4592011EC3D00FCF9FF /* PrintingsTableFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrintingsTableFooter.swift; sourceTree = "<group>"; };
 		CF0CE3652002678E00000EE1 /* NSMutableAttributedString+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSMutableAttributedString+Extension.swift"; sourceTree = "<group>"; };
 		CF0CE3672002A9AB00000EE1 /* Format.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Format.swift; sourceTree = "<group>"; };
 		CF0CE36E2003EA5E00000EE1 /* LegalityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegalityView.swift; sourceTree = "<group>"; };
@@ -269,6 +279,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF00E456201157C400FCF9FF /* RxGesture.framework in Frameworks */,
 				CFD05BF720002E0200CDF9C2 /* RxRealm.framework in Frameworks */,
 				CFD05BF820002E0200CDF9C2 /* Action.framework in Frameworks */,
 				CFD05BF920002E0200CDF9C2 /* Realm.framework in Frameworks */,
@@ -284,6 +295,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF00E4502011529500FCF9FF /* RxBlocking.framework in Frameworks */,
+				CF00E4512011529500FCF9FF /* RxTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -440,6 +453,8 @@
 				CFBBEBD6200E9CC6005A301F /* PrintingsTableHeader.swift */,
 				CFBBEBDC200E9E6E005A301F /* PrintingsTableRow.xib */,
 				CFBBEBD8200E9CD8005A301F /* PrintingsTableRow.swift */,
+				CF00E4572011EB0100FCF9FF /* PrintingsTableFooter.xib */,
+				CF00E4592011EC3D00FCF9FF /* PrintingsTableFooter.swift */,
 			);
 			path = "Printings Table";
 			sourceTree = "<group>";
@@ -572,6 +587,9 @@
 		CFD05BEE20002E0100CDF9C2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CF00E455201157C400FCF9FF /* RxGesture.framework */,
+				CF00E44E2011529500FCF9FF /* RxBlocking.framework */,
+				CF00E44F2011529500FCF9FF /* RxTest.framework */,
 				CFD05BF020002E0200CDF9C2 /* Action.framework */,
 				CFD05BF320002E0200CDF9C2 /* NSObject_Rx.framework */,
 				CFD05BF120002E0200CDF9C2 /* Realm.framework */,
@@ -657,6 +675,7 @@
 				CFD05BD020001A4A00CDF9C2 /* Sources */,
 				CFD05BD120001A4A00CDF9C2 /* Frameworks */,
 				CFD05BD220001A4A00CDF9C2 /* Resources */,
+				CF00E4542011531100FCF9FF /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -715,6 +734,7 @@
 			files = (
 				CFBBEBDF200EAA7A005A301F /* PrintingsTableHeader.xib in Resources */,
 				CF4BE07D2008DB740054FFEA /* CardsListSettingsHeader.xib in Resources */,
+				CF00E4582011EB0100FCF9FF /* PrintingsTableFooter.xib in Resources */,
 				CFBBEBDD200E9E6E005A301F /* PrintingsTableRow.xib in Resources */,
 				CFD05BCE20001A4A00CDF9C2 /* LaunchScreen.storyboard in Resources */,
 				CFD05BCB20001A4A00CDF9C2 /* Assets.xcassets in Resources */,
@@ -733,6 +753,29 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		CF00E4542011531100FCF9FF /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Action.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/NSObject_Rx.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxRealm.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxTest.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxBlocking.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
 		CFD05BE52000207500CDF9C2 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -760,6 +803,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxRealm.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxGesture.framework",
 			);
 			outputPaths = (
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/SwiftyJSON.framework",
@@ -770,6 +814,7 @@
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxSwift.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxRealm.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxCocoa.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxGesture.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -816,6 +861,7 @@
 				CFD05C2C2001622C00CDF9C2 /* Layout.swift in Sources */,
 				CF1FA2692006936B00E8DAEA /* RarityToken.swift in Sources */,
 				CF1FA25320057D0100E8DAEA /* OracleTextToken.swift in Sources */,
+				CF00E45A2011EC3D00FCF9FF /* PrintingsTableFooter.swift in Sources */,
 				CF1FA23B20042D9800E8DAEA /* Color.swift in Sources */,
 				CF1FA2322004200100E8DAEA /* ColorSetToken.swift in Sources */,
 				CF1FA2432004C62700E8DAEA /* CyclingLabel.swift in Sources */,
@@ -1080,6 +1126,10 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SDRP58XW4X;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = ScryfallTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ru.aint.ScryfallTests;
@@ -1097,6 +1147,10 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SDRP58XW4X;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = ScryfallTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ru.aint.ScryfallTests;

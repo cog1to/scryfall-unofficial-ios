@@ -9,6 +9,9 @@
 import Foundation
 import UIKit
 import RxSwift
+import RxCocoa
+import RxGesture
+import Action
 
 /**
  * View that displays a single card's set info.
@@ -37,12 +40,14 @@ class CardSetView: UIView {
         cardNumberLabel.textColor = Style.color(forKey: .printingText)
     }
     
-    func configure(forCard card: Card) {
+    func configure(forCard card: Card, tapAction: CocoaAction) {
         if let setSymbol = UIImage(named: "set_\(card.setCode)") {
             setIconView.image = setSymbol
         }
         
         setNameLabel.text = "\(card.setName) (\(card.setCode.uppercased()))"
         cardNumberLabel.text = "#\(card.collectorsNumber), \(card.rarity.name)"
+        
+        rx.tapGesture().when(.recognized).map { _ in return () }.bind(to: tapAction.inputs).disposed(by: rx.disposeBag)
     }
 }

@@ -14,7 +14,7 @@ class TraitToken: StringEnumToken<Trait> {
         case .hasWatermark:
             return "has"
         default:
-            return "wm"
+            return "is"
         }
     }
     

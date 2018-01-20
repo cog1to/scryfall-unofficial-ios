@@ -8,6 +8,9 @@
 
 import Foundation
 import UIKit
+import RxSwift
+import RxCocoa
+import Action
 
 /**
  * View that holds card details information.
@@ -24,7 +27,9 @@ class CardDetailsView: UIView {
         self.layer.borderWidth = 1.0/UIScreen.main.scale
     }
     
-    func configure(for card: Card) {
+    func configure(for card: Card, artistAction: CocoaAction, watermarkAction: CocoaAction, reservedAction: CocoaAction) {
+        stackView.subviews.forEach { $0.removeFromSuperview() }
+        
         let faces = card.faces ?? [card]
         faces.enumerated().forEach { (idx, face) in
             if (idx > 0) {
@@ -63,19 +68,31 @@ class CardDetailsView: UIView {
         // Watermark.
         if let watermark = card.watermark {
             stackView.addArrangedSubview(separator())
-            stackView.addArrangedSubview(label(text: linkText(prefix: "Watermark:", value: watermark.name)))
+            
+            let watermarkLabel = label(text: linkText(prefix: "Watermark:", value: watermark.name))
+            watermarkLabel.rx.tapGesture().when(.recognized).map({_ in return ()}).bind(to: watermarkAction.inputs).disposed(by: rx.disposeBag)
+            
+            stackView.addArrangedSubview(watermarkLabel)
         }
         
         // Artist.
         if let artist = card.artist {
             stackView.addArrangedSubview(separator())
-            stackView.addArrangedSubview(label(text: linkText(prefix: "Illustrated by", value: artist)))
+            
+            let artistLabel = label(text: linkText(prefix: "Illustrated by", value: artist))
+            artistLabel.rx.tapGesture().when(.recognized).map({_ in return ()}).bind(to: artistAction.inputs).disposed(by: rx.disposeBag)
+            
+            stackView.addArrangedSubview(artistLabel)
         }
         
         // Reserved flag.
         if card.reserved {
             stackView.addArrangedSubview(separator())
-            stackView.addArrangedSubview(label(text: linkText(prefix: "Part of the", value: "Reserved List")))
+            
+            let reservedLabel = label(text: linkText(prefix: "Part of the", value: "Reserved List"))
+            reservedLabel.rx.tapGesture().when(.recognized).map({_ in return ()}).bind(to: reservedAction.inputs).disposed(by: rx.disposeBag)
+            
+            stackView.addArrangedSubview(reservedLabel)
         }
         
         // Legalities.
