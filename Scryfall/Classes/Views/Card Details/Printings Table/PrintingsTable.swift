@@ -65,7 +65,10 @@ class PrintingsTable: UIView {
         }
         
         // Printings
-        for card in cards.prefix(maxPrints) {
+        var filtered = cards.filter({ return $0.ID != selected.ID })
+        filtered.insert(selected, at: 0)
+        
+        for card in filtered.prefix(maxPrints) {
             if let rowView = Bundle.main.loadNibNamed("PrintingsTableRow", owner: nil, options: nil)!.first as? PrintingsTableRow {
                 rowView.configure(card: card, selected: card.ID == selected.ID)
                 
