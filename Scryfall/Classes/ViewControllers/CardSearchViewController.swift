@@ -44,7 +44,7 @@ class CardSearchViewController: UIViewController, BindableType {
         definesPresentationContext = true
         
         loadingView.backgroundColor = Style.color(forKey: .background)
-        loadingView.layer.cornerRadius = 4.0
+        loadingView.layer.cornerRadius = Constants.commonCornerRadius
         
         menuButton.tintColor = Style.color(forKey: .printingText)
     }

@@ -85,6 +85,7 @@
 		CF4BE070200826710054FFEA /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4BE06F200826710054FFEA /* UIView+Extension.swift */; };
 		CF4BE0792008D1890054FFEA /* RoundCornerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4BE0782008D1890054FFEA /* RoundCornerButton.swift */; };
 		CF4BE07D2008DB740054FFEA /* CardsListSettingsHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF4BE07C2008DB740054FFEA /* CardsListSettingsHeader.xib */; };
+		CF8F8C3120193C17007CB484 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8F8C3020193C17007CB484 /* Constants.swift */; };
 		CFBBEBB9200D6A0E005A301F /* PrintingsTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBBEBB8200D6A0E005A301F /* PrintingsTable.swift */; };
 		CFBBEBD7200E9CC6005A301F /* PrintingsTableHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBBEBD6200E9CC6005A301F /* PrintingsTableHeader.swift */; };
 		CFBBEBD9200E9CD8005A301F /* PrintingsTableRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBBEBD8200E9CD8005A301F /* PrintingsTableRow.swift */; };
@@ -222,6 +223,7 @@
 		CF4BE06F200826710054FFEA /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		CF4BE0782008D1890054FFEA /* RoundCornerButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundCornerButton.swift; sourceTree = "<group>"; };
 		CF4BE07C2008DB740054FFEA /* CardsListSettingsHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardsListSettingsHeader.xib; sourceTree = "<group>"; };
+		CF8F8C3020193C17007CB484 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		CFBBEBB8200D6A0E005A301F /* PrintingsTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrintingsTable.swift; sourceTree = "<group>"; };
 		CFBBEBD6200E9CC6005A301F /* PrintingsTableHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrintingsTableHeader.swift; sourceTree = "<group>"; };
 		CFBBEBD8200E9CD8005A301F /* PrintingsTableRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrintingsTableRow.swift; sourceTree = "<group>"; };
@@ -435,6 +437,14 @@
 			path = Lists;
 			sourceTree = "<group>";
 		};
+		CF8F8C2F20193BFF007CB484 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				CF8F8C3020193C17007CB484 /* Constants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
 		CFBBEBB7200D6002005A301F /* Prices */ = {
 			isa = PBXGroup;
 			children = (
@@ -514,6 +524,7 @@
 		CFD05BE320001A7900CDF9C2 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				CF8F8C2F20193BFF007CB484 /* Constants */,
 				CF0CE36D2003EA5000000EE1 /* Views */,
 				CF0CE3642002675400000EE1 /* Extensions */,
 				CFD05C2F200182AE00CDF9C2 /* Cache */,
@@ -922,6 +933,7 @@
 				CF1FA24D200579F700E8DAEA /* TextValue.swift in Sources */,
 				CF1FA2972006A5FC00E8DAEA /* Watermark.swift in Sources */,
 				CF1FA2592005842400E8DAEA /* ManaToken.swift in Sources */,
+				CF8F8C3120193C17007CB484 /* Constants.swift in Sources */,
 				CF4BE06C2007F1380054FFEA /* JSONConvertible.swift in Sources */,
 				CFD05C20200136F900CDF9C2 /* Style.swift in Sources */,
 				CFD05C2A2001616500CDF9C2 /* CardImageView.swift in Sources */,

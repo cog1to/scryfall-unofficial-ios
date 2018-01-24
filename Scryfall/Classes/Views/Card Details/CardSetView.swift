@@ -29,7 +29,7 @@ class CardSetView: UIView {
     
     private func setup() {
         backgroundColor = Style.color(forKey: .navigationTint)
-        layer.cornerRadius = 4.0
+        layer.cornerRadius = Constants.commonCornerRadius
         
         setIconView.tintColor = Style.color(forKey: .printingText)
         

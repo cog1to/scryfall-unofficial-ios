@@ -107,7 +107,7 @@ class RoundCornerButton: UIView {
         stackView.spacing = 8.0
         
         // Style layout
-        layer.cornerRadius = 4.0
+        layer.cornerRadius = Constants.commonCornerRadius
         layer.borderWidth = 1.0/UIScreen.main.scale
         layer.borderColor = Style.color(forKey: .tint).cgColor
         titleLabel.textColor = Style.color(forKey: .tint)
