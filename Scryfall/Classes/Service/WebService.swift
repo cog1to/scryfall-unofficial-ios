@@ -86,15 +86,26 @@ class WebService {
                 throw WebServiceError.invalidURL(endpoint)
             }
             
-            let request = URLRequest(url: finalURL)
-            
-            return URLSession.shared.rx.response(request: request).map { response, data -> JSON in
-                guard 200..<300 ~= response.statusCode else {
-                    throw WebServiceError.badStatusCode(response.statusCode)
-                }
+            if let cachedResponse = NetworkCache.instance.data(forURL: finalURL) {
+                return Observable.just(cachedResponse).map { return JSON(data: $0) }
+            } else {
+                let request = URLRequest(url: finalURL)
                 
-                let jsonObject = JSON(data: data)
-                return jsonObject
+                return URLSession.shared.rx.response(request: request)
+                    .map { response, data -> Data in
+                        guard 200..<300 ~= response.statusCode else {
+                            throw WebServiceError.badStatusCode(response.statusCode)
+                        }
+                        
+                        return data
+                    }
+                    .do(onNext: {
+                        NetworkCache.instance.save(data: $0, forURL: finalURL)
+                    })
+                    .map { data -> JSON in
+                        let jsonObject = JSON(data: data)
+                        return jsonObject
+                    }
             }
         } catch {
             return Observable.error(error)
