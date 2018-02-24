@@ -18,6 +18,7 @@ class CardSearchViewModel {
     let hasMore: Variable<Bool>
     let loading: Variable<Bool>
     let searchText = Variable<String>("")
+    let sortOrder = Variable<SortOrder>(.name)
     
     private var nextPage: URL?
     private var lastRequest: Disposable?
@@ -112,9 +113,12 @@ class CardSearchViewModel {
             this.loading.value = true
             this.lastRequest?.dispose()
             
-            let query = queryItems.filter { $0.name == "q" }.first
-            if let queryText = query?.value {
+            if let query = queryItems.filter({ $0.name == "q" }).first, let queryText = query.value {
                 this.searchText.value = queryText
+            }
+            
+            if let order = queryItems.filter({ $0.name == "order" }).first?.value, let orderValue = SortOrder(rawValue: order) {
+                this.sortOrder.value = orderValue
             }
             
             let request = self.scryfallService.search(params: queryItems).share(replay: 1, scope: .whileConnected)

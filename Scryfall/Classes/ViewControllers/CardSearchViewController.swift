@@ -140,8 +140,11 @@ class CardSearchViewController: UIViewController, BindableType {
         viewModel.loading.asObservable().distinctUntilChanged().map{ !$0 }.asDriver(onErrorJustReturn: false).drive(loadingView.rx.isHidden).disposed(by: disposeBag)
         viewModel.loading.asObservable().distinctUntilChanged().asDriver(onErrorJustReturn: false).drive(activityLabel.rx.isAnimating).disposed(by: disposeBag)
         
-        // Search text reverse binding.
+        // Search params reverse binding.
         viewModel.searchText.asObservable().bind(to: searchField.rx.text).disposed(by: disposeBag)
+        viewModel.sortOrder.asObservable().subscribe(onNext: {
+            self.searchOptionsView.setSortOrder($0)
+        }).disposed(by: disposeBag)
         
         // Connect view mode setting.
         Settings.shared.viewMode.asObservable().subscribe(onNext: { [weak self] viewMode in
