@@ -23,12 +23,46 @@ class CardSearchViewModel {
     private var lastRequest: Disposable?
     private let bag = DisposeBag()
     
+    private let _searchText = Variable<String>("")
+    private let _sortOrder = Variable<SortOrder>(.name)
+    
     init(service: ScryfallServiceType, coordinator: SceneCoordinatorType) {
         scryfallService = service
         sceneCoordinator = coordinator
         cards = Variable<[Card]>([])
         hasMore = Variable<Bool>(false)
         loading = Variable<Bool>(false)
+        
+        Observable.combineLatest(_searchText.asObservable(), _sortOrder.asObservable()).subscribe(onNext: { (text, order) in
+            self.loading.value = true
+            self.lastRequest?.dispose()
+            
+            let request = self.scryfallService.search(query: text, sort: order).share(replay: 1, scope: .whileConnected)
+            self.lastRequest = request.subscribe(onNext: { cardsList in
+                self.cards.value = cardsList.data
+                self.hasMore.value = cardsList.hasMore
+                self.nextPage = cardsList.nextPage
+            }, onError: { error in
+                switch error {
+                case WebServiceError.badStatusCode(let code):
+                    if (code == 404) {
+                        self.cards.value = []
+                        self.hasMore.value = false
+                        self.nextPage = nil
+                    } else {
+                        // show error
+                        print("API error")
+                    }
+                default:
+                    // show error
+                    print("API error")
+                }
+            })
+            
+            request.subscribe({ _ in
+                self.loading.value = false
+            }).disposed(by: self.bag)
+        }).disposed(by: bag)
     }
     
     lazy var onCancel: Action<Void, Void> = { this in
@@ -42,20 +76,7 @@ class CardSearchViewModel {
     
     lazy var onSearch: Action<String, Void> = { this in
         return Action { query in
-            this.loading.value = true
-            this.lastRequest?.dispose()
-            
-            let request = self.scryfallService.search(query: query).share(replay: 1, scope: .whileConnected)
-            this.lastRequest = request.subscribe(onNext: { cardsList in
-                this.cards.value = cardsList.data
-                this.hasMore.value = cardsList.hasMore
-                this.nextPage = cardsList.nextPage
-            })
-            
-            request.subscribe({ _ in
-                this.loading.value = false
-            }).disposed(by: this.bag)
-            
+            this._searchText.value = query
             return Observable.just(())
         }
     }(self)
@@ -106,6 +127,13 @@ class CardSearchViewModel {
                 this.loading.value = false
             }).disposed(by: this.bag)
             
+            return Observable.just(())
+        }
+    }(self)
+    
+    lazy var onSortOrderChange: Action<SortOrder, Void> = { this in
+        return Action { sortOrder in
+            this._sortOrder.value = sortOrder
             return Observable.just(())
         }
     }(self)

@@ -26,17 +26,19 @@ protocol ScryfallServiceType {
      * Returns card list for given search query string.
      *
      * - parameter query: Query string.
+     * - parameter sort: Sort order.
      * - returns: An observable emitting downloaded cards data.
      */
-    func search(query: String) -> Observable<CardsList>
+    func search(query: String, sort: SortOrder) -> Observable<CardsList>
     
     /**
      * Returns card list for given search query parameters.
      *
      * - parameter params: An array of searchquery items to use for the request.
+     * - parameter sort: Sort order.
      * - returns: An observable emitting downloaded cards list data.
      */
-    func search(params: [URLQueryItem]) -> Observable<CardsList>
+    func search(params: [URLQueryItem], sort: SortOrder) -> Observable<CardsList>
     
     /**
      * Returns a list of known sets.
@@ -44,4 +46,15 @@ protocol ScryfallServiceType {
      * - returns: An observable emitting array of known sets.
      */
     func sets() -> Observable<RemoteList<CardSet>>
+}
+
+
+extension ScryfallServiceType {
+    func search(query: String) -> Observable<CardsList> {
+        return search(query: query, sort: .name)
+    }
+    
+    func search(params: [URLQueryItem]) -> Observable<CardsList> {
+        return search(params: params, sort: .name)
+    }
 }

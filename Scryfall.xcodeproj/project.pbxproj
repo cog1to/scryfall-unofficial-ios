@@ -85,9 +85,15 @@
 		CF4BE070200826710054FFEA /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4BE06F200826710054FFEA /* UIView+Extension.swift */; };
 		CF4BE0792008D1890054FFEA /* RoundCornerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4BE0782008D1890054FFEA /* RoundCornerButton.swift */; };
 		CF4BE07D2008DB740054FFEA /* CardsListSettingsHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF4BE07C2008DB740054FFEA /* CardsListSettingsHeader.xib */; };
+		CF6DDA0820360F4D00F5EAC9 /* CardsListSettingsHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6DDA0720360F4D00F5EAC9 /* CardsListSettingsHeader.swift */; };
+		CF6DDA0A20361D6D00F5EAC9 /* CardSearchCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6DDA0920361D6D00F5EAC9 /* CardSearchCollectionCell.swift */; };
+		CF6DDA0C203620EF00F5EAC9 /* LoadingCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6DDA0B203620EF00F5EAC9 /* LoadingCollectionCell.swift */; };
+		CF6DDA0E20362E5600F5EAC9 /* DisplayMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6DDA0D20362E5600F5EAC9 /* DisplayMode.swift */; };
+		CF6DDA1020362F0900F5EAC9 /* SortOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6DDA0F20362F0900F5EAC9 /* SortOrder.swift */; };
 		CF8F8C3120193C17007CB484 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8F8C3020193C17007CB484 /* Constants.swift */; };
 		CF8F8C36201944AC007CB484 /* NetworkCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8F8C35201944AC007CB484 /* NetworkCache.swift */; };
 		CF8F8C56201A5E3E007CB484 /* NetworkCacheItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8F8C55201A5E3E007CB484 /* NetworkCacheItem.swift */; };
+		CFA2A18D203B4A4300866BEC /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA2A18C203B4A4300866BEC /* Settings.swift */; };
 		CFBBEBB9200D6A0E005A301F /* PrintingsTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBBEBB8200D6A0E005A301F /* PrintingsTable.swift */; };
 		CFBBEBD7200E9CC6005A301F /* PrintingsTableHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBBEBD6200E9CC6005A301F /* PrintingsTableHeader.swift */; };
 		CFBBEBD9200E9CD8005A301F /* PrintingsTableRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBBEBD8200E9CD8005A301F /* PrintingsTableRow.swift */; };
@@ -225,9 +231,15 @@
 		CF4BE06F200826710054FFEA /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		CF4BE0782008D1890054FFEA /* RoundCornerButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundCornerButton.swift; sourceTree = "<group>"; };
 		CF4BE07C2008DB740054FFEA /* CardsListSettingsHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardsListSettingsHeader.xib; sourceTree = "<group>"; };
+		CF6DDA0720360F4D00F5EAC9 /* CardsListSettingsHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsListSettingsHeader.swift; sourceTree = "<group>"; };
+		CF6DDA0920361D6D00F5EAC9 /* CardSearchCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSearchCollectionCell.swift; sourceTree = "<group>"; };
+		CF6DDA0B203620EF00F5EAC9 /* LoadingCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingCollectionCell.swift; sourceTree = "<group>"; };
+		CF6DDA0D20362E5600F5EAC9 /* DisplayMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayMode.swift; sourceTree = "<group>"; };
+		CF6DDA0F20362F0900F5EAC9 /* SortOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortOrder.swift; sourceTree = "<group>"; };
 		CF8F8C3020193C17007CB484 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		CF8F8C35201944AC007CB484 /* NetworkCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkCache.swift; sourceTree = "<group>"; };
 		CF8F8C55201A5E3E007CB484 /* NetworkCacheItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkCacheItem.swift; sourceTree = "<group>"; };
+		CFA2A18C203B4A4300866BEC /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		CFBBEBB8200D6A0E005A301F /* PrintingsTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrintingsTable.swift; sourceTree = "<group>"; };
 		CFBBEBD6200E9CC6005A301F /* PrintingsTableHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrintingsTableHeader.swift; sourceTree = "<group>"; };
 		CFBBEBD8200E9CD8005A301F /* PrintingsTableRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrintingsTableRow.swift; sourceTree = "<group>"; };
@@ -326,6 +338,7 @@
 				CF1FA2422004C62700E8DAEA /* CyclingLabel.swift */,
 				CF4BE0782008D1890054FFEA /* RoundCornerButton.swift */,
 				CF4BE07C2008DB740054FFEA /* CardsListSettingsHeader.xib */,
+				CF6DDA0720360F4D00F5EAC9 /* CardsListSettingsHeader.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -405,6 +418,8 @@
 				CF1FA25C20058EBB00E8DAEA /* Trait.swift */,
 				CF1FA2962006A5FC00E8DAEA /* Watermark.swift */,
 				CF4BE0642007E9280054FFEA /* CardSetType.swift */,
+				CF6DDA0D20362E5600F5EAC9 /* DisplayMode.swift */,
+				CF6DDA0F20362F0900F5EAC9 /* SortOrder.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -447,6 +462,14 @@
 				CF8F8C3020193C17007CB484 /* Constants.swift */,
 			);
 			path = Constants;
+			sourceTree = "<group>";
+		};
+		CFA2A18B203B4A3200866BEC /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				CFA2A18C203B4A4300866BEC /* Settings.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 		CFBBEBB7200D6002005A301F /* Prices */ = {
@@ -528,6 +551,7 @@
 		CFD05BE320001A7900CDF9C2 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				CFA2A18B203B4A3200866BEC /* Settings */,
 				CF8F8C2F20193BFF007CB484 /* Constants */,
 				CF0CE36D2003EA5000000EE1 /* Views */,
 				CF0CE3642002675400000EE1 /* Extensions */,
@@ -641,6 +665,8 @@
 			children = (
 				CFD05C1A200123E600CDF9C2 /* CardSearchCell.swift */,
 				CFD05C1C2001246700CDF9C2 /* LoadingCell.swift */,
+				CF6DDA0920361D6D00F5EAC9 /* CardSearchCollectionCell.swift */,
+				CF6DDA0B203620EF00F5EAC9 /* LoadingCollectionCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -871,10 +897,12 @@
 				CF1FA28F2006A4D800E8DAEA /* BannedToken.swift in Sources */,
 				CF1FA2AF2006B74800E8DAEA /* ComparableToken.swift in Sources */,
 				CF1FA24F20057B3E00E8DAEA /* TypeToken.swift in Sources */,
+				CF6DDA0E20362E5600F5EAC9 /* DisplayMode.swift in Sources */,
 				CF1FA26F200695BF00E8DAEA /* SetsToken.swift in Sources */,
 				CF1FA27B20069F9600E8DAEA /* GameToken.swift in Sources */,
 				CF1FA2672006930800E8DAEA /* ToughnessToken.swift in Sources */,
 				CF1FA26120068A2B00E8DAEA /* NumericToken.swift in Sources */,
+				CF6DDA0820360F4D00F5EAC9 /* CardsListSettingsHeader.swift in Sources */,
 				CFD05C2C2001622C00CDF9C2 /* Layout.swift in Sources */,
 				CF1FA2692006936B00E8DAEA /* RarityToken.swift in Sources */,
 				CF1FA25320057D0100E8DAEA /* OracleTextToken.swift in Sources */,
@@ -888,6 +916,7 @@
 				CF1FA27F2006A1FD00E8DAEA /* YearToken.swift in Sources */,
 				CFD05C1320003E5500CDF9C2 /* BindableType.swift in Sources */,
 				CF1FA26D2006955500E8DAEA /* IncludeExtrasToken.swift in Sources */,
+				CF6DDA1020362F0900F5EAC9 /* SortOrder.swift in Sources */,
 				CF1FA2832006A2FE00E8DAEA /* USDToken.swift in Sources */,
 				CF1FA2892006A38A00E8DAEA /* Cube.swift in Sources */,
 				CF1FA265200692F400E8DAEA /* LoyaltyToken.swift in Sources */,
@@ -914,7 +943,9 @@
 				CFD05C1D2001246700CDF9C2 /* LoadingCell.swift in Sources */,
 				CF4BE070200826710054FFEA /* UIView+Extension.swift in Sources */,
 				CF1FA2732006960200E8DAEA /* PaperSets.swift in Sources */,
+				CFA2A18D203B4A4300866BEC /* Settings.swift in Sources */,
 				CF1FA29F2006A89B00E8DAEA /* Border.swift in Sources */,
+				CF6DDA0C203620EF00F5EAC9 /* LoadingCollectionCell.swift in Sources */,
 				CF1FA2A52006AC2F00E8DAEA /* PrintedInBlockToken.swift in Sources */,
 				CF1FA271200695E500E8DAEA /* PaperPrints.swift in Sources */,
 				CFBBEBE1200EB47D005A301F /* CardSetView.swift in Sources */,
@@ -945,6 +976,7 @@
 				CF4BE06C2007F1380054FFEA /* JSONConvertible.swift in Sources */,
 				CFD05C20200136F900CDF9C2 /* Style.swift in Sources */,
 				CFD05C2A2001616500CDF9C2 /* CardImageView.swift in Sources */,
+				CF6DDA0A20361D6D00F5EAC9 /* CardSearchCollectionCell.swift in Sources */,
 				CFD05BC420001A4A00CDF9C2 /* AppDelegate.swift in Sources */,
 				CF1FA23820042D3900E8DAEA /* ColorCountToken.swift in Sources */,
 				CF1FA2342004235A00E8DAEA /* Comparison.swift in Sources */,

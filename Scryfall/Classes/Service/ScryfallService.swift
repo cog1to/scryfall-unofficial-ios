@@ -21,8 +21,8 @@ class Scryfall: ScryfallServiceType {
         }
     }
     
-    func search(query: String) -> Observable<CardsList> {
-        return WebService.json(API: API, endpoint: "\(searchEndpoint)", query: ["q": query]).map {
+    func search(query: String, sort: SortOrder) -> Observable<CardsList> {
+        return WebService.json(API: API, endpoint: "\(searchEndpoint)", query: ["q": query, "order": sort.rawValue]).map {
             guard let list = CardsList(json: $0) else {
                 throw WebServiceError.invalidJSON
             }
@@ -31,8 +31,11 @@ class Scryfall: ScryfallServiceType {
         }
     }
     
-    func search(params: [URLQueryItem]) -> Observable<CardsList> {
-        return WebService.json(API: API, endpoint: "\(searchEndpoint)", query: params).map {
+    func search(params: [URLQueryItem], sort: SortOrder) -> Observable<CardsList> {
+        var allParams = params
+        allParams.append(URLQueryItem(name: "order", value: sort.rawValue))
+        
+        return WebService.json(API: API, endpoint: "\(searchEndpoint)", query: allParams).map {
             guard let list = CardsList(json: $0) else {
                 throw WebServiceError.invalidJSON
             }

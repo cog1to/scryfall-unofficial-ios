@@ -29,6 +29,9 @@ class Style {
         /// Common supplementary text (artist, watermark, reserverd info, etc.)
         case subtext
         
+        /// Small buttons
+        case subtextBold
+        
         /// Font for legality plaques
         case legality
         
@@ -161,6 +164,10 @@ class Style {
             return UIFont(name: "TimesNewRomanPS-ItalicMT", size: size)!
         case .subtext:
             font = UIFont.preferredFont(forTextStyle: .footnote)
+        case .subtextBold:
+            let descriptor = UIFontDescriptor.preferredFontDescriptor(withTextStyle: .footnote)
+                .withSymbolicTraits(UIFontDescriptorSymbolicTraits.traitBold)!
+            font = UIFont(descriptor: descriptor, size: descriptor.pointSize)
         case .headline:
             font = getFont(fromTextStyle: .title3, withTraits: .traitBold)
         case .legality:
