@@ -33,7 +33,8 @@ class CardSearchViewModel {
         hasMore = Variable<Bool>(false)
         loading = Variable<Bool>(false)
         
-        Observable.combineLatest(_searchText.asObservable(), _sortOrder.asObservable()).subscribe(onNext: { (text, order) in
+        let searchText = _searchText.asObservable().filter({ return $0.count > 0})
+        Observable.combineLatest(searchText, _sortOrder.asObservable()).subscribe(onNext: { (text, order) in
             self.loading.value = true
             self.lastRequest?.dispose()
             

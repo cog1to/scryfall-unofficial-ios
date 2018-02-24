@@ -24,7 +24,17 @@ class CardSearchCollectionCell: UICollectionViewCell {
     
     func configure(for card: Card) {
         imageView.layer.cornerRadius = frame.size.width / Constants.widthToCornerRadiusRatio
-        CardSearchCollectionCell.downloader.image(for: card.imageUris[CardImageType.normal]!)
+        
+        var imageUri = card.imageUris[.normal]
+        if imageUri == nil, let faces = card.faces, faces.count > 0, let faceImage = faces[0].imageUris[.normal] {
+            imageUri = faceImage
+        }
+        
+        guard imageUri != nil else {
+            return
+        }
+        
+        CardSearchCollectionCell.downloader.image(for: imageUri!)
             .asDriver(onErrorJustReturn: nil)
             .drive(imageView.rx.image)
             .disposed(by: self.rx.disposeBag)
