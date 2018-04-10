@@ -356,9 +356,14 @@ extension CardSearchViewController {
             return
         }
         
+        var safeAreaInset: CGFloat = 0.0
+        if #available(iOS 11, *) {
+            safeAreaInset = UIApplication.shared.keyWindow!.safeAreaInsets.bottom
+        }
+        
         UIView.animate(withDuration: duration) {
             for constraint in self.bottomConstraints {
-                constraint.constant = -rect.size.height
+                constraint.constant = safeAreaInset - rect.size.height
             }
         }
     }

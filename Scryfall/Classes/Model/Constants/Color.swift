@@ -53,7 +53,7 @@ enum Color: String {
             return [.white, .blue, green]
         case "wgr", "wrg", "rwg", "rgw", "gwr", "grw", "naya":
             return [.red, .white, .green]
-        case "wbu", "wub", "uwb", "uwb", "buw", "bwu", "esper":
+        case "wbu", "wub", "uwb", "buw", "bwu", "esper":
             return [.white, .blue, .black]
         case "ubr", "urb", "rub", "rbu", "bur", "bru", "grixis":
             return [.blue, .black, .red]
