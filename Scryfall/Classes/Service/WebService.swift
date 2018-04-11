@@ -40,7 +40,7 @@ class WebService {
      * - parameter query: query parameters
      * - returns: An observable holding the result of performing given web request
      */
-    static func json(API: String, endpoint: String, query: [String: Any] = [:]) -> Observable<JSON> {
+    static func json(API: String, endpoint: String, query: [String: Any] = [:], force: Bool = false) -> Observable<JSON> {
         do {
             // Convert raw query values to URLQueryItems
             let items = try query.map { pair -> URLQueryItem in
@@ -66,27 +66,13 @@ class WebService {
      * - parameter query: query items
      * - returns: An observable holding the result of performing given web request
      */
-    static func json(API: String, endpoint: String, query: [URLQueryItem]) -> Observable<JSON> {
+    static func json(API: String, endpoint: String, query: [URLQueryItem], force: Bool = false) -> Observable<JSON> {
         do {
-            guard let url = URL(string: API)?.appendingPathComponent(endpoint),
-                var components = URLComponents(url: url, resolvingAgainstBaseURL: true) else {
-                    throw WebServiceError.invalidURL(endpoint)
-            }
-            
-            components.queryItems = query
-            // Replace all "+" in the percentEncodedQuery with "%2B" (a percent-encoded +)
-            // and then replace all "!" with "%21" (a percent-encoded !)
-            // and then replace all "%20" (a percent-encoded space) with "+"
-            components.percentEncodedQuery = components.percentEncodedQuery?
-                .replacingOccurrences(of: "+", with: "%2B")
-                .replacingOccurrences(of: "!", with: "%21")
-                .replacingOccurrences(of: "%20", with: "+")
-            
-            guard let finalURL = components.url else {
+            guard let finalURL = url(API: API, endpoint: endpoint, query: query) else {
                 throw WebServiceError.invalidURL(endpoint)
             }
             
-            if let cachedResponse = NetworkCache.instance.data(forURL: finalURL) {
+            if !force, let cachedResponse = NetworkCache.instance.data(forURL: finalURL) {
                 return Observable.just(cachedResponse).map { return JSON(data: $0) }
             } else {
                 let request = URLRequest(url: finalURL)
@@ -110,5 +96,40 @@ class WebService {
         } catch {
             return Observable.error(error)
         }
+    }
+        
+    static private func url(API: String, endpoint: String, query: [String: Any] = [:]) throws -> URL? {
+        // Convert raw query values to URLQueryItems
+        let items = try query.map { pair -> URLQueryItem in
+            guard let v = pair.value as? CustomStringConvertible else {
+                throw WebServiceError.invalidParameter(pair.key, pair.value)
+            }
+            
+            return URLQueryItem(name: pair.key, value: v.description)
+        }
+        
+        return url(API: API, endpoint: endpoint, query: items)
+    }
+    
+    static private func url(API: String, endpoint: String, query: [URLQueryItem]) -> URL? {
+        guard let url = URL(string: API)?.appendingPathComponent(endpoint),
+            var components = URLComponents(url: url, resolvingAgainstBaseURL: true) else {
+                return nil
+        }
+        
+        components.queryItems = query
+        // Replace all "+" in the percentEncodedQuery with "%2B" (a percent-encoded +)
+        // and then replace all "!" with "%21" (a percent-encoded !)
+        // and then replace all "%20" (a percent-encoded space) with "+"
+        components.percentEncodedQuery = components.percentEncodedQuery?
+            .replacingOccurrences(of: "+", with: "%2B")
+            .replacingOccurrences(of: "!", with: "%21")
+            .replacingOccurrences(of: "%20", with: "+")
+        
+        guard let finalURL = components.url else {
+            return nil
+        }
+        
+        return finalURL
     }
 }

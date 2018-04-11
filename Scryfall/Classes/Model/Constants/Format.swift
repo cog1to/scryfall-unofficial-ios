@@ -55,7 +55,7 @@ enum Format: String {
     
     static var displayed: [Format] {
         get {
-            return [.standard, .frontier, .modern, .pauper, .legacy, .penny, .vintage, .duel, .commander, .onevone]
+            return [.standard, .frontier, .modern, .pauper, .legacy, .penny, .vintage, .commander, .onevone, .brawl]
         }
     }
 }

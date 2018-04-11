@@ -12,12 +12,13 @@ import RxSwift
 import RxCocoa
 import RxGesture
 import Action
+import PocketSVG
 
 /**
  * View that displays a single card's set info.
  */
 class CardSetView: UIView {
-    @IBOutlet weak var setIconView: UIImageView!
+    @IBOutlet weak var setIconView: UIView!
     @IBOutlet weak var setNameLabel: UILabel!
     @IBOutlet weak var cardNumberLabel: UILabel!
     
@@ -41,9 +42,36 @@ class CardSetView: UIView {
     }
     
     func configure(forCard card: Card, tapAction: CocoaAction) {
-        if let setSymbol = UIImage(named: "set_\(card.setCode)") {
-            setIconView.image = setSymbol
-        }
+        CardSetCache.instance.set(forCode: card.setCode)
+            .filter {
+                $0.iconURI != nil
+            }
+            .flatMap { set in
+                return ImageDownloader().data(for: set.iconURI!)
+            }
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext: { data in
+                guard let data = data else {
+                    return
+                }
+                
+                // Create SVG image view.
+                let svgPaths = SVGBezierPath.paths(fromSVGString: String(data: data, encoding: .utf8)!) as! [SVGBezierPath]
+                let svgView = SVGImageView()
+                svgView.paths = svgPaths
+                svgView.fillColor = Style.color(forKey: .printingText)
+                
+                // Remove old image.
+                for subview in self.setIconView.subviews {
+                    subview.removeFromSuperview()
+                }
+                
+                // Add new image.
+                svgView.frame = self.setIconView.bounds
+                svgView.contentMode = .scaleAspectFit
+                self.setIconView.addSubview(svgView)
+            })
+            .disposed(by: self.disposeBag)
         
         setNameLabel.text = "\(card.setName) (\(card.setCode.uppercased()))"
         cardNumberLabel.text = "#\(card.collectorsNumber), \(card.rarity.name)"

@@ -18,3 +18,6 @@ github "RxSwiftCommunity/NSObject-Rx" ~> 4.2.0
 
 # Require RxGesture
 github "RxSwiftCommunity/RxGesture" ~> 1.2.1
+
+# Require PocketSVG
+github "pocketsvg/PocketSVG" ~> 2.4.0

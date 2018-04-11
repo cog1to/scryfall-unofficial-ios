@@ -11,7 +11,7 @@ import SwiftyJSON
 
 class CardSet: JSONConvertible {
     var code: String
-    var mtgoCode: String
+    var mtgoCode: String?
     var name: String
     var setType: CardSetType
     var releasedAt: Date?
@@ -25,9 +25,11 @@ class CardSet: JSONConvertible {
     var searchURI: URL?
     
     required init?(json: JSON) {
-        guard let code = json["code"].string, let name = json["name"].string,
-            let mtgoCode = json["mtgo_code"].string, let cardCount = json["card_count"].int,
-            let digital = json["digital"].bool, let foil = json["foil"].bool else {
+        guard let code = json["code"].string,
+            let name = json["name"].string,
+            let cardCount = json["card_count"].int,
+            let digital = json["digital"].bool,
+            let foil = json["foil"].bool else {
                 return nil
         }
         
@@ -37,12 +39,12 @@ class CardSet: JSONConvertible {
         
         self.code = code
         self.name = name
-        self.mtgoCode = mtgoCode
         self.cardCount = cardCount
         self.digital = digital
         self.foil = foil
         self.setType = setType
         
+        self.mtgoCode = json["mtgo_code"].string
         self.block = json["block"].string
         self.blockCode = json["block_code"].string
         self.parentSetCode = json["parent_set_code"].string

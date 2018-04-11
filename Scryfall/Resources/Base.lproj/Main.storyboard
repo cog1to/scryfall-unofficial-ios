@@ -1,20 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="v7n-ig-6pn">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="v7n-ig-6pn">
     <device id="retina3_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="HelveticaNeue.ttc">
-            <string>HelveticaNeue</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--Card Search View Controller-->
         <scene sceneID="Ne0-sd-mMC">
@@ -281,10 +276,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="400"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="YKR-kc-FYE">
-                                        <rect key="frame" x="16" y="16" width="320" height="709.5"/>
+                                        <rect key="frame" x="16" y="16" width="288" height="796"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SVj-a1-of2" customClass="CardImageView" customModule="Scryfall" customModuleProvider="target">
-                                                <rect key="frame" x="144" y="0.0" width="248" height="484"/>
+                                                <rect key="frame" x="20" y="0.0" width="248" height="484"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="equalSpacing" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="MXo-19-u7M">
                                                         <rect key="frame" x="0.0" y="0.0" width="248" height="484"/>
@@ -320,10 +315,10 @@
                                                 </connections>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Juc-Ck-hUq" customClass="CardDetailsView" customModule="Scryfall" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="504" width="320" height="128"/>
+                                                <rect key="frame" x="0.0" y="504" width="288" height="128"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="zsh-fc-4QC">
-                                                        <rect key="frame" x="0.0" y="0.0" width="320" height="128"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="288" height="128"/>
                                                     </stackView>
                                                 </subviews>
                                                 <constraints>
@@ -337,29 +332,30 @@
                                                 </connections>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l0i-sj-1jl" customClass="CardSetView" customModule="Scryfall" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="652" width="320" height="57.5"/>
+                                                <rect key="frame" x="0.0" y="652" width="288" height="144"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="PCh-gI-E5j">
-                                                        <rect key="frame" x="8" y="8" width="320" height="41.5"/>
+                                                        <rect key="frame" x="8" y="8" width="272" height="128"/>
                                                         <subviews>
-                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="set_bng" translatesAutoresizingMaskIntoConstraints="NO" id="ehh-Kc-Oak">
-                                                                <rect key="frame" x="0.0" y="9" width="24" height="24"/>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="She-bn-QtL">
+                                                                <rect key="frame" x="0.0" y="52" width="24" height="24"/>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="height" constant="24" id="RTJ-ze-m2n"/>
-                                                                    <constraint firstAttribute="width" constant="24" id="esc-Ws-iCC"/>
+                                                                    <constraint firstAttribute="height" constant="24" id="hTH-dv-6ss"/>
+                                                                    <constraint firstAttribute="width" constant="24" id="wAV-S6-ute"/>
                                                                 </constraints>
-                                                            </imageView>
+                                                            </view>
                                                             <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalCompressionResistancePriority="751" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="uTx-UZ-jSo">
-                                                                <rect key="frame" x="30" y="2" width="320" height="37.5"/>
+                                                                <rect key="frame" x="30" y="45.5" width="242" height="37.5"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Set name (ABR)" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Or1-Gx-sM6">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="320" height="20.5"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="242" height="20.5"/>
                                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Card number" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QkX-dW-77O">
-                                                                        <rect key="frame" x="0.0" y="20.5" width="320" height="17"/>
+                                                                        <rect key="frame" x="0.0" y="20.5" width="242" height="17"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
@@ -377,7 +373,7 @@
                                                 </constraints>
                                                 <connections>
                                                     <outlet property="cardNumberLabel" destination="QkX-dW-77O" id="eh1-DV-0qp"/>
-                                                    <outlet property="setIconView" destination="ehh-Kc-Oak" id="nDa-sM-VWF"/>
+                                                    <outlet property="setIconView" destination="She-bn-QtL" id="7ZX-OL-C2i"/>
                                                     <outlet property="setNameLabel" destination="Or1-Gx-sM6" id="wu1-51-O6D"/>
                                                 </connections>
                                             </view>
@@ -509,7 +505,6 @@
     <resources>
         <image name="close" width="26" height="26"/>
         <image name="menu" width="26" height="26"/>
-        <image name="set_bng" width="657" height="768"/>
         <image name="transform" width="16" height="16"/>
     </resources>
 </document>

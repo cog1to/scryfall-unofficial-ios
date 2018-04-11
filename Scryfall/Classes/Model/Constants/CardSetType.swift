@@ -27,4 +27,6 @@ enum CardSetType: String {
     case promo = "promo"
     case token = "token"
     case memorabilia = "memorabilia"
+    case spellbook = "spellbook"
+    case treasureChest = "treasure_chest"
 }

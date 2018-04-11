@@ -140,6 +140,8 @@
 		CFD05C31200182B900CDF9C2 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD05C30200182B900CDF9C2 /* ImageCache.swift */; };
 		CFD05C382002294100CDF9C2 /* CardDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD05C372002294100CDF9C2 /* CardDetailsView.swift */; };
 		CFD05C3A2002525900CDF9C2 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD05C392002525900CDF9C2 /* UIColor+Extension.swift */; };
+		CFD0686F207D6259004E32B5 /* CardSetCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD0686E207D6259004E32B5 /* CardSetCache.swift */; };
+		CFD06873207DE930004E32B5 /* PocketSVG.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFD06872207DE930004E32B5 /* PocketSVG.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -290,6 +292,8 @@
 		CFD05C30200182B900CDF9C2 /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 		CFD05C372002294100CDF9C2 /* CardDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailsView.swift; sourceTree = "<group>"; };
 		CFD05C392002525900CDF9C2 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		CFD0686E207D6259004E32B5 /* CardSetCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSetCache.swift; sourceTree = "<group>"; };
+		CFD06872207DE930004E32B5 /* PocketSVG.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PocketSVG.framework; path = Carthage/Build/iOS/PocketSVG.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -297,6 +301,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFD06873207DE930004E32B5 /* PocketSVG.framework in Frameworks */,
 				CF00E456201157C400FCF9FF /* RxGesture.framework in Frameworks */,
 				CFD05BF720002E0200CDF9C2 /* RxRealm.framework in Frameworks */,
 				CFD05BF820002E0200CDF9C2 /* Action.framework in Frameworks */,
@@ -626,6 +631,7 @@
 		CFD05BEE20002E0100CDF9C2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CFD06872207DE930004E32B5 /* PocketSVG.framework */,
 				CF00E455201157C400FCF9FF /* RxGesture.framework */,
 				CF00E44E2011529500FCF9FF /* RxBlocking.framework */,
 				CF00E44F2011529500FCF9FF /* RxTest.framework */,
@@ -685,6 +691,7 @@
 				CFD05C30200182B900CDF9C2 /* ImageCache.swift */,
 				CF8F8C35201944AC007CB484 /* NetworkCache.swift */,
 				CF8F8C55201A5E3E007CB484 /* NetworkCacheItem.swift */,
+				CFD0686E207D6259004E32B5 /* CardSetCache.swift */,
 			);
 			path = Cache;
 			sourceTree = "<group>";
@@ -847,6 +854,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/RxRealm.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxGesture.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/PocketSVG.framework",
 			);
 			outputPaths = (
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/SwiftyJSON.framework",
@@ -858,6 +866,7 @@
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxRealm.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxCocoa.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxGesture.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/PocketSVG.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -941,6 +950,7 @@
 				CFD05C1B200123E600CDF9C2 /* CardSearchCell.swift in Sources */,
 				CF1FA2992006A6AA00E8DAEA /* WatermarkToken.swift in Sources */,
 				CFD05C1D2001246700CDF9C2 /* LoadingCell.swift in Sources */,
+				CFD0686F207D6259004E32B5 /* CardSetCache.swift in Sources */,
 				CF4BE070200826710054FFEA /* UIView+Extension.swift in Sources */,
 				CF1FA2732006960200E8DAEA /* PaperSets.swift in Sources */,
 				CFA2A18D203B4A4300866BEC /* Settings.swift in Sources */,

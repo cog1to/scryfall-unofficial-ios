@@ -79,14 +79,29 @@ class ImageDownloader {
      * - returns: An observable that will emit an image downloaded from specified URL
      */
     func image(for url: URL) -> Observable<UIImage?> {
+        return data(for: url).map {
+            if let data = $0 {
+                return UIImage(data: data)
+            } else {
+                return nil
+            }
+        }
+    }
+    
+    /**
+     * Returns a data downloaded from given URL.
+     *
+     * - parameter url: Data source URL
+     * - returns: An observable that will emit a data downloaded from specified URL
+     */
+    func data(for url: URL) -> Observable<Data?> {
         if let cachedImage = cachedImage(for: url) {
-            return Observable.just(UIImage(data: cachedImage as Data))
+            return Observable.just(cachedImage as Data)
         }
         
         // Download an image, save it into cache, and pass along to the subscriber.
         return URLSession.shared.rx.data(request: URLRequest(url: url)).do(onNext: { image in
-                self.set(image as NSData, for: url)
-            })
-            .map { return UIImage(data: $0 as Data) }
+            self.set(image as NSData, for: url)
+        }).map { return $0 as Data }
     }
 }

@@ -43,9 +43,10 @@ protocol ScryfallServiceType {
     /**
      * Returns a list of known sets.
      *
+     * - parameter force: Forces reloading of the cached response.
      * - returns: An observable emitting array of known sets.
      */
-    func sets() -> Observable<RemoteList<CardSet>>
+    func sets(force: Bool) -> Observable<RemoteList<CardSet>>
 }
 
 

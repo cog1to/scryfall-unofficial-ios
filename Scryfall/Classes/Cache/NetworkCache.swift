@@ -78,6 +78,16 @@ class NetworkCache {
         }
     }
     
+    func purge(url: URL) {
+        let _ = withRealm("saving cache") { realm -> Void in
+            let cache = realm.objects(NetworkCacheItem.self).filter(NSPredicate(format: "url == %@", argumentArray: [url.absoluteString])).first
+            if let cache = cache {
+                print("cache for \(url.absoluteString) exists, purging")
+                realm.delete(cache)
+            }
+        }
+    }
+    
     fileprivate func withRealm<T>(_ operation: String, action: (Realm) throws -> T) -> T? {
         do {
             let realm = try Realm()
