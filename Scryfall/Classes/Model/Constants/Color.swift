@@ -19,16 +19,18 @@ enum Color: String {
     
     static func from(string: String) throws -> Set<Color> {
         switch string.lowercased() {
-        case "w":
+        case "w", "white":
             return [.white]
-        case "u":
+        case "u", "blue":
             return [.blue]
-        case "b":
+        case "b", "black":
             return [.black]
-        case "r":
+        case "r", "red":
             return [.red]
-        case "g":
+        case "g", "green":
             return [.green]
+        case "c", "colorless":
+            return [.colorless]
         case "uw", "wu", "azorius":
             return [.white, .blue]
         case "wg", "gw", "selesnya":

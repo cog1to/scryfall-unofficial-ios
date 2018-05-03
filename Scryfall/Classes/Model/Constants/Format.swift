@@ -21,6 +21,7 @@ enum Format: String {
     case onevone = "1v1"
     case future = "future"
     case brawl = "brawl"
+    case unknown = "unknown"
     
     var name: String {
         get {
@@ -49,6 +50,8 @@ enum Format: String {
                 return "Future Standard"
             case .brawl:
                 return "Brawl"
+            default:
+                return "Unknown"
             }
         }
     }

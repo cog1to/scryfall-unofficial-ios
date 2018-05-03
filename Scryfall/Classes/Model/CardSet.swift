@@ -29,7 +29,7 @@ class CardSet: JSONConvertible {
             let name = json["name"].string,
             let cardCount = json["card_count"].int,
             let digital = json["digital"].bool,
-            let foil = json["foil"].bool else {
+            let foil = (json["foil_only"].bool ?? json["foil"].bool) else {
                 return nil
         }
         

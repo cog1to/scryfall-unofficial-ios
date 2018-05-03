@@ -142,6 +142,11 @@
 		CFD05C3A2002525900CDF9C2 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD05C392002525900CDF9C2 /* UIColor+Extension.swift */; };
 		CFD0686F207D6259004E32B5 /* CardSetCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD0686E207D6259004E32B5 /* CardSetCache.swift */; };
 		CFD06873207DE930004E32B5 /* PocketSVG.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFD06872207DE930004E32B5 /* PocketSVG.framework */; };
+		CFD06888207E83C3004E32B5 /* TextToQueryServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD06887207E83C3004E32B5 /* TextToQueryServiceType.swift */; };
+		CFD0688A207E84C3004E32B5 /* TextToQueryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD06889207E84C3004E32B5 /* TextToQueryService.swift */; };
+		CFD0688D207E859D004E32B5 /* TextParserToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD0688C207E859D004E32B5 /* TextParserToken.swift */; };
+		CFD0688F207E93F1004E32B5 /* TextParserType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD0688E207E93F1004E32B5 /* TextParserType.swift */; };
+		CFD06891207E94B9004E32B5 /* TextParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD06890207E94B9004E32B5 /* TextParser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -294,6 +299,11 @@
 		CFD05C392002525900CDF9C2 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		CFD0686E207D6259004E32B5 /* CardSetCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSetCache.swift; sourceTree = "<group>"; };
 		CFD06872207DE930004E32B5 /* PocketSVG.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PocketSVG.framework; path = Carthage/Build/iOS/PocketSVG.framework; sourceTree = "<group>"; };
+		CFD06887207E83C3004E32B5 /* TextToQueryServiceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextToQueryServiceType.swift; sourceTree = "<group>"; };
+		CFD06889207E84C3004E32B5 /* TextToQueryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextToQueryService.swift; sourceTree = "<group>"; };
+		CFD0688C207E859D004E32B5 /* TextParserToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextParserToken.swift; sourceTree = "<group>"; };
+		CFD0688E207E93F1004E32B5 /* TextParserType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextParserType.swift; sourceTree = "<group>"; };
+		CFD06890207E94B9004E32B5 /* TextParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextParser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -603,6 +613,7 @@
 		CFD05BE9200024FC00CDF9C2 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				CFD0688B207E84E3004E32B5 /* TextToQuery */,
 				CFD05BEC20002D9300CDF9C2 /* WebService.swift */,
 				CFD05BFF20002F4B00CDF9C2 /* ScryfallServiceType.swift */,
 				CFD05C0120002F5600CDF9C2 /* ScryfallService.swift */,
@@ -694,6 +705,18 @@
 				CFD0686E207D6259004E32B5 /* CardSetCache.swift */,
 			);
 			path = Cache;
+			sourceTree = "<group>";
+		};
+		CFD0688B207E84E3004E32B5 /* TextToQuery */ = {
+			isa = PBXGroup;
+			children = (
+				CFD06887207E83C3004E32B5 /* TextToQueryServiceType.swift */,
+				CFD06889207E84C3004E32B5 /* TextToQueryService.swift */,
+				CFD0688C207E859D004E32B5 /* TextParserToken.swift */,
+				CFD0688E207E93F1004E32B5 /* TextParserType.swift */,
+				CFD06890207E94B9004E32B5 /* TextParser.swift */,
+			);
+			path = TextToQuery;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -893,8 +916,11 @@
 				CF0CE36F2003EA5E00000EE1 /* LegalityView.swift in Sources */,
 				CF1FA2A12006A8D600E8DAEA /* BorderToken.swift in Sources */,
 				CF0CE3752004031B00000EE1 /* Legality.swift in Sources */,
+				CFD0688D207E859D004E32B5 /* TextParserToken.swift in Sources */,
 				CF4BE06A2007F0470054FFEA /* RemoteList.swift in Sources */,
 				CFD05C3A2002525900CDF9C2 /* UIColor+Extension.swift in Sources */,
+				CFD06891207E94B9004E32B5 /* TextParser.swift in Sources */,
+				CFD0688F207E93F1004E32B5 /* TextParserType.swift in Sources */,
 				CFD05BED20002D9300CDF9C2 /* WebService.swift in Sources */,
 				CF1FA2952006A59400E8DAEA /* ArtistToken.swift in Sources */,
 				CFD05C382002294100CDF9C2 /* CardDetailsView.swift in Sources */,
@@ -913,6 +939,7 @@
 				CF1FA26120068A2B00E8DAEA /* NumericToken.swift in Sources */,
 				CF6DDA0820360F4D00F5EAC9 /* CardsListSettingsHeader.swift in Sources */,
 				CFD05C2C2001622C00CDF9C2 /* Layout.swift in Sources */,
+				CFD0688A207E84C3004E32B5 /* TextToQueryService.swift in Sources */,
 				CF1FA2692006936B00E8DAEA /* RarityToken.swift in Sources */,
 				CF1FA25320057D0100E8DAEA /* OracleTextToken.swift in Sources */,
 				CF00E45A2011EC3D00FCF9FF /* PrintingsTableFooter.swift in Sources */,
@@ -945,6 +972,7 @@
 				CF1FA25F200613D700E8DAEA /* TraitToken.swift in Sources */,
 				CF0CE3732003EDD100000EE1 /* LegalityTable.swift in Sources */,
 				CFD05C0020002F4B00CDF9C2 /* ScryfallServiceType.swift in Sources */,
+				CFD06888207E83C3004E32B5 /* TextToQueryServiceType.swift in Sources */,
 				CF1FA29B2006A76300E8DAEA /* Frame.swift in Sources */,
 				CF1FA2A92006AD9300E8DAEA /* CombinedToken.swift in Sources */,
 				CFD05C1B200123E600CDF9C2 /* CardSearchCell.swift in Sources */,

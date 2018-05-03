@@ -11,6 +11,17 @@ import Foundation
 enum LogicalOperator: String {
     case or = "OR"
     case and = "AND"
+    
+    init?(rawValue: String) {
+        switch rawValue.lowercased() {
+        case "or":
+            self = .or
+        case "and":
+            self = .and
+        default:
+            return nil
+        }
+    }
 }
 
 class CombinedToken: QueryToken {

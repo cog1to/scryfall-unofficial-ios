@@ -23,6 +23,8 @@ enum Layout: String {
     case emblem = "emblem"
     case augment = "augment"
     case host = "host"
+    case saga = "saga"
+    case unknown = "unknown"
     
     var name: String {
         get {
