@@ -46,7 +46,7 @@ class PrintingsTableRow: UIView {
             label.translatesAutoresizingMaskIntoConstraints = false
             label.textColor =  Style.color(forKey: .text)
             label.font = Style.font(forKey: .subtext)
-            label.setContentCompressionResistancePriority(UILayoutPriority.init(760), for: .horizontal)
+            label.setContentCompressionResistancePriority(UILayoutPriority.init(1000), for: .horizontal)
             
             if let priceValue = price.value {
                 label.text = "\(price.type.symbol)\(priceValue)"
