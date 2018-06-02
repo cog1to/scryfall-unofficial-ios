@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="v7n-ig-6pn">
-    <device id="retina3_5" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
@@ -16,31 +13,31 @@
             <objects>
                 <viewController storyboardIdentifier="CardSearchViewController" id="Jv1-y0-fQw" customClass="CardSearchViewController" customModule="Scryfall" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iPg-kD-40V">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AJZ-j5-ffy" customClass="ListSettingsHeaderView" customModule="Scryfall" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="68" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="68" width="600" height="44"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j5g-Xo-UJa" userLabel="Search Background">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="68"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="68"/>
                                 <color key="backgroundColor" red="0.20000000000000001" green="0.19215686274509802" blue="0.25490196078431371" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7vg-ad-WHL" userLabel="Search Bar">
-                                <rect key="frame" x="0.0" y="20" width="320" height="48"/>
+                                <rect key="frame" x="0.0" y="20" width="600" height="48"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Ff0-ur-diQ">
-                                        <rect key="frame" x="8" y="8" width="304" height="32"/>
+                                        <rect key="frame" x="8" y="8" width="584" height="32"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search for cards..." adjustsFontSizeToFit="NO" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="42m-qy-1uC">
-                                                <rect key="frame" x="0.0" y="0.0" width="270" height="32"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="550" height="32"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="search" smartQuotesType="no"/>
                                             </textField>
                                             <button opaque="NO" contentMode="center" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N8k-96-UMd">
-                                                <rect key="frame" x="278" y="0.0" width="26" height="32"/>
+                                                <rect key="frame" x="558" y="0.0" width="26" height="32"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" image="menu"/>
                                             </button>
@@ -56,14 +53,14 @@
                                 </constraints>
                             </view>
                             <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="I3W-VQ-7gs">
-                                <rect key="frame" x="0.0" y="120" width="320" height="360"/>
+                                <rect key="frame" x="0.0" y="120" width="600" height="360"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="LoadingCell" rowHeight="42" id="aZf-eW-Ylq" customClass="LoadingCell" customModule="Scryfall" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="320" height="42"/>
+                                        <rect key="frame" x="0.0" y="28" width="600" height="42"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="aZf-eW-Ylq" id="Pqa-4P-5Eh">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="41.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="41.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="6KD-u6-CX1">
@@ -81,10 +78,10 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CardSearchCell" rowHeight="57" id="OBo-Kq-PdX" customClass="CardSearchCell" customModule="Scryfall" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="70" width="320" height="57"/>
+                                        <rect key="frame" x="0.0" y="70" width="600" height="57"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="OBo-Kq-PdX" id="yJl-Nz-g5n">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="56.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="56.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" ambiguous="YES" text="Card name" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g2q-p3-ECE">
@@ -139,7 +136,7 @@
                                 </connections>
                             </tableView>
                             <collectionView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="TcZ-J5-ucO">
-                                <rect key="frame" x="0.0" y="120" width="320" height="360"/>
+                                <rect key="frame" x="0.0" y="120" width="600" height="360"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="3ha-Zn-dyo">
                                     <size key="itemSize" width="165" height="201"/>
@@ -149,7 +146,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CardSearchCell" id="oAP-DZ-9J1" customClass="CardSearchCollectionCell" customModule="Scryfall" customModuleProvider="target">
-                                        <rect key="frame" x="77.5" y="0.0" width="165" height="201"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="165" height="201"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="165" height="201"/>
@@ -173,7 +170,7 @@
                                         </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="LoadingCell" id="fsL-v7-PEJ" customClass="LoadingCollectionCell" customModule="Scryfall" customModuleProvider="target">
-                                        <rect key="frame" x="77.5" y="211" width="165" height="201"/>
+                                        <rect key="frame" x="217.5" y="0.0" width="165" height="201"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="165" height="201"/>
@@ -199,7 +196,7 @@
                                 </connections>
                             </collectionView>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JSq-LC-VRz">
-                                <rect key="frame" x="142" y="222" width="36" height="36"/>
+                                <rect key="frame" x="282" y="282" width="36" height="36"/>
                                 <subviews>
                                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="YqF-fu-EiW">
                                         <rect key="frame" x="8" y="8" width="20" height="20"/>
@@ -269,17 +266,17 @@
             <objects>
                 <viewController storyboardIdentifier="CardDetailsViewController" id="HIK-fP-es0" customClass="CardDetailsViewController" customModule="Scryfall" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TLP-qB-f1N">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lD2-5k-QBT">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="400"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="520"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="YKR-kc-FYE">
-                                        <rect key="frame" x="16" y="16" width="288" height="796"/>
+                                        <rect key="frame" x="16" y="16" width="568" height="796"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SVj-a1-of2" customClass="CardImageView" customModule="Scryfall" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="0.0" width="248" height="484"/>
+                                                <rect key="frame" x="160" y="0.0" width="248" height="484"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="equalSpacing" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="MXo-19-u7M">
                                                         <rect key="frame" x="0.0" y="0.0" width="248" height="484"/>
@@ -315,10 +312,10 @@
                                                 </connections>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Juc-Ck-hUq" customClass="CardDetailsView" customModule="Scryfall" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="504" width="288" height="128"/>
+                                                <rect key="frame" x="0.0" y="504" width="568" height="128"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="zsh-fc-4QC">
-                                                        <rect key="frame" x="0.0" y="0.0" width="288" height="128"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="568" height="128"/>
                                                     </stackView>
                                                 </subviews>
                                                 <constraints>
@@ -332,10 +329,10 @@
                                                 </connections>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l0i-sj-1jl" customClass="CardSetView" customModule="Scryfall" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="652" width="288" height="144"/>
+                                                <rect key="frame" x="0.0" y="652" width="568" height="144"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="PCh-gI-E5j">
-                                                        <rect key="frame" x="8" y="8" width="272" height="128"/>
+                                                        <rect key="frame" x="8" y="8" width="552" height="128"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="She-bn-QtL">
                                                                 <rect key="frame" x="0.0" y="52" width="24" height="24"/>
@@ -346,16 +343,16 @@
                                                                 </constraints>
                                                             </view>
                                                             <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalCompressionResistancePriority="751" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="uTx-UZ-jSo">
-                                                                <rect key="frame" x="30" y="45.5" width="242" height="37.5"/>
+                                                                <rect key="frame" x="30" y="45.5" width="522" height="37.5"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Set name (ABR)" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Or1-Gx-sM6">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="242" height="20.5"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="522" height="20.5"/>
                                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Card number" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QkX-dW-77O">
-                                                                        <rect key="frame" x="0.0" y="20.5" width="242" height="17"/>
+                                                                        <rect key="frame" x="0.0" y="20.5" width="522" height="17"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
@@ -424,21 +421,21 @@
         <!--Sets-->
         <scene sceneID="cz9-Rb-wbm">
             <objects>
-                <viewController title="Sets" id="J4x-8B-ZOf" customClass="SetsListViewController" customModule="Scryfall" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Sets" id="J4x-8B-ZOf" customClass="SetListViewController" customModule="Scryfall" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Tbv-wu-DM5">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qc7-4N-VgH" customClass="ListSettingsHeaderView" customModule="Scryfall" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="6Vc-6j-V45">
-                                <rect key="frame" x="0.0" y="44" width="320" height="372"/>
+                                <rect key="frame" x="0.0" y="44" width="600" height="372"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="azY-9b-g34">
-                                <rect key="frame" x="142" y="190" width="36" height="36"/>
+                                <rect key="frame" x="282" y="250" width="36" height="36"/>
                                 <subviews>
                                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="ZoV-7z-9IQ">
                                         <rect key="frame" x="8" y="8" width="20" height="20"/>
@@ -492,15 +489,15 @@
             <objects>
                 <tableViewController id="FIc-iG-mZN" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="6N0-4n-JPd">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="alH-5I-oH1">
-                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="alH-5I-oH1" id="mOm-6Q-Qkk">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -520,7 +517,7 @@
             <objects>
                 <viewController id="v7n-ig-6pn" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JWw-oX-Xea">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="teF-MJ-VND"/>
@@ -556,6 +553,7 @@
                     <toolbarItems/>
                     <nil key="simulatedTopBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Rzr-SV-obC">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

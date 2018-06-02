@@ -32,7 +32,7 @@ extension Scene {
             return nc
         case .sets(let viewModel):
             let nc = storyboard.instantiateViewController(withIdentifier: "SetsList") as! UINavigationController
-            var vc = nc.viewControllers.first as! SetsListViewController
+            var vc = nc.viewControllers.first as! SetListViewController
             vc.bindViewModel(to: viewModel)
             return vc
         }

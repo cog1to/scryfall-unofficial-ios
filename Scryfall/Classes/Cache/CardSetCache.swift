@@ -37,4 +37,6 @@ class CardSetCache {
         
         return observable
     }
+    
+    // MARK: - Variable bindings
 }

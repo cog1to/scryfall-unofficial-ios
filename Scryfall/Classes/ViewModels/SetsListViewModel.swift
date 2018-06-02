@@ -33,6 +33,7 @@ class SetsListViewModel {
     let sortOrder = Variable<SetSortOrder>(.releaseDate)
     let setType = Variable<CardSetType>(.any)
     let sets = Variable<[SetListItem]>([])
+    let refreshSubject = PublishSubject<Bool>()
     
     private let bag = DisposeBag()
     
@@ -41,9 +42,11 @@ class SetsListViewModel {
         sceneCoordinator = coordinator
         self.callback = callback
         
-        let setsObservable = CardSetCache.instance.sets()
-        Observable.combineLatest(sortOrder.asObservable(), setType.asObservable(), setsObservable)
-            .map { (order: SetSortOrder, type: CardSetType, sets: [CardSet]) -> [SetListItem] in
+        let setsObservable = refreshSubject.asObservable().flatMap {
+            CardSetCache.instance.sets(force: $0)
+        }
+        let combinedObservable = Observable.combineLatest(sortOrder.asObservable(), setType.asObservable(), setsObservable)
+        combinedObservable.map { (order: SetSortOrder, type: CardSetType, sets: [CardSet]) -> [SetListItem] in
                 let filteredItems = (type == .any) ? sets : sets.filter {
                     return $0.setType == type
                 }

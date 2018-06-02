@@ -1,5 +1,5 @@
 //
-//  SetsListViewController.swift
+//  SetListViewController.swift
 //  Scryfall
 //
 //  Created by Alexander Rogachev on 5/28/18.
@@ -17,7 +17,7 @@ import Action
 /**
  * All Sets list view controller.
  */
-class SetsListViewController: UIViewController, BindableType {
+class SetListViewController: UIViewController, BindableType {
     
     let cellIdentifier = "SetsListCell"
     
@@ -46,6 +46,7 @@ class SetsListViewController: UIViewController, BindableType {
         tableView.rx.didScroll.subscribe(onNext: { [unowned self] in
             self.scrollViewDidScroll(self.tableView)
         }).disposed(by: disposeBag)
+        tableView.refreshControl = UIRefreshControl()
         
         searchOptionsView.firstOptionLabel.text = "Sort by"
         searchOptionsView.secondOptionLabel.text = "Set type"
@@ -83,14 +84,19 @@ class SetsListViewController: UIViewController, BindableType {
         searchOptionsConstraint.isActive = false
         
         // We bind data source after view appears to remove the lag between tapping on "all sets" button and UI response.
-        viewModel.sets
-            .asObservable()
-            .bind(to: tableView.rx.items(cellIdentifier: cellIdentifier)) { [unowned self] index, model, cell in
-                if let cell = cell as? SetsListCell {
-                    cell.configure(for: model, tableView: self.tableView, indexPath: IndexPath(row: index, section: 0))
-                }
+        let sets = viewModel.sets.asObservable()
+        sets.bind(to: tableView.rx.items(cellIdentifier: cellIdentifier)) { [unowned self] index, model, cell in
+            if let cell = cell as? SetsListCell {
+                cell.configure(for: model, tableView: self.tableView, indexPath: IndexPath(row: index, section: 0))
             }
-            .disposed(by: disposeBag)
+        }
+        .disposed(by: disposeBag)
+        
+        sets.subscribeOn(MainScheduler.instance).subscribe(onNext: { [unowned self] _ in
+            self.tableView.refreshControl?.endRefreshing()
+        }).disposed(by: disposeBag)
+
+        viewModel.refreshSubject.onNext(false)
     }
     
     func bindViewModel() {
@@ -107,6 +113,11 @@ class SetsListViewController: UIViewController, BindableType {
             }.subscribe(viewModel.onSet.inputs)
             .disposed(by: disposeBag)
 
+        // Refresh.
+        tableView.refreshControl?.rx.controlEvent(.valueChanged).subscribe(onNext: { [unowned self] in
+            self.viewModel.refreshSubject.onNext(true)
+        }).disposed(by: disposeBag)
+        
         // Connect UX to view mode settings
         optionsViewController.firstOptionSelected = Action { [unowned self] sortOrder in
             self.viewModel.sortOrder.value = sortOrder
@@ -131,7 +142,7 @@ class SetsListViewController: UIViewController, BindableType {
 
 // MARK: - Scrolling / Options header
 
-extension SetsListViewController: UITableViewDelegate {
+extension SetListViewController: UITableViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         guard let settingsHeaderConstraint = settingsHeaderConstraint else {
             return

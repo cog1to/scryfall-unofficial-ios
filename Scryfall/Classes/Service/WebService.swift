@@ -52,7 +52,7 @@ class WebService {
             }
             
             // Perform the request.
-            return self.json(API: API, endpoint: endpoint, query: items)
+            return self.json(API: API, endpoint: endpoint, query: items, force: force)
         } catch {
             return Observable.error(error)
         }

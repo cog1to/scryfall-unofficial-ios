@@ -60,7 +60,6 @@ class CardSearchViewController: UIViewController, BindableType {
         noItemsLabel.centerYAnchor.constraint(equalTo: tableView.centerYAnchor).isActive = true
         tableView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-(>=20)-[label]-(>=20)-|", options: [], metrics: nil, views: ["label":noItemsLabel]))
         tableView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-(>=20)-[label]-(>=20)-|", options: [], metrics: nil, views: ["label":noItemsLabel]))
-        
         tableView.tableFooterView = UIView()
         
         definesPresentationContext = true
@@ -69,6 +68,9 @@ class CardSearchViewController: UIViewController, BindableType {
         loadingView.layer.cornerRadius = Constants.commonCornerRadius
         
         menuButton.tintColor = Style.color(forKey: .printingText)
+        
+        searchOptionsView.firstOptionLabel.text = "Show as"
+        searchOptionsView.secondOptionLabel.text = "Sort by"
     }
     
     func bindViewModel() {

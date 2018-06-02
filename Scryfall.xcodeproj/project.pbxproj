@@ -84,12 +84,12 @@
 		CF248D8720BBEF67007C8909 /* ListSettingsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF248D8620BBEF67007C8909 /* ListSettingsHeaderView.swift */; };
 		CF248D8920BBF406007C8909 /* PopoverCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF248D8820BBF406007C8909 /* PopoverCell.xib */; };
 		CF248D8B20BC4038007C8909 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF248D8A20BC4038007C8909 /* SnapKit.framework */; };
-		CF248D8D20BC62A5007C8909 /* SetsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF248D8C20BC62A5007C8909 /* SetsListViewController.swift */; };
 		CF248D8F20BC6335007C8909 /* SetSortOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF248D8E20BC6335007C8909 /* SetSortOrder.swift */; };
 		CF248D9120BC6645007C8909 /* SetsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF248D9020BC6645007C8909 /* SetsListViewModel.swift */; };
 		CF248D9420BC7362007C8909 /* SetsListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF248D9320BC7362007C8909 /* SetsListCell.swift */; };
 		CF248D9620BC7727007C8909 /* SetsListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF248D9520BC7727007C8909 /* SetsListCell.xib */; };
 		CF248D9920BF4737007C8909 /* DateFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF248D9820BF4737007C8909 /* DateFormat.swift */; };
+		CF248D9B20C32E15007C8909 /* SetListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF248D9A20C32E14007C8909 /* SetListViewController.swift */; };
 		CF4BE0302007BB030054FFEA /* LayoutToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4BE02F2007BB030054FFEA /* LayoutToken.swift */; };
 		CF4BE0322007BBEB0054FFEA /* StringEnumToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4BE0312007BBEB0054FFEA /* StringEnumToken.swift */; };
 		CF4BE0622007E88A0054FFEA /* CardSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4BE0612007E88A0054FFEA /* CardSet.swift */; };
@@ -244,12 +244,12 @@
 		CF248D8620BBEF67007C8909 /* ListSettingsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSettingsHeaderView.swift; sourceTree = "<group>"; };
 		CF248D8820BBF406007C8909 /* PopoverCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopoverCell.xib; sourceTree = "<group>"; };
 		CF248D8A20BC4038007C8909 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
-		CF248D8C20BC62A5007C8909 /* SetsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetsListViewController.swift; sourceTree = "<group>"; };
 		CF248D8E20BC6335007C8909 /* SetSortOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetSortOrder.swift; sourceTree = "<group>"; };
 		CF248D9020BC6645007C8909 /* SetsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetsListViewModel.swift; sourceTree = "<group>"; };
 		CF248D9320BC7362007C8909 /* SetsListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetsListCell.swift; sourceTree = "<group>"; };
 		CF248D9520BC7727007C8909 /* SetsListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SetsListCell.xib; sourceTree = "<group>"; };
 		CF248D9820BF4737007C8909 /* DateFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormat.swift; sourceTree = "<group>"; };
+		CF248D9A20C32E14007C8909 /* SetListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetListViewController.swift; sourceTree = "<group>"; };
 		CF4BE02F2007BB030054FFEA /* LayoutToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutToken.swift; sourceTree = "<group>"; };
 		CF4BE0312007BBEB0054FFEA /* StringEnumToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringEnumToken.swift; sourceTree = "<group>"; };
 		CF4BE0612007E88A0054FFEA /* CardSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSet.swift; sourceTree = "<group>"; };
@@ -681,9 +681,9 @@
 		CFD05BEB2000270C00CDF9C2 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				CF248D9A20C32E14007C8909 /* SetListViewController.swift */,
 				CFD05C072000336C00CDF9C2 /* CardSearchViewController.swift */,
 				CFD05C23200142F500CDF9C2 /* CardDetailsViewController.swift */,
-				CF248D8C20BC62A5007C8909 /* SetsListViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -980,6 +980,7 @@
 				CF1FA26F200695BF00E8DAEA /* SetsToken.swift in Sources */,
 				CF1FA27B20069F9600E8DAEA /* GameToken.swift in Sources */,
 				CF1FA2672006930800E8DAEA /* ToughnessToken.swift in Sources */,
+				CF248D9B20C32E15007C8909 /* SetListViewController.swift in Sources */,
 				CF1FA26120068A2B00E8DAEA /* NumericToken.swift in Sources */,
 				CFD05C2C2001622C00CDF9C2 /* Layout.swift in Sources */,
 				CF1FA2692006936B00E8DAEA /* RarityToken.swift in Sources */,
@@ -1035,7 +1036,6 @@
 				CF248D8F20BC6335007C8909 /* SetSortOrder.swift in Sources */,
 				CF1FA27720069ED300E8DAEA /* IsInToken.swift in Sources */,
 				CF4BE0792008D1890054FFEA /* RoundCornerButton.swift in Sources */,
-				CF248D8D20BC62A5007C8909 /* SetsListViewController.swift in Sources */,
 				CF1FA25120057C2800E8DAEA /* QueryError.swift in Sources */,
 				CF0CE3662002678E00000EE1 /* NSMutableAttributedString+Extension.swift in Sources */,
 				CF1FA2B42006C51600E8DAEA /* TextToken.swift in Sources */,
