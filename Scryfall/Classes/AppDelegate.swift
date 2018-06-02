@@ -46,6 +46,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UIView.appearance(whenContainedInInstancesOf: [UIAlertController.self]).tintColor = Style.color(forKey: .tint)
         UINavigationBar.appearance().tintColor = Style.color(forKey: .printingText)
         UINavigationBar.appearance().barTintColor = Style.color(forKey: .navigationTint)
+        let textAttributes = [NSAttributedStringKey.foregroundColor: Style.color(forKey: .printingText)]
+        UINavigationBar.appearance().titleTextAttributes = textAttributes
         UISearchBar.appearance().tintColor = Style.color(forKey: .printingText)
         UITableView.appearance().separatorColor = Style.color(forKey: .gray)
         UIButton.appearance().tintColor = Style.color(forKey: .tint)

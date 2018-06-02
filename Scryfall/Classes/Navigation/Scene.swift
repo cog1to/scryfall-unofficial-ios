@@ -13,6 +13,7 @@ import UIKit
 enum Scene {
     case search(CardSearchViewModel)
     case details(CardDetailsViewModel)
+    case sets(SetsListViewModel)
 }
 
 extension Scene {
@@ -29,6 +30,11 @@ extension Scene {
             var vc = nc.viewControllers.first as! CardDetailsViewController
             vc.bindViewModel(to: viewModel)
             return nc
+        case .sets(let viewModel):
+            let nc = storyboard.instantiateViewController(withIdentifier: "SetsList") as! UINavigationController
+            var vc = nc.viewControllers.first as! SetsListViewController
+            vc.bindViewModel(to: viewModel)
+            return vc
         }
     }
 }

@@ -83,6 +83,15 @@ class CardSearchViewModel {
         }
     }(self)
     
+    lazy var onMenuItemSelected: Action<String, Void> = { this in
+        return Action { query in
+            let setsViewModel = SetsListViewModel(service: this.scryfallService,
+                                                  coordinator: this.sceneCoordinator,
+                                                  callback: this.onLink)
+            return this.sceneCoordinator.transition(to: Scene.sets(setsViewModel), type: .push)
+        }
+    }(self)
+    
     lazy var onNextPage: CocoaAction = { this in
         return CocoaAction {
             if let nextPage = this.nextPage, let components = URLComponents.init(url: nextPage, resolvingAgainstBaseURL: false), let parameters = components.queryItems {

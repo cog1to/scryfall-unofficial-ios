@@ -76,6 +76,20 @@
 		CF1FA2AF2006B74800E8DAEA /* ComparableToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1FA2AE2006B74800E8DAEA /* ComparableToken.swift */; };
 		CF1FA2B22006BE4A00E8DAEA /* EqualityToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1FA2B12006BE4A00E8DAEA /* EqualityToken.swift */; };
 		CF1FA2B42006C51600E8DAEA /* TextToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1FA2B32006C51600E8DAEA /* TextToken.swift */; };
+		CF248D7C20BB5FAE007C8909 /* PopoverMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF248D7B20BB5FAE007C8909 /* PopoverMenuView.swift */; };
+		CF248D7E20BB60C1007C8909 /* Popover.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF248D7D20BB60C1007C8909 /* Popover.framework */; };
+		CF248D8120BBE279007C8909 /* ListSettingsHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF248D8020BBE279007C8909 /* ListSettingsHeader.swift */; };
+		CF248D8320BBE2FF007C8909 /* StringRepresentableOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF248D8220BBE2FF007C8909 /* StringRepresentableOption.swift */; };
+		CF248D8520BBE587007C8909 /* ListSettingsHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF248D8420BBE587007C8909 /* ListSettingsHeaderView.xib */; };
+		CF248D8720BBEF67007C8909 /* ListSettingsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF248D8620BBEF67007C8909 /* ListSettingsHeaderView.swift */; };
+		CF248D8920BBF406007C8909 /* PopoverCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF248D8820BBF406007C8909 /* PopoverCell.xib */; };
+		CF248D8B20BC4038007C8909 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF248D8A20BC4038007C8909 /* SnapKit.framework */; };
+		CF248D8D20BC62A5007C8909 /* SetsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF248D8C20BC62A5007C8909 /* SetsListViewController.swift */; };
+		CF248D8F20BC6335007C8909 /* SetSortOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF248D8E20BC6335007C8909 /* SetSortOrder.swift */; };
+		CF248D9120BC6645007C8909 /* SetsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF248D9020BC6645007C8909 /* SetsListViewModel.swift */; };
+		CF248D9420BC7362007C8909 /* SetsListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF248D9320BC7362007C8909 /* SetsListCell.swift */; };
+		CF248D9620BC7727007C8909 /* SetsListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF248D9520BC7727007C8909 /* SetsListCell.xib */; };
+		CF248D9920BF4737007C8909 /* DateFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF248D9820BF4737007C8909 /* DateFormat.swift */; };
 		CF4BE0302007BB030054FFEA /* LayoutToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4BE02F2007BB030054FFEA /* LayoutToken.swift */; };
 		CF4BE0322007BBEB0054FFEA /* StringEnumToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4BE0312007BBEB0054FFEA /* StringEnumToken.swift */; };
 		CF4BE0622007E88A0054FFEA /* CardSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4BE0612007E88A0054FFEA /* CardSet.swift */; };
@@ -84,8 +98,6 @@
 		CF4BE06C2007F1380054FFEA /* JSONConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4BE06B2007F1380054FFEA /* JSONConvertible.swift */; };
 		CF4BE070200826710054FFEA /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4BE06F200826710054FFEA /* UIView+Extension.swift */; };
 		CF4BE0792008D1890054FFEA /* RoundCornerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4BE0782008D1890054FFEA /* RoundCornerButton.swift */; };
-		CF4BE07D2008DB740054FFEA /* CardsListSettingsHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF4BE07C2008DB740054FFEA /* CardsListSettingsHeader.xib */; };
-		CF6DDA0820360F4D00F5EAC9 /* CardsListSettingsHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6DDA0720360F4D00F5EAC9 /* CardsListSettingsHeader.swift */; };
 		CF6DDA0A20361D6D00F5EAC9 /* CardSearchCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6DDA0920361D6D00F5EAC9 /* CardSearchCollectionCell.swift */; };
 		CF6DDA0C203620EF00F5EAC9 /* LoadingCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6DDA0B203620EF00F5EAC9 /* LoadingCollectionCell.swift */; };
 		CF6DDA0E20362E5600F5EAC9 /* DisplayMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6DDA0D20362E5600F5EAC9 /* DisplayMode.swift */; };
@@ -142,8 +154,6 @@
 		CFD05C3A2002525900CDF9C2 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD05C392002525900CDF9C2 /* UIColor+Extension.swift */; };
 		CFD0686F207D6259004E32B5 /* CardSetCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD0686E207D6259004E32B5 /* CardSetCache.swift */; };
 		CFD06873207DE930004E32B5 /* PocketSVG.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFD06872207DE930004E32B5 /* PocketSVG.framework */; };
-		CFD06888207E83C3004E32B5 /* TextToQueryServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD06887207E83C3004E32B5 /* TextToQueryServiceType.swift */; };
-		CFD0688A207E84C3004E32B5 /* TextToQueryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD06889207E84C3004E32B5 /* TextToQueryService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -226,6 +236,20 @@
 		CF1FA2AE2006B74800E8DAEA /* ComparableToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComparableToken.swift; sourceTree = "<group>"; };
 		CF1FA2B12006BE4A00E8DAEA /* EqualityToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EqualityToken.swift; sourceTree = "<group>"; };
 		CF1FA2B32006C51600E8DAEA /* TextToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextToken.swift; sourceTree = "<group>"; };
+		CF248D7B20BB5FAE007C8909 /* PopoverMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverMenuView.swift; sourceTree = "<group>"; };
+		CF248D7D20BB60C1007C8909 /* Popover.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Popover.framework; path = Carthage/Build/iOS/Popover.framework; sourceTree = "<group>"; };
+		CF248D8020BBE279007C8909 /* ListSettingsHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSettingsHeader.swift; sourceTree = "<group>"; };
+		CF248D8220BBE2FF007C8909 /* StringRepresentableOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringRepresentableOption.swift; sourceTree = "<group>"; };
+		CF248D8420BBE587007C8909 /* ListSettingsHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ListSettingsHeaderView.xib; sourceTree = "<group>"; };
+		CF248D8620BBEF67007C8909 /* ListSettingsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSettingsHeaderView.swift; sourceTree = "<group>"; };
+		CF248D8820BBF406007C8909 /* PopoverCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopoverCell.xib; sourceTree = "<group>"; };
+		CF248D8A20BC4038007C8909 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
+		CF248D8C20BC62A5007C8909 /* SetsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetsListViewController.swift; sourceTree = "<group>"; };
+		CF248D8E20BC6335007C8909 /* SetSortOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetSortOrder.swift; sourceTree = "<group>"; };
+		CF248D9020BC6645007C8909 /* SetsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetsListViewModel.swift; sourceTree = "<group>"; };
+		CF248D9320BC7362007C8909 /* SetsListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetsListCell.swift; sourceTree = "<group>"; };
+		CF248D9520BC7727007C8909 /* SetsListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SetsListCell.xib; sourceTree = "<group>"; };
+		CF248D9820BF4737007C8909 /* DateFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormat.swift; sourceTree = "<group>"; };
 		CF4BE02F2007BB030054FFEA /* LayoutToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutToken.swift; sourceTree = "<group>"; };
 		CF4BE0312007BBEB0054FFEA /* StringEnumToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringEnumToken.swift; sourceTree = "<group>"; };
 		CF4BE0612007E88A0054FFEA /* CardSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSet.swift; sourceTree = "<group>"; };
@@ -234,8 +258,6 @@
 		CF4BE06B2007F1380054FFEA /* JSONConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONConvertible.swift; sourceTree = "<group>"; };
 		CF4BE06F200826710054FFEA /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		CF4BE0782008D1890054FFEA /* RoundCornerButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundCornerButton.swift; sourceTree = "<group>"; };
-		CF4BE07C2008DB740054FFEA /* CardsListSettingsHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardsListSettingsHeader.xib; sourceTree = "<group>"; };
-		CF6DDA0720360F4D00F5EAC9 /* CardsListSettingsHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsListSettingsHeader.swift; sourceTree = "<group>"; };
 		CF6DDA0920361D6D00F5EAC9 /* CardSearchCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSearchCollectionCell.swift; sourceTree = "<group>"; };
 		CF6DDA0B203620EF00F5EAC9 /* LoadingCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingCollectionCell.swift; sourceTree = "<group>"; };
 		CF6DDA0D20362E5600F5EAC9 /* DisplayMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayMode.swift; sourceTree = "<group>"; };
@@ -296,8 +318,6 @@
 		CFD05C392002525900CDF9C2 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		CFD0686E207D6259004E32B5 /* CardSetCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSetCache.swift; sourceTree = "<group>"; };
 		CFD06872207DE930004E32B5 /* PocketSVG.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PocketSVG.framework; path = Carthage/Build/iOS/PocketSVG.framework; sourceTree = "<group>"; };
-		CFD06887207E83C3004E32B5 /* TextToQueryServiceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextToQueryServiceType.swift; sourceTree = "<group>"; };
-		CFD06889207E84C3004E32B5 /* TextToQueryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextToQueryService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -305,6 +325,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF248D8B20BC4038007C8909 /* SnapKit.framework in Frameworks */,
+				CF248D7E20BB60C1007C8909 /* Popover.framework in Frameworks */,
 				CFD06873207DE930004E32B5 /* PocketSVG.framework in Frameworks */,
 				CF00E456201157C400FCF9FF /* RxGesture.framework in Frameworks */,
 				CFD05BF720002E0200CDF9C2 /* RxRealm.framework in Frameworks */,
@@ -343,11 +365,13 @@
 		CF0CE36D2003EA5000000EE1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				CF248D9220BC734A007C8909 /* Sets List */,
+				CF248D7F20BBE24F007C8909 /* List Settings */,
 				CFBBEBE2200EB562005A301F /* Card Details */,
 				CF1FA2422004C62700E8DAEA /* CyclingLabel.swift */,
 				CF4BE0782008D1890054FFEA /* RoundCornerButton.swift */,
-				CF4BE07C2008DB740054FFEA /* CardsListSettingsHeader.xib */,
-				CF6DDA0720360F4D00F5EAC9 /* CardsListSettingsHeader.swift */,
+				CF248D7B20BB5FAE007C8909 /* PopoverMenuView.swift */,
+				CF248D8820BBF406007C8909 /* PopoverCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -429,6 +453,7 @@
 				CF4BE0642007E9280054FFEA /* CardSetType.swift */,
 				CF6DDA0D20362E5600F5EAC9 /* DisplayMode.swift */,
 				CF6DDA0F20362F0900F5EAC9 /* SortOrder.swift */,
+				CF248D8E20BC6335007C8909 /* SetSortOrder.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -446,6 +471,33 @@
 				CF4BE0312007BBEB0054FFEA /* StringEnumToken.swift */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		CF248D7F20BBE24F007C8909 /* List Settings */ = {
+			isa = PBXGroup;
+			children = (
+				CF248D8020BBE279007C8909 /* ListSettingsHeader.swift */,
+				CF248D8620BBEF67007C8909 /* ListSettingsHeaderView.swift */,
+				CF248D8420BBE587007C8909 /* ListSettingsHeaderView.xib */,
+			);
+			path = "List Settings";
+			sourceTree = "<group>";
+		};
+		CF248D9220BC734A007C8909 /* Sets List */ = {
+			isa = PBXGroup;
+			children = (
+				CF248D9320BC7362007C8909 /* SetsListCell.swift */,
+				CF248D9520BC7727007C8909 /* SetsListCell.xib */,
+			);
+			path = "Sets List";
+			sourceTree = "<group>";
+		};
+		CF248D9720BF471F007C8909 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				CF248D9820BF4737007C8909 /* DateFormat.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		CF4BE0632007E8960054FFEA /* MVVM */ = {
@@ -560,6 +612,7 @@
 		CFD05BE320001A7900CDF9C2 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				CF248D9720BF471F007C8909 /* Utilities */,
 				CFA2A18B203B4A3200866BEC /* Settings */,
 				CF8F8C2F20193BFF007CB484 /* Constants */,
 				CF0CE36D2003EA5000000EE1 /* Views */,
@@ -607,7 +660,6 @@
 		CFD05BE9200024FC00CDF9C2 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				CFD0688B207E84E3004E32B5 /* TextToQuery */,
 				CFD05BEC20002D9300CDF9C2 /* WebService.swift */,
 				CFD05BFF20002F4B00CDF9C2 /* ScryfallServiceType.swift */,
 				CFD05C0120002F5600CDF9C2 /* ScryfallService.swift */,
@@ -618,8 +670,10 @@
 		CFD05BEA200026FB00CDF9C2 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				CF248D8220BBE2FF007C8909 /* StringRepresentableOption.swift */,
 				CFD05C052000317900CDF9C2 /* CardSearchViewModel.swift */,
 				CFD05C2520014C7600CDF9C2 /* CardDetailsViewModel.swift */,
+				CF248D9020BC6645007C8909 /* SetsListViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -629,6 +683,7 @@
 			children = (
 				CFD05C072000336C00CDF9C2 /* CardSearchViewController.swift */,
 				CFD05C23200142F500CDF9C2 /* CardDetailsViewController.swift */,
+				CF248D8C20BC62A5007C8909 /* SetsListViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -636,6 +691,8 @@
 		CFD05BEE20002E0100CDF9C2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CF248D8A20BC4038007C8909 /* SnapKit.framework */,
+				CF248D7D20BB60C1007C8909 /* Popover.framework */,
 				CFD06872207DE930004E32B5 /* PocketSVG.framework */,
 				CF00E455201157C400FCF9FF /* RxGesture.framework */,
 				CF00E44E2011529500FCF9FF /* RxBlocking.framework */,
@@ -701,15 +758,6 @@
 			path = Cache;
 			sourceTree = "<group>";
 		};
-		CFD0688B207E84E3004E32B5 /* TextToQuery */ = {
-			isa = PBXGroup;
-			children = (
-				CFD06887207E83C3004E32B5 /* TextToQueryServiceType.swift */,
-				CFD06889207E84C3004E32B5 /* TextToQueryService.swift */,
-			);
-			path = TextToQuery;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -758,7 +806,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Alexander Rogachev";
 				TargetAttributes = {
 					CFD05BBF20001A4A00CDF9C2 = {
@@ -797,12 +845,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				CFBBEBDF200EAA7A005A301F /* PrintingsTableHeader.xib in Resources */,
-				CF4BE07D2008DB740054FFEA /* CardsListSettingsHeader.xib in Resources */,
+				CF248D8520BBE587007C8909 /* ListSettingsHeaderView.xib in Resources */,
 				CF00E4582011EB0100FCF9FF /* PrintingsTableFooter.xib in Resources */,
 				CFBBEBDD200E9E6E005A301F /* PrintingsTableRow.xib in Resources */,
+				CF248D8920BBF406007C8909 /* PopoverCell.xib in Resources */,
 				CFD05BCE20001A4A00CDF9C2 /* LaunchScreen.storyboard in Resources */,
 				CFD05BCB20001A4A00CDF9C2 /* Assets.xcassets in Resources */,
 				CFD05BC920001A4A00CDF9C2 /* Main.storyboard in Resources */,
+				CF248D9620BC7727007C8909 /* SetsListCell.xib in Resources */,
 				CF0CE3712003EA7200000EE1 /* LegalityView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -869,6 +919,8 @@
 				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxGesture.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/PocketSVG.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Popover.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SnapKit.framework",
 			);
 			outputPaths = (
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/SwiftyJSON.framework",
@@ -881,6 +933,8 @@
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxCocoa.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxGesture.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/PocketSVG.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Popover.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/SnapKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -905,10 +959,12 @@
 				CF1FA2852006A34300E8DAEA /* TIXToken.swift in Sources */,
 				CF1FA27D2006A03000E8DAEA /* Product.swift in Sources */,
 				CF0CE36F2003EA5E00000EE1 /* LegalityView.swift in Sources */,
+				CF248D8320BBE2FF007C8909 /* StringRepresentableOption.swift in Sources */,
 				CF1FA2A12006A8D600E8DAEA /* BorderToken.swift in Sources */,
 				CF0CE3752004031B00000EE1 /* Legality.swift in Sources */,
 				CF4BE06A2007F0470054FFEA /* RemoteList.swift in Sources */,
 				CFD05C3A2002525900CDF9C2 /* UIColor+Extension.swift in Sources */,
+				CF248D9420BC7362007C8909 /* SetsListCell.swift in Sources */,
 				CFD05BED20002D9300CDF9C2 /* WebService.swift in Sources */,
 				CF1FA2952006A59400E8DAEA /* ArtistToken.swift in Sources */,
 				CFD05C382002294100CDF9C2 /* CardDetailsView.swift in Sources */,
@@ -925,9 +981,7 @@
 				CF1FA27B20069F9600E8DAEA /* GameToken.swift in Sources */,
 				CF1FA2672006930800E8DAEA /* ToughnessToken.swift in Sources */,
 				CF1FA26120068A2B00E8DAEA /* NumericToken.swift in Sources */,
-				CF6DDA0820360F4D00F5EAC9 /* CardsListSettingsHeader.swift in Sources */,
 				CFD05C2C2001622C00CDF9C2 /* Layout.swift in Sources */,
-				CFD0688A207E84C3004E32B5 /* TextToQueryService.swift in Sources */,
 				CF1FA2692006936B00E8DAEA /* RarityToken.swift in Sources */,
 				CF1FA25320057D0100E8DAEA /* OracleTextToken.swift in Sources */,
 				CF00E45A2011EC3D00FCF9FF /* PrintingsTableFooter.swift in Sources */,
@@ -951,7 +1005,9 @@
 				CF0CE3682002A9AB00000EE1 /* Format.swift in Sources */,
 				CF1FA27920069F3100E8DAEA /* Game.swift in Sources */,
 				CF1FA2A72006AD2800E8DAEA /* UnrollToken.swift in Sources */,
+				CF248D8120BBE279007C8909 /* ListSettingsHeader.swift in Sources */,
 				CF1FA263200692CA00E8DAEA /* PowerToken.swift in Sources */,
+				CF248D8720BBEF67007C8909 /* ListSettingsHeaderView.swift in Sources */,
 				CFBBEBDB200E9D67005A301F /* Price.swift in Sources */,
 				CFD05C0420002F7E00CDF9C2 /* Card.swift in Sources */,
 				CFD05C0B20003CA700CDF9C2 /* SceneCoordinator.swift in Sources */,
@@ -960,7 +1016,6 @@
 				CF1FA25F200613D700E8DAEA /* TraitToken.swift in Sources */,
 				CF0CE3732003EDD100000EE1 /* LegalityTable.swift in Sources */,
 				CFD05C0020002F4B00CDF9C2 /* ScryfallServiceType.swift in Sources */,
-				CFD06888207E83C3004E32B5 /* TextToQueryServiceType.swift in Sources */,
 				CF1FA29B2006A76300E8DAEA /* Frame.swift in Sources */,
 				CF1FA2A92006AD9300E8DAEA /* CombinedToken.swift in Sources */,
 				CFD05C1B200123E600CDF9C2 /* CardSearchCell.swift in Sources */,
@@ -973,10 +1028,14 @@
 				CF1FA29F2006A89B00E8DAEA /* Border.swift in Sources */,
 				CF6DDA0C203620EF00F5EAC9 /* LoadingCollectionCell.swift in Sources */,
 				CF1FA2A52006AC2F00E8DAEA /* PrintedInBlockToken.swift in Sources */,
+				CF248D7C20BB5FAE007C8909 /* PopoverMenuView.swift in Sources */,
+				CF248D9120BC6645007C8909 /* SetsListViewModel.swift in Sources */,
 				CF1FA271200695E500E8DAEA /* PaperPrints.swift in Sources */,
 				CFBBEBE1200EB47D005A301F /* CardSetView.swift in Sources */,
+				CF248D8F20BC6335007C8909 /* SetSortOrder.swift in Sources */,
 				CF1FA27720069ED300E8DAEA /* IsInToken.swift in Sources */,
 				CF4BE0792008D1890054FFEA /* RoundCornerButton.swift in Sources */,
+				CF248D8D20BC62A5007C8909 /* SetsListViewController.swift in Sources */,
 				CF1FA25120057C2800E8DAEA /* QueryError.swift in Sources */,
 				CF0CE3662002678E00000EE1 /* NSMutableAttributedString+Extension.swift in Sources */,
 				CF1FA2B42006C51600E8DAEA /* TextToken.swift in Sources */,
@@ -994,6 +1053,7 @@
 				CFD05C182001144500CDF9C2 /* CardsList.swift in Sources */,
 				CFBBEBB9200D6A0E005A301F /* PrintingsTable.swift in Sources */,
 				CF1FA2572005833400E8DAEA /* OracleSymbol.swift in Sources */,
+				CF248D9920BF4737007C8909 /* DateFormat.swift in Sources */,
 				CF1FA24D200579F700E8DAEA /* TextValue.swift in Sources */,
 				CF1FA2972006A5FC00E8DAEA /* Watermark.swift in Sources */,
 				CF1FA2592005842400E8DAEA /* ManaToken.swift in Sources */,
@@ -1064,6 +1124,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -1071,6 +1132,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -1121,6 +1183,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -1128,6 +1191,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;

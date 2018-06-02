@@ -53,4 +53,16 @@ class Scryfall: ScryfallServiceType {
             return list
         }
     }
+    
+    func sets(order: SetSortOrder, type: CardSetType, force: Bool = false) -> Observable<RemoteList<CardSet>> {
+        let params = [URLQueryItem(name: "order", value: order.rawValue), URLQueryItem(name: "type", value: type.rawValue)]
+        
+        return WebService.json(API: API, endpoint: "\(setsEndpoint)", query: params, force: force).map {
+            guard let list = RemoteList<CardSet>(json: $0) else {
+                throw WebServiceError.invalidJSON
+            }
+            
+            return list
+        }
+    }
 }

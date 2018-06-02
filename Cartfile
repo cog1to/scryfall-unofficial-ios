@@ -21,3 +21,9 @@ github "RxSwiftCommunity/RxGesture" ~> 1.2.1
 
 # Require PocketSVG
 github "pocketsvg/PocketSVG" ~> 2.4.0
+
+# Require Popover
+github "corin8823/Popover" ~> 1.2.0
+
+# Require SnapKit
+github "SnapKit/SnapKit" ~> 4.0.0

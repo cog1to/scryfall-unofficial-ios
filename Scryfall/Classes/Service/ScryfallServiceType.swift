@@ -47,6 +47,11 @@ protocol ScryfallServiceType {
      * - returns: An observable emitting array of known sets.
      */
     func sets(force: Bool) -> Observable<RemoteList<CardSet>>
+    
+    /**
+     * Returns a list of known sets.
+     */
+    func sets(order: SetSortOrder, type: CardSetType, force: Bool) -> Observable<RemoteList<CardSet>>
 }
 
 

@@ -22,14 +22,18 @@ class CardSearchViewController: UIViewController, BindableType {
     @IBOutlet weak var activityLabel: UIActivityIndicatorView!
     @IBOutlet weak var menuButton: UIButton!
     @IBOutlet weak var searchBarContainer: UIView!
-    @IBOutlet weak var searchOptionsView: CardsListSettingsHeader!
+    @IBOutlet weak var searchOptionsView: ListSettingsHeaderView!
     @IBOutlet var searchOptionsConstraint: NSLayoutConstraint!
     
     @IBOutlet var bottomConstraints: Array<NSLayoutConstraint>!
     
+    var searchOptionsViewController: ListSettingsHeader<DisplayMode, SortOrder>!
+    
     var noItemsLabel = UILabel()
     
     var viewModel: CardSearchViewModel!
+    
+    var popover: PopoverMenuView!
     
     private var disposeBag = DisposeBag()
     
@@ -37,7 +41,7 @@ class CardSearchViewController: UIViewController, BindableType {
         super.viewDidLoad()
         view.backgroundColor = Style.color(forKey: .navigationTint)
         
-        searchOptionsView.presenter = self
+        searchOptionsViewController = ListSettingsHeader<DisplayMode, SortOrder>(view: searchOptionsView, presenter: self)
         
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 60
@@ -143,7 +147,7 @@ class CardSearchViewController: UIViewController, BindableType {
         // Search params reverse binding.
         viewModel.searchText.asObservable().bind(to: searchField.rx.text).disposed(by: disposeBag)
         viewModel.sortOrder.asObservable().subscribe(onNext: {
-            self.searchOptionsView.setSortOrder($0)
+            self.searchOptionsViewController.setSecondOption($0)
         }).disposed(by: disposeBag)
         
         // Connect view mode setting.
@@ -169,19 +173,24 @@ class CardSearchViewController: UIViewController, BindableType {
                 strongSelf.collectionView.reloadData()
             }
             
-            strongSelf.searchOptionsView.setDisplayMode(viewMode)
+            strongSelf.searchOptionsViewController.setFirstOption(viewMode)
         }).disposed(by: disposeBag)
         
         // Connect UX to view mode settings
-        searchOptionsView.displayModeSelected = Action { displayMode in
+        searchOptionsViewController.firstOptionSelected = Action { displayMode in
             Settings.shared.viewMode.value = displayMode
             return Observable.just(())
         }
         
         // Connect UX to view mode settings
-        searchOptionsView.sortOrderSelected = Action { sortOrder in
+        searchOptionsViewController.secondOptionSelected = Action { sortOrder in
             self.viewModel.onSortOrderChange.execute(sortOrder)
         }
+        
+        menuButton.rx.tap.subscribe(onNext: {
+            self.popover = PopoverMenuView(items: ["All sets"])
+            self.popover.show(from: self.menuButton, itemSelected: self.viewModel.onMenuItemSelected)
+        }).disposed(by: disposeBag)
     }
     
     fileprivate var maxSettingsHeaderHeight: CGFloat = 0

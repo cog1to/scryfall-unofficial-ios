@@ -19,7 +19,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AJZ-j5-ffy" customClass="CardsListSettingsHeader" customModule="Scryfall" customModuleProvider="target">
+                            <view contentMode="scaleToFill" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AJZ-j5-ffy" customClass="ListSettingsHeaderView" customModule="Scryfall" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="68" width="320" height="44"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
@@ -254,7 +254,7 @@
                         <outlet property="searchBarContainer" destination="j5g-Xo-UJa" id="wyb-T0-G6U"/>
                         <outlet property="searchField" destination="42m-qy-1uC" id="NbR-GV-UQV"/>
                         <outlet property="searchOptionsConstraint" destination="IOp-hr-Gv1" id="atr-WU-Iyi"/>
-                        <outlet property="searchOptionsView" destination="AJZ-j5-ffy" id="MKz-Em-Aht"/>
+                        <outlet property="searchOptionsView" destination="AJZ-j5-ffy" id="j4C-Pw-Aye"/>
                         <outlet property="tableView" destination="I3W-VQ-7gs" id="nTa-9V-R6M"/>
                         <outletCollection property="bottomConstraints" destination="9Dr-rb-D5M" collectionClass="NSMutableArray" id="aaH-zP-IJt"/>
                         <outletCollection property="bottomConstraints" destination="KON-9t-PcV" collectionClass="NSMutableArray" id="Up7-ww-YXG"/>
@@ -421,6 +421,72 @@
             </objects>
             <point key="canvasLocation" x="474.375" y="802.5"/>
         </scene>
+        <!--Sets-->
+        <scene sceneID="cz9-Rb-wbm">
+            <objects>
+                <viewController title="Sets" id="J4x-8B-ZOf" customClass="SetsListViewController" customModule="Scryfall" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Tbv-wu-DM5">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qc7-4N-VgH" customClass="ListSettingsHeaderView" customModule="Scryfall" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="6Vc-6j-V45">
+                                <rect key="frame" x="0.0" y="44" width="320" height="372"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="azY-9b-g34">
+                                <rect key="frame" x="142" y="190" width="36" height="36"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="ZoV-7z-9IQ">
+                                        <rect key="frame" x="8" y="8" width="20" height="20"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="ZoV-7z-9IQ" firstAttribute="leading" secondItem="azY-9b-g34" secondAttribute="leading" constant="8" id="G7T-UL-PVi"/>
+                                    <constraint firstItem="ZoV-7z-9IQ" firstAttribute="top" secondItem="azY-9b-g34" secondAttribute="top" constant="8" id="Vgk-Al-gJ3"/>
+                                    <constraint firstAttribute="trailing" secondItem="ZoV-7z-9IQ" secondAttribute="trailing" constant="8" id="n2w-Sh-P4b"/>
+                                    <constraint firstAttribute="bottom" secondItem="ZoV-7z-9IQ" secondAttribute="bottom" constant="8" id="uiO-if-lLl"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Qc7-4N-VgH" firstAttribute="leading" secondItem="byM-HA-g8R" secondAttribute="leading" id="6Re-xN-Ffv"/>
+                            <constraint firstItem="azY-9b-g34" firstAttribute="centerY" secondItem="Tbv-wu-DM5" secondAttribute="centerY" id="7ep-DM-JAL"/>
+                            <constraint firstItem="6Vc-6j-V45" firstAttribute="trailing" secondItem="byM-HA-g8R" secondAttribute="trailing" id="SfU-Qq-9Ne"/>
+                            <constraint firstItem="azY-9b-g34" firstAttribute="centerX" secondItem="Tbv-wu-DM5" secondAttribute="centerX" id="Ypg-s7-qAd"/>
+                            <constraint firstItem="6Vc-6j-V45" firstAttribute="leading" secondItem="byM-HA-g8R" secondAttribute="leading" id="cgp-jJ-NNJ"/>
+                            <constraint firstItem="6Vc-6j-V45" firstAttribute="top" secondItem="Qc7-4N-VgH" secondAttribute="bottom" id="mRj-tL-dbb"/>
+                            <constraint firstItem="Qc7-4N-VgH" firstAttribute="top" secondItem="byM-HA-g8R" secondAttribute="top" id="onT-XD-VZC"/>
+                            <constraint firstItem="6Vc-6j-V45" firstAttribute="bottom" secondItem="byM-HA-g8R" secondAttribute="bottom" id="sI7-Dv-WvU"/>
+                            <constraint firstItem="Qc7-4N-VgH" firstAttribute="trailing" secondItem="byM-HA-g8R" secondAttribute="trailing" id="viA-Sd-1Ox"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="byM-HA-g8R"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Gut-mB-4hq"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <connections>
+                        <outlet property="activityLabel" destination="ZoV-7z-9IQ" id="vLn-y0-lOF"/>
+                        <outlet property="loadingView" destination="azY-9b-g34" id="9Xw-x0-VwR"/>
+                        <outlet property="searchOptionsConstraint" destination="onT-XD-VZC" id="IGE-aY-7w7"/>
+                        <outlet property="searchOptionsView" destination="Qc7-4N-VgH" id="nZ2-L2-Z4x"/>
+                        <outlet property="tableView" destination="6Vc-6j-V45" id="i8q-NY-Ibz"/>
+                        <outletCollection property="bottomConstraints" destination="sI7-Dv-WvU" collectionClass="NSMutableArray" id="qrR-7S-nDu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UvO-LZ-RXl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1466.25" y="1545"/>
+        </scene>
         <!--Table View Controller-->
         <scene sceneID="O8S-I7-u9Y">
             <objects>
@@ -500,6 +566,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Cj-UQ-s5S" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="848" y="21"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="PVb-LW-LpS">
+            <objects>
+                <navigationController storyboardIdentifier="SetsList" automaticallyAdjustsScrollViewInsets="NO" id="1M9-SI-RZf" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="T01-Ze-lf2">
+                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="J4x-8B-ZOf" kind="relationship" relationship="rootViewController" id="ypC-WU-v6o"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KGG-x4-Zm0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="468.75" y="1545"/>
         </scene>
     </scenes>
     <resources>

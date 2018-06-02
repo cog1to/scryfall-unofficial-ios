@@ -80,7 +80,7 @@ class CardDetailsView: UIView {
             stackView.addArrangedSubview(separator())
             
             let artistLabel = label(text: linkText(prefix: "Illustrated by", value: artist))
-            artistLabel.rx.tapGesture().when(.recognized).map({_ in return ()}).bind(to: artistAction.inputs).disposed(by: rx.disposeBag)
+            artistLabel.rx.tapGesture().when(.recognized).map({_ in return ()}).take(1).bind(to: artistAction.inputs).disposed(by: rx.disposeBag)
             
             stackView.addArrangedSubview(artistLabel)
         }

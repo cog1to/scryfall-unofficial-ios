@@ -88,6 +88,7 @@ class SceneCoordinator: SceneCoordinatorType {
         } else {
             fatalError("Not a modal, no navigation controller: can't navigate back from \(currentViewController)")
         }
+        
         return subject.asObservable().take(1)
     }
 }

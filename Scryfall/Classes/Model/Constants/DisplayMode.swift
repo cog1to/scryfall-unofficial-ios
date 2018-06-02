@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum DisplayMode: String {
+enum DisplayMode: String, StringRepresentableOption {
     case cards = "cards"
     case images = "images"
     

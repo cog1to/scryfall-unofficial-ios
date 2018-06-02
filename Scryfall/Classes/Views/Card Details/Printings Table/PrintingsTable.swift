@@ -53,7 +53,7 @@ class PrintingsTable: UIView {
         guard cards.count > 0 else {
             return
         }
-        
+
         // Header
         var headerLabels = [UIView]()
         if let headerView = Bundle.main.loadNibNamed("PrintingsTableHeader", owner: nil, options: nil)!.first as? PrintingsTableHeader {

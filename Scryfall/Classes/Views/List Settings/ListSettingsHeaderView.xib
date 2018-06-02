@@ -1,34 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CardsListSettingsHeader" customModule="Scryfall" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ListSettingsHeaderView" customModule="Scryfall" customModuleProvider="target">
             <connections>
-                <outlet property="displayModeButton" destination="sxx-Hs-foj" id="YMb-ju-EUc"/>
-                <outlet property="displayModeLabel" destination="hKv-e7-YoD" id="mQm-0g-6K8"/>
-                <outlet property="sortingButton" destination="aKD-Pn-R7F" id="oLS-cu-Ua9"/>
-                <outlet property="sortingLabel" destination="3Wa-FF-OSv" id="AMI-hE-eUN"/>
+                <outlet property="firstOptionButton" destination="sxx-Hs-foj" id="9SO-Ji-HMA"/>
+                <outlet property="firstOptionLabel" destination="hKv-e7-YoD" id="bgz-rP-Cvn"/>
+                <outlet property="secondOptionButton" destination="aKD-Pn-R7F" id="LfW-Se-v4l"/>
+                <outlet property="secondOptionLabel" destination="3Wa-FF-OSv" id="LdJ-B7-HHV"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="485" height="92"/>
+            <rect key="frame" x="0.0" y="0.0" width="486" height="92"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="JQp-7K-Oo9">
-                    <rect key="frame" x="8" y="8" width="469" height="74"/>
+                    <rect key="frame" x="8" y="8" width="470" height="74"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="2hM-pe-eC4">
-                            <rect key="frame" x="0.0" y="0.0" width="234.5" height="74"/>
+                            <rect key="frame" x="0.0" y="0.0" width="235" height="74"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j6t-wi-ppf">
-                                    <rect key="frame" x="61.5" y="0.0" width="111.5" height="20.5"/>
+                                    <rect key="frame" x="62" y="0.0" width="111.5" height="20.5"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="755" text="Show as" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hKv-e7-YoD">
                                             <rect key="frame" x="0.0" y="0.0" width="111.5" height="20.5"/>
@@ -46,7 +46,7 @@
                                     </constraints>
                                 </view>
                                 <view contentMode="center" horizontalHuggingPriority="252" verticalHuggingPriority="252" translatesAutoresizingMaskIntoConstraints="NO" id="sxx-Hs-foj" customClass="RoundCornerButton" customModule="Scryfall" customModuleProvider="target">
-                                    <rect key="frame" x="62" y="28.5" width="110.5" height="45.5"/>
+                                    <rect key="frame" x="62.5" y="28.5" width="110.5" height="45.5"/>
                                     <color key="tintColor" red="0.25882352939999997" green="0.1019607843" blue="0.50588235290000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="string" keyPath="title" value="Images"/>
@@ -59,10 +59,10 @@
                             </subviews>
                         </stackView>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="PNB-R7-L32">
-                            <rect key="frame" x="234.5" y="0.0" width="234.5" height="74"/>
+                            <rect key="frame" x="235" y="0.0" width="235" height="74"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LjY-GX-Oft">
-                                    <rect key="frame" x="61.5" y="0.0" width="111.5" height="20.5"/>
+                                    <rect key="frame" x="62" y="0.0" width="111.5" height="20.5"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="754" text="Sort By" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Wa-FF-OSv">
                                             <rect key="frame" x="0.0" y="0.0" width="111.5" height="20.5"/>
@@ -80,7 +80,7 @@
                                     </constraints>
                                 </view>
                                 <view contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aKD-Pn-R7F" customClass="RoundCornerButton" customModule="Scryfall" customModuleProvider="target">
-                                    <rect key="frame" x="63.5" y="28.5" width="107.5" height="45.5"/>
+                                    <rect key="frame" x="64" y="28.5" width="107.5" height="45.5"/>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="string" keyPath="title" value="Name"/>
                                         <userDefinedRuntimeAttribute type="image" keyPath="rightImage" value="dropdown"/>
@@ -94,7 +94,7 @@
                     </constraints>
                 </stackView>
                 <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CSr-bm-2ej">
-                    <rect key="frame" x="0.0" y="91" width="485" height="1"/>
+                    <rect key="frame" x="0.0" y="91" width="486" height="1"/>
                     <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="0.5" id="lKc-bz-eLV"/>
@@ -114,7 +114,7 @@
             <nil key="simulatedTopBarMetrics"/>
             <nil key="simulatedBottomBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="-269.5" y="-653"/>
+            <point key="canvasLocation" x="553" y="-689"/>
         </view>
     </objects>
     <resources>

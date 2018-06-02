@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum SortOrder: String {
+enum SortOrder: String, StringRepresentableOption {
     case name = "name"
     case set = "set"
     case rarity = "rarity"

@@ -9,7 +9,7 @@
 import Foundation
 import SwiftyJSON
 
-class CardSet: JSONConvertible {
+class CardSet: JSONConvertible, Equatable {
     var code: String
     var mtgoCode: String?
     var name: String
@@ -44,11 +44,19 @@ class CardSet: JSONConvertible {
         self.foil = foil
         self.setType = setType
         
+        if let date = json["released_at"].string {
+            self.releasedAt = DateFormat.date(from: date)
+        }
+        
         self.mtgoCode = json["mtgo_code"].string
         self.block = json["block"].string
         self.blockCode = json["block_code"].string
         self.parentSetCode = json["parent_set_code"].string
         self.iconURI = json["icon_svg_uri"].url
         self.searchURI = json["search_uri"].url
+    }
+    
+    static func ==(lhs: CardSet, rhs: CardSet) -> Bool {
+        return lhs.name == rhs.name
     }
 }

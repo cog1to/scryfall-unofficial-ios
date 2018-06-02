@@ -31,57 +31,75 @@ class CardDetailsViewModel: NSObject {
             .asDriver(onErrorJustReturn: ([], cardVariable.value))
     }
 
-    lazy var onPrintingSelected: Action<Card, Void> = { this in
-        return Action { card in
-            this.cardVariable.value = card
+    lazy var onPrintingSelected: Action<Card, Void> = { [unowned self] in
+        return Action { [unowned self] card in
+            self.cardVariable.value = card
             return Observable.just(())
         }
-    }(self)
+    }()
     
-    lazy var onAllPrint: CocoaAction = { this in
-        return CocoaAction {
-            if let callback = this.callback,
-                let printsUrl = this.cardVariable.value.printSearchUri,
+    lazy var onAllPrint: CocoaAction = { [unowned self] in
+        return CocoaAction { [unowned self] in
+            if let callback = self.callback,
+                let printsUrl = self.cardVariable.value.printSearchUri,
                 let components = URLComponents(url: printsUrl, resolvingAgainstBaseURL: false),
                 let queryItems = components.queryItems {
-                
-                callback.execute(queryItems)
+
+                return callback.execute(queryItems)
             }
             return Observable.just(())
         }
-    }(self)
+    }()
     
-    lazy var onArtist: CocoaAction = { this in
-        return CocoaAction {
-            if let artist = this.cardVariable.value.artist {
-                this.callback(withToken: ArtistToken(value: artist))
+    lazy var onArtist: CocoaAction = { [unowned self] in
+        return CocoaAction { [unowned self] in
+            return self.cardVariable.asObservable().map({
+                return $0.artist
+            }).filter { $0 != nil }.map { $0! }.map ({
+                let token = ArtistToken(value: $0)
+                let queryString = try! token.string()
+                return [URLQueryItem(name: "q", value: queryString)]
+            }).flatMap { [unowned self] in
+                return self.callback?.execute($0) ?? Observable.just(())
             }
-            return Observable.just(())
         }
-    }(self)
+    }()
     
-    lazy var onWatermark: CocoaAction = { this in
-        return CocoaAction {
-            if let watermark = this.cardVariable.value.watermark {
-               this.callback(withToken: WatermarkToken(value: watermark))
+    lazy var onWatermark: CocoaAction = { [unowned self] in
+        return CocoaAction { [unowned self] in
+            return self.cardVariable.asObservable().map({
+                return $0.watermark
+            }).filter { $0 != nil }.map { $0! }.map ({
+                let token = WatermarkToken(value: $0)
+                let queryString = try! token.string()
+                return [URLQueryItem(name: "q", value: queryString)]
+            }).flatMap { [unowned self] in
+                return self.callback?.execute($0) ?? Observable.just(())
             }
-            return Observable.just(())
         }
-    }(self)
+    }()
     
-    lazy var onSet: CocoaAction = { this in
-        return CocoaAction {
-            this.callback(withQueryString: "set:\(this.cardVariable.value.setCode)")
-            return Observable.just(())
+    lazy var onSet: CocoaAction = { [unowned self] in
+        return CocoaAction { [unowned self] in
+            return self.cardVariable.asObservable().map({
+                return [URLQueryItem(name: "q", value: "set:\($0.setCode)")]
+            }).flatMap { [unowned self] in
+                return self.callback?.execute($0) ?? Observable.just(())
+            }
         }
-    }(self)
+    }()
     
-    lazy var onReserved: CocoaAction = { this in
-        return CocoaAction {
-            this.callback(withToken: TraitToken(value: .inReservedList))
-            return Observable.just(())
+    lazy var onReserved: CocoaAction = { [unowned self] in
+        return CocoaAction { [unowned self] in
+            return self.cardVariable.asObservable().map({_ in
+                let token = TraitToken(value: .inReservedList)
+                let queryString = try! token.string()
+                return [URLQueryItem(name: "q", value: queryString)]
+            }).flatMap { [unowned self] in
+                return self.callback?.execute($0) ?? Observable.just(())
+            }
         }
-    }(self)
+    }()
     
     init(card: Card, service: ScryfallServiceType, coordinator: SceneCoordinatorType, callback: Action<[URLQueryItem], Void>? = nil) {
         self.service = service
@@ -97,7 +115,7 @@ class CardDetailsViewModel: NSObject {
         super.init()
         
         cardVariable.asObservable()
-            .do(onNext: { _ in
+            .do(onNext: { [unowned self] _ in
                 self.disposeBag = DisposeBag()
             })
             .map {
@@ -121,15 +139,5 @@ class CardDetailsViewModel: NSObject {
         callback?.executionObservables.take(1).subscribe(onNext: { _ in
             coordinator.pop()
         }).disposed(by: rx.disposeBag)
-    }
-    
-    private func callback(withToken token: QueryToken) {
-        let queryString = try! token.string()
-        callback(withQueryString: queryString)
-    }
-    
-    private func callback(withQueryString string: String) {
-        let queryItem = URLQueryItem(name: "q", value: string)
-        callback?.execute([queryItem])
     }
 }
