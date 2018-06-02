@@ -14,18 +14,13 @@ import Action
 /**
  * Card search view controller. Shows search bar and list of search results.
  */
-class CardSearchViewController: UIViewController, BindableType {
-    @IBOutlet weak var tableView: UITableView!
+class CardSearchViewController: DynamicHeaderViewController, BindableType {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var searchField: UITextField!
     @IBOutlet weak var loadingView: UIView!
     @IBOutlet weak var activityLabel: UIActivityIndicatorView!
     @IBOutlet weak var menuButton: UIButton!
     @IBOutlet weak var searchBarContainer: UIView!
-    @IBOutlet weak var searchOptionsView: ListSettingsHeaderView!
-    @IBOutlet var searchOptionsConstraint: NSLayoutConstraint!
-    
-    @IBOutlet var bottomConstraints: Array<NSLayoutConstraint>!
     
     var searchOptionsViewController: ListSettingsHeader<DisplayMode, SortOrder>!
     
@@ -35,7 +30,9 @@ class CardSearchViewController: UIViewController, BindableType {
     
     var popover: PopoverMenuView!
     
-    private var disposeBag = DisposeBag()
+    override var topGuide: DynamicHeaderViewController.TopGuide {
+        return TopGuide(guide: searchBarContainer, attribute: .bottom)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,6 +58,10 @@ class CardSearchViewController: UIViewController, BindableType {
         tableView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-(>=20)-[label]-(>=20)-|", options: [], metrics: nil, views: ["label":noItemsLabel]))
         tableView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-(>=20)-[label]-(>=20)-|", options: [], metrics: nil, views: ["label":noItemsLabel]))
         tableView.tableFooterView = UIView()
+        
+        collectionView.rx.didScroll.subscribe(onNext: { [unowned self] in
+            self.scrollViewDidScroll(self.collectionView)
+        }).disposed(by: disposeBag)
         
         definesPresentationContext = true
         
@@ -195,20 +196,8 @@ class CardSearchViewController: UIViewController, BindableType {
         }).disposed(by: disposeBag)
     }
     
-    fileprivate var maxSettingsHeaderHeight: CGFloat = 0
-    fileprivate var settingsHeaderConstraint: NSLayoutConstraint!
-    fileprivate var previousScrollOffset: CGFloat = 0
-    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
-        if (settingsHeaderConstraint == nil) {
-            maxSettingsHeaderHeight = searchOptionsView.frame.size.height
-            settingsHeaderConstraint = NSLayoutConstraint(item: searchOptionsView, attribute: .bottom, relatedBy: .equal, toItem: searchBarContainer, attribute: .bottom, multiplier: 1.0, constant: maxSettingsHeaderHeight)
-            view.addConstraint(settingsHeaderConstraint)
-        }
-        
-        searchOptionsConstraint.isActive = false
         
         // Notifications
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
@@ -218,47 +207,6 @@ class CardSearchViewController: UIViewController, BindableType {
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         NotificationCenter.default.removeObserver(self)
-    }
-}
-
-// MARK: - Scrolling / Options header
-
-extension CardSearchViewController: UITableViewDelegate, UICollectionViewDelegate {
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        guard let settingsHeaderConstraint = settingsHeaderConstraint else {
-            return
-        }
-        
-        guard canAnimateHeader(scrollView) else {
-            return
-        }
-        
-        let scrollDiff = scrollView.contentOffset.y - previousScrollOffset
-        
-        let absoluteTop: CGFloat = 0;
-        let absoluteBottom: CGFloat = scrollView.contentSize.height - scrollView.frame.size.height;
-        
-        let isScrollingDown = scrollDiff > 0 && scrollView.contentOffset.y > absoluteTop
-        let isScrollingUp = scrollDiff < 0 && scrollView.contentOffset.y < absoluteBottom
-        
-        var newHeight = settingsHeaderConstraint.constant
-        if isScrollingDown {
-            newHeight = max(0, settingsHeaderConstraint.constant - abs(scrollDiff))
-        } else if isScrollingUp {
-            newHeight = min(maxSettingsHeaderHeight, settingsHeaderConstraint.constant + abs(scrollDiff))
-        }
-        
-        if newHeight != settingsHeaderConstraint.constant {
-            settingsHeaderConstraint.constant = newHeight
-            scrollView.setContentOffset(CGPoint(x: 0, y: previousScrollOffset), animated: false)
-        }
-        
-        previousScrollOffset = scrollView.contentOffset.y
-    }
-    
-    func canAnimateHeader(_ scrollView: UIScrollView) -> Bool {
-        let scrollViewMaxHeight = scrollView.frame.height + settingsHeaderConstraint.constant
-        return scrollView.contentSize.height > scrollViewMaxHeight
     }
 }
 

@@ -90,6 +90,7 @@
 		CF248D9620BC7727007C8909 /* SetsListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF248D9520BC7727007C8909 /* SetsListCell.xib */; };
 		CF248D9920BF4737007C8909 /* DateFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF248D9820BF4737007C8909 /* DateFormat.swift */; };
 		CF248D9B20C32E15007C8909 /* SetListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF248D9A20C32E14007C8909 /* SetListViewController.swift */; };
+		CF248D9E20C32EA4007C8909 /* DynamicHeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF248D9D20C32EA4007C8909 /* DynamicHeaderViewController.swift */; };
 		CF4BE0302007BB030054FFEA /* LayoutToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4BE02F2007BB030054FFEA /* LayoutToken.swift */; };
 		CF4BE0322007BBEB0054FFEA /* StringEnumToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4BE0312007BBEB0054FFEA /* StringEnumToken.swift */; };
 		CF4BE0622007E88A0054FFEA /* CardSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4BE0612007E88A0054FFEA /* CardSet.swift */; };
@@ -250,6 +251,7 @@
 		CF248D9520BC7727007C8909 /* SetsListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SetsListCell.xib; sourceTree = "<group>"; };
 		CF248D9820BF4737007C8909 /* DateFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormat.swift; sourceTree = "<group>"; };
 		CF248D9A20C32E14007C8909 /* SetListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetListViewController.swift; sourceTree = "<group>"; };
+		CF248D9D20C32EA4007C8909 /* DynamicHeaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicHeaderViewController.swift; sourceTree = "<group>"; };
 		CF4BE02F2007BB030054FFEA /* LayoutToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutToken.swift; sourceTree = "<group>"; };
 		CF4BE0312007BBEB0054FFEA /* StringEnumToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringEnumToken.swift; sourceTree = "<group>"; };
 		CF4BE0612007E88A0054FFEA /* CardSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSet.swift; sourceTree = "<group>"; };
@@ -500,6 +502,14 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
+		CF248D9C20C32E82007C8909 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				CF248D9D20C32EA4007C8909 /* DynamicHeaderViewController.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		CF4BE0632007E8960054FFEA /* MVVM */ = {
 			isa = PBXGroup;
 			children = (
@@ -681,6 +691,7 @@
 		CFD05BEB2000270C00CDF9C2 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				CF248D9C20C32E82007C8909 /* Common */,
 				CF248D9A20C32E14007C8909 /* SetListViewController.swift */,
 				CFD05C072000336C00CDF9C2 /* CardSearchViewController.swift */,
 				CFD05C23200142F500CDF9C2 /* CardDetailsViewController.swift */,
@@ -976,6 +987,7 @@
 				CF1FA28F2006A4D800E8DAEA /* BannedToken.swift in Sources */,
 				CF1FA2AF2006B74800E8DAEA /* ComparableToken.swift in Sources */,
 				CF1FA24F20057B3E00E8DAEA /* TypeToken.swift in Sources */,
+				CF248D9E20C32EA4007C8909 /* DynamicHeaderViewController.swift in Sources */,
 				CF6DDA0E20362E5600F5EAC9 /* DisplayMode.swift in Sources */,
 				CF1FA26F200695BF00E8DAEA /* SetsToken.swift in Sources */,
 				CF1FA27B20069F9600E8DAEA /* GameToken.swift in Sources */,

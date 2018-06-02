@@ -17,21 +17,16 @@ import Action
 /**
  * All Sets list view controller.
  */
-class SetListViewController: UIViewController, BindableType {
+class SetListViewController: DynamicHeaderViewController, BindableType {
     
     let cellIdentifier = "SetsListCell"
     
-    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var loadingView: UIView!
     @IBOutlet weak var activityLabel: UIActivityIndicatorView!
-    @IBOutlet weak var searchOptionsView: ListSettingsHeaderView!
-    @IBOutlet var searchOptionsConstraint: NSLayoutConstraint!
-    @IBOutlet var bottomConstraints: Array<NSLayoutConstraint>!
     
     var optionsViewController: ListSettingsHeader<SetSortOrder, CardSetType>!
     
     var viewModel: SetsListViewModel!
-    private var disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,9 +38,6 @@ class SetListViewController: UIViewController, BindableType {
         tableView.estimatedRowHeight = 60
         tableView.tableFooterView = UIView()
         tableView.register(UINib(nibName: "SetsListCell", bundle: Bundle.main), forCellReuseIdentifier: cellIdentifier)
-        tableView.rx.didScroll.subscribe(onNext: { [unowned self] in
-            self.scrollViewDidScroll(self.tableView)
-        }).disposed(by: disposeBag)
         tableView.refreshControl = UIRefreshControl()
         
         searchOptionsView.firstOptionLabel.text = "Sort by"
@@ -56,10 +48,6 @@ class SetListViewController: UIViewController, BindableType {
         loadingView.backgroundColor = Style.color(forKey: .background)
         loadingView.layer.cornerRadius = Constants.commonCornerRadius
     }
-    
-    fileprivate var maxSettingsHeaderHeight: CGFloat = 0
-    fileprivate var settingsHeaderConstraint: NSLayoutConstraint!
-    fileprivate var previousScrollOffset: CGFloat = 0
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(false, animated: false)
@@ -75,14 +63,6 @@ class SetListViewController: UIViewController, BindableType {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        if (settingsHeaderConstraint == nil) {
-            maxSettingsHeaderHeight = searchOptionsView.frame.size.height
-            settingsHeaderConstraint = NSLayoutConstraint(item: searchOptionsView, attribute: .bottom, relatedBy: .equal, toItem: view.safeAreaLayoutGuide, attribute: .top, multiplier: 1.0, constant: maxSettingsHeaderHeight)
-            view.addConstraint(settingsHeaderConstraint)
-        }
-        
-        searchOptionsConstraint.isActive = false
-        
         // We bind data source after view appears to remove the lag between tapping on "all sets" button and UI response.
         let sets = viewModel.sets.asObservable()
         sets.bind(to: tableView.rx.items(cellIdentifier: cellIdentifier)) { [unowned self] index, model, cell in
@@ -92,7 +72,7 @@ class SetListViewController: UIViewController, BindableType {
         }
         .disposed(by: disposeBag)
         
-        sets.subscribeOn(MainScheduler.instance).subscribe(onNext: { [unowned self] _ in
+        sets.asDriver(onErrorJustReturn: []).drive(onNext: { [unowned self] _ in
             self.tableView.refreshControl?.endRefreshing()
         }).disposed(by: disposeBag)
 
@@ -133,50 +113,8 @@ class SetListViewController: UIViewController, BindableType {
     
     func setupNavigationBackAction() {
         self.navigationItem.hidesBackButton = true
-        var customBackButton = UIBarButtonItem(title: "Back", style: .done,
-                                               target: nil, action: nil)
+        var customBackButton = UIBarButtonItem(title: "Back", style: .done, target: nil, action: nil)
         customBackButton.rx.action = viewModel.onBack
         self.navigationItem.leftBarButtonItem = customBackButton
-    }
-}
-
-// MARK: - Scrolling / Options header
-
-extension SetListViewController: UITableViewDelegate {
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        guard let settingsHeaderConstraint = settingsHeaderConstraint else {
-            return
-        }
-        
-        guard canAnimateHeader(scrollView) else {
-            return
-        }
-        
-        let scrollDiff = scrollView.contentOffset.y - previousScrollOffset
-        
-        let absoluteTop: CGFloat = 0;
-        let absoluteBottom: CGFloat = scrollView.contentSize.height - scrollView.frame.size.height;
-        
-        let isScrollingDown = scrollDiff > 0 && scrollView.contentOffset.y > absoluteTop
-        let isScrollingUp = scrollDiff < 0 && scrollView.contentOffset.y < absoluteBottom
-        
-        var newHeight = settingsHeaderConstraint.constant
-        if isScrollingDown {
-            newHeight = max(0, settingsHeaderConstraint.constant - abs(scrollDiff))
-        } else if isScrollingUp {
-            newHeight = min(maxSettingsHeaderHeight, settingsHeaderConstraint.constant + abs(scrollDiff))
-        }
-        
-        if newHeight != settingsHeaderConstraint.constant {
-            settingsHeaderConstraint.constant = newHeight
-            scrollView.setContentOffset(CGPoint(x: 0, y: previousScrollOffset), animated: false)
-        }
-        
-        previousScrollOffset = scrollView.contentOffset.y
-    }
-    
-    func canAnimateHeader(_ scrollView: UIScrollView) -> Bool {
-        let scrollViewMaxHeight = scrollView.frame.height + settingsHeaderConstraint.constant
-        return scrollView.contentSize.height > scrollViewMaxHeight
     }
 }
