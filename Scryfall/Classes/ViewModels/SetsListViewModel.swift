@@ -84,6 +84,11 @@ class SetsListViewModel {
                     }
                 case .releaseDate:
                     sortFunction = {
+                        if ($0.code == "pxtc" || $1.code == "pxtc") {
+                            print("\($0.code) - \($1.code)")
+                            print("hey")
+                        }
+                        
                         if ($0.code == $1.parentSetCode) {
                             return true
                         } else if ($1.code == $0.parentSetCode) {
@@ -103,19 +108,19 @@ class SetsListViewModel {
                             }
                         }
                         
-                        if let parent1 = $0.parentSetCode, let parentSet1 = sets[parent1], let releaseDate1 = parentSet1.releasedAt, let releaseDate2 = $1.releasedAt {
-                            if (releaseDate1 == releaseDate2) {
-                                return sets.index(of: parentSet1)! < sets.index(of: $1)!
-                            } else {
+                        if let parent1 = $0.parentSetCode, let parentSet1 = sets[parent1], let releaseDate1 = parentSet1.releasedAt {
+                            if let releaseDate2 = $1.releasedAt, releaseDate1 != releaseDate2 {
                                 return releaseDate1 > releaseDate2
+                            } else {
+                                return sets.index(of: parentSet1)! < sets.index(of: $1)!
                             }
                         }
                         
-                        if let parent2 = $1.parentSetCode, let parentSet2 = sets[parent2], let releaseDate2 = parentSet2.releasedAt, let releaseDate1 = $0.releasedAt {
-                            if (releaseDate1 == releaseDate2) {
-                                return sets.index(of: $0)! < sets.index(of: parentSet2)!
-                            } else {
+                        if let parent2 = $1.parentSetCode, let parentSet2 = sets[parent2], let releaseDate2 = parentSet2.releasedAt {
+                            if let releaseDate1 = $0.releasedAt, releaseDate1 != releaseDate2 {
                                 return releaseDate1 > releaseDate2
+                            } else {
+                                return sets.index(of: $0)! < sets.index(of: parentSet2)!
                             }
                         }
                         
