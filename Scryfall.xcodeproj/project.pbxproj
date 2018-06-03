@@ -91,6 +91,9 @@
 		CF248D9920BF4737007C8909 /* DateFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF248D9820BF4737007C8909 /* DateFormat.swift */; };
 		CF248D9B20C32E15007C8909 /* SetListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF248D9A20C32E14007C8909 /* SetListViewController.swift */; };
 		CF248D9E20C32EA4007C8909 /* DynamicHeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF248D9D20C32EA4007C8909 /* DynamicHeaderViewController.swift */; };
+		CF248DA020C3D246007C8909 /* Unique.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF248D9F20C3D246007C8909 /* Unique.swift */; };
+		CF248DA220C3D29C007C8909 /* UniqueToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF248DA120C3D29C007C8909 /* UniqueToken.swift */; };
+		CF248DA420C3D516007C8909 /* SortDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF248DA320C3D516007C8909 /* SortDirection.swift */; };
 		CF4BE0302007BB030054FFEA /* LayoutToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4BE02F2007BB030054FFEA /* LayoutToken.swift */; };
 		CF4BE0322007BBEB0054FFEA /* StringEnumToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4BE0312007BBEB0054FFEA /* StringEnumToken.swift */; };
 		CF4BE0622007E88A0054FFEA /* CardSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4BE0612007E88A0054FFEA /* CardSet.swift */; };
@@ -102,7 +105,7 @@
 		CF6DDA0A20361D6D00F5EAC9 /* CardSearchCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6DDA0920361D6D00F5EAC9 /* CardSearchCollectionCell.swift */; };
 		CF6DDA0C203620EF00F5EAC9 /* LoadingCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6DDA0B203620EF00F5EAC9 /* LoadingCollectionCell.swift */; };
 		CF6DDA0E20362E5600F5EAC9 /* DisplayMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6DDA0D20362E5600F5EAC9 /* DisplayMode.swift */; };
-		CF6DDA1020362F0900F5EAC9 /* SortOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6DDA0F20362F0900F5EAC9 /* SortOrder.swift */; };
+		CF6DDA1020362F0900F5EAC9 /* CardSortOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6DDA0F20362F0900F5EAC9 /* CardSortOrder.swift */; };
 		CF8F8C3120193C17007CB484 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8F8C3020193C17007CB484 /* Constants.swift */; };
 		CF8F8C36201944AC007CB484 /* NetworkCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8F8C35201944AC007CB484 /* NetworkCache.swift */; };
 		CF8F8C56201A5E3E007CB484 /* NetworkCacheItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8F8C55201A5E3E007CB484 /* NetworkCacheItem.swift */; };
@@ -252,6 +255,9 @@
 		CF248D9820BF4737007C8909 /* DateFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormat.swift; sourceTree = "<group>"; };
 		CF248D9A20C32E14007C8909 /* SetListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetListViewController.swift; sourceTree = "<group>"; };
 		CF248D9D20C32EA4007C8909 /* DynamicHeaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicHeaderViewController.swift; sourceTree = "<group>"; };
+		CF248D9F20C3D246007C8909 /* Unique.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unique.swift; sourceTree = "<group>"; };
+		CF248DA120C3D29C007C8909 /* UniqueToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniqueToken.swift; sourceTree = "<group>"; };
+		CF248DA320C3D516007C8909 /* SortDirection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortDirection.swift; sourceTree = "<group>"; };
 		CF4BE02F2007BB030054FFEA /* LayoutToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutToken.swift; sourceTree = "<group>"; };
 		CF4BE0312007BBEB0054FFEA /* StringEnumToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringEnumToken.swift; sourceTree = "<group>"; };
 		CF4BE0612007E88A0054FFEA /* CardSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSet.swift; sourceTree = "<group>"; };
@@ -263,7 +269,7 @@
 		CF6DDA0920361D6D00F5EAC9 /* CardSearchCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSearchCollectionCell.swift; sourceTree = "<group>"; };
 		CF6DDA0B203620EF00F5EAC9 /* LoadingCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingCollectionCell.swift; sourceTree = "<group>"; };
 		CF6DDA0D20362E5600F5EAC9 /* DisplayMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayMode.swift; sourceTree = "<group>"; };
-		CF6DDA0F20362F0900F5EAC9 /* SortOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortOrder.swift; sourceTree = "<group>"; };
+		CF6DDA0F20362F0900F5EAC9 /* CardSortOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSortOrder.swift; sourceTree = "<group>"; };
 		CF8F8C3020193C17007CB484 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		CF8F8C35201944AC007CB484 /* NetworkCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkCache.swift; sourceTree = "<group>"; };
 		CF8F8C55201A5E3E007CB484 /* NetworkCacheItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkCacheItem.swift; sourceTree = "<group>"; };
@@ -426,6 +432,7 @@
 				CF1FA2A62006AD2800E8DAEA /* UnrollToken.swift */,
 				CF1FA2982006A6AA00E8DAEA /* WatermarkToken.swift */,
 				CF1FA27E2006A1FD00E8DAEA /* YearToken.swift */,
+				CF248DA120C3D29C007C8909 /* UniqueToken.swift */,
 			);
 			path = Tokens;
 			sourceTree = "<group>";
@@ -454,8 +461,10 @@
 				CF1FA2962006A5FC00E8DAEA /* Watermark.swift */,
 				CF4BE0642007E9280054FFEA /* CardSetType.swift */,
 				CF6DDA0D20362E5600F5EAC9 /* DisplayMode.swift */,
-				CF6DDA0F20362F0900F5EAC9 /* SortOrder.swift */,
+				CF6DDA0F20362F0900F5EAC9 /* CardSortOrder.swift */,
 				CF248D8E20BC6335007C8909 /* SetSortOrder.swift */,
+				CF248D9F20C3D246007C8909 /* Unique.swift */,
+				CF248DA320C3D516007C8909 /* SortDirection.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -977,6 +986,7 @@
 				CFD05C3A2002525900CDF9C2 /* UIColor+Extension.swift in Sources */,
 				CF248D9420BC7362007C8909 /* SetsListCell.swift in Sources */,
 				CFD05BED20002D9300CDF9C2 /* WebService.swift in Sources */,
+				CF248DA220C3D29C007C8909 /* UniqueToken.swift in Sources */,
 				CF1FA2952006A59400E8DAEA /* ArtistToken.swift in Sources */,
 				CFD05C382002294100CDF9C2 /* CardDetailsView.swift in Sources */,
 				CF1FA2B22006BE4A00E8DAEA /* EqualityToken.swift in Sources */,
@@ -990,12 +1000,14 @@
 				CF248D9E20C32EA4007C8909 /* DynamicHeaderViewController.swift in Sources */,
 				CF6DDA0E20362E5600F5EAC9 /* DisplayMode.swift in Sources */,
 				CF1FA26F200695BF00E8DAEA /* SetsToken.swift in Sources */,
+				CF248DA420C3D516007C8909 /* SortDirection.swift in Sources */,
 				CF1FA27B20069F9600E8DAEA /* GameToken.swift in Sources */,
 				CF1FA2672006930800E8DAEA /* ToughnessToken.swift in Sources */,
 				CF248D9B20C32E15007C8909 /* SetListViewController.swift in Sources */,
 				CF1FA26120068A2B00E8DAEA /* NumericToken.swift in Sources */,
 				CFD05C2C2001622C00CDF9C2 /* Layout.swift in Sources */,
 				CF1FA2692006936B00E8DAEA /* RarityToken.swift in Sources */,
+				CF248DA020C3D246007C8909 /* Unique.swift in Sources */,
 				CF1FA25320057D0100E8DAEA /* OracleTextToken.swift in Sources */,
 				CF00E45A2011EC3D00FCF9FF /* PrintingsTableFooter.swift in Sources */,
 				CF1FA23B20042D9800E8DAEA /* Color.swift in Sources */,
@@ -1007,7 +1019,7 @@
 				CF1FA27F2006A1FD00E8DAEA /* YearToken.swift in Sources */,
 				CFD05C1320003E5500CDF9C2 /* BindableType.swift in Sources */,
 				CF1FA26D2006955500E8DAEA /* IncludeExtrasToken.swift in Sources */,
-				CF6DDA1020362F0900F5EAC9 /* SortOrder.swift in Sources */,
+				CF6DDA1020362F0900F5EAC9 /* CardSortOrder.swift in Sources */,
 				CF1FA2832006A2FE00E8DAEA /* USDToken.swift in Sources */,
 				CF1FA2892006A38A00E8DAEA /* Cube.swift in Sources */,
 				CF1FA265200692F400E8DAEA /* LoyaltyToken.swift in Sources */,
