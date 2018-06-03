@@ -115,5 +115,8 @@ class PrintingsTable: UIView {
         stackView.addArrangedSubview(footer)
         stackView.addConstraint(NSLayoutConstraint(item: footer, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: 2.0))
         stackView.addConstraint(NSLayoutConstraint(item: footer, attribute: .width, relatedBy: .equal, toItem: stackView, attribute: .width, multiplier: 1.0, constant: 0.0))
+        
+        self.setNeedsUpdateConstraints()
+        self.layoutSubviews()
     }
 }

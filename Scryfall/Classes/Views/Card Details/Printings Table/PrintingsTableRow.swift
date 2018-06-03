@@ -30,11 +30,13 @@ class PrintingsTableRow: UIView {
         titleLabel.textColor =  Style.color(forKey: .text)
         titleLabel.font = Style.font(forKey: .subtext)
         titleLabel.text = card.setName
+        titleLabel.numberOfLines = 0
+        titleLabel.lineBreakMode = .byWordWrapping
         
         // Values labels.
         pricesStackView.translatesAutoresizingMaskIntoConstraints = false
         pricesStackView.axis = .horizontal
-        pricesStackView.distribution = .equalSpacing
+        pricesStackView.distribution = .fillEqually
         pricesStackView.alignment = .center
         pricesStackView.spacing = 8
         
@@ -60,5 +62,8 @@ class PrintingsTableRow: UIView {
         backgroundColor = selected
             ? Style.color(forKey: .selectedPrinting)
             : UIColor.white
+        
+        self.setNeedsUpdateConstraints()
+        self.layoutSubviews()
     }
 }

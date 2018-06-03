@@ -22,16 +22,22 @@ class ListSettingsHeader<T1: StringRepresentableOption, T2: StringRepresentableO
     
     var firstOptionSelected: Action<T1, Void>?
     var secondOptionSelected: Action<T2, Void>?
+    var sortDirectionSelected: Action<SortDirection, Void>?
     
     init(view: ListSettingsHeaderView, presenter: UIViewController?) {
         self.view = view
         self.presenter = presenter
         super.init()
         
-        view.firstOptionButton.rx.tapGesture().when(.recognized).subscribe(onNext: { _ in self.firstOptionTapped()
+        view.firstOptionButton.rx.tapGesture().when(.recognized).subscribe(onNext: { _ in self.showOptions(from: view.firstOptionButton, action: self.firstOptionSelected)
         }).disposed(by: rx.disposeBag)
+        
         view.secondOptionButton.rx.tapGesture().when(.recognized).subscribe(onNext: { _ in
-            self.secondOptionTapped()
+            self.showOptions(from: view.secondOptionButton, action: self.secondOptionSelected)
+        }).disposed(by: rx.disposeBag)
+        
+        view.sortDirectionButton.rx.tapGesture().when(.recognized).subscribe(onNext: { _ in
+            self.showOptions(from: view.sortDirectionButton, action: self.sortDirectionSelected)
         }).disposed(by: rx.disposeBag)
     }
     
@@ -43,39 +49,25 @@ class ListSettingsHeader<T1: StringRepresentableOption, T2: StringRepresentableO
         view.secondOptionButton.titleLabel.text = option.name
     }
     
-    private func firstOptionTapped() {
-        let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-        for option in T1.all {
-            alertController.addAction(UIAlertAction(title: option.name, style: .default, handler: { _ in
-                if let action = self.firstOptionSelected {
-                    self.setFirstOption(option)
-                    action.execute(option)
-                }
-            }))
-        }
-        
-        if let popoverController = alertController.popoverPresentationController {
-            popoverController.sourceView = view.firstOptionButton.rightIcon
-        }
-        
-        if let presenter = presenter {
-            presenter.present(alertController, animated: true, completion: nil)
-        }
+    func setSortDirection(_ option: SortDirection) {
+        view.sortDirectionButton.titleLabel.text = option.name
     }
-    
-    private func secondOptionTapped() {
+}
+
+extension ListSettingsHeader {
+    fileprivate func showOptions<T: StringRepresentableOption>(from button: RoundCornerButton, action: Action<T, Void>?) {
         let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-        for option in T2.all {
+        for option in T.all {
             alertController.addAction(UIAlertAction(title: option.name, style: .default, handler: { _ in
-                if let action = self.secondOptionSelected {
-                    self.setSecondOption(option)
+                if let action = action {
+                    button.titleLabel.text = option.name
                     action.execute(option)
                 }
             }))
         }
         
         if let popoverController = alertController.popoverPresentationController {
-            popoverController.sourceView = view.secondOptionButton.rightIcon
+            popoverController.sourceView = button.rightIcon
         }
         
         if let presenter = presenter {

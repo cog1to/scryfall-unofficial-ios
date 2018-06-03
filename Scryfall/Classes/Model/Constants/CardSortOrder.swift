@@ -1,5 +1,5 @@
 //
-//  SortOrder.swift
+//  CardSortOrder.swift
 //  Scryfall
 //
 //  Created by Alexander Rogachev on 2/16/18.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum SortOrder: String, StringRepresentableOption {
+enum CardSortOrder: String, StringRepresentableOption {
     case name = "name"
     case set = "set"
     case rarity = "rarity"
@@ -51,11 +51,5 @@ enum SortOrder: String, StringRepresentableOption {
         }
     }
     
-    static var all: [SortOrder] = [.name, .set, .rarity, .color, .usd, .tix, .eur, .cmc, .power, .toughness, .edhrec, .artist]
-}
-
-enum SortDirection {
-    case auto
-    case ascending
-    case descending
+    static var all: [CardSortOrder] = [.name, .set, .rarity, .color, .usd, .tix, .eur, .cmc, .power, .toughness, .edhrec, .artist]
 }

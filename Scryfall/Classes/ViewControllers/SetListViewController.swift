@@ -42,6 +42,8 @@ class SetListViewController: DynamicHeaderViewController, BindableType {
         
         searchOptionsView.firstOptionLabel.text = "Sort by"
         searchOptionsView.secondOptionLabel.text = "Set type"
+        searchOptionsView.delimiterLabel.isHidden = true
+        searchOptionsView.sortDirectionButton.isHidden = true
         
         definesPresentationContext = true
         

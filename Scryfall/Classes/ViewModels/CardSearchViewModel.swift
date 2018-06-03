@@ -18,14 +18,16 @@ class CardSearchViewModel {
     let hasMore: Variable<Bool>
     let loading: Variable<Bool>
     let searchText = Variable<String>("")
-    let sortOrder = Variable<SortOrder>(.name)
+    let sortOrder = Variable<CardSortOrder>(.name)
+    let direction = Variable<SortDirection>(.auto)
     
     private var nextPage: URL?
     private var lastRequest: Disposable?
     private let bag = DisposeBag()
     
     private let _searchText = Variable<String>("")
-    private let _sortOrder = Variable<SortOrder>(.name)
+    private let _sortOrder = Variable<CardSortOrder>(.name)
+    private let _direction = Variable<SortDirection>(.auto)
     
     init(service: ScryfallServiceType, coordinator: SceneCoordinatorType) {
         scryfallService = service
@@ -35,11 +37,11 @@ class CardSearchViewModel {
         loading = Variable<Bool>(false)
         
         let searchText = _searchText.asObservable().filter({ return $0.count > 0})
-        Observable.combineLatest(searchText, _sortOrder.asObservable()).subscribe(onNext: { (text, order) in
+        Observable.combineLatest(searchText, _sortOrder.asObservable(), _direction.asObservable()).subscribe(onNext: { (text, order, direction) in
             self.loading.value = true
             self.lastRequest?.dispose()
             
-            let request = self.scryfallService.search(query: text, sort: order).share(replay: 1, scope: .whileConnected)
+            let request = self.scryfallService.search(query: text, sort: order, direction: direction).share(replay: 1, scope: .whileConnected)
             self.lastRequest = request.subscribe(onNext: { cardsList in
                 self.cards.value = cardsList.data
                 self.hasMore.value = cardsList.hasMore
@@ -117,38 +119,51 @@ class CardSearchViewModel {
         }
     }(self)
     
-    lazy var onLink: Action<[URLQueryItem], Void> = { this in
-        return Action { queryItems in
-            this.loading.value = true
-            this.lastRequest?.dispose()
+    lazy var onLink: Action<[URLQueryItem], Void> = { [unowned self] in
+        return Action { [unowned self] queryItems in
+            self.loading.value = true
+            self.lastRequest?.dispose()
             
             if let query = queryItems.filter({ $0.name == "q" }).first, let queryText = query.value {
-                this.searchText.value = queryText
+                self.searchText.value = queryText
             }
             
-            if let order = queryItems.filter({ $0.name == "order" }).first?.value, let orderValue = SortOrder(rawValue: order) {
-                this.sortOrder.value = orderValue
+            if let order = queryItems.filter({ $0.name == "order" }).first?.value, let orderValue = CardSortOrder(rawValue: order) {
+                self.sortOrder.value = orderValue
+            }
+            
+            if let direction = queryItems.filter({ $0.name == "dir" }).first?.value, let dirValue = SortDirection(rawValue: direction) {
+                self.direction.value = dirValue
+            } else {
+                self.direction.value = .auto
             }
             
             let request = self.scryfallService.search(params: queryItems).share(replay: 1, scope: .whileConnected)
-            this.lastRequest = request.subscribe(onNext: { cardsList in
-                this.cards.value = cardsList.data
-                this.hasMore.value = cardsList.hasMore
-                this.nextPage = cardsList.nextPage
+            self.lastRequest = request.subscribe(onNext: { cardsList in
+                self.cards.value = cardsList.data
+                self.hasMore.value = cardsList.hasMore
+                self.nextPage = cardsList.nextPage
             })
             
             request.subscribe({ _ in
-                this.loading.value = false
-            }).disposed(by: this.bag)
+                self.loading.value = false
+            }).disposed(by: self.bag)
             
             return Observable.just(())
         }
-    }(self)
+    }()
     
-    lazy var onSortOrderChange: Action<SortOrder, Void> = { this in
-        return Action { sortOrder in
-            this._sortOrder.value = sortOrder
+    lazy var onSortOrderChange: Action<CardSortOrder, Void> = { [unowned self] in
+        return Action { [unowned self] sortOrder in
+            self._sortOrder.value = sortOrder
             return Observable.just(())
         }
-    }(self)
+    }()
+    
+    lazy var onSortDirectionChange: Action<SortDirection, Void> = { [unowned self] in
+        return Action { [unowned self] direction in
+            self._direction.value = direction
+            return Observable.just(())
+        }
+    }()
 }

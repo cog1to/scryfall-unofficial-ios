@@ -22,7 +22,7 @@ class CardSearchViewController: DynamicHeaderViewController, BindableType {
     @IBOutlet weak var menuButton: UIButton!
     @IBOutlet weak var searchBarContainer: UIView!
     
-    var searchOptionsViewController: ListSettingsHeader<DisplayMode, SortOrder>!
+    var searchOptionsViewController: ListSettingsHeader<DisplayMode, CardSortOrder>!
     
     var noItemsLabel = UILabel()
     
@@ -38,7 +38,7 @@ class CardSearchViewController: DynamicHeaderViewController, BindableType {
         super.viewDidLoad()
         view.backgroundColor = Style.color(forKey: .navigationTint)
         
-        searchOptionsViewController = ListSettingsHeader<DisplayMode, SortOrder>(view: searchOptionsView, presenter: self)
+        searchOptionsViewController = ListSettingsHeader<DisplayMode, CardSortOrder>(view: searchOptionsView, presenter: self)
         
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 60
@@ -152,6 +152,9 @@ class CardSearchViewController: DynamicHeaderViewController, BindableType {
         viewModel.sortOrder.asObservable().subscribe(onNext: {
             self.searchOptionsViewController.setSecondOption($0)
         }).disposed(by: disposeBag)
+        viewModel.direction.asObservable().subscribe(onNext: {
+            self.searchOptionsViewController.setSortDirection($0)
+        }).disposed(by: disposeBag)
         
         // Connect view mode setting.
         Settings.shared.viewMode.asObservable().subscribe(onNext: { [weak self] viewMode in
@@ -179,15 +182,17 @@ class CardSearchViewController: DynamicHeaderViewController, BindableType {
             strongSelf.searchOptionsViewController.setFirstOption(viewMode)
         }).disposed(by: disposeBag)
         
-        // Connect UX to view mode settings
         searchOptionsViewController.firstOptionSelected = Action { displayMode in
             Settings.shared.viewMode.value = displayMode
             return Observable.just(())
         }
         
-        // Connect UX to view mode settings
         searchOptionsViewController.secondOptionSelected = Action { sortOrder in
             self.viewModel.onSortOrderChange.execute(sortOrder)
+        }
+        
+        searchOptionsViewController.sortDirectionSelected = Action { direction in
+            self.viewModel.onSortDirectionChange.execute(direction)
         }
         
         menuButton.rx.tap.subscribe(onNext: {

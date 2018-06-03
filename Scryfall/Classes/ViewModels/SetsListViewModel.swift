@@ -45,6 +45,7 @@ class SetsListViewModel {
         let setsObservable = refreshSubject.asObservable().flatMap {
             CardSetCache.instance.sets(force: $0)
         }
+        
         let combinedObservable = Observable.combineLatest(sortOrder.asObservable(), setType.asObservable(), setsObservable)
         combinedObservable.map { (order: SetSortOrder, type: CardSetType, sets: [CardSet]) -> [SetListItem] in
                 let filteredItems = (type == .any) ? sets : sets.filter {
@@ -84,11 +85,6 @@ class SetsListViewModel {
                     }
                 case .releaseDate:
                     sortFunction = {
-                        if ($0.code == "pxtc" || $1.code == "pxtc") {
-                            print("\($0.code) - \($1.code)")
-                            print("hey")
-                        }
-                        
                         if ($0.code == $1.parentSetCode) {
                             return true
                         } else if ($1.code == $0.parentSetCode) {

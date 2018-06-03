@@ -16,6 +16,8 @@ class ListSettingsHeaderView: UIView {
     @IBOutlet weak var firstOptionButton: RoundCornerButton!
     @IBOutlet weak var secondOptionLabel: UILabel!
     @IBOutlet weak var secondOptionButton: RoundCornerButton!
+    @IBOutlet weak var delimiterLabel: UILabel!
+    @IBOutlet weak var sortDirectionButton: RoundCornerButton!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -50,5 +52,8 @@ class ListSettingsHeaderView: UIView {
         secondOptionLabel.textColor = Style.color(forKey: .text)
         
         secondOptionButton.titleLabel.font = Style.font(forKey: .subtextBold)
+        
+        delimiterLabel.font = Style.font(forKey: .text)
+        sortDirectionButton.titleLabel.font = Style.font(forKey: .subtextBold)
     }
 }

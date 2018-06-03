@@ -63,7 +63,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Cards" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="daN-hT-Mpo">
-                                <rect key="frame" x="0.0" y="41" width="382" height="17"/>
+                                <rect key="frame" x="0.0" y="45" width="382" height="13"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -79,7 +79,7 @@
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="TJ2-3w-Gq5" secondAttribute="trailing" id="AAL-qt-jGj"/>
                             <constraint firstItem="eLR-tH-ZHU" firstAttribute="leading" secondItem="daN-hT-Mpo" secondAttribute="trailing" constant="8" id="KrV-8P-vUg"/>
-                            <constraint firstItem="daN-hT-Mpo" firstAttribute="top" secondItem="TJ2-3w-Gq5" secondAttribute="bottom" id="LxB-KR-V7b"/>
+                            <constraint firstItem="daN-hT-Mpo" firstAttribute="top" secondItem="TJ2-3w-Gq5" secondAttribute="bottom" constant="4" id="LxB-KR-V7b"/>
                             <constraint firstItem="eLR-tH-ZHU" firstAttribute="baseline" secondItem="daN-hT-Mpo" secondAttribute="baseline" id="Mpg-LX-FSv"/>
                             <constraint firstAttribute="bottom" secondItem="daN-hT-Mpo" secondAttribute="bottom" id="OY0-GW-VNB"/>
                             <constraint firstItem="TJ2-3w-Gq5" firstAttribute="top" secondItem="IlD-AJ-pT5" secondAttribute="top" id="QHh-BQ-8GB"/>
