@@ -117,6 +117,10 @@
 		CFBBEBDD200E9E6E005A301F /* PrintingsTableRow.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFBBEBDC200E9E6E005A301F /* PrintingsTableRow.xib */; };
 		CFBBEBDF200EAA7A005A301F /* PrintingsTableHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFBBEBDE200EAA7A005A301F /* PrintingsTableHeader.xib */; };
 		CFBBEBE1200EB47D005A301F /* CardSetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBBEBE0200EB47D005A301F /* CardSetView.swift */; };
+		CFC17E4820C5BA0A00221260 /* UIBarButtonItem+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC17E4720C5BA0A00221260 /* UIBarButtonItem+Extension.swift */; };
+		CFC17E4A20C5BE8400221260 /* CustomSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC17E4920C5BE8400221260 /* CustomSearchController.swift */; };
+		CFC17E4D20C5BEC600221260 /* CustomSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC17E4C20C5BEC600221260 /* CustomSearchBar.swift */; };
+		CFC17E4F20C5C4F200221260 /* UINavigationController+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC17E4E20C5C4F200221260 /* UINavigationController+Rx.swift */; };
 		CFD05BC420001A4A00CDF9C2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD05BC320001A4A00CDF9C2 /* AppDelegate.swift */; };
 		CFD05BC920001A4A00CDF9C2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFD05BC720001A4A00CDF9C2 /* Main.storyboard */; };
 		CFD05BCB20001A4A00CDF9C2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFD05BCA20001A4A00CDF9C2 /* Assets.xcassets */; };
@@ -281,6 +285,10 @@
 		CFBBEBDC200E9E6E005A301F /* PrintingsTableRow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PrintingsTableRow.xib; sourceTree = "<group>"; };
 		CFBBEBDE200EAA7A005A301F /* PrintingsTableHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PrintingsTableHeader.xib; sourceTree = "<group>"; };
 		CFBBEBE0200EB47D005A301F /* CardSetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardSetView.swift; sourceTree = "<group>"; };
+		CFC17E4720C5BA0A00221260 /* UIBarButtonItem+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extension.swift"; sourceTree = "<group>"; };
+		CFC17E4920C5BE8400221260 /* CustomSearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSearchController.swift; sourceTree = "<group>"; };
+		CFC17E4C20C5BEC600221260 /* CustomSearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSearchBar.swift; sourceTree = "<group>"; };
+		CFC17E4E20C5C4F200221260 /* UINavigationController+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Rx.swift"; sourceTree = "<group>"; };
 		CFD05BC020001A4A00CDF9C2 /* Scryfall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scryfall.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFD05BC320001A4A00CDF9C2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CFD05BC820001A4A00CDF9C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -366,6 +374,7 @@
 				CFD05C392002525900CDF9C2 /* UIColor+Extension.swift */,
 				CF0CE3652002678E00000EE1 /* NSMutableAttributedString+Extension.swift */,
 				CF4BE06F200826710054FFEA /* UIView+Extension.swift */,
+				CFC17E4720C5BA0A00221260 /* UIBarButtonItem+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -373,6 +382,7 @@
 		CF0CE36D2003EA5000000EE1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				CFC17E4B20C5BEAE00221260 /* Search Bar */,
 				CF248D9220BC734A007C8909 /* Sets List */,
 				CF248D7F20BBE24F007C8909 /* List Settings */,
 				CFBBEBE2200EB562005A301F /* Card Details */,
@@ -590,6 +600,15 @@
 			path = "Card Details";
 			sourceTree = "<group>";
 		};
+		CFC17E4B20C5BEAE00221260 /* Search Bar */ = {
+			isa = PBXGroup;
+			children = (
+				CFC17E4920C5BE8400221260 /* CustomSearchController.swift */,
+				CFC17E4C20C5BEC600221260 /* CustomSearchBar.swift */,
+			);
+			path = "Search Bar";
+			sourceTree = "<group>";
+		};
 		CFD05BB720001A4A00CDF9C2 = {
 			isa = PBXGroup;
 			children = (
@@ -744,6 +763,7 @@
 			isa = PBXGroup;
 			children = (
 				CFD05C1520003F8500CDF9C2 /* UISearchController+Rx.swift */,
+				CFC17E4E20C5C4F200221260 /* UINavigationController+Rx.swift */,
 			);
 			path = Rx;
 			sourceTree = "<group>";
@@ -979,6 +999,7 @@
 				CF1FA2852006A34300E8DAEA /* TIXToken.swift in Sources */,
 				CF1FA27D2006A03000E8DAEA /* Product.swift in Sources */,
 				CF0CE36F2003EA5E00000EE1 /* LegalityView.swift in Sources */,
+				CFC17E4820C5BA0A00221260 /* UIBarButtonItem+Extension.swift in Sources */,
 				CF248D8320BBE2FF007C8909 /* StringRepresentableOption.swift in Sources */,
 				CF1FA2A12006A8D600E8DAEA /* BorderToken.swift in Sources */,
 				CF0CE3752004031B00000EE1 /* Legality.swift in Sources */,
@@ -1001,6 +1022,7 @@
 				CF6DDA0E20362E5600F5EAC9 /* DisplayMode.swift in Sources */,
 				CF1FA26F200695BF00E8DAEA /* SetsToken.swift in Sources */,
 				CF248DA420C3D516007C8909 /* SortDirection.swift in Sources */,
+				CFC17E4D20C5BEC600221260 /* CustomSearchBar.swift in Sources */,
 				CF1FA27B20069F9600E8DAEA /* GameToken.swift in Sources */,
 				CF1FA2672006930800E8DAEA /* ToughnessToken.swift in Sources */,
 				CF248D9B20C32E15007C8909 /* SetListViewController.swift in Sources */,
@@ -1036,6 +1058,7 @@
 				CFBBEBDB200E9D67005A301F /* Price.swift in Sources */,
 				CFD05C0420002F7E00CDF9C2 /* Card.swift in Sources */,
 				CFD05C0B20003CA700CDF9C2 /* SceneCoordinator.swift in Sources */,
+				CFC17E4F20C5C4F200221260 /* UINavigationController+Rx.swift in Sources */,
 				CF1FA2AB2006B2B100E8DAEA /* ValueToken.swift in Sources */,
 				CF1FA25B2005843A00E8DAEA /* CMCToken.swift in Sources */,
 				CF1FA25F200613D700E8DAEA /* TraitToken.swift in Sources */,
@@ -1074,6 +1097,7 @@
 				CF1FA2AD2006B65600E8DAEA /* NegatableToken.swift in Sources */,
 				CFD05C1620003F8500CDF9C2 /* UISearchController+Rx.swift in Sources */,
 				CF1FA28D2006A4A900E8DAEA /* FormatToken.swift in Sources */,
+				CFC17E4A20C5BE8400221260 /* CustomSearchController.swift in Sources */,
 				CFD05C182001144500CDF9C2 /* CardsList.swift in Sources */,
 				CFBBEBB9200D6A0E005A301F /* PrintingsTable.swift in Sources */,
 				CF1FA2572005833400E8DAEA /* OracleSymbol.swift in Sources */,

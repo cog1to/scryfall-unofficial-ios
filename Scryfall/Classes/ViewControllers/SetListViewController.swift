@@ -29,7 +29,9 @@ class SetListViewController: DynamicHeaderViewController, BindableType {
     var viewModel: SetsListViewModel!
     
     override func viewDidLoad() {
-        super.viewDidLoad()
+        super.viewDidLoad()        
+        self.title = "All sets"
+        
         view.backgroundColor = Style.color(forKey: .navigationTint)
         
         optionsViewController = ListSettingsHeader<SetSortOrder, CardSetType>(view: searchOptionsView, presenter: self)
@@ -49,17 +51,6 @@ class SetListViewController: DynamicHeaderViewController, BindableType {
         
         loadingView.backgroundColor = Style.color(forKey: .background)
         loadingView.layer.cornerRadius = Constants.commonCornerRadius
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.setNavigationBarHidden(false, animated: false)
-        self.title = "All sets"
-        super.viewWillAppear(animated)
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        self.navigationController?.setNavigationBarHidden(true, animated: false)
-        super.viewWillDisappear(animated)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -114,9 +105,9 @@ class SetListViewController: DynamicHeaderViewController, BindableType {
     }
     
     func setupNavigationBackAction() {
-        self.navigationItem.hidesBackButton = true
-        var customBackButton = UIBarButtonItem(title: "Back", style: .done, target: nil, action: nil)
-        customBackButton.rx.action = viewModel.onBack
-        self.navigationItem.leftBarButtonItem = customBackButton
+//        self.navigationItem.hidesBackButton = true
+//        var customBackButton = UIBarButtonItem(title: "Back", style: .done, target: nil, action: nil)
+//        customBackButton.rx.action = viewModel.onBack
+//        self.navigationItem.leftBarButtonItem = customBackButton
     }
 }

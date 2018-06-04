@@ -12,8 +12,11 @@ import RxCocoa
 
 class SceneCoordinator: SceneCoordinatorType {
     
+    fileprivate let disposeBag = DisposeBag()
     fileprivate var window: UIWindow
     fileprivate var currentViewController: UIViewController
+    fileprivate var rootNavigationController: UINavigationController?
+    fileprivate var popSubject = PublishSubject<Void>()
     
     required init(window: UIWindow) {
         self.window = window
@@ -36,8 +39,25 @@ class SceneCoordinator: SceneCoordinatorType {
         case .root:
             currentViewController = SceneCoordinator.actualViewController(for: viewController)
             window.rootViewController = viewController
-            subject.onCompleted()
             
+            if let navController = viewController as? UINavigationController {
+                rootNavigationController = navController
+                navController.rx.transition
+                    .subscribe(onNext: { [unowned self] transition in
+                        if (transition.operation == .pop) {
+                            // one-off subscription to be notified when push complete
+                            _ = navController.rx.delegate
+                                .sentMessage(#selector(UINavigationControllerDelegate.navigationController(_:didShow:animated:)))
+                                .map { _ in }
+                                .take(1)
+                                .subscribe(onNext: {
+                                    self.currentViewController = SceneCoordinator.actualViewController(for: transition.toVC)
+                                })
+                        }
+                    })
+                    .disposed(by: disposeBag)
+            }
+            return subject.asObservable().take(1)
         case .push:
             guard let navigationController = currentViewController.navigationController else {
                 fatalError("Can't push a view controller without a current navigation controller")
@@ -48,8 +68,7 @@ class SceneCoordinator: SceneCoordinatorType {
                 .map { _ in }
                 .bind(to: subject)
             navigationController.pushViewController(viewController, animated: true)
-            currentViewController = SceneCoordinator.actualViewController(for: viewController)
-            
+            currentViewController = SceneCoordinator.actualViewController(for: viewController)            
         case .modal:
             currentViewController.present(viewController, animated: true) {
                 subject.onCompleted()

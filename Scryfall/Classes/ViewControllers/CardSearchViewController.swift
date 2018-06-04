@@ -19,8 +19,7 @@ class CardSearchViewController: DynamicHeaderViewController, BindableType {
     @IBOutlet weak var searchField: UITextField!
     @IBOutlet weak var loadingView: UIView!
     @IBOutlet weak var activityLabel: UIActivityIndicatorView!
-    @IBOutlet weak var menuButton: UIButton!
-    @IBOutlet weak var searchBarContainer: UIView!
+    @IBOutlet weak var menuButton: UIBarButtonItem!
     
     var searchOptionsViewController: ListSettingsHeader<DisplayMode, CardSortOrder>!
     
@@ -30,8 +29,10 @@ class CardSearchViewController: DynamicHeaderViewController, BindableType {
     
     var popover: PopoverMenuView!
     
+    var searchController: UISearchController!
+    
     override var topGuide: DynamicHeaderViewController.TopGuide {
-        return TopGuide(guide: searchBarContainer, attribute: .bottom)
+        return TopGuide(guide: view.safeAreaLayoutGuide, attribute: .top)
     }
     
     override func viewDidLoad() {
@@ -72,18 +73,34 @@ class CardSearchViewController: DynamicHeaderViewController, BindableType {
         
         searchOptionsView.firstOptionLabel.text = "Show as"
         searchOptionsView.secondOptionLabel.text = "Sort by"
+        
+        // Create search bar.
+        searchController = CustomSearchController(searchResultsController: nil)
+        searchController.title = "Search for Magic cards"
+        searchController.searchBar.searchBarStyle = .minimal
+        searchController.searchBar.placeholder = "Search for Magic cards"
+        searchController.dimsBackgroundDuringPresentation = false
+        searchController.hidesNavigationBarDuringPresentation = false
+        if let textField = searchController.searchBar.value(forKey:"searchField") as? UIView {
+            let backgroundView = textField.subviews.first
+            backgroundView?.backgroundColor = Style.color(forKey: .printingText)
+            backgroundView?.layer.cornerRadius = 10
+            backgroundView?.clipsToBounds = true
+        }
+        navigationItem.searchController = searchController
+        navigationItem.hidesSearchBarWhenScrolling = false
     }
     
     func bindViewModel() {
         // Perform searh when search bar text changes.
-        searchField.rx.text
+        searchController.rx.updateSearchResults
             .filter { $0 != nil && $0!.count > 0 }
             .map { $0! }
             .distinctUntilChanged()
             .debounce(RxTimeInterval(0.5), scheduler: MainScheduler.instance)
             .distinctUntilChanged()
             .subscribe(viewModel.onSearch.inputs)
-            .disposed(by: disposeBag)
+            .disposed(by: disposeBag)      
         
         // Reload table when change in cards array is detected.
         let cards = viewModel.cards.asObservable().observeOn(MainScheduler.instance)
@@ -148,7 +165,7 @@ class CardSearchViewController: DynamicHeaderViewController, BindableType {
         viewModel.loading.asObservable().distinctUntilChanged().asDriver(onErrorJustReturn: false).drive(activityLabel.rx.isAnimating).disposed(by: disposeBag)
         
         // Search params reverse binding.
-        viewModel.searchText.asObservable().bind(to: searchField.rx.text).disposed(by: disposeBag)
+        viewModel.searchText.asObservable().bind(to: searchController.searchBar.rx.text).disposed(by: disposeBag)
         viewModel.sortOrder.asObservable().subscribe(onNext: {
             self.searchOptionsViewController.setSecondOption($0)
         }).disposed(by: disposeBag)
@@ -195,9 +212,11 @@ class CardSearchViewController: DynamicHeaderViewController, BindableType {
             self.viewModel.onSortDirectionChange.execute(direction)
         }
         
-        menuButton.rx.tap.subscribe(onNext: {
-            self.popover = PopoverMenuView(items: ["All sets"])
-            self.popover.show(from: self.menuButton, itemSelected: self.viewModel.onMenuItemSelected)
+        menuButton.rx.tap.subscribe(onNext: { [unowned self] in
+            if let view = self.menuButton.view {
+                self.popover = PopoverMenuView(items: ["All sets"])
+                self.popover.show(from: view, itemSelected: self.viewModel.onMenuItemSelected)
+            }
         }).disposed(by: disposeBag)
     }
     
