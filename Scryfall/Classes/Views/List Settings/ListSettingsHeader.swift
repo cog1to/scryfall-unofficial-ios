@@ -57,6 +57,8 @@ class ListSettingsHeader<T1: StringRepresentableOption, T2: StringRepresentableO
 extension ListSettingsHeader {
     fileprivate func showOptions<T: StringRepresentableOption>(from button: RoundCornerButton, action: Action<T, Void>?) {
         let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        
+        // Add option buttons.
         for option in T.all {
             alertController.addAction(UIAlertAction(title: option.name, style: .default, handler: { _ in
                 if let action = action {
@@ -66,10 +68,19 @@ extension ListSettingsHeader {
             }))
         }
         
+        // Add cancel button.
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: { _ in
+            alertController.dismiss(animated: true, completion: nil)
+        })
+        cancelAction.setValue(Style.color(forKey: .text), forKey: "titleTextColor")
+        alertController.addAction(cancelAction)
+        
+        // Pin to the presenting view.
         if let popoverController = alertController.popoverPresentationController {
             popoverController.sourceView = button.rightIcon
         }
         
+        // Show.
         if let presenter = presenter {
             presenter.present(alertController, animated: true, completion: nil)
         }
