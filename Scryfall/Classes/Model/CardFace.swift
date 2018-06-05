@@ -19,6 +19,9 @@ class CardFace: JSONConvertible {
     var power: String? = nil
     var toughness: String? = nil
     var loyalty: String? = nil
+    var printedText: String?
+    var printedName: String?
+    var printedTypeLine: String?
     
     required init?(json: JSON) {
         guard let name = json["name"].string else {
@@ -45,5 +48,9 @@ class CardFace: JSONConvertible {
         } else {
             self.imageUris = [:]
         }
+        
+        self.printedText = json["printed_text"].string
+        self.printedName = json["printed_name"].string
+        self.printedTypeLine = json["printed_type_line"].string
     }
 }

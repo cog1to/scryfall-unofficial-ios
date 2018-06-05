@@ -37,19 +37,21 @@ class CardDetailsView: UIView {
             }
             
             // Name and cost.
-            let titleLabel = label(text: nameString(name: face.name, cost: face.manaCost))
+            let titleLabel = label(text: nameString(name: face.printedName ?? face.name, cost: face.manaCost))
             stackView.addArrangedSubview(titleLabel)
             
             // Type line.
-            if face.typeLine.count > 0 {
+            let typeline = face.printedTypeLine ?? face.typeLine
+            if typeline.count > 0 {
                 stackView.addArrangedSubview(separator())
-                stackView.addArrangedSubview(label(withFontStyle: .text, text: face.typeLine))
+                stackView.addArrangedSubview(label(withFontStyle: .text, text: typeline))
             }
             
             // Oracle text.
-            if let oracleText = face.oracleText {
+            let text = face.printedText ?? face.oracleText
+            if text != nil || face.flavorText != nil {
                 stackView.addArrangedSubview(separator())
-                stackView.addArrangedSubview(label(text: rulingsString(for: oracleText, flavor: face.flavorText)))
+                stackView.addArrangedSubview(label(text: rulingsString(for: text, flavor: face.flavorText)))
             }
             
             // Power and toughness.
@@ -163,30 +165,37 @@ extension CardDetailsView {
      * - parameter flavor: Flavor text of a card or card face.
      * - returns: Formatted attributed string with oracle text and flavor text.
      */
-    fileprivate func rulingsString(for text: String, flavor: String?) -> NSAttributedString {
+    fileprivate func rulingsString(for text: String?, flavor: String?) -> NSAttributedString {
         let combined = NSMutableAttributedString()
         
         // Format each paragraph.
-        let paragraphs = text.components(separatedBy: "\n")
-        paragraphs.enumerated().forEach { (idx, string) in
-            // Line break after each paragraph except last.
-            let updated = (idx == paragraphs.count - 1) ? string : "\(string)\n"
-            
-            // Apply font.
-            let attributed = NSMutableAttributedString(string: updated, attributes: [.font: Style.font(forKey: .text), NSAttributedStringKey.foregroundColor: Style.color(forKey: .text)])
-            
-            // Italicise reminder text, if it's found.
-            let regexp = try! NSRegularExpression(pattern: " \\(.*\\)(\n)?", options: [])
-            if let match = regexp.firstMatch(in: attributed.string, options: [], range: NSRange(location: 0, length: attributed.string.count)) {
-                attributed.addAttribute(.font, value: Style.font(forKey: .italic), range: match.range)
+        if let text = text, text.count > 0 {
+            let paragraphs = text.components(separatedBy: "\n")
+            paragraphs.enumerated().forEach { (idx, string) in
+                // Line break after each paragraph except last.
+                let updated = (idx == paragraphs.count - 1) ? string : "\(string)\n"
+                
+                // Apply font.
+                let attributed = NSMutableAttributedString(string: updated, attributes: [.font: Style.font(forKey: .text), NSAttributedStringKey.foregroundColor: Style.color(forKey: .text)])
+                
+                // Italicise reminder text, if it's found.
+                let regexp = try! NSRegularExpression(pattern: " \\(.*\\)(\n)?", options: [])
+                if let match = regexp.firstMatch(in: attributed.string, options: [], range: NSRange(location: 0, length: attributed.string.count)) {
+                    attributed.addAttribute(.font, value: Style.font(forKey: .italic), range: match.range)
+                }
+                
+                combined.append(attributed)
             }
-            
-            combined.append(attributed)
         }
         
         // Add flavor text paragraph.
         if let flavor = flavor, flavor.count > 0 {
-            combined.append(NSAttributedString(string: "\n\(flavor)", attributes: [.font : Style.font(forKey: .italic)]))
+            var flavorText = "\(flavor)"
+            if (combined.length > 0) {
+                flavorText = "\n\(flavorText)"
+            }
+            
+            combined.append(NSAttributedString(string: flavorText, attributes: [.font : Style.font(forKey: .italic)]))
         }
         
         // Replace mana symbols with images.

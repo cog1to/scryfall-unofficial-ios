@@ -61,16 +61,20 @@ class NetworkCache {
             } else {
                 print("saving cache for \(url.absoluteString)")
                 
-                let allItems = realm.objects(NetworkCacheItem.self).sorted(byKeyPath: "date", ascending: false)
-                if allItems.count >= cacheLimit, let first = allItems.first {
+                let allItems = realm.objects(NetworkCacheItem.self).sorted(byKeyPath: "date", ascending: true)
+                let overflow = allItems.count >= cacheLimit && allItems.first != nil
+                if overflow {
                     print("cache is full, deleting the oldest item")
-                    realm.delete(first)
                 }
                 
                 let newItem = NetworkCacheItem()
                 newItem.data = data
                 newItem.date = Date()
                 try realm.write {
+                    if overflow, let first = allItems.first {
+                        realm.delete(first)
+                    }
+                    
                     newItem.url = url.absoluteString
                     realm.add(newItem)
                 }

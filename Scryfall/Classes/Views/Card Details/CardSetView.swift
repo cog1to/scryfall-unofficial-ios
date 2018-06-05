@@ -74,7 +74,12 @@ class CardSetView: UIView {
             .disposed(by: self.disposeBag)
         
         setNameLabel.text = "\(card.setName) (\(card.setCode.uppercased()))"
-        cardNumberLabel.text = "#\(card.collectorsNumber), \(card.rarity.name)"
+        
+        var descriptionText = "#\(card.collectorsNumber) · \(card.rarity.name)"
+        if let language = card.language {
+            descriptionText += " · \(language.name)"
+        }
+        cardNumberLabel.text = descriptionText
         
         rx.tapGesture().when(.recognized).map { _ in return () }.bind(to: tapAction.inputs).disposed(by: rx.disposeBag)
     }

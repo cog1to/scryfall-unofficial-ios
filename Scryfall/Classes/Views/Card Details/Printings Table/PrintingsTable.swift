@@ -65,34 +65,33 @@ class PrintingsTable: UIView {
         }
         
         // Printings
-        if let index = cards.index(where: { card -> Bool in return card.ID == selected.ID }) {
-            let window = ((maxPrints - 1) / 2)
-            var start = max(0, index - window)
-            var end = min(cards.count, index + window + 1)
-            
-            if index == 0 {
-                end = min(cards.count, index + maxPrints)
-            }
-            
-            if index == cards.count - 1 {
-                start = max(0, index - maxPrints + 1)
-            }
-            
-            let slice = cards[start..<end]
-            
-            for card in slice {
-                if let rowView = Bundle.main.loadNibNamed("PrintingsTableRow", owner: nil, options: nil)!.first as? PrintingsTableRow {
-                    rowView.configure(card: card, selected: card.ID == selected.ID)
-                    
-                    stackView.addArrangedSubview(rowView)
-                    stackView.addConstraint(NSLayoutConstraint(item: rowView, attribute: .width, relatedBy: .equal, toItem: stackView, attribute: .width, multiplier: 1.0, constant: -(2.0*1.0/UIScreen.main.scale)))
-                    
-                    for (idx, view) in rowView.pricesStackView.subviews.enumerated() {
-                        addConstraint(NSLayoutConstraint(item: view, attribute: .width, relatedBy: .equal, toItem: headerLabels[idx], attribute: .width, multiplier: 1.0, constant: 0.0))
-                    }
-                    
-                    rowView.rx.tapGesture().when(.recognized).map({ _ in return card }).bind(to: action.inputs).disposed(by: disposeBag)
+        let index = cards.index(where: { card -> Bool in return card.ID == selected.ID }) ?? 0
+        let window = ((maxPrints - 1) / 2)
+        var start = max(0, index - window)
+        var end = min(cards.count, index + window + 1)
+        
+        if index == 0 {
+            end = min(cards.count, index + maxPrints)
+        }
+        
+        if index == cards.count - 1 {
+            start = max(0, index - maxPrints + 1)
+        }
+        
+        let slice = cards[start..<end]
+        
+        for card in slice {
+            if let rowView = Bundle.main.loadNibNamed("PrintingsTableRow", owner: nil, options: nil)!.first as? PrintingsTableRow {
+                rowView.configure(card: card, selected: card.ID == selected.ID)
+                
+                stackView.addArrangedSubview(rowView)
+                stackView.addConstraint(NSLayoutConstraint(item: rowView, attribute: .width, relatedBy: .equal, toItem: stackView, attribute: .width, multiplier: 1.0, constant: -(2.0*1.0/UIScreen.main.scale)))
+                
+                for (idx, view) in rowView.pricesStackView.subviews.enumerated() {
+                    addConstraint(NSLayoutConstraint(item: view, attribute: .width, relatedBy: .equal, toItem: headerLabels[idx], attribute: .width, multiplier: 1.0, constant: 0.0))
                 }
+                
+                rowView.rx.tapGesture().when(.recognized).map({ _ in return card }).bind(to: action.inputs).disposed(by: disposeBag)
             }
         }
         

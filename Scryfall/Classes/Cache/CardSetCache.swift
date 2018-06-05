@@ -17,7 +17,7 @@ class CardSetCache {
     func set(forCode code: String) -> Observable<CardSet> {
         return sets().map({ return $0.filter({ set in set.code == code }).first }).flatMap { set -> Observable<CardSet> in
             if let set = set {
-                return Observable.just(set)
+                return .just(set)
             } else {
                 return self.sets(force: true).map({ return $0.filter({ set in set.code == code }).first! })
             }

@@ -94,13 +94,13 @@ class SetListViewController: DynamicHeaderViewController, BindableType {
         // Connect UX to view mode settings
         optionsViewController.firstOptionSelected = Action { [unowned self] sortOrder in
             self.viewModel.sortOrder.value = sortOrder
-            return Observable.just(())
+            return .just(())
         }
 
         // Connect UX to view mode settings
         optionsViewController.secondOptionSelected = Action { [unowned self] type in
             self.viewModel.setType.value = type
-            return Observable.just(())
+            return .just(())
         }
     }
     

@@ -201,7 +201,7 @@ class CardSearchViewController: DynamicHeaderViewController, BindableType {
         
         searchOptionsViewController.firstOptionSelected = Action { displayMode in
             Settings.shared.viewMode.value = displayMode
-            return Observable.just(())
+            return .just(())
         }
         
         searchOptionsViewController.secondOptionSelected = Action { sortOrder in

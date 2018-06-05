@@ -1,5 +1,5 @@
 //
-//  CombinedToken.swift
+//  LogicalCombinedToken.swift
 //  Scryfall
 //
 //  Created by Alexander Rogachev on 1/10/18.
@@ -24,7 +24,7 @@ enum LogicalOperator: String {
     }
 }
 
-class CombinedToken: QueryToken {
+class LogicalCombinedToken: QueryToken {
     var op: LogicalOperator
     var value: [QueryToken]
     var negative: Bool

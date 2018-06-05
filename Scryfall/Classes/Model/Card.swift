@@ -39,7 +39,8 @@ class Card: CardFace {
     var reserved: Bool
     var legalities: [Format: Legality]
     var watermark: Watermark? = nil
-    
+    var language: Language?
+
     required init?(json: JSON) {
         // Validate mandatory fields.
         guard let id = json["id"].string else {
@@ -113,6 +114,10 @@ class Card: CardFace {
         
         if let faces = json["card_faces"].array {
             self.faces = faces.map { return CardFace(json: $0)! }
+        }
+        
+        if let language = json["lang"].string {
+            self.language = Language(rawValue: language)
         }
     }
 }

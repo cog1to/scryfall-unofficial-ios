@@ -74,14 +74,14 @@ class CardSearchViewModel {
             this.hasMore.value = false
             this.cards.value = []
             
-            return Observable.just(())
+            return .just(())
         }
     }(self)
     
     lazy var onSearch: Action<String, Void> = { this in
         return Action { query in
             this._searchText.value = query
-            return Observable.just(())
+            return .just(())
         }
     }(self)
     
@@ -105,7 +105,7 @@ class CardSearchViewModel {
                 })
             }
             
-            return Observable.just(())
+            return .just(())
         }
     }(self)
     
@@ -149,21 +149,21 @@ class CardSearchViewModel {
                 self.loading.value = false
             }).disposed(by: self.bag)
             
-            return Observable.just(())
+            return .just(())
         }
     }()
     
     lazy var onSortOrderChange: Action<CardSortOrder, Void> = { [unowned self] in
         return Action { [unowned self] sortOrder in
             self._sortOrder.value = sortOrder
-            return Observable.just(())
+            return .just(())
         }
     }()
     
     lazy var onSortDirectionChange: Action<SortDirection, Void> = { [unowned self] in
         return Action { [unowned self] direction in
             self._direction.value = direction
-            return Observable.just(())
+            return .just(())
         }
     }()
 }

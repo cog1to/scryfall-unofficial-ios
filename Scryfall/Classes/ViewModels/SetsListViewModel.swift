@@ -158,7 +158,7 @@ class SetsListViewModel {
     
     lazy var onSet: Action<SetListItem, Void> = { [unowned self] in
         return Action { [unowned self] item in
-            return self.callback(withQueryString: "set:\(item.code)") ?? Observable.just(())
+            return self.callback(withQueryString: "set:\(item.code)") ?? .just(())
         }
     }()
 }

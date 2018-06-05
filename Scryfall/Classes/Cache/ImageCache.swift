@@ -96,7 +96,7 @@ class ImageDownloader {
      */
     func data(for url: URL) -> Observable<Data?> {
         if let cachedImage = cachedImage(for: url) {
-            return Observable.just(cachedImage as Data)
+            return .just(cachedImage as Data)
         }
         
         // Download an image, save it into cache, and pass along to the subscriber.

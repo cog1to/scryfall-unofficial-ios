@@ -73,7 +73,9 @@ class WebService {
             }
             
             if !force, let cachedResponse = NetworkCache.instance.data(forURL: finalURL) {
-                return Observable.just(cachedResponse).map { return JSON(data: $0) }
+                return Observable.just(cachedResponse).map { data -> JSON in
+                    return JSON(data: data)
+                }
             } else {
                 let request = URLRequest(url: finalURL)
                 

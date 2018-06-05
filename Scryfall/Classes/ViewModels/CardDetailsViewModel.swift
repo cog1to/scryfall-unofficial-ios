@@ -13,28 +13,32 @@ import RxCocoa
 import NSObject_Rx
 
 class CardDetailsViewModel: NSObject {
-    private var disposeBag = DisposeBag()
-    private let cardVariable: Variable<Card>
+    private var disposeBag = DisposeBag()    
     private let printsVariable = Variable<[Card]>([])
+    private let languagesVariable = Variable<[Card]>([])
     
     let service: ScryfallServiceType
     let coordinator: SceneCoordinatorType
     let onCancel: CocoaAction
     let callback: Action<[URLQueryItem], Void>?
+    let cardVariable: Variable<Card>
     
     var card: Driver<Card> {
         return cardVariable.asDriver()
     }
     
-    var prints: Driver<([Card], Card)> {
-        return Observable.combineLatest(printsVariable.asObservable(), cardVariable.asObservable())
-            .asDriver(onErrorJustReturn: ([], cardVariable.value))
+    var prints: Driver<[Card]> {
+        return printsVariable.asDriver()
     }
 
+    var languages: Driver<[Card]> {
+        return languagesVariable.asDriver()
+    }
+    
     lazy var onPrintingSelected: Action<Card, Void> = { [unowned self] in
         return Action { [unowned self] card in
             self.cardVariable.value = card
-            return Observable.just(())
+            return .just(())
         }
     }()
     
@@ -47,7 +51,7 @@ class CardDetailsViewModel: NSObject {
 
                 return callback.execute(queryItems)
             }
-            return Observable.just(())
+            return .just(())
         }
     }()
     
@@ -60,7 +64,7 @@ class CardDetailsViewModel: NSObject {
                 let queryString = try! token.string()
                 return [URLQueryItem(name: "q", value: queryString)]
             }).flatMap { [unowned self] in
-                return self.callback?.execute($0) ?? Observable.just(())
+                return self.callback?.execute($0) ?? .just(())
             }
         }
     }()
@@ -74,7 +78,7 @@ class CardDetailsViewModel: NSObject {
                 let queryString = try! token.string()
                 return [URLQueryItem(name: "q", value: queryString)]
             }).flatMap { [unowned self] in
-                return self.callback?.execute($0) ?? Observable.just(())
+                return self.callback?.execute($0) ?? .just(())
             }
         }
     }()
@@ -84,8 +88,15 @@ class CardDetailsViewModel: NSObject {
             return self.cardVariable.asObservable().map({
                 return [URLQueryItem(name: "q", value: "set:\($0.setCode)")]
             }).flatMap { [unowned self] in
-                return self.callback?.execute($0) ?? Observable.just(())
+                return self.callback?.execute($0) ?? .just(())
             }
+        }
+    }()
+    
+    lazy var onLanguage: Action<Card, Void> = { [unowned self] in
+        return Action { [unowned self] card in
+            self.cardVariable.value = card
+            return .just(())
         }
     }()
     
@@ -96,7 +107,7 @@ class CardDetailsViewModel: NSObject {
                 let queryString = try! token.string()
                 return [URLQueryItem(name: "q", value: queryString)]
             }).flatMap { [unowned self] in
-                return self.callback?.execute($0) ?? Observable.just(())
+                return self.callback?.execute($0) ?? .just(())
             }
         }
     }()
@@ -115,25 +126,41 @@ class CardDetailsViewModel: NSObject {
         super.init()
         
         cardVariable.asObservable()
-            .do(onNext: { [unowned self] _ in
-                self.disposeBag = DisposeBag()
-            })
-            .map {
-                return $0.printSearchUri
+            .map { card -> CombinedToken in
+                var queryTokens = [QueryToken]()
+                queryTokens.append(NameToken(value: .plain(card.name), exact: true, negative: false))
+                queryTokens.append(UniqueToken(value: .prints))
+                
+                return CombinedToken(value: queryTokens)
             }
-            .filter { $0 != nil }.map { $0! }
-            .map { url -> [URLQueryItem]? in
-                let components = URLComponents(url: url, resolvingAgainstBaseURL: false)
-                return components?.queryItems
-            }
-            .filter { $0 != nil }.map { $0! }
             .flatMap { [unowned self] in
-                return self.service.search(params: $0)
+                return self.service.search(query: try $0.string(), sort: .set, direction: .auto)
             }
             .map { cardList -> [Card] in
                 return cardList.data
             }
             .bind(to: printsVariable)
+            .disposed(by: disposeBag)
+        
+        let setObservable = cardVariable.asObservable().flatMap {
+            CardSetCache.instance.set(forCode: $0.setCode)
+        }
+        
+        setObservable
+            .map { [unowned self] set -> CombinedToken in
+                var queryTokens = [QueryToken]()
+                queryTokens.append(NameToken(value: .plain(self.cardVariable.value.name), exact: true, negative: false))
+                queryTokens.append(UniqueToken(value: .prints))
+                queryTokens.append(SetToken(value: set))
+                queryTokens.append(LanguageToken(value: .any))
+                
+                return CombinedToken(value: queryTokens)
+            }
+            .flatMap { [unowned self] token in
+                return self.service.search(query: try token.string())
+            }
+            .map { return $0.data }
+            .bind(to: languagesVariable)
             .disposed(by: disposeBag)
         
         callback?.executionObservables.take(1).subscribe(onNext: { _ in

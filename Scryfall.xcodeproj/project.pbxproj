@@ -70,7 +70,7 @@
 		CF1FA2A12006A8D600E8DAEA /* BorderToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1FA2A02006A8D600E8DAEA /* BorderToken.swift */; };
 		CF1FA2A52006AC2F00E8DAEA /* PrintedInBlockToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1FA2A42006AC2F00E8DAEA /* PrintedInBlockToken.swift */; };
 		CF1FA2A72006AD2800E8DAEA /* UnrollToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1FA2A62006AD2800E8DAEA /* UnrollToken.swift */; };
-		CF1FA2A92006AD9300E8DAEA /* CombinedToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1FA2A82006AD9300E8DAEA /* CombinedToken.swift */; };
+		CF1FA2A92006AD9300E8DAEA /* LogicalCombinedToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1FA2A82006AD9300E8DAEA /* LogicalCombinedToken.swift */; };
 		CF1FA2AB2006B2B100E8DAEA /* ValueToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1FA2AA2006B2B100E8DAEA /* ValueToken.swift */; };
 		CF1FA2AD2006B65600E8DAEA /* NegatableToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1FA2AC2006B65600E8DAEA /* NegatableToken.swift */; };
 		CF1FA2AF2006B74800E8DAEA /* ComparableToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1FA2AE2006B74800E8DAEA /* ComparableToken.swift */; };
@@ -121,6 +121,13 @@
 		CFC17E4A20C5BE8400221260 /* CustomSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC17E4920C5BE8400221260 /* CustomSearchController.swift */; };
 		CFC17E4D20C5BEC600221260 /* CustomSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC17E4C20C5BEC600221260 /* CustomSearchBar.swift */; };
 		CFC17E4F20C5C4F200221260 /* UINavigationController+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC17E4E20C5C4F200221260 /* UINavigationController+Rx.swift */; };
+		CFC17E5320C676F400221260 /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC17E5220C676F400221260 /* Language.swift */; };
+		CFC17E5520C678FC00221260 /* LanguageToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC17E5420C678FC00221260 /* LanguageToken.swift */; };
+		CFC17E5A20C68BD400221260 /* CombinedToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC17E5920C68BD400221260 /* CombinedToken.swift */; };
+		CFC17E6220C6A70200221260 /* TagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC17E6020C6A70100221260 /* TagView.swift */; };
+		CFC17E6320C6A70200221260 /* TagListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC17E6120C6A70100221260 /* TagListView.swift */; };
+		CFC17E6520C6A73A00221260 /* CloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC17E6420C6A73A00221260 /* CloseButton.swift */; };
+		CFC17E6720C6A87D00221260 /* TagListView+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC17E6620C6A87D00221260 /* TagListView+Rx.swift */; };
 		CFD05BC420001A4A00CDF9C2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD05BC320001A4A00CDF9C2 /* AppDelegate.swift */; };
 		CFD05BC920001A4A00CDF9C2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFD05BC720001A4A00CDF9C2 /* Main.storyboard */; };
 		CFD05BCB20001A4A00CDF9C2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFD05BCA20001A4A00CDF9C2 /* Assets.xcassets */; };
@@ -238,7 +245,7 @@
 		CF1FA2A02006A8D600E8DAEA /* BorderToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderToken.swift; sourceTree = "<group>"; };
 		CF1FA2A42006AC2F00E8DAEA /* PrintedInBlockToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrintedInBlockToken.swift; sourceTree = "<group>"; };
 		CF1FA2A62006AD2800E8DAEA /* UnrollToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnrollToken.swift; sourceTree = "<group>"; };
-		CF1FA2A82006AD9300E8DAEA /* CombinedToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombinedToken.swift; sourceTree = "<group>"; };
+		CF1FA2A82006AD9300E8DAEA /* LogicalCombinedToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogicalCombinedToken.swift; sourceTree = "<group>"; };
 		CF1FA2AA2006B2B100E8DAEA /* ValueToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueToken.swift; sourceTree = "<group>"; };
 		CF1FA2AC2006B65600E8DAEA /* NegatableToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NegatableToken.swift; sourceTree = "<group>"; };
 		CF1FA2AE2006B74800E8DAEA /* ComparableToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComparableToken.swift; sourceTree = "<group>"; };
@@ -289,6 +296,13 @@
 		CFC17E4920C5BE8400221260 /* CustomSearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSearchController.swift; sourceTree = "<group>"; };
 		CFC17E4C20C5BEC600221260 /* CustomSearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSearchBar.swift; sourceTree = "<group>"; };
 		CFC17E4E20C5C4F200221260 /* UINavigationController+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Rx.swift"; sourceTree = "<group>"; };
+		CFC17E5220C676F400221260 /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
+		CFC17E5420C678FC00221260 /* LanguageToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageToken.swift; sourceTree = "<group>"; };
+		CFC17E5920C68BD400221260 /* CombinedToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombinedToken.swift; sourceTree = "<group>"; };
+		CFC17E6020C6A70100221260 /* TagView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagView.swift; sourceTree = "<group>"; };
+		CFC17E6120C6A70100221260 /* TagListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagListView.swift; sourceTree = "<group>"; };
+		CFC17E6420C6A73A00221260 /* CloseButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloseButton.swift; sourceTree = "<group>"; };
+		CFC17E6620C6A87D00221260 /* TagListView+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TagListView+Rx.swift"; sourceTree = "<group>"; };
 		CFD05BC020001A4A00CDF9C2 /* Scryfall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scryfall.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFD05BC320001A4A00CDF9C2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CFD05BC820001A4A00CDF9C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -382,6 +396,7 @@
 		CF0CE36D2003EA5000000EE1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				CFC17E5B20C690EE00221260 /* Tags View */,
 				CFC17E4B20C5BEAE00221260 /* Search Bar */,
 				CF248D9220BC734A007C8909 /* Sets List */,
 				CF248D7F20BBE24F007C8909 /* List Settings */,
@@ -405,6 +420,7 @@
 		CF1FA2352004298400E8DAEA /* Tokens */ = {
 			isa = PBXGroup;
 			children = (
+				CFC17E5820C68BA400221260 /* Combined */,
 				CFBBEBB7200D6002005A301F /* Prices */,
 				CF1FA2B02006BD3700E8DAEA /* Base */,
 				CF1FA2942006A59400E8DAEA /* ArtistToken.swift */,
@@ -414,7 +430,6 @@
 				CF1FA23720042D3900E8DAEA /* ColorCountToken.swift */,
 				CF1FA23C200430CE00E8DAEA /* ColorIdentityToken.swift */,
 				CF1FA2312004200100E8DAEA /* ColorSetToken.swift */,
-				CF1FA2A82006AD9300E8DAEA /* CombinedToken.swift */,
 				CF1FA28A2006A3C100E8DAEA /* CubeToken.swift */,
 				CF1FA2922006A55B00E8DAEA /* FlavorTextToken.swift */,
 				CF1FA28C2006A4A900E8DAEA /* FormatToken.swift */,
@@ -443,6 +458,7 @@
 				CF1FA2982006A6AA00E8DAEA /* WatermarkToken.swift */,
 				CF1FA27E2006A1FD00E8DAEA /* YearToken.swift */,
 				CF248DA120C3D29C007C8909 /* UniqueToken.swift */,
+				CFC17E5420C678FC00221260 /* LanguageToken.swift */,
 			);
 			path = Tokens;
 			sourceTree = "<group>";
@@ -475,6 +491,7 @@
 				CF248D8E20BC6335007C8909 /* SetSortOrder.swift */,
 				CF248D9F20C3D246007C8909 /* Unique.swift */,
 				CF248DA320C3D516007C8909 /* SortDirection.swift */,
+				CFC17E5220C676F400221260 /* Language.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -607,6 +624,25 @@
 				CFC17E4C20C5BEC600221260 /* CustomSearchBar.swift */,
 			);
 			path = "Search Bar";
+			sourceTree = "<group>";
+		};
+		CFC17E5820C68BA400221260 /* Combined */ = {
+			isa = PBXGroup;
+			children = (
+				CF1FA2A82006AD9300E8DAEA /* LogicalCombinedToken.swift */,
+				CFC17E5920C68BD400221260 /* CombinedToken.swift */,
+			);
+			path = Combined;
+			sourceTree = "<group>";
+		};
+		CFC17E5B20C690EE00221260 /* Tags View */ = {
+			isa = PBXGroup;
+			children = (
+				CFC17E6420C6A73A00221260 /* CloseButton.swift */,
+				CFC17E6120C6A70100221260 /* TagListView.swift */,
+				CFC17E6020C6A70100221260 /* TagView.swift */,
+			);
+			path = "Tags View";
 			sourceTree = "<group>";
 		};
 		CFD05BB720001A4A00CDF9C2 = {
@@ -764,6 +800,7 @@
 			children = (
 				CFD05C1520003F8500CDF9C2 /* UISearchController+Rx.swift */,
 				CFC17E4E20C5C4F200221260 /* UINavigationController+Rx.swift */,
+				CFC17E6620C6A87D00221260 /* TagListView+Rx.swift */,
 			);
 			path = Rx;
 			sourceTree = "<group>";
@@ -994,6 +1031,7 @@
 				CFD05C24200142F500CDF9C2 /* CardDetailsViewController.swift in Sources */,
 				CFBBEBD7200E9CC6005A301F /* PrintingsTableHeader.swift in Sources */,
 				CF1FA23F2004322500E8DAEA /* NameToken.swift in Sources */,
+				CFC17E5520C678FC00221260 /* LanguageToken.swift in Sources */,
 				CF1FA25D20058EBB00E8DAEA /* Trait.swift in Sources */,
 				CF4BE0322007BBEB0054FFEA /* StringEnumToken.swift in Sources */,
 				CF1FA2852006A34300E8DAEA /* TIXToken.swift in Sources */,
@@ -1007,6 +1045,7 @@
 				CFD05C3A2002525900CDF9C2 /* UIColor+Extension.swift in Sources */,
 				CF248D9420BC7362007C8909 /* SetsListCell.swift in Sources */,
 				CFD05BED20002D9300CDF9C2 /* WebService.swift in Sources */,
+				CFC17E5320C676F400221260 /* Language.swift in Sources */,
 				CF248DA220C3D29C007C8909 /* UniqueToken.swift in Sources */,
 				CF1FA2952006A59400E8DAEA /* ArtistToken.swift in Sources */,
 				CFD05C382002294100CDF9C2 /* CardDetailsView.swift in Sources */,
@@ -1023,6 +1062,7 @@
 				CF1FA26F200695BF00E8DAEA /* SetsToken.swift in Sources */,
 				CF248DA420C3D516007C8909 /* SortDirection.swift in Sources */,
 				CFC17E4D20C5BEC600221260 /* CustomSearchBar.swift in Sources */,
+				CFC17E6720C6A87D00221260 /* TagListView+Rx.swift in Sources */,
 				CF1FA27B20069F9600E8DAEA /* GameToken.swift in Sources */,
 				CF1FA2672006930800E8DAEA /* ToughnessToken.swift in Sources */,
 				CF248D9B20C32E15007C8909 /* SetListViewController.swift in Sources */,
@@ -1037,6 +1077,7 @@
 				CF1FA2432004C62700E8DAEA /* CyclingLabel.swift in Sources */,
 				CF1FA26B200694DE00E8DAEA /* PrintsToken.swift in Sources */,
 				CFD05C2820014C8400CDF9C2 /* CardFace.swift in Sources */,
+				CFC17E5A20C68BD400221260 /* CombinedToken.swift in Sources */,
 				CFD05C1120003D6900CDF9C2 /* SceneTransitionType.swift in Sources */,
 				CF1FA27F2006A1FD00E8DAEA /* YearToken.swift in Sources */,
 				CFD05C1320003E5500CDF9C2 /* BindableType.swift in Sources */,
@@ -1065,12 +1106,13 @@
 				CF0CE3732003EDD100000EE1 /* LegalityTable.swift in Sources */,
 				CFD05C0020002F4B00CDF9C2 /* ScryfallServiceType.swift in Sources */,
 				CF1FA29B2006A76300E8DAEA /* Frame.swift in Sources */,
-				CF1FA2A92006AD9300E8DAEA /* CombinedToken.swift in Sources */,
+				CF1FA2A92006AD9300E8DAEA /* LogicalCombinedToken.swift in Sources */,
 				CFD05C1B200123E600CDF9C2 /* CardSearchCell.swift in Sources */,
 				CF1FA2992006A6AA00E8DAEA /* WatermarkToken.swift in Sources */,
 				CFD05C1D2001246700CDF9C2 /* LoadingCell.swift in Sources */,
 				CFD0686F207D6259004E32B5 /* CardSetCache.swift in Sources */,
 				CF4BE070200826710054FFEA /* UIView+Extension.swift in Sources */,
+				CFC17E6320C6A70200221260 /* TagListView.swift in Sources */,
 				CF1FA2732006960200E8DAEA /* PaperSets.swift in Sources */,
 				CFA2A18D203B4A4300866BEC /* Settings.swift in Sources */,
 				CF1FA29F2006A89B00E8DAEA /* Border.swift in Sources */,
@@ -1101,11 +1143,13 @@
 				CFD05C182001144500CDF9C2 /* CardsList.swift in Sources */,
 				CFBBEBB9200D6A0E005A301F /* PrintingsTable.swift in Sources */,
 				CF1FA2572005833400E8DAEA /* OracleSymbol.swift in Sources */,
+				CFC17E6220C6A70200221260 /* TagView.swift in Sources */,
 				CF248D9920BF4737007C8909 /* DateFormat.swift in Sources */,
 				CF1FA24D200579F700E8DAEA /* TextValue.swift in Sources */,
 				CF1FA2972006A5FC00E8DAEA /* Watermark.swift in Sources */,
 				CF1FA2592005842400E8DAEA /* ManaToken.swift in Sources */,
 				CF8F8C36201944AC007CB484 /* NetworkCache.swift in Sources */,
+				CFC17E6520C6A73A00221260 /* CloseButton.swift in Sources */,
 				CF8F8C3120193C17007CB484 /* Constants.swift in Sources */,
 				CF4BE06C2007F1380054FFEA /* JSONConvertible.swift in Sources */,
 				CFD05C20200136F900CDF9C2 /* Style.swift in Sources */,
