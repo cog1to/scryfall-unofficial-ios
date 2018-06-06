@@ -54,6 +54,15 @@ protocol ScryfallServiceType {
      * Returns a list of known sets.
      */
     func sets(order: SetSortOrder, type: CardSetType, force: Bool) -> Observable<RemoteList<CardSet>>
+    
+    /**
+     * Returns a list of rulings.
+     *
+     * - parameter card: Card to fetch.
+     * - parameter force: Flag indicating that method should ignore cache and reload request.
+     * - returns: An observable emitting array of card rulings.
+     */
+    func rulings(card: Card, force: Bool) -> Observable<RulingsList>
 }
 
 

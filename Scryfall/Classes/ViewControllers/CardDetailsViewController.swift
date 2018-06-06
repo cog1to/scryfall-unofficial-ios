@@ -21,8 +21,10 @@ class CardDetailsViewController: UIViewController, BindableType {
     @IBOutlet weak var cardImageView: CardImageView!
     @IBOutlet weak var cardDetailsView: CardDetailsView!
     @IBOutlet weak var cardSetView: CardSetView!
+    
     var printingsTable: PrintingsTable?
     var languagesView: TagListView?
+    var rulingsView: RulingsListView?
     
     var viewModel: CardDetailsViewModel!
     var disposeBag = DisposeBag()
@@ -54,32 +56,60 @@ class CardDetailsViewController: UIViewController, BindableType {
             self.updateCard(card)
         }).disposed(by: disposeBag)
 
-        viewModel.prints
-            .drive(onNext: { [weak self] cards in
+        Driver.combineLatest(viewModel.prints, viewModel.card)
+            .drive(onNext: { [weak self] cards, selected in
                 OperationQueue.main.addOperation { [weak self] in
-                guard let strongSelf = self else {
-                    return
-                }
-                
-                if let oldPrintingsTable = strongSelf.printingsTable {
-                    oldPrintingsTable.removeFromSuperview()
-                }
-                
-                let printingsTable = PrintingsTable()
-                printingsTable.configure(cards: cards, selected: strongSelf.viewModel.cardVariable.value, action: strongSelf.viewModel.onPrintingSelected, allPrintsAction: strongSelf.viewModel.onAllPrint)
-                
-                strongSelf.stackView.addArrangedSubview(printingsTable)
-                strongSelf.printingsTable = printingsTable
-                printingsTable.widthAnchor.constraint(equalTo: strongSelf.stackView.widthAnchor, multiplier: 1.0).isActive = true
-                
-                strongSelf.scrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
+                    guard let strongSelf = self else {
+                        return
+                    }
+                    
+                    if let oldPrintingsTable = strongSelf.printingsTable {
+                        oldPrintingsTable.removeFromSuperview()
+                    }
+                    
+                    let printingsTable = PrintingsTable()
+                    printingsTable.configure(cards: cards, selected: strongSelf.viewModel.cardVariable.value, action: strongSelf.viewModel.onPrintingSelected, allPrintsAction: strongSelf.viewModel.onAllPrint)
+                    
+                    if (strongSelf.rulingsView == nil) {
+                        strongSelf.stackView.addArrangedSubview(printingsTable)
+                    } else {
+                        strongSelf.stackView.insertArrangedSubview(printingsTable, at: strongSelf.stackView.subviews.count - 1)
+                    }
+                    
+                    strongSelf.printingsTable = printingsTable
+                    printingsTable.widthAnchor.constraint(equalTo: strongSelf.stackView.widthAnchor, multiplier: 1.0).isActive = true
+                    
+                    strongSelf.scrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
                 }
             })
             .disposed(by: disposeBag)
         
-        viewModel.languages
-            .drive(onNext: { [weak self] cards in
+        Driver.combineLatest(viewModel.languages, viewModel.card)
+            .drive(onNext: { [weak self] cards, selected in
                 self?.updateLanguages(cards: cards, selected: self!.viewModel.cardVariable.value)
+            })
+            .disposed(by: disposeBag)
+        
+        viewModel.rulings
+            .drive(onNext: { [unowned self] rulings in
+                OperationQueue.main.addOperation { [weak self] in
+                    guard let strongSelf = self else {
+                        return
+                    }
+                    
+                    var rulingsView: RulingsListView! = strongSelf.rulingsView
+                    if rulingsView == nil {
+                        rulingsView = Bundle.main.loadNibNamed("RulingsListView", owner: nil, options: nil)?.first! as! RulingsListView
+                        rulingsView.translatesAutoresizingMaskIntoConstraints = false
+                    }
+                    
+                    rulingsView.configure(for: rulings)
+                    
+                    strongSelf.stackView.addArrangedSubview(rulingsView)
+                    rulingsView.widthAnchor.constraint(equalTo: strongSelf.stackView.widthAnchor, multiplier: 1.0).isActive = true
+                    
+                    strongSelf.rulingsView = rulingsView
+                }
             })
             .disposed(by: disposeBag)
     }

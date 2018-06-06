@@ -128,6 +128,13 @@
 		CFC17E6320C6A70200221260 /* TagListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC17E6120C6A70100221260 /* TagListView.swift */; };
 		CFC17E6520C6A73A00221260 /* CloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC17E6420C6A73A00221260 /* CloseButton.swift */; };
 		CFC17E6720C6A87D00221260 /* TagListView+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC17E6620C6A87D00221260 /* TagListView+Rx.swift */; };
+		CFC17E6A20C748EC00221260 /* RulingsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC17E6920C748EC00221260 /* RulingsListView.swift */; };
+		CFC17E6C20C7491D00221260 /* RulingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC17E6B20C7491D00221260 /* RulingsView.swift */; };
+		CFC17E6E20C7495200221260 /* CardRuling.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC17E6D20C7495200221260 /* CardRuling.swift */; };
+		CFC17E7020C74AEA00221260 /* RulingsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC17E6F20C74AEA00221260 /* RulingsList.swift */; };
+		CFC17E7220C80E8600221260 /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC17E7120C80E8600221260 /* UIFont+Extension.swift */; };
+		CFC17E7420C80F1000221260 /* RulingsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFC17E7320C80F1000221260 /* RulingsView.xib */; };
+		CFC17E7620C8596300221260 /* RulingsListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFC17E7520C8596300221260 /* RulingsListView.xib */; };
 		CFD05BC420001A4A00CDF9C2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD05BC320001A4A00CDF9C2 /* AppDelegate.swift */; };
 		CFD05BC920001A4A00CDF9C2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFD05BC720001A4A00CDF9C2 /* Main.storyboard */; };
 		CFD05BCB20001A4A00CDF9C2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFD05BCA20001A4A00CDF9C2 /* Assets.xcassets */; };
@@ -303,6 +310,13 @@
 		CFC17E6120C6A70100221260 /* TagListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagListView.swift; sourceTree = "<group>"; };
 		CFC17E6420C6A73A00221260 /* CloseButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloseButton.swift; sourceTree = "<group>"; };
 		CFC17E6620C6A87D00221260 /* TagListView+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TagListView+Rx.swift"; sourceTree = "<group>"; };
+		CFC17E6920C748EC00221260 /* RulingsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulingsListView.swift; sourceTree = "<group>"; };
+		CFC17E6B20C7491D00221260 /* RulingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulingsView.swift; sourceTree = "<group>"; };
+		CFC17E6D20C7495200221260 /* CardRuling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardRuling.swift; sourceTree = "<group>"; };
+		CFC17E6F20C74AEA00221260 /* RulingsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulingsList.swift; sourceTree = "<group>"; };
+		CFC17E7120C80E8600221260 /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
+		CFC17E7320C80F1000221260 /* RulingsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RulingsView.xib; sourceTree = "<group>"; };
+		CFC17E7520C8596300221260 /* RulingsListView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RulingsListView.xib; sourceTree = "<group>"; };
 		CFD05BC020001A4A00CDF9C2 /* Scryfall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scryfall.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFD05BC320001A4A00CDF9C2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CFD05BC820001A4A00CDF9C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -389,6 +403,7 @@
 				CF0CE3652002678E00000EE1 /* NSMutableAttributedString+Extension.swift */,
 				CF4BE06F200826710054FFEA /* UIView+Extension.swift */,
 				CFC17E4720C5BA0A00221260 /* UIBarButtonItem+Extension.swift */,
+				CFC17E7120C80E8600221260 /* UIFont+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -396,6 +411,7 @@
 		CF0CE36D2003EA5000000EE1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				CFC17E6820C748D600221260 /* Rulings */,
 				CFC17E5B20C690EE00221260 /* Tags View */,
 				CFC17E4B20C5BEAE00221260 /* Search Bar */,
 				CF248D9220BC734A007C8909 /* Sets List */,
@@ -559,6 +575,7 @@
 			children = (
 				CFD05C172001144500CDF9C2 /* CardsList.swift */,
 				CF4BE0692007F0470054FFEA /* RemoteList.swift */,
+				CFC17E6F20C74AEA00221260 /* RulingsList.swift */,
 			);
 			path = Lists;
 			sourceTree = "<group>";
@@ -645,6 +662,17 @@
 			path = "Tags View";
 			sourceTree = "<group>";
 		};
+		CFC17E6820C748D600221260 /* Rulings */ = {
+			isa = PBXGroup;
+			children = (
+				CFC17E7520C8596300221260 /* RulingsListView.xib */,
+				CFC17E6920C748EC00221260 /* RulingsListView.swift */,
+				CFC17E7320C80F1000221260 /* RulingsView.xib */,
+				CFC17E6B20C7491D00221260 /* RulingsView.swift */,
+			);
+			path = Rulings;
+			sourceTree = "<group>";
+		};
 		CFD05BB720001A4A00CDF9C2 = {
 			isa = PBXGroup;
 			children = (
@@ -725,6 +753,7 @@
 				CF0CE37620041A6E00000EE1 /* Queries */,
 				CFD05C0320002F7E00CDF9C2 /* Card.swift */,
 				CFD05C2720014C8400CDF9C2 /* CardFace.swift */,
+				CFC17E6D20C7495200221260 /* CardRuling.swift */,
 				CF4BE0612007E88A0054FFEA /* CardSet.swift */,
 				CF4BE06B2007F1380054FFEA /* JSONConvertible.swift */,
 			);
@@ -921,6 +950,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFC17E7420C80F1000221260 /* RulingsView.xib in Resources */,
 				CFBBEBDF200EAA7A005A301F /* PrintingsTableHeader.xib in Resources */,
 				CF248D8520BBE587007C8909 /* ListSettingsHeaderView.xib in Resources */,
 				CF00E4582011EB0100FCF9FF /* PrintingsTableFooter.xib in Resources */,
@@ -931,6 +961,7 @@
 				CFD05BC920001A4A00CDF9C2 /* Main.storyboard in Resources */,
 				CF248D9620BC7727007C8909 /* SetsListCell.xib in Resources */,
 				CF0CE3712003EA7200000EE1 /* LegalityView.xib in Resources */,
+				CFC17E7620C8596300221260 /* RulingsListView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1042,13 +1073,16 @@
 				CF1FA2A12006A8D600E8DAEA /* BorderToken.swift in Sources */,
 				CF0CE3752004031B00000EE1 /* Legality.swift in Sources */,
 				CF4BE06A2007F0470054FFEA /* RemoteList.swift in Sources */,
+				CFC17E7220C80E8600221260 /* UIFont+Extension.swift in Sources */,
 				CFD05C3A2002525900CDF9C2 /* UIColor+Extension.swift in Sources */,
 				CF248D9420BC7362007C8909 /* SetsListCell.swift in Sources */,
 				CFD05BED20002D9300CDF9C2 /* WebService.swift in Sources */,
 				CFC17E5320C676F400221260 /* Language.swift in Sources */,
+				CFC17E6E20C7495200221260 /* CardRuling.swift in Sources */,
 				CF248DA220C3D29C007C8909 /* UniqueToken.swift in Sources */,
 				CF1FA2952006A59400E8DAEA /* ArtistToken.swift in Sources */,
 				CFD05C382002294100CDF9C2 /* CardDetailsView.swift in Sources */,
+				CFC17E7020C74AEA00221260 /* RulingsList.swift in Sources */,
 				CF1FA2B22006BE4A00E8DAEA /* EqualityToken.swift in Sources */,
 				CFD05C0220002F5600CDF9C2 /* ScryfallService.swift in Sources */,
 				CF4BE0652007E9280054FFEA /* CardSetType.swift in Sources */,
@@ -1117,6 +1151,7 @@
 				CFA2A18D203B4A4300866BEC /* Settings.swift in Sources */,
 				CF1FA29F2006A89B00E8DAEA /* Border.swift in Sources */,
 				CF6DDA0C203620EF00F5EAC9 /* LoadingCollectionCell.swift in Sources */,
+				CFC17E6C20C7491D00221260 /* RulingsView.swift in Sources */,
 				CF1FA2A52006AC2F00E8DAEA /* PrintedInBlockToken.swift in Sources */,
 				CF248D7C20BB5FAE007C8909 /* PopoverMenuView.swift in Sources */,
 				CF248D9120BC6645007C8909 /* SetsListViewModel.swift in Sources */,
@@ -1147,6 +1182,7 @@
 				CF248D9920BF4737007C8909 /* DateFormat.swift in Sources */,
 				CF1FA24D200579F700E8DAEA /* TextValue.swift in Sources */,
 				CF1FA2972006A5FC00E8DAEA /* Watermark.swift in Sources */,
+				CFC17E6A20C748EC00221260 /* RulingsListView.swift in Sources */,
 				CF1FA2592005842400E8DAEA /* ManaToken.swift in Sources */,
 				CF8F8C36201944AC007CB484 /* NetworkCache.swift in Sources */,
 				CFC17E6520C6A73A00221260 /* CloseButton.swift in Sources */,

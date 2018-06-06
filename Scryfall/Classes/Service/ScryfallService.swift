@@ -73,4 +73,14 @@ class Scryfall: ScryfallServiceType {
             return list
         }
     }
+    
+    func rulings(card: Card, force: Bool) -> Observable<RulingsList> {
+        return WebService.json(API: API, endpoint: "\(cardEndpoint)/\(card.setCode)/\(card.collectorsNumber)/rulings").map {
+            guard let list = RulingsList(json: $0) else {
+                throw WebServiceError.invalidJSON
+            }
+            
+            return list
+        }
+    }
 }

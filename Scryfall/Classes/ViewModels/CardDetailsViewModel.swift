@@ -16,6 +16,7 @@ class CardDetailsViewModel: NSObject {
     private var disposeBag = DisposeBag()    
     private let printsVariable = Variable<[Card]>([])
     private let languagesVariable = Variable<[Card]>([])
+    private let rulingsVariable = Variable<[CardRuling]>([])
     
     let service: ScryfallServiceType
     let coordinator: SceneCoordinatorType
@@ -33,6 +34,10 @@ class CardDetailsViewModel: NSObject {
 
     var languages: Driver<[Card]> {
         return languagesVariable.asDriver()
+    }
+    
+    var rulings: Driver<[CardRuling]> {
+        return rulingsVariable.asDriver()
     }
     
     lazy var onPrintingSelected: Action<Card, Void> = { [unowned self] in
@@ -133,8 +138,12 @@ class CardDetailsViewModel: NSObject {
                 
                 return CombinedToken(value: queryTokens)
             }
+            .map { token -> String in
+                return try token.string()
+            }
+            .distinctUntilChanged()
             .flatMap { [unowned self] in
-                return self.service.search(query: try $0.string(), sort: .set, direction: .auto)
+                return self.service.search(query: $0, sort: .set, direction: .auto)
             }
             .map { cardList -> [Card] in
                 return cardList.data
@@ -156,11 +165,22 @@ class CardDetailsViewModel: NSObject {
                 
                 return CombinedToken(value: queryTokens)
             }
+            .map { token -> String in
+                return try token.string()
+            }
+            .distinctUntilChanged()
             .flatMap { [unowned self] token in
-                return self.service.search(query: try token.string())
+                return self.service.search(query: token)
             }
             .map { return $0.data }
             .bind(to: languagesVariable)
+            .disposed(by: disposeBag)
+        
+        cardVariable.asObservable()
+            .take(1)
+            .flatMap { return service.rulings(card: $0, force: false) }
+            .map { return $0.data }
+            .bind(to: rulingsVariable)
             .disposed(by: disposeBag)
         
         callback?.executionObservables.take(1).subscribe(onNext: { _ in
