@@ -14,7 +14,7 @@ import NSObject_Rx
 
 class CardDetailsViewModel: NSObject {
     private var disposeBag = DisposeBag()    
-    private let printsVariable = Variable<[Card]>([])
+    private let printsVariable = Variable<CardsList?>(nil)
     private let languagesVariable = Variable<[Card]>([])
     private let rulingsVariable = Variable<[CardRuling]>([])
     
@@ -28,7 +28,7 @@ class CardDetailsViewModel: NSObject {
         return cardVariable.asDriver()
     }
     
-    var prints: Driver<[Card]> {
+    var prints: Driver<CardsList?> {
         return printsVariable.asDriver()
     }
 
@@ -49,11 +49,21 @@ class CardDetailsViewModel: NSObject {
     
     lazy var onAllPrint: CocoaAction = { [unowned self] in
         return CocoaAction { [unowned self] in
-            if let callback = self.callback,
-                let printsUrl = self.cardVariable.value.printSearchUri,
-                let components = URLComponents(url: printsUrl, resolvingAgainstBaseURL: false),
-                let queryItems = components.queryItems {
-
+            if let callback = self.callback {
+                
+                var queryItems = [URLQueryItem]()
+                
+                // Get search query first.
+                let queryTokens: [QueryToken] = [
+                    NameToken(value: .plain(self.cardVariable.value.name), exact: true, negative: false),
+                    UniqueToken(value: .prints),
+                ]
+                let searchToken = CombinedToken(value: queryTokens)
+                queryItems.append(URLQueryItem(name: "q", value: try! searchToken.string()))
+                
+                // Get order
+                queryItems.append(URLQueryItem(name: "order", value: CardSortOrder.set.rawValue))
+                
                 return callback.execute(queryItems)
             }
             return .just(())
@@ -144,9 +154,6 @@ class CardDetailsViewModel: NSObject {
             .distinctUntilChanged()
             .flatMap { [unowned self] in
                 return self.service.search(query: $0, sort: .set, direction: .auto)
-            }
-            .map { cardList -> [Card] in
-                return cardList.data
             }
             .bind(to: printsVariable)
             .disposed(by: disposeBag)

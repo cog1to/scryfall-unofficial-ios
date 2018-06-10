@@ -47,10 +47,10 @@ class PrintingsTable: UIView {
         addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[stackView]|", options: [], metrics: nil, views: ["stackView": stackView]))
     }
     
-    func configure(cards: [Card], selected: Card, action: Action<Card, Void>, allPrintsAction: CocoaAction) {
+    func configure(cardsList: CardsList, selected: Card, action: Action<Card, Void>, allPrintsAction: CocoaAction) {
         stackView.subviews.forEach { stackView.removeArrangedSubview($0) }
         
-        guard cards.count > 0 else {
+        guard cardsList.data.count > 0 else {
             return
         }
 
@@ -63,6 +63,18 @@ class PrintingsTable: UIView {
             stackView.addArrangedSubview(headerView)
             stackView.addConstraint(NSLayoutConstraint(item: headerView, attribute: .width, relatedBy: .equal, toItem: stackView, attribute: .width, multiplier: 1.0, constant: 0))
         }
+        
+        let cards = cardsList.data
+        
+        // Calculate whether list has multiple printings inside one set.
+        let sets = Set<String>(cards.map { $0.setCode })
+        let setCounts = sets
+            .map({ set -> Int in
+                return cards.filter({ card in
+                    card.setCode == set
+                }).count
+            })
+        let multiplePrintings = setCounts.filter({$0 > 1}).count > 0
         
         // Printings
         let index = cards.index(where: { card -> Bool in return card.ID == selected.ID }) ?? 0
@@ -82,7 +94,7 @@ class PrintingsTable: UIView {
         
         for card in slice {
             if let rowView = Bundle.main.loadNibNamed("PrintingsTableRow", owner: nil, options: nil)!.first as? PrintingsTableRow {
-                rowView.configure(card: card, selected: card.ID == selected.ID)
+                rowView.configure(card: card, selected: card.ID == selected.ID, withNumber: multiplePrintings)
                 
                 stackView.addArrangedSubview(rowView)
                 stackView.addConstraint(NSLayoutConstraint(item: rowView, attribute: .width, relatedBy: .equal, toItem: stackView, attribute: .width, multiplier: 1.0, constant: -(2.0*1.0/UIScreen.main.scale)))
@@ -98,7 +110,11 @@ class PrintingsTable: UIView {
         // Put 'all prints' link if there are too many prints
         if cards.count > maxPrints {
             if let linkView = Bundle.main.loadNibNamed("PrintingsTableFooter", owner: nil, options: nil)!.first as? PrintingsTableFooter {
-                linkView.title = "View all \(cards.count) prints →"
+                if (cardsList.hasMore) {
+                    linkView.title = "View all prints →"
+                } else {
+                    linkView.title = "View all \(cards.count) prints →"
+                }
                 
                 stackView.addArrangedSubview(linkView)
                 stackView.addConstraint(NSLayoutConstraint(item: linkView, attribute: .width, relatedBy: .equal, toItem: stackView, attribute: .width, multiplier: 1.0, constant: -(2.0*1.0/UIScreen.main.scale)))

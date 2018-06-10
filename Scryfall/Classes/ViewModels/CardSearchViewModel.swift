@@ -21,6 +21,10 @@ class CardSearchViewModel {
     let sortOrder = Variable<CardSortOrder>(.name)
     let direction = Variable<SortDirection>(.auto)
     
+    lazy var random: Observable<Card>  = {
+        return self._random.share(replay: 1, scope: .forever)
+    }()
+    
     private var nextPage: URL?
     private var lastRequest: Disposable?
     private let bag = DisposeBag()
@@ -28,6 +32,7 @@ class CardSearchViewModel {
     private let _searchText = Variable<String>("")
     private let _sortOrder = Variable<CardSortOrder>(.name)
     private let _direction = Variable<SortDirection>(.auto)
+    private let _random = PublishSubject<Card>()
     
     init(service: ScryfallServiceType, coordinator: SceneCoordinatorType) {
         scryfallService = service
@@ -69,36 +74,55 @@ class CardSearchViewModel {
         }).disposed(by: bag)
     }
     
-    lazy var onCancel: Action<Void, Void> = { this in
-        return Action {
-            this.hasMore.value = false
-            this.cards.value = []
+    lazy var onCancel: Action<Void, Void> = { [unowned self] in
+        return Action { [unowned self] in
+            self.hasMore.value = false
+            self.cards.value = []
             
             return .just(())
         }
-    }(self)
+    }()
     
-    lazy var onSearch: Action<String, Void> = { this in
-        return Action { query in
-            this._searchText.value = query
+    lazy var onSearch: Action<String, Void> = { [unowned self] in
+        return Action { [unowned self] query in
+            self._searchText.value = query
             return .just(())
         }
-    }(self)
+    }()
     
-    lazy var onMenuItemSelected: Action<String, Void> = { this in
-        return Action { query in
-            let setsViewModel = SetsListViewModel(service: this.scryfallService,
-                                                  coordinator: this.sceneCoordinator,
-                                                  callback: this.onLink)
-            return this.sceneCoordinator.transition(to: Scene.sets(setsViewModel), type: .push)
+    lazy var onMenuItemSelected: Action<PopoverMenuItem, Void> = { [unowned self] in
+        return Action { [unowned self] item in
+            switch item.name {
+            case "All sets":
+                let setsViewModel = SetsListViewModel(service: self.scryfallService,
+                                                      coordinator: self.sceneCoordinator,
+                                                      callback: self.onLink)
+                return self.sceneCoordinator.transition(to: Scene.sets(setsViewModel), type: .push)
+            case "Random":
+                return self.scryfallService.random().subscribeOn(MainScheduler.instance).flatMap { card -> Observable<Void> in
+                    let viewModel = CardDetailsViewModel(card: card,
+                                                         service: self.scryfallService,
+                                                         coordinator: self.sceneCoordinator,
+                                                         callback: self.onLink)
+                    return self.sceneCoordinator.transition(to: Scene.details(viewModel), type: .formSheet)
+                }
+            default:
+                return .just(())
+            }
         }
-    }(self)
+    }()
     
     lazy var onNextPage: CocoaAction = { this in
         return CocoaAction {
             if let nextPage = this.nextPage, let components = URLComponents.init(url: nextPage, resolvingAgainstBaseURL: false), let parameters = components.queryItems {
                 this.lastRequest?.dispose()
-                this.lastRequest = this.scryfallService.search(params: parameters).subscribe(onNext: { cardsList in
+                
+                let query = URLQueryItem(name: "q", value: this.searchText.value)
+                let order = URLQueryItem(name: "order", value: this.sortOrder.value.rawValue)
+                let direction = URLQueryItem(name: "dir", value: this.direction.value.rawValue)
+                let page = parameters.first(where: { $0.name == "page" })!
+                
+                this.lastRequest = this.scryfallService.search(params: [query, order, page, direction]).subscribe(onNext: { cardsList in
                     this.cards.value.append(contentsOf: cardsList.data)
                     this.hasMore.value = cardsList.hasMore
                     this.nextPage = cardsList.nextPage

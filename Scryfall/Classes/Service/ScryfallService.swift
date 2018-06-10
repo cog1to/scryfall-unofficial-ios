@@ -13,6 +13,7 @@ class Scryfall: ScryfallServiceType {
     let API = "https://api.scryfall.com"
     let cardEndpoint = "cards"
     let searchEndpoint = "cards/search"
+    let randomEndpoint = "cards/random"
     let setsEndpoint = "sets"
     
     func card(set: String, number: Int) -> Observable<Card?> {
@@ -81,6 +82,16 @@ class Scryfall: ScryfallServiceType {
             }
             
             return list
+        }
+    }
+    
+    func random() -> Observable<Card> {
+        return WebService.json(API: API, endpoint: "\(randomEndpoint)").map {
+            guard let card = Card(json: $0) else {
+                throw WebServiceError.invalidJSON
+            }
+            
+            return card
         }
     }
 }

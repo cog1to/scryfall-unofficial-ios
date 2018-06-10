@@ -81,6 +81,10 @@ class CardSetView: UIView {
         }
         cardNumberLabel.text = descriptionText
         
-        rx.tapGesture().when(.recognized).map { _ in return () }.bind(to: tapAction.inputs).disposed(by: rx.disposeBag)
+        rx.tapGesture()
+            .when(.recognized)
+            .map { _ in return () }
+            .bind(to: tapAction.inputs)
+            .disposed(by: rx.disposeBag)
     }
 }

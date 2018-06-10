@@ -21,7 +21,7 @@ class PrintingsTableRow: UIView {
         rarityIcon.backgroundColor = UIColor.white
     }
     
-    func configure(card: Card, selected: Bool) {
+    func configure(card: Card, selected: Bool, withNumber: Bool) {
         pricesStackView.subviews.forEach { pricesStackView.removeArrangedSubview($0) }
         
         rarityIcon.tintColor = card.rarity.color
@@ -29,7 +29,7 @@ class PrintingsTableRow: UIView {
         // Title label.
         titleLabel.textColor =  Style.color(forKey: .text)
         titleLabel.font = Style.font(forKey: .subtext)
-        titleLabel.text = card.setName
+        titleLabel.text = card.setName + (withNumber ? " #\(card.collectorsNumber)" : "")
         titleLabel.numberOfLines = 0
         titleLabel.lineBreakMode = .byWordWrapping
         

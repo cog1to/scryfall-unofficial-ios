@@ -63,6 +63,11 @@ protocol ScryfallServiceType {
      * - returns: An observable emitting array of card rulings.
      */
     func rulings(card: Card, force: Bool) -> Observable<RulingsList>
+    
+    /**
+     * Returns a rendom card.
+     */
+    func random() -> Observable<Card>
 }
 
 

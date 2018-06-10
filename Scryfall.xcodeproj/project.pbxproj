@@ -76,7 +76,7 @@
 		CF1FA2AF2006B74800E8DAEA /* ComparableToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1FA2AE2006B74800E8DAEA /* ComparableToken.swift */; };
 		CF1FA2B22006BE4A00E8DAEA /* EqualityToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1FA2B12006BE4A00E8DAEA /* EqualityToken.swift */; };
 		CF1FA2B42006C51600E8DAEA /* TextToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1FA2B32006C51600E8DAEA /* TextToken.swift */; };
-		CF248D7C20BB5FAE007C8909 /* PopoverMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF248D7B20BB5FAE007C8909 /* PopoverMenuView.swift */; };
+		CF248D7C20BB5FAE007C8909 /* PopoverMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF248D7B20BB5FAE007C8909 /* PopoverMenuViewController.swift */; };
 		CF248D7E20BB60C1007C8909 /* Popover.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF248D7D20BB60C1007C8909 /* Popover.framework */; };
 		CF248D8120BBE279007C8909 /* ListSettingsHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF248D8020BBE279007C8909 /* ListSettingsHeader.swift */; };
 		CF248D8320BBE2FF007C8909 /* StringRepresentableOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF248D8220BBE2FF007C8909 /* StringRepresentableOption.swift */; };
@@ -106,6 +106,7 @@
 		CF6DDA0C203620EF00F5EAC9 /* LoadingCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6DDA0B203620EF00F5EAC9 /* LoadingCollectionCell.swift */; };
 		CF6DDA0E20362E5600F5EAC9 /* DisplayMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6DDA0D20362E5600F5EAC9 /* DisplayMode.swift */; };
 		CF6DDA1020362F0900F5EAC9 /* CardSortOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6DDA0F20362F0900F5EAC9 /* CardSortOrder.swift */; };
+		CF75786320C9AAE400346CCA /* PopoverMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF75786220C9AAE400346CCA /* PopoverMenuItem.swift */; };
 		CF8F8C3120193C17007CB484 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8F8C3020193C17007CB484 /* Constants.swift */; };
 		CF8F8C36201944AC007CB484 /* NetworkCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8F8C35201944AC007CB484 /* NetworkCache.swift */; };
 		CF8F8C56201A5E3E007CB484 /* NetworkCacheItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8F8C55201A5E3E007CB484 /* NetworkCacheItem.swift */; };
@@ -258,7 +259,7 @@
 		CF1FA2AE2006B74800E8DAEA /* ComparableToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComparableToken.swift; sourceTree = "<group>"; };
 		CF1FA2B12006BE4A00E8DAEA /* EqualityToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EqualityToken.swift; sourceTree = "<group>"; };
 		CF1FA2B32006C51600E8DAEA /* TextToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextToken.swift; sourceTree = "<group>"; };
-		CF248D7B20BB5FAE007C8909 /* PopoverMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverMenuView.swift; sourceTree = "<group>"; };
+		CF248D7B20BB5FAE007C8909 /* PopoverMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverMenuViewController.swift; sourceTree = "<group>"; };
 		CF248D7D20BB60C1007C8909 /* Popover.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Popover.framework; path = Carthage/Build/iOS/Popover.framework; sourceTree = "<group>"; };
 		CF248D8020BBE279007C8909 /* ListSettingsHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSettingsHeader.swift; sourceTree = "<group>"; };
 		CF248D8220BBE2FF007C8909 /* StringRepresentableOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringRepresentableOption.swift; sourceTree = "<group>"; };
@@ -288,6 +289,7 @@
 		CF6DDA0B203620EF00F5EAC9 /* LoadingCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingCollectionCell.swift; sourceTree = "<group>"; };
 		CF6DDA0D20362E5600F5EAC9 /* DisplayMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayMode.swift; sourceTree = "<group>"; };
 		CF6DDA0F20362F0900F5EAC9 /* CardSortOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSortOrder.swift; sourceTree = "<group>"; };
+		CF75786220C9AAE400346CCA /* PopoverMenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverMenuItem.swift; sourceTree = "<group>"; };
 		CF8F8C3020193C17007CB484 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		CF8F8C35201944AC007CB484 /* NetworkCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkCache.swift; sourceTree = "<group>"; };
 		CF8F8C55201A5E3E007CB484 /* NetworkCacheItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkCacheItem.swift; sourceTree = "<group>"; };
@@ -411,7 +413,7 @@
 		CF0CE36D2003EA5000000EE1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				CFC17E6820C748D600221260 /* Rulings */,
+				CF75786120C9AAC700346CCA /* Popover */,
 				CFC17E5B20C690EE00221260 /* Tags View */,
 				CFC17E4B20C5BEAE00221260 /* Search Bar */,
 				CF248D9220BC734A007C8909 /* Sets List */,
@@ -419,8 +421,6 @@
 				CFBBEBE2200EB562005A301F /* Card Details */,
 				CF1FA2422004C62700E8DAEA /* CyclingLabel.swift */,
 				CF4BE0782008D1890054FFEA /* RoundCornerButton.swift */,
-				CF248D7B20BB5FAE007C8909 /* PopoverMenuView.swift */,
-				CF248D8820BBF406007C8909 /* PopoverCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -580,6 +580,16 @@
 			path = Lists;
 			sourceTree = "<group>";
 		};
+		CF75786120C9AAC700346CCA /* Popover */ = {
+			isa = PBXGroup;
+			children = (
+				CF248D7B20BB5FAE007C8909 /* PopoverMenuViewController.swift */,
+				CF248D8820BBF406007C8909 /* PopoverCell.xib */,
+				CF75786220C9AAE400346CCA /* PopoverMenuItem.swift */,
+			);
+			path = Popover;
+			sourceTree = "<group>";
+		};
 		CF8F8C2F20193BFF007CB484 /* Constants */ = {
 			isa = PBXGroup;
 			children = (
@@ -623,6 +633,7 @@
 		CFBBEBE2200EB562005A301F /* Card Details */ = {
 			isa = PBXGroup;
 			children = (
+				CFC17E6820C748D600221260 /* Rulings */,
 				CFBBEBD5200E9CAD005A301F /* Printings Table */,
 				CFD05C292001616500CDF9C2 /* CardImageView.swift */,
 				CFBBEBE0200EB47D005A301F /* CardSetView.swift */,
@@ -1137,6 +1148,7 @@
 				CF1FA2AB2006B2B100E8DAEA /* ValueToken.swift in Sources */,
 				CF1FA25B2005843A00E8DAEA /* CMCToken.swift in Sources */,
 				CF1FA25F200613D700E8DAEA /* TraitToken.swift in Sources */,
+				CF75786320C9AAE400346CCA /* PopoverMenuItem.swift in Sources */,
 				CF0CE3732003EDD100000EE1 /* LegalityTable.swift in Sources */,
 				CFD05C0020002F4B00CDF9C2 /* ScryfallServiceType.swift in Sources */,
 				CF1FA29B2006A76300E8DAEA /* Frame.swift in Sources */,
@@ -1153,7 +1165,7 @@
 				CF6DDA0C203620EF00F5EAC9 /* LoadingCollectionCell.swift in Sources */,
 				CFC17E6C20C7491D00221260 /* RulingsView.swift in Sources */,
 				CF1FA2A52006AC2F00E8DAEA /* PrintedInBlockToken.swift in Sources */,
-				CF248D7C20BB5FAE007C8909 /* PopoverMenuView.swift in Sources */,
+				CF248D7C20BB5FAE007C8909 /* PopoverMenuViewController.swift in Sources */,
 				CF248D9120BC6645007C8909 /* SetsListViewModel.swift in Sources */,
 				CF1FA271200695E500E8DAEA /* PaperPrints.swift in Sources */,
 				CFBBEBE1200EB47D005A301F /* CardSetView.swift in Sources */,

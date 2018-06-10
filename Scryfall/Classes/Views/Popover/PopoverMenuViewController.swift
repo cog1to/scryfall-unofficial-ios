@@ -14,13 +14,13 @@ import Action
 import SnapKit
 
 /// Popover menu view controller.
-class PopoverMenuView: NSObject {
+class PopoverMenuViewController: NSObject {
     
     /// Menu cell identifier.
     let popoverCellIdentifier = "PopoverCell"
     
     /// Items to show in the menu.
-    let items: [String]
+    let items: [PopoverMenuItem]
     
     /// Popover instance.
     var popover: Popover!
@@ -34,12 +34,12 @@ class PopoverMenuView: NSObject {
         .blackOverlayColor(UIColor(white: 0.0, alpha: 0.6))
     ]
     
-    init(items: [String]) {
+    init(items: [PopoverMenuItem]) {
         self.items = items
         super.init()
     }
     
-    func show(from view: UIView, itemSelected: Action<String, Void>) {
+    func show(from view: UIView, itemSelected: Action<PopoverMenuItem, Void>) {
         let popover = Popover(options: popoverOptions)
         
         let stackView = UIStackView(frame: CGRect.zero)
@@ -50,7 +50,7 @@ class PopoverMenuView: NSObject {
             let label = UILabel()
             label.translatesAutoresizingMaskIntoConstraints = false
             label.font = Style.font(forKey: .text)
-            label.text = item
+            label.text = item.name
             
             // Create a label container for stack view.
             let view = UIView()

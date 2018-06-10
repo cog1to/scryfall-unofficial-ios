@@ -57,6 +57,8 @@ class CardDetailsViewController: UIViewController, BindableType {
         }).disposed(by: disposeBag)
 
         Driver.combineLatest(viewModel.prints, viewModel.card)
+            .filter { $0.0 != nil }
+            .map { ($0.0!, $0.1) }
             .drive(onNext: { [weak self] cards, selected in
                 OperationQueue.main.addOperation { [weak self] in
                     guard let strongSelf = self else {
@@ -68,7 +70,7 @@ class CardDetailsViewController: UIViewController, BindableType {
                     }
                     
                     let printingsTable = PrintingsTable()
-                    printingsTable.configure(cards: cards, selected: strongSelf.viewModel.cardVariable.value, action: strongSelf.viewModel.onPrintingSelected, allPrintsAction: strongSelf.viewModel.onAllPrint)
+                    printingsTable.configure(cardsList: cards, selected: strongSelf.viewModel.cardVariable.value, action: strongSelf.viewModel.onPrintingSelected, allPrintsAction: strongSelf.viewModel.onAllPrint)
                     
                     if (strongSelf.rulingsView == nil) {
                         strongSelf.stackView.addArrangedSubview(printingsTable)
@@ -94,6 +96,14 @@ class CardDetailsViewController: UIViewController, BindableType {
             .drive(onNext: { [unowned self] rulings in
                 OperationQueue.main.addOperation { [weak self] in
                     guard let strongSelf = self else {
+                        return
+                    }
+                    
+                    guard rulings.count > 0 else {
+                        if let view = strongSelf.rulingsView {
+                            view.removeFromSuperview()
+                            strongSelf.rulingsView = nil
+                        }
                         return
                     }
                     
@@ -139,10 +149,17 @@ class CardDetailsViewController: UIViewController, BindableType {
                 tagListView!.removeAllTags()
             }
             
-            if (cards.count == 0) {
+            var uniqueCards = [selected]
+            for card in cards {
+                if !uniqueCards.contains(where: { $0.setCode == card.setCode && $0.language?.rawValue == card.language?.rawValue }) {
+                    uniqueCards.append(card)
+                }
+            }
+            
+            if (uniqueCards.count == 0) {
                 tagListView!.addTagView(strongSelf.view(forCard: selected, selected: true))
             } else {
-                for card in cards.filter({ return $0.language != nil }) {
+                for card in uniqueCards.filter({ return $0.language != nil }) {
                     let tagView = strongSelf.view(forCard: card, selected: (card.ID == selected.ID))
                     tagListView!.addTagView(tagView)
                 }

@@ -27,7 +27,7 @@ class CardSearchViewController: DynamicHeaderViewController, BindableType {
     
     var viewModel: CardSearchViewModel!
     
-    var popover: PopoverMenuView!
+    var popover: PopoverMenuViewController!
     
     var searchController: UISearchController!
     
@@ -214,7 +214,7 @@ class CardSearchViewController: DynamicHeaderViewController, BindableType {
         
         menuButton.rx.tap.subscribe(onNext: { [unowned self] in
             if let view = self.menuButton.view {
-                self.popover = PopoverMenuView(items: ["All sets"])
+                self.popover = PopoverMenuViewController(items: [PopoverMenuItem(image: nil, name: "All sets"), PopoverMenuItem(image: nil, name: "Random")])
                 self.popover.show(from: view, itemSelected: self.viewModel.onMenuItemSelected)
             }
         }).disposed(by: disposeBag)
