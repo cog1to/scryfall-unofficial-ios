@@ -11,6 +11,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 import Action
+import SnapKit
 
 /**
  * View that holds card details information.
@@ -148,8 +149,12 @@ extension CardDetailsView {
         container.translatesAutoresizingMaskIntoConstraints = false
         container.addSubview(view)
         
-        container.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-8-[child]-8-|", options: [], metrics: nil, views: ["child": view]))
-        container.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-8-[child]-8-|", options: [], metrics: nil, views: ["child": view]))
+        view.snp.makeConstraints { make in
+            make.leading.equalToSuperview().inset(8)
+            make.trailing.equalToSuperview().inset(8)
+            make.top.equalToSuperview().inset(8)
+            make.bottom.equalToSuperview().inset(8)
+        }
         
         return container
     }

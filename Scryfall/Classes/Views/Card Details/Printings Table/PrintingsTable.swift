@@ -42,9 +42,13 @@ class PrintingsTable: UIView {
         stackView.alignment = .center
         stackView.spacing = 1.0/UIScreen.main.scale
         addSubview(stackView)
-        
-        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[stackView]|", options: [], metrics: nil, views: ["stackView": stackView]))
-        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[stackView]|", options: [], metrics: nil, views: ["stackView": stackView]))
+
+        stackView.snp.makeConstraints { make in
+            make.leading.equalToSuperview()
+            make.trailing.equalToSuperview()
+            make.top.equalToSuperview()
+            make.bottom.equalToSuperview()
+        }
     }
     
     func configure(cardsList: CardsList, selected: Card, action: Action<Card, Void>, allPrintsAction: CocoaAction) {
@@ -61,7 +65,10 @@ class PrintingsTable: UIView {
             headerLabels = headerView.headersStackView.subviews
             
             stackView.addArrangedSubview(headerView)
-            stackView.addConstraint(NSLayoutConstraint(item: headerView, attribute: .width, relatedBy: .equal, toItem: stackView, attribute: .width, multiplier: 1.0, constant: 0))
+            
+            headerView.snp.makeConstraints { make in
+                make.width.equalToSuperview()
+            }
         }
         
         let cards = cardsList.data
@@ -97,10 +104,15 @@ class PrintingsTable: UIView {
                 rowView.configure(card: card, selected: card.ID == selected.ID, withNumber: multiplePrintings)
                 
                 stackView.addArrangedSubview(rowView)
-                stackView.addConstraint(NSLayoutConstraint(item: rowView, attribute: .width, relatedBy: .equal, toItem: stackView, attribute: .width, multiplier: 1.0, constant: -(2.0*1.0/UIScreen.main.scale)))
+                
+                rowView.snp.makeConstraints { make in
+                    make.width.equalTo(stackView).inset(1.0/UIScreen.main.scale)
+                }
                 
                 for (idx, view) in rowView.pricesStackView.subviews.enumerated() {
-                    addConstraint(NSLayoutConstraint(item: view, attribute: .width, relatedBy: .equal, toItem: headerLabels[idx], attribute: .width, multiplier: 1.0, constant: 0.0))
+                    view.snp.makeConstraints { make in
+                        make.width.equalTo(headerLabels[idx])
+                    }
                 }
                 
                 rowView.rx.tapGesture().when(.recognized).map({ _ in return card }).bind(to: action.inputs).disposed(by: disposeBag)
@@ -117,8 +129,11 @@ class PrintingsTable: UIView {
                 }
                 
                 stackView.addArrangedSubview(linkView)
-                stackView.addConstraint(NSLayoutConstraint(item: linkView, attribute: .width, relatedBy: .equal, toItem: stackView, attribute: .width, multiplier: 1.0, constant: -(2.0*1.0/UIScreen.main.scale)))
                 
+                linkView.snp.makeConstraints { make in
+                    make.width.equalTo(stackView).inset(1.0/UIScreen.main.scale)
+                }
+                                
                 linkView.rx.tapGesture().when(.recognized).map({_ in return ()}).bind(to: allPrintsAction.inputs).disposed(by: disposeBag)
             }
         }
@@ -128,8 +143,11 @@ class PrintingsTable: UIView {
         footer.translatesAutoresizingMaskIntoConstraints = false
         footer.backgroundColor = Style.color(forKey: .navigationTint)
         stackView.addArrangedSubview(footer)
-        stackView.addConstraint(NSLayoutConstraint(item: footer, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: 2.0))
-        stackView.addConstraint(NSLayoutConstraint(item: footer, attribute: .width, relatedBy: .equal, toItem: stackView, attribute: .width, multiplier: 1.0, constant: 0.0))
+        
+        footer.snp.makeConstraints { make in
+            make.height.equalTo(2.0)
+            make.width.equalToSuperview()
+        }
         
         self.setNeedsUpdateConstraints()
         self.layoutSubviews()

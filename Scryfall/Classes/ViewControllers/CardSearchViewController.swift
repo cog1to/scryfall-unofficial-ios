@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import RxSwift
 import Action
+import SnapKit
 
 /**
  * Card search view controller. Shows search bar and list of search results.
@@ -56,8 +57,14 @@ class CardSearchViewController: DynamicHeaderViewController, BindableType {
         tableView.addSubview(noItemsLabel)
         noItemsLabel.centerXAnchor.constraint(equalTo: tableView.centerXAnchor).isActive = true
         noItemsLabel.centerYAnchor.constraint(equalTo: tableView.centerYAnchor).isActive = true
-        tableView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-(>=20)-[label]-(>=20)-|", options: [], metrics: nil, views: ["label":noItemsLabel]))
-        tableView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-(>=20)-[label]-(>=20)-|", options: [], metrics: nil, views: ["label":noItemsLabel]))
+        
+        noItemsLabel.snp.makeConstraints { make in
+            make.leading.greaterThanOrEqualToSuperview().inset(20)
+            make.trailing.greaterThanOrEqualToSuperview().inset(20)
+            make.top.greaterThanOrEqualToSuperview().inset(20)
+            make.bottom.greaterThanOrEqualToSuperview().inset(20)
+        }
+        
         tableView.tableFooterView = UIView()
         
         collectionView.rx.didScroll.subscribe(onNext: { [unowned self] in

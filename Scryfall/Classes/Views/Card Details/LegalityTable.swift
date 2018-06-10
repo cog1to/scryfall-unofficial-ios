@@ -57,7 +57,9 @@ class LegalityTable: UIStackView {
         // Make all columns equal width. Theoretically this should be achieved by "distribution = .fillEqually"
         // but for some reason it doesn't work unless I explicitly specify equality constraints.
         columnViews.suffix(from: 1).forEach {
-            addConstraint(NSLayoutConstraint(item: $0, attribute: .width, relatedBy: .equal, toItem: columnViews[0], attribute: .width, multiplier: 1.0, constant: 0.0))
+            $0.snp.makeConstraints { make in
+                make.width.equalTo(columnViews[0])
+            }
         }
         
         layoutIfNeeded()

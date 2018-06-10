@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import RxSwift
 import RxCocoa
+import SnapKit
 
 @IBDesignable
 class RoundCornerButton: UIView {
@@ -114,8 +115,13 @@ class RoundCornerButton: UIView {
         titleLabel.font = Style.font(forKey: .bold)
         
         addSubview(stackView)
-        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-8-[stackView]-8-|", options: [], metrics: nil, views: ["stackView": stackView]))
-        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-4-[stackView]-4-|", options: [], metrics: nil, views: ["stackView": stackView]))
+        
+        stackView.snp.makeConstraints { make in
+            make.leading.equalToSuperview().inset(8)
+            make.trailing.equalToSuperview().inset(8)
+            make.top.equalToSuperview().inset(4)
+            make.bottom.equalToSuperview().inset(4)
+        }
         
         // Add gesture recognizer.
         let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(touchUpInside(recognizer:)))
