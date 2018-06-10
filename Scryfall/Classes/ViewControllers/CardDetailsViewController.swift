@@ -149,12 +149,16 @@ class CardDetailsViewController: UIViewController, BindableType {
                 tagListView!.removeAllTags()
             }
             
+            // Exclude same language printings from the languages list.
             var uniqueCards = [selected]
             for card in cards {
                 if !uniqueCards.contains(where: { $0.setCode == card.setCode && $0.language?.rawValue == card.language?.rawValue }) {
                     uniqueCards.append(card)
                 }
             }
+            
+            // Sort languages (by the same order as on site).
+            uniqueCards = uniqueCards.sorted(by: { $0.language! < $1.language! })
             
             if (uniqueCards.count == 0) {
                 tagListView!.addTagView(strongSelf.view(forCard: selected, selected: true))

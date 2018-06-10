@@ -86,7 +86,7 @@ class Scryfall: ScryfallServiceType {
     }
     
     func random() -> Observable<Card> {
-        return WebService.json(API: API, endpoint: "\(randomEndpoint)").map {
+        return WebService.json(API: API, endpoint: "\(randomEndpoint)", force: true).map {
             guard let card = Card(json: $0) else {
                 throw WebServiceError.invalidJSON
             }

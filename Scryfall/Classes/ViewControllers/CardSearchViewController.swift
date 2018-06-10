@@ -212,7 +212,7 @@ class CardSearchViewController: DynamicHeaderViewController, BindableType {
             self.viewModel.onSortDirectionChange.execute(direction)
         }
         
-        menuButton.rx.tap.subscribe(onNext: { [unowned self] in
+        menuButton.rx.tap.observeOn(MainScheduler.instance).subscribe(onNext: { [unowned self] in
             if let view = self.menuButton.view {
                 self.popover = PopoverMenuViewController(items: [PopoverMenuItem(image: nil, name: "All sets"), PopoverMenuItem(image: nil, name: "Random")])
                 self.popover.show(from: view, itemSelected: self.viewModel.onMenuItemSelected)

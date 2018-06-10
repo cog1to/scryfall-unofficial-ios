@@ -99,7 +99,7 @@ class CardSearchViewModel {
                                                       callback: self.onLink)
                 return self.sceneCoordinator.transition(to: Scene.sets(setsViewModel), type: .push)
             case "Random":
-                return self.scryfallService.random().subscribeOn(MainScheduler.instance).flatMap { card -> Observable<Void> in
+                return self.scryfallService.random().observeOn(MainScheduler.instance).flatMap { card -> Observable<Void> in
                     let viewModel = CardDetailsViewModel(card: card,
                                                          service: self.scryfallService,
                                                          coordinator: self.sceneCoordinator,

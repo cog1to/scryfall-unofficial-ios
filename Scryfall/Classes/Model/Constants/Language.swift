@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum Language: String {
+enum Language: String, Equatable, Comparable {
     case english = "en"
     case spanish = "es"
     case french = "fr"
@@ -67,5 +67,17 @@ enum Language: String {
         case .any:
             return "Any"
         }
+    }
+    
+    static var all: [Language] {
+        return [.english, .spanish, .french, .german, .italian, .portuguese, .japanese, .korean, .russian, .chineseSimplified, .chineseTraditional, .hebrew, .latin, .ancientGreek, .arabic, .sanskrit, .phyrexian]
+    }
+    
+    public static func == (lhs: Language, rhs: Language) -> Bool {
+        return lhs.rawValue == rhs.rawValue
+    }
+    
+    static func < (lhs: Language, rhs: Language) -> Bool {
+        return all.index(of: lhs)! < all.index(of: rhs)!
     }
 }

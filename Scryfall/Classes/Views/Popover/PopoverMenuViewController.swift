@@ -61,13 +61,13 @@ class PopoverMenuViewController: NSObject {
             label.snp.makeConstraints({ make -> Void in
                 make.left.equalToSuperview().inset(10)
                 make.right.equalToSuperview().inset(10)
-                make.top.equalToSuperview().inset(10)
+                make.top.equalToSuperview().inset(4)
                 make.bottom.equalToSuperview().inset(0)
             })
             
             // Add tap listener.
             view.isUserInteractionEnabled = true
-            view.rx.tapGesture().when(.recognized).subscribe(onNext: { _ in
+            view.rx.tapGesture().when(.recognized).observeOn(MainScheduler.instance).subscribe(onNext: { _ in
                 popover.dismiss()
                 itemSelected.execute(item)
             }).disposed(by: bag)
@@ -84,7 +84,23 @@ class PopoverMenuViewController: NSObject {
         let frame = CGRect(origin: CGPoint.zero, size: size)
         stackView.frame = frame
         
+        // Popover has a bug with laying out content view starting with arrow's origin.
+        // To fix that we wrap content view inside another view with top offset.
+        let containerView = UIView(frame: CGRect.zero)
+        containerView.translatesAutoresizingMaskIntoConstraints = false
+        containerView.addSubview(stackView)
+        stackView.snp.makeConstraints { make -> Void in
+            make.left.equalToSuperview().inset(0)
+            make.right.equalToSuperview().inset(0)
+            make.top.equalToSuperview().inset(14)
+            make.bottom.equalToSuperview().inset(0)
+        }
+        
+        let containerSize = containerView.systemLayoutSizeFitting(UILayoutFittingCompressedSize)
+        let containerFrame = CGRect(origin: CGPoint.zero, size: containerSize)
+        containerView.frame = containerFrame
+        
         self.popover = popover
-        self.popover.show(stackView, fromView: view)
+        self.popover.show(containerView, fromView: view)
     }
 }
