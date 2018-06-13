@@ -99,13 +99,24 @@ class CardSearchViewModel {
                                                       callback: self.onLink)
                 return self.sceneCoordinator.transition(to: Scene.sets(setsViewModel), type: .push)
             case "Random":
-                return self.scryfallService.random().observeOn(MainScheduler.instance).flatMap { card -> Observable<Void> in
+                self.loading.value = true
+                self.lastRequest?.dispose()
+                
+                let request = self.scryfallService.random().share(replay: 1, scope: .whileConnected)
+                
+                self.lastRequest = request.observeOn(MainScheduler.instance).subscribe(onNext: { card in
                     let viewModel = CardDetailsViewModel(card: card,
-                                                         service: self.scryfallService,
-                                                         coordinator: self.sceneCoordinator,
-                                                         callback: self.onLink)
-                    return self.sceneCoordinator.transition(to: Scene.details(viewModel), type: .formSheet)
-                }
+                                                        service: self.scryfallService,
+                                                        coordinator: self.sceneCoordinator,
+                                                        callback: self.onLink)
+                    self.sceneCoordinator.transition(to: Scene.details(viewModel), type: .formSheet)
+                })
+                    
+                request.subscribe({ _ in
+                    self.loading.value = false
+                }).disposed(by: self.bag)
+                
+                return .just(())
             default:
                 return .just(())
             }

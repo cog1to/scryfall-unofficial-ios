@@ -44,6 +44,7 @@ class PopoverMenuViewController: NSObject {
         
         let stackView = UIStackView(frame: CGRect.zero)
         stackView.axis = .vertical
+        stackView.spacing = 6
         
         let itemViews = items.map { item -> UIView in
             // Create an option label.
@@ -59,9 +60,9 @@ class PopoverMenuViewController: NSObject {
             
             // Bind label container to label.
             label.snp.makeConstraints({ make -> Void in
-                make.left.equalToSuperview().inset(10)
-                make.right.equalToSuperview().inset(10)
-                make.top.equalToSuperview().inset(4)
+                make.left.equalToSuperview().inset(5)
+                make.right.equalToSuperview().inset(5)
+                make.top.equalToSuperview().inset(0)
                 make.bottom.equalToSuperview().inset(0)
             })
             
@@ -75,8 +76,26 @@ class PopoverMenuViewController: NSObject {
             return view
         }
         
-        for view in itemViews {
-            stackView.addArrangedSubview(view)
+        // Small helper function for creating separator views.
+        func separator() -> UIView {
+            let separator = UIView()
+            separator.tag = 999
+            separator.translatesAutoresizingMaskIntoConstraints = false
+            separator.backgroundColor = Style.color(forKey: .gray)
+            
+            separator.snp.makeConstraints { make in
+                make.height.equalTo(1.0/UIScreen.main.scale)
+            }
+            
+            return separator
+        }
+        
+        let itemViewsWithSeparators = (0..<(2 * itemViews.count - 1)).map {
+            $0 % 2 == 0 ? itemViews[$0/2] : separator()
+        }
+        
+        for view in itemViewsWithSeparators {
+            stackView.addArrangedSubview(view)            
         }
         
         // Resize stack view with auto-layout.
@@ -92,7 +111,7 @@ class PopoverMenuViewController: NSObject {
         stackView.snp.makeConstraints { make -> Void in
             make.left.equalToSuperview().inset(0)
             make.right.equalToSuperview().inset(0)
-            make.top.equalToSuperview().inset(14)
+            make.top.equalToSuperview().inset(16)
             make.bottom.equalToSuperview().inset(0)
         }
         

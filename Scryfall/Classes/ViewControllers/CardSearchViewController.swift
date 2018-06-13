@@ -54,9 +54,9 @@ class CardSearchViewController: DynamicHeaderViewController, BindableType {
         noItemsLabel.text = "Sorry, no cards matching current search criteria found"
         noItemsLabel.isHidden = true
         
-        tableView.addSubview(noItemsLabel)
-        noItemsLabel.centerXAnchor.constraint(equalTo: tableView.centerXAnchor).isActive = true
-        noItemsLabel.centerYAnchor.constraint(equalTo: tableView.centerYAnchor).isActive = true
+        view.addSubview(noItemsLabel)
+        noItemsLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        noItemsLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
         
         noItemsLabel.snp.makeConstraints { make in
             make.leading.greaterThanOrEqualToSuperview().inset(20)
