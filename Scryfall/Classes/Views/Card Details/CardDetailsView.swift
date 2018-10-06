@@ -42,14 +42,14 @@ class CardDetailsView: UIView {
             stackView.addArrangedSubview(titleLabel)
             
             // Type line.
-            let typeline = face.printedTypeLine ?? face.typeLine
+            let typeline = face.printedTypeLine.isNullOrEmpty ? face.typeLine : face.printedTypeLine!
             if typeline.count > 0 {
                 stackView.addArrangedSubview(separator())
                 stackView.addArrangedSubview(label(withFontStyle: .text, text: typeline))
             }
             
             // Oracle text.
-            let text = face.printedText ?? face.oracleText
+            let text = face.printedText.isNullOrEmpty ? face.oracleText : face.printedText
             if text != nil || face.flavorText != nil {
                 stackView.addArrangedSubview(separator())
                 stackView.addArrangedSubview(label(text: rulingsString(for: text, flavor: face.flavorText)))

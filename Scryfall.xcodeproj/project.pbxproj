@@ -110,6 +110,7 @@
 		CF8F8C3120193C17007CB484 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8F8C3020193C17007CB484 /* Constants.swift */; };
 		CF8F8C36201944AC007CB484 /* NetworkCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8F8C35201944AC007CB484 /* NetworkCache.swift */; };
 		CF8F8C56201A5E3E007CB484 /* NetworkCacheItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8F8C55201A5E3E007CB484 /* NetworkCacheItem.swift */; };
+		CFA215772168AAE80025BEAF /* OptionalString+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA215762168AAE80025BEAF /* OptionalString+Extension.swift */; };
 		CFA2A18D203B4A4300866BEC /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA2A18C203B4A4300866BEC /* Settings.swift */; };
 		CFBBEBB9200D6A0E005A301F /* PrintingsTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBBEBB8200D6A0E005A301F /* PrintingsTable.swift */; };
 		CFBBEBD7200E9CC6005A301F /* PrintingsTableHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBBEBD6200E9CC6005A301F /* PrintingsTableHeader.swift */; };
@@ -293,6 +294,7 @@
 		CF8F8C3020193C17007CB484 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		CF8F8C35201944AC007CB484 /* NetworkCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkCache.swift; sourceTree = "<group>"; };
 		CF8F8C55201A5E3E007CB484 /* NetworkCacheItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkCacheItem.swift; sourceTree = "<group>"; };
+		CFA215762168AAE80025BEAF /* OptionalString+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OptionalString+Extension.swift"; sourceTree = "<group>"; };
 		CFA2A18C203B4A4300866BEC /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		CFBBEBB8200D6A0E005A301F /* PrintingsTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrintingsTable.swift; sourceTree = "<group>"; };
 		CFBBEBD6200E9CC6005A301F /* PrintingsTableHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrintingsTableHeader.swift; sourceTree = "<group>"; };
@@ -406,6 +408,7 @@
 				CF4BE06F200826710054FFEA /* UIView+Extension.swift */,
 				CFC17E4720C5BA0A00221260 /* UIBarButtonItem+Extension.swift */,
 				CFC17E7120C80E8600221260 /* UIFont+Extension.swift */,
+				CFA215762168AAE80025BEAF /* OptionalString+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1160,6 +1163,7 @@
 				CF4BE070200826710054FFEA /* UIView+Extension.swift in Sources */,
 				CFC17E6320C6A70200221260 /* TagListView.swift in Sources */,
 				CF1FA2732006960200E8DAEA /* PaperSets.swift in Sources */,
+				CFA215772168AAE80025BEAF /* OptionalString+Extension.swift in Sources */,
 				CFA2A18D203B4A4300866BEC /* Settings.swift in Sources */,
 				CF1FA29F2006A89B00E8DAEA /* Border.swift in Sources */,
 				CF6DDA0C203620EF00F5EAC9 /* LoadingCollectionCell.swift in Sources */,
