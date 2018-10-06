@@ -184,8 +184,8 @@ extension CardDetailsView {
                 let attributed = NSMutableAttributedString(string: updated, attributes: [.font: Style.font(forKey: .text), NSAttributedStringKey.foregroundColor: Style.color(forKey: .text)])
                 
                 // Italicise reminder text, if it's found.
-                let regexp = try! NSRegularExpression(pattern: " \\(.*\\)(\n)?", options: [])
-                if let match = regexp.firstMatch(in: attributed.string, options: [], range: NSRange(location: 0, length: attributed.string.count)) {
+                let regexp = try! NSRegularExpression(pattern: "(^|\\W)\\(.*\\)(\n)?", options: [])
+                for match in regexp.matches(in: attributed.string, options: [], range: NSRange(location: 0, length: attributed.string.count)) {
                     attributed.addAttribute(.font, value: Style.font(forKey: .italic), range: match.range)
                 }
                 
