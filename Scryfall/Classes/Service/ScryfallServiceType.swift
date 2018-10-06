@@ -43,7 +43,7 @@ protocol ScryfallServiceType {
     func search(params: [URLQueryItem], sort: CardSortOrder, direction: SortDirection) -> Observable<CardsList>
     
     /**
-     * Returns a list of known sets.
+     * Returns a list of all known sets.
      *
      * - parameter force: Forces reloading of the cached response.
      * - returns: An observable emitting array of known sets.
@@ -51,7 +51,12 @@ protocol ScryfallServiceType {
     func sets(force: Bool) -> Observable<RemoteList<CardSet>>
     
     /**
-     * Returns a list of known sets.
+     * Returns a subset of card sets of given type.
+     *
+     * - parameter order: Sorting order
+     * - parameter type: Set type.
+     * - parameter force: Flag indicating that method should overwrite existing cache.
+     * - returns: An observable emitting a list of sets matching search criteria.
      */
     func sets(order: SetSortOrder, type: CardSetType, force: Bool) -> Observable<RemoteList<CardSet>>
     
@@ -65,17 +70,32 @@ protocol ScryfallServiceType {
     func rulings(card: Card, force: Bool) -> Observable<RulingsList>
     
     /**
-     * Returns a rendom card.
+     * Returns a random card.
      */
     func random() -> Observable<Card>
 }
 
 
 extension ScryfallServiceType {
+    
+    /**
+     * Convenience search method with default sort and direction values.
+     * Default sort type: by card name. Default direction: auto.
+     *
+     * parameter query: Query string.
+     * returns: An observable containg list of search results.
+     */
     func search(query: String) -> Observable<CardsList> {
         return search(query: query, sort: .name, direction: .auto)
     }
     
+    /**
+     * Convenience search method with default sort and direction values.
+     * Default sort type: by card name. Default direction: auto.
+     *
+     * parameter params: List of query items.
+     * returns: An observable containg list of search results.
+     */
     func search(params: [URLQueryItem]) -> Observable<CardsList> {
         return search(params: params, sort: .name, direction: .auto)
     }
