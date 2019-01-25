@@ -128,7 +128,7 @@ class CardSearchViewModel {
             if let nextPage = this.nextPage, let components = URLComponents.init(url: nextPage, resolvingAgainstBaseURL: false), let parameters = components.queryItems {
                 this.lastRequest?.dispose()
                 
-                let query = URLQueryItem(name: "q", value: this.searchText.value)
+                let query = URLQueryItem(name: "q", value: this._searchText.value)
                 let order = URLQueryItem(name: "order", value: this.sortOrder.value.rawValue)
                 let direction = URLQueryItem(name: "dir", value: this.direction.value.rawValue)
                 let page = parameters.first(where: { $0.name == "page" })!
