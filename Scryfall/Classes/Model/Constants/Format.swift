@@ -22,6 +22,7 @@ enum Format: String {
     case future = "future"
     case brawl = "brawl"
     case unknown = "unknown"
+    case oldschool = "oldschool"
     
     var name: String {
         get {
@@ -50,9 +51,44 @@ enum Format: String {
                 return "Future Standard"
             case .brawl:
                 return "Brawl"
-            default:
+            case .unknown:
                 return "Unknown"
+            case .oldschool:
+                return "Oldschool"
             }
+        }
+    }
+    
+    init?(rawValue: String) {
+        switch rawValue {
+        case "standard":
+            self = .standard
+        case "frontier":
+            self = .frontier
+        case "modern":
+            self = .modern
+        case "pauper":
+            self = .pauper
+        case "legacy":
+            self = .legacy
+        case "penny":
+            self = .penny
+        case "vintage":
+            self = .vintage
+        case "duel":
+            self = .duel
+        case "commander":
+            self = .commander
+        case "1v1":
+            self = .onevone
+        case "future":
+            self = .future
+        case "brawl":
+            self = .brawl
+        case "oldschool":
+            self = .oldschool
+        default:
+            self = .unknown
         }
     }
     
